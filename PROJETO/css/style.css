@@ -37,7 +37,8 @@ header{
 
 #menu{
     width:650px;
-    height:70px;
+    height:55px;
+    margin-top:8px;
     float: left;
     box-sizing:border-box;
     /*background-color:#ffdfff;*/
@@ -53,21 +54,22 @@ header{
 
 #menu ul li{
 
-    width:100px;
+    width:110px;
     height:inherit;
     list-style:none;
     margin-right:3px;
+    padding-top:19px;
+    text-align: center;
     display: block;
-    padding:35px 0px 0px 20px;
     font-weight: bold;
     font-size:15px;
     float:left;
     box-sizing:border-box;
 }
 
-li:hover{
+#menu li:hover{
     
-    background-color: rgba(100, 100, 153, 0.1);
+    background-color: rgba(100, 100, 153, 0.3);
     
 }
 
@@ -97,6 +99,7 @@ li a:visited{
     
     width:26%;
     height: inherit;
+    right: 0;
     /*background-color: aliceblue;*/
     float: left;
 }
@@ -108,15 +111,26 @@ li a:visited{
     height: 55px;
     margin: 8px 0px 0px 0px;
     /*background-color: aliceblue;*/
+    font-weight: bold;
+    color:white;
     display:block;
     box-sizing:border-box;
     float: left;
     
 }
 
+input{
+    
+    border: none;
+}
+
 #btnOk{
+    
+    font-weight: bold;
+    color:white;
     display: inline-block;
     text-decoration: none;
+    background-color: rgba(100, 100, 153, 0.3);
 }
 
 #box-slider{
@@ -274,7 +288,7 @@ li a:visited{
     
     width: 70px;
     height: 210px;
-    right: 0;
+    right: 10px;
     top: 38%;
     /*margin: 20% 0% 0% 91.5%;*/
     background-color: transparent;
