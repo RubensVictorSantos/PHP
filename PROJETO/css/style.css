@@ -65,9 +65,9 @@ header{
     box-sizing:border-box;
 }
 
-#menu ul li:hover{
+li:hover{
     
-    background-color: rgba(100, 255, 153, 0.1);
+    background-color: rgba(100, 100, 153, 0.1);
     
 }
 
