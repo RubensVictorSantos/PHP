@@ -29,7 +29,8 @@ header{
     position:fixed;
     top: 0;
     padding: 0% 0% 0% 10.4%;
-    background-color:#66ff99;
+    /*background-color:#66ff99;*/
+    background-color:#33ff77;
     -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.77);
     box-sizing:border-box;
     z-index: 1;
@@ -41,7 +42,7 @@ header{
     margin-top:8px;
     float: left;
     box-sizing:border-box;
-    background-color:#ffdfff;
+    /*background-color:#ffdfff;*/
 }
 
 #menu ul{
@@ -146,7 +147,7 @@ input{
 #conteudo{
     
     width: 1550px;
-    min-height: 1000px;
+    height: 1000px;
     background: transparent;
     float:left;
     
@@ -155,7 +156,7 @@ input{
 #menu-catalogo{
     
     width:  250px;
-    height: inherit;
+    height: 100%;
     /*background-color:rgba(102, 255, 153, 0.5);*/
     /*background:#fff8f8;*/
     float: left;
@@ -220,15 +221,15 @@ input{
     
 }
 
-/*#box-catalogo::-webkit-scrollbar { 
+/*#menu-catalogo::-webkit-scrollbar { 
 	display: none;
 }*/
 
 .img-card{
     
-    width:200px;
-    height: 200px;
-    margin: 30px 65px 30px 65px;
+    width: inherit;
+    height: 259px;
+    /*margin: 30px 65px 30px 65px;*/
     background-color: #feefee;
     box-sizing: border-box;
 }
@@ -261,8 +262,9 @@ input{
     height: 40px;
     padding:6px 15px 0px 15px;
     background-color:white;
+    font-size: 20px;
     font-weight: bold;
-    color:#66ff99;
+    color: #00ee44;
     overflow: hidden;
     box-sizing: border-box;
 }
