@@ -112,7 +112,7 @@ li a:visited{
     width: 213px;
     padding: 8px 0px 0px 5px; 
     height: 55px;
-    background-color: aliceblue;
+    /*background-color: aliceblue;*/
     font-weight: bold;
     color:white;
     display:block;
