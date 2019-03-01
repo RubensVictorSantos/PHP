@@ -43,7 +43,7 @@ header{
 }
 
 #menu{
-    width:678px;
+    width:710px;
     height:55px;
     margin-top:8px;
     float: left;
@@ -61,7 +61,7 @@ header{
 
 #menu ul li{
 
-    width:110px;
+    width:115px;
     height:inherit;
     list-style:none;
     margin-right:3px;
@@ -70,7 +70,7 @@ header{
     display: block;
     font-weight: bold;
     /*background-color: #eeeeaa;*/
-    font-size:16px;
+    font-size:17px;
     float:left;
     box-sizing:border-box;
 }
@@ -96,15 +96,15 @@ li a:visited{
 
 #logo{
     
-    width: 100px;
-    height: 55px;
-    margin: 8px 20px 0px 20px;
-    background-color: #33ff77;
+    width: 150px;
+    height: inherit;
+    margin: 0px 2% 0px 0px;
+    /*background-color: #33ff77;*/
     padding-top: 5px;
     font-size: 35px;
     color: white;
-    -webkit-text-stroke-width: 1px;
-    /*-webkit-text-stroke-color: #ffbb33;*/
+    /*-webkit-text-stroke-width: 1px;*/
+    line-height: 27px;
     text-shadow: 3px 3px #ffbb33;
     font-weight:bold;
     overflow: hidden;
@@ -117,7 +117,7 @@ li a:visited{
     
     width: 426px;
     height: 55px;
-    margin: 8px 0px 0px 15%;
+    margin: 8px 0px 0px 10%;
     /*background-color: aliceblue;*/
     overflow: hidden;
     box-sizing: border-box;
@@ -342,13 +342,14 @@ input{
     width: 387px;
     height: inherit;
     color:white;
-    /*background-color: #6f9;*/
+    padding: 20px;
     list-style: none;
     text-align: center;
     font-size: 25px;
     background-color: transparent;
     overflow: hidden;
     float:left;
+    box-sizing: border-box;
     
 }
 
