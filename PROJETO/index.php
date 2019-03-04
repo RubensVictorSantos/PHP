@@ -1,3 +1,9 @@
+<?php
+
+    require_once('menu.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -6,45 +12,11 @@
         <title>
             Road Runner Cross Bikes
         </title>
-        <link rel="icon" href="img/icon/playButton.png">
+        <link rel="icon" href="img/ico/logo.png">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <header class="center">
-            <div id="box-main-header" class="center">
-                <div id="logo">
-                    Bikes
-                </div>
-                <nav id="menu" class="center">
-                    <ul class="center">
-                        <li><a href="index.html">Destaques</a></li>
-                        <li><a href="index.html">Promoções</a></li>
-                        <li><a href="index.html">Eventos</a></li>
-                        <li><a href="index.html">Fale Conosco</a></li>
-                        <li><a href="Sobre.php">Sobre</a></li>
-                        <li><a href="index.html">Nossas Lojas</a></li>
-                    </ul>
-                </nav>
-                <div id="login">
-                    <form name="frmRoadRunnerCrossBikes" method="post" action="index.php">
-                        <div class="box-login center">
-                            <label for="usuario">
-                                Usuário
-                            </label><br>
-                            <input type="text" name="txt-usuario" id="txtUser">
-                        </div>
-                        <div class="box-login center">
-                            <label for="senha">
-                                Senha
-                            </label><br>
-                            <input type="password" name="txt-senha" id="txtPass">
-                            <input type="button" value="Ok" name="btn-ok" id="btnOk">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </header>
-        <div id="test" class="center">
+        <div id="conteudo" class="center">
             <div id="box-slider" class="center">
                 
                 <!-- #region Jssor Slider Begin -->
@@ -140,12 +112,7 @@
                         <div>
                             <img data-u="image" src="img/Almaty-Cycling-1300x500.jpg" />
                            
-                            <!--<div style="position:absolute;top:30px;left:30px;width:480px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:40px;color:#000000;line-height:1.5;padding:5px 5px 5px 5px;box-sizing:border-box;background-color:rgba(255,188,5,0.8);background-clip:padding-box;">TOUCH SWIPE 
-                                <br/>
-                                COLOCAR TEXTO NO SLIDE
-                            
-                            </div>
-                            
+                            <!--
                             <div style="position:absolute;top:300px;left:30px;width:480px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:30px;color:#000000;line-height:1.27;padding:5px 5px 5px 5px;box-sizing:border-box;background-color:rgba(255,188,5,0.8);background-clip:padding-box;">
                                 
                                 Build your slider with anything, includes image, svg, text, html, photo, picture content
@@ -153,7 +120,13 @@
                             </div>-->
                         </div>
                         <div>
-                            <img data-u="image" src="img/granfondo-2-1500-1300x500.jpg" />
+                            <img data-u="image" src="img/granfondo-2-1500-1300x500.jpg"/>
+                            
+                            <div class="msg-slider" style="position:absolute;top:15px;left:100px;width:800px;-webkit-text-stroke-width: 2px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:70px;text-shadow: 5px 0px #3d7;color:white;line-height:1.0;padding:5px 5px 5px 5px;box-sizing:border-box;background-clip:padding-box;text-align:center;">"Participe da maior corrida
+                                <br/>
+                                de bikes do Brasil !!!"
+                            
+                            </div>
                             
                         </div>
                         <div>
@@ -186,7 +159,7 @@
                     </div>
                 </div>
             </div>
-            <div id="conteudo" class="center">
+            <div id="conteudo-catalogo" class="center">
                 <div id="menu-catalogo">
                     <lu >
                         <li class="itens-catalogo">
@@ -433,50 +406,10 @@
                 </div>
             </div>
         </div>
-        <div id="footer" class="center">
-            <div id="main-footer" class="center">
-                <div class="conteudo-footer">
-                    <lu>
-                        <li>tesqwewq </li>
-                        <li>test wqew</li>
-                        <li>testqwe w</li>
-                        <li>test wqew</li>
-                        <li>testqwewq</li>
-
-                    </lu>
-                </div>
-                <div class="conteudo-footer">
-                    <lu>
-                        <li>test </li>
-                        <li>testq</li>
-                        <li>tesqw</li>
-                        <li>tesew</li>
-                        <li>test </li>
-
-                    </lu>
-                </div>
-                <div class="conteudo-footer">
-                    <lu>
-                        <li>test wqeq</li>
-                        <li>test wqeqw</li>
-                        <li>te s wqewqt</li>
-                        <li>tes wqeqwt</li>
-                        <li>t qwq est</li>
-                        <li>tesqwe t</li>
-
-                    </lu>
-                </div>
-                <div class="conteudo-footer">
-                    <lu>
-                        <li>tqwewq est</li>
-                        <li>test</li>
-                        <li>tesqqe t</li>
-                        <li>tqwe est</li>
-                        <li>te qwqwst</li>
-
-                    </lu>
-                </div>
-            </div>
-        </div>
+        <?php
+            
+            require_once('footer.php');
+            
+        ?>
     </body>
 </html>
