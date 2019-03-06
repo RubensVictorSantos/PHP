@@ -16,45 +16,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-<<<<<<< HEAD:PROJETO/index.php
         <div id="conteudo" class="center">
-=======
-        <header class="center">
-            <div id="box-main-header" class="center">
-                <div id="logo">
-                    Road Runner
-                </div>
-                <nav id="menu" class="center">
-                    <ul class="center">
-                        <li><a href="index.html">Destaques</a></li>
-                        <li><a href="index.html">Promoções</a></li>
-                        <li><a href="index.html">Eventos</a></li>
-                        <li><a href="index.html">Fale Conosco</a></li>
-                        <li><a href="Sobre.php">Sobre</a></li>
-                        <li><a href="index.html">Nossas Lojas</a></li>
-                    </ul>
-                </nav>
-                <div id="login">
-                    <form name="frmRoadRunnerCrossBikes" method="post" action="index.php">
-                        <div class="box-login center">
-                            <label for="usuario">
-                                Usuário
-                            </label><br>
-                            <input type="text" name="txt-usuario" id="txtUser">
-                        </div>
-                        <div class="box-login center">
-                            <label for="senha">
-                                Senha
-                            </label><br>
-                            <input type="password" name="txt-senha" id="txtPass">
-                            <input type="button" value="Ok" name="btn-ok" id="btnOk">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </header>
-        <div id="test" class="center">
->>>>>>> 46ac53eab33da9b470325f045339d7ba525585e4:PROJETO/index.html
             <div id="box-slider" class="center">
                 
                 <!-- #region Jssor Slider Begin -->
@@ -150,14 +112,6 @@
                         <div>
                             <img data-u="image" src="img/Almaty-Cycling-1300x500.jpg" />
                            
-<<<<<<< HEAD:PROJETO/index.php
-=======
-                            <div class="msg-slider" style="">Participe da maior
-                                <br/>
-                                de bike sem São Paulo
-                            
-                            </div>
->>>>>>> 46ac53eab33da9b470325f045339d7ba525585e4:PROJETO/index.html
                             <!--
                             <div style="position:absolute;top:300px;left:30px;width:480px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:30px;color:#000000;line-height:1.27;padding:5px 5px 5px 5px;box-sizing:border-box;background-color:rgba(255,188,5,0.8);background-clip:padding-box;">
                                 
@@ -452,53 +406,10 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD:PROJETO/index.php
         <?php
             
             require_once('footer.php');
             
         ?>
-=======
-        <div id="footer" class="center">
-            <div id="main-footer" class="center">
-                <div class="conteudo-footer">
-                    <lu>
-                        <li>Sobre nós </li>
-                        <li>Pulitica de privacidade</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-
-                    </lu>
-                </div>
-                <div class="conteudo-footer">
-                    <lu>
-                        <li></li>
-                        <li>Trabalhe conosco</li>
-                        <li></li>
-                        <li></li>
-
-                    </lu>
-                </div>
-                <div class="conteudo-footer">
-                    <lu>
-                        <li>Contatos</li>
-                        <li>www.roadrunnercrossbikes@outlook.com</li>
-                        <li>cel: (11)95880-8525</li>
-                        
-                    </lu>
-                </div>
-                <div class="conteudo-footer">
-                    <lu>
-                        <li>escrever qualquer  </li>
-                        <li>coisa p/ ver </li>
-                        <li>se fica bom o </li>
-                        <li>rodapé</li>
-                        <li></li>
-                    </lu>
-                </div>
-            </div>
-        </div>
->>>>>>> 46ac53eab33da9b470325f045339d7ba525585e4:PROJETO/index.html
     </body>
 </html>
