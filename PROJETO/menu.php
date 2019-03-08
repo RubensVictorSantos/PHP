@@ -7,16 +7,18 @@
         <div id="box-main-header" class="center">
             <div id="logo">
                 <!--Road Runner-->
-                <img src="img/ico/logo.png" style=" "alt="bicicleta logo da empresa" id="imag">
+                <a href="index.php" title="Página inicial" >
+                    <img src="img/ico/logo.png" style=" "alt="bicicleta logo da empresa" id="imag">
+                </a>
             </div>
             <nav id="menu" class="center">
                 <ul class="center">
                     <li><a href="index.html">Destaques</a></li>
-                    <li><a href="index.html">Promoções</a></li>
-                    <li><a href="index.html">Eventos</a></li>
+                    <li><a href="promocoes.php">Promoções</a></li>
+                    <li><a href="eventos.php">Eventos</a></li>
                     <li><a href="fale-conosco.php">Fale Conosco</a></li>
                     <li><a href="Sobre.php">Sobre</a></li>
-                    <li><a href="index.html">Nossas Lojas</a></li>
+                    <li><a href="lojas.php">Nossas Lojas</a></li>
                 </ul>
             </nav>
             <div id="login">

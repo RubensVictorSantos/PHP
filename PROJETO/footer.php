@@ -8,7 +8,7 @@
                 <div class="conteudo-footer">
                     <lu>
                         <li>Sobre nós </li>
-                        <li>Pulitica de privacidade</li>
+                        <li>Política de privacidade</li>
                         <li></li>
                         <li></li>
                         <li></li>
