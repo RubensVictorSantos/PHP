@@ -250,7 +250,7 @@
                             </div>
                             <div class="detalhes">
 
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
 
                             </div>
                         </div>
@@ -277,7 +277,7 @@
                             </div>
                             <div class="detalhes">
 
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
 
                             </div>
                         </div>
@@ -303,7 +303,7 @@
                                 </p>
                             </div>
                             <div class="detalhes">
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
                             </div>
                         </div>
                     </div>
@@ -331,7 +331,7 @@
                             </div>
                             <div class="detalhes">
 
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
 
                             </div>
                         </div>
@@ -358,7 +358,7 @@
                             </div>
                             <div class="detalhes">
 
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
 
                             </div>
                         </div>
@@ -384,7 +384,7 @@
                                 </p>
                             </div>
                             <div class="detalhes">
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
                             </div>
                         </div>
                     </div>
