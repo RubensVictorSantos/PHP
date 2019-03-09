@@ -1,24 +1,25 @@
+
 <html>
     <head>
         <meta charset="utf-8">
         <title>
-            Eventos
+            Destaques
         </title>
     </head>
     <body>
-        <?php
-        
+        <?php 
+
             require_once('menu.php');
-        
+
         ?>
         <div id="conteudo" class="center" >
         
         
-        </div>
-        <?php
-        
+        </div>        
+        <?php 
+
             require_once('footer.php');
-        
+
         ?>
     </body>
 </html>

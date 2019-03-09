@@ -20,6 +20,7 @@ body, ul, h1, h2, h3, h4, h5, p{
     
 }
 
+/****************************************MENU***********************************/
 header{
     width:100%;
     height:70px;
@@ -42,7 +43,7 @@ header{
 }
 
 #menu{
-    width:710px;
+    width:730px;
     height:55px;
     margin-top:8px;
     float: left;
@@ -51,17 +52,20 @@ header{
 }
 
 #menu ul{
-
+    
+    list-style-type: none;
     width:inherit;
     height:inherit;
     box-sizing:border-box;
 
 }
 
-#menu ul li{
+#menu li{
 
     list-style:none;
-    margin-right:3px;
+    /*margin-right:1px;*/
+    width: 16.6%;
+    height: inherit;
     text-align: center;
     font-weight: bold;
     /*background-color: #eeeeaa;*/
@@ -70,38 +74,37 @@ header{
     box-sizing:border-box;
 }
  
-#menu li:hover{
+
+#menu a:hover {
     
+    width: 100%;
+    height: 40px;
     background-color: rgba(100, 100, 153, 0.3);
-    
+    color:white;
 }
 
 li a:link{
     
+    width: 100%;
+    height: 40px;
     display:inline-block;
-    padding: 17px 15px 18px 15px;
+    padding-top: 17px;
     text-decoration: none;
     color:white;
     
 }
 
 li a:visited{
-    
     color:white;
     
 }
+
 
 #logo{
     
     width: 150px;
     height: inherit;
     margin: 0px 2% 0px 0px;
-    /*padding-top: 5px;
-    font-size: 35px;
-    color: white;
-    line-height: 27px;
-    text-shadow: 3px 3px #ffbb33;
-    font-weight:bold;*/
     overflow: hidden;
     box-sizing: border-box;
     float: left;
@@ -163,7 +166,7 @@ input{
     z-index: -1;
     background-color:gray;
 }
-
+/******************************************HOME*********************************/
 .msg-slider{
     
     /*background-color: rgba(255,250,255,0.3);*/
@@ -457,78 +460,109 @@ input{
 /***********************************CADASTRO**********************************/
 
 
-.box_campos{
-    background-color: #397;
-}
-
-.campo-obs{
-    
-    height: 140px;
-    padding: 15px;
-    background-color: #3f7;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-
-.box-text-cad{
-    
-    width: inherit;
-    height: 50px;
-    padding: 15px;
-    background-color: antiquewhite;
-    text-align: center;
-    overflow: hidden;
-    box-sizing: border-box;
-    
-}
-
-.box-label{
-    
-    width: 150px;
-    padding: 10px;
-    font-size: 25px;
-    background-color: #3f7;
-    float: left;
-    
-}
-
-#titulo-cadastro{
-    
-    width: inherit;
-    height: 100px;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    font-size: 25px;
-    background-color: #3f7;
-    overflow: hidden;
-    box-sizing: border-box;
-    
-}
-
-
-
-#form-fale-conosco{
+#main-fale-conosco{
     
     width: 600px;
     height: 800px;
-    color: white;
     margin-top: 50px;
     font-weight: bold;
-    border-radius: 7px 7px 7px 7px;
-    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    /*background-color: #3f9;*/
     box-shadow: 2px 2px 4px 4px rgba(100, 100, 100,0.5);
     box-sizing: border-box;
     overflow: hidden;
 }
 
+
+#titulo-cadastro{
+    
+    width: inherit;
+    height: 100px;
+    padding: 25px 15px 15px 15px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    background-color: #3f9;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+.box_campos{
+    
+    height: 55px;
+    background-color: white;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.box-label{
+    
+    width: 195px;
+    height: inherit;
+    padding: 10px 10px 10px 50px; 
+    font-size: 20px;
+    color: white;
+    background-color: rgba(51,255,153,0.9);
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+.box-text-cad{
+    
+    width: inherit;
+    height: inherit;
+    padding: 10px 10px 10px 10px;
+    /*background-color: antiquewhite;*/
+    text-align: center;
+    /*color:#ffbb33;*/
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+.input-fale-conosco{
+    
+    width: 350px;
+    height: 35px;
+    text-align: center;
+    border-radius: 2px 2px;
+    border: 1px solid #ffdd55;
+    
+}
+.campo-obs{
+    
+    height: 155px;
+    padding: 0px;
+    background-color: white;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+#box-textarea{
+    
+    width: 400px;
+    height: inherit;
+    padding: 10px;
+    text-align: center;
+    /*background-color: #ffa;*/
+    float: right;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
 textarea{
     
     width: 350px;
-    height: 100px;
+    height: 135px;
     padding: 10px;
+    border: 1px solid #ffdd55;
+    border-radius: 5px 5px 5px 5px;
     overflow-y: scroll;
 }
 
@@ -536,7 +570,9 @@ textarea{
     
     width: inherit;
     height: 50px;
-    background-color: #f9f999;
+    /*background-color: #f9f999;*/
+    overflow: hidden;
+    box-sizing: border-box;
     
 }
 
@@ -545,5 +581,21 @@ textarea{
     width: 50%;
     height: inherit;
     text-align: center;
+    padding: 10px 10px 10px 10px;
+    /*background-color: #ffe;*/
     float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.btn-fale-conosco{
+    
+    width: 100px;
+    height: 30px;
+    color:white;
+    background-color: rgba(51,255,153,0.9);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px 5px 5px 5px;
+    
 }
