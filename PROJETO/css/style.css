@@ -459,7 +459,10 @@ input{
 
 
 .box_campos{
+    height: 60px;
     background-color: #397;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .campo-obs{
@@ -474,10 +477,10 @@ input{
 
 .box-text-cad{
     
-    width: inherit;
-    height: 50px;
+    width: 511px;
+    height: inherit;
     padding: 15px;
-    background-color: antiquewhite;
+    background-color: #99eeff;
     text-align: center;
     overflow: hidden;
     box-sizing: border-box;
@@ -486,13 +489,17 @@ input{
 
 .box-label{
     
-    width: 150px;
+    width: 239px;
+    height: inherit;
     padding: 10px;
     font-size: 25px;
     background-color: #3f7;
     float: left;
+    overflow: hidden;
+    box-sizing: border-box;
     
 }
+
 
 #titulo-cadastro{
     
@@ -513,8 +520,8 @@ input{
 
 #form-fale-conosco{
     
-    width: 600px;
-    height: 800px;
+    width: 750px;
+    height: 950px;
     color: white;
     margin-top: 50px;
     font-weight: bold;
