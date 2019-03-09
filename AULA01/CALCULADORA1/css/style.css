@@ -1,0 +1,138 @@
+*{
+                
+    border: none;
+    font-family: arial;
+
+}
+
+body, h2, h3, p{
+
+    margin:0;
+    padding:0;
+}
+
+div{
+
+    /*border: 1px solid black;*/
+    font-size: 14.8px;
+    box-sizing: border-box;
+    background-color:#d4cfc6;
+
+}
+
+#titulo{
+
+    width:444px;
+    height:40px;
+    padding:5px;
+    color:white;
+    font-size: 18px;
+    text-align:center;
+    background-color: #000000;
+}
+
+#caixa-principal{
+
+    width:450px;
+    height:251px;
+    /*border: 1px solid black;*/
+    /*border-radius:0px 0px 2px 2px;*/
+    border-top: none;
+    border:1px solid black;
+    /*border-style:outset;*/
+    /*background-color:#001111;*/
+
+}
+
+#caixa-valores{
+
+    width:244px;
+    height:205px;
+    float:left;
+    /*background-color:#0000ff;*/
+    /*border: 1px solid black;*/
+}
+
+#saida{
+
+    width:200px;
+    height:205;
+    float:left;
+    padding: 7px 0px 0px 5px;
+    /*background-color:#dd11dd;
+    /*border: 1px solid black;*/
+
+}
+
+#titulo-resultado{
+
+    width:189px;
+    padding:5px;
+    font-size: 18px;
+    text-align:center;
+    background-color: #ffffff;
+    color:white;
+    /*border: 1px solid black;*/
+}
+
+#caixa-texto{
+
+    padding:3px;
+    width:inherit;
+    height:56px;
+    box-sizing: border-box;
+    /*background-color:#d4cfdd;*/
+}
+
+.input{
+
+    margin-bottom: 5px;
+    /*border-style:inset;*/
+    text-align: center;
+}
+
+#caixa-radio{
+
+    padding:5px;
+    width:inherit;
+    height:87px;
+    /*background-color:#d4ddc6;*/
+
+}
+
+#caixa-alert{
+
+    padding:5px;
+    text-align: center;
+    width:inherit;
+    height:31px;
+    /*background-color:#ddcfc6;*/
+
+}
+
+#caixa-botao{
+
+    padding:5px 0px 0px 90px;
+    width:inherit;
+    height:31px;
+    /*background-color:#dddfc6;*/
+
+}
+
+#caixa-resultado{
+
+    width: 189px;
+    height: 158px;
+    padding-top: 20%;
+    font-size: 50px;
+    text-align: center;
+    border: 1px solid black;
+    overflow: auto;
+    background-color:white;
+}
+
+#btncal{
+
+     /*border-style:outset;*/
+
+}

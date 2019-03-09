@@ -13,7 +13,11 @@
             </div>
             <nav id="menu" class="center">
                 <ul class="center">
+<<<<<<< HEAD
                     <li><a href="Destaques.php">Destaques</a></li>
+=======
+                    <li><a href="index.html">Destaques</a></li>
+>>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
                     <li><a href="promocoes.php">Promoções</a></li>
                     <li><a href="eventos.php">Eventos</a></li>
                     <li><a href="fale-conosco.php">Fale Conosco</a></li>
