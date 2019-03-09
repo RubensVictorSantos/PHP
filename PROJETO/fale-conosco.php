@@ -78,6 +78,16 @@
                         <input type="text" name="txtcel" >
                     </div>
                 </div>
+                <div class="campo-obs">
+                    <div class="box-label">
+                        <label>
+                            Sugestões:
+                        </label>
+                    </div>
+                    <div>
+                        <textarea name="txtobs"></textarea>
+                    </div>
+                </div>
                 <div class="box_campos">
                     <div class="box-label">
                         <label>
@@ -107,16 +117,6 @@
                     </div>
                     <div class="box-text-cad">
                         <input type="text" name="txtdtnasc">
-                    </div>
-                </div>
-                 <div class="campo-obs">
-                    <div class="box-label">
-                        <label>
-                            Sugestões:
-                        </label>
-                    </div>
-                    <div>
-                        <textarea name="txtobs"></textarea>
                     </div>
                 </div>
                 <div id="box-buttons">

@@ -132,6 +132,9 @@
                         <div>
                             <img data-u="image" src="img/imgslide_pegBikeRe-Ciclo.jpg" />
                             
+                            <div class="msg-slider" style="position:absolute;top:15px;left:50px;width:800px;-webkit-text-stroke-width: 2px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:70px;text-shadow: 5px 0px #3d7;color:white;line-height:1.0;padding:5px 5px 5px 5px;box-sizing:border-box;background-clip:padding-box;text-align:center;">Bike-sharing nova proposta ecologica!
+                            </div>
+                            
                         </div>
                         
                     </div>
@@ -220,6 +223,7 @@
                         </li>
                         
                         
+                        
                     </lu>
                 </div>
                 <div id="box-catalogo">
@@ -246,7 +250,7 @@
                             </div>
                             <div class="detalhes">
 
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
 
                             </div>
                         </div>
@@ -273,7 +277,7 @@
                             </div>
                             <div class="detalhes">
 
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
 
                             </div>
                         </div>
@@ -299,7 +303,7 @@
                                 </p>
                             </div>
                             <div class="detalhes">
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
                             </div>
                         </div>
                     </div>
@@ -327,7 +331,7 @@
                             </div>
                             <div class="detalhes">
 
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
 
                             </div>
                         </div>
@@ -354,7 +358,7 @@
                             </div>
                             <div class="detalhes">
 
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
 
                             </div>
                         </div>
@@ -380,7 +384,7 @@
                                 </p>
                             </div>
                             <div class="detalhes">
-                                <a href="index.html">Detalhes</a>
+                                <a href="#">Detalhes</a>
                             </div>
                         </div>
                     </div>
