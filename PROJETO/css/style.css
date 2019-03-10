@@ -20,10 +20,8 @@ body, ul, h1, h2, h3, h4, h5, p{
     
 }
 
-<<<<<<< HEAD
 /****************************************MENU***********************************/
-=======
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
+
 header{
     width:100%;
     height:70px;
@@ -46,11 +44,8 @@ header{
 }
 
 #menu{
-<<<<<<< HEAD
+
     width:730px;
-=======
-    width:710px;
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
     height:55px;
     margin-top:8px;
     float: left;
@@ -59,31 +54,20 @@ header{
 }
 
 #menu ul{
-<<<<<<< HEAD
     
     list-style-type: none;
-=======
-
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
     width:inherit;
     height:inherit;
     box-sizing:border-box;
 
 }
 
-<<<<<<< HEAD
 #menu li{
 
     list-style:none;
     /*margin-right:1px;*/
     width: 16.6%;
     height: inherit;
-=======
-#menu ul li{
-
-    list-style:none;
-    margin-right:3px;
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
     text-align: center;
     font-weight: bold;
     /*background-color: #eeeeaa;*/
@@ -91,8 +75,6 @@ header{
     float:left;
     box-sizing:border-box;
 }
- 
-<<<<<<< HEAD
 
 #menu a:hover {
     
@@ -100,57 +82,30 @@ header{
     height: 40px;
     background-color: rgba(100, 100, 153, 0.3);
     color:white;
-=======
-#menu li:hover{
-    
-    background-color: rgba(100, 100, 153, 0.3);
-    
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
 }
 
 li a:link{
-    
-<<<<<<< HEAD
+
     width: 100%;
     height: 40px;
     display:inline-block;
     padding-top: 17px;
-=======
-    display:inline-block;
-    padding: 17px 15px 18px 15px;
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
     text-decoration: none;
     color:white;
     
 }
 
 li a:visited{
-<<<<<<< HEAD
-=======
-    
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
     color:white;
     
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
 #logo{
     
     width: 150px;
     height: inherit;
     margin: 0px 2% 0px 0px;
-<<<<<<< HEAD
-=======
-    /*padding-top: 5px;
-    font-size: 35px;
-    color: white;
-    line-height: 27px;
-    text-shadow: 3px 3px #ffbb33;
-    font-weight:bold;*/
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
     overflow: hidden;
     box-sizing: border-box;
     float: left;
@@ -212,11 +167,9 @@ input{
     z-index: -1;
     background-color:gray;
 }
-<<<<<<< HEAD
-/******************************************HOME*********************************/
-=======
 
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
+/******************************************HOME*********************************/
+
 .msg-slider{
     
     /*background-color: rgba(255,250,255,0.3);*/
@@ -510,7 +463,6 @@ input{
 /***********************************CADASTRO**********************************/
 
 
-<<<<<<< HEAD
 #main-fale-conosco{
     
     width: 600px;
@@ -535,35 +487,11 @@ input{
     color: white;
     font-size: 25px;
     background-color: #3f9;
-=======
-.box_campos{
-    background-color: #397;
-}
-
-.campo-obs{
-    
-    height: 140px;
-    padding: 15px;
-    background-color: #3f7;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-
-.box-text-cad{
-    
-    width: inherit;
-    height: 50px;
-    padding: 15px;
-    background-color: antiquewhite;
-    text-align: center;
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
     overflow: hidden;
     box-sizing: border-box;
     
 }
 
-<<<<<<< HEAD
 .box_campos{
     
     height: 55px;
@@ -594,34 +522,11 @@ input{
     /*background-color: antiquewhite;*/
     text-align: center;
     /*color:#ffbb33;*/
-=======
-.box-label{
-    
-    width: 150px;
-    padding: 10px;
-    font-size: 25px;
-    background-color: #3f7;
-    float: left;
-    
-}
-
-#titulo-cadastro{
-    
-    width: inherit;
-    height: 100px;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    font-size: 25px;
-    background-color: #3f7;
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
     overflow: hidden;
     box-sizing: border-box;
     
 }
 
-<<<<<<< HEAD
 .input-fale-conosco{
     
     width: 350px;
@@ -652,36 +557,15 @@ input{
     overflow: hidden;
     box-sizing: border-box;
     
-=======
-
-
-#form-fale-conosco{
-    
-    width: 600px;
-    height: 800px;
-    color: white;
-    margin-top: 50px;
-    font-weight: bold;
-    border-radius: 7px 7px 7px 7px;
-    background-color: white;
-    box-shadow: 2px 2px 4px 4px rgba(100, 100, 100,0.5);
-    box-sizing: border-box;
-    overflow: hidden;
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
 }
 
 textarea{
     
     width: 350px;
-<<<<<<< HEAD
     height: 135px;
     padding: 10px;
     border: 1px solid #ffdd55;
     border-radius: 5px 5px 5px 5px;
-=======
-    height: 100px;
-    padding: 10px;
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
     overflow-y: scroll;
 }
 
@@ -689,13 +573,9 @@ textarea{
     
     width: inherit;
     height: 50px;
-<<<<<<< HEAD
     /*background-color: #f9f999;*/
     overflow: hidden;
     box-sizing: border-box;
-=======
-    background-color: #f9f999;
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
     
 }
 
@@ -704,7 +584,6 @@ textarea{
     width: 50%;
     height: inherit;
     text-align: center;
-<<<<<<< HEAD
     padding: 10px 10px 10px 10px;
     /*background-color: #ffe;*/
     float: left;
@@ -721,8 +600,4 @@ textarea{
     font-weight: bold;
     font-size: 20px;
     border-radius: 5px 5px 5px 5px;
-    
-=======
-    float: left;
->>>>>>> e4f2422ae794b34d5f3932d327d828dd8104c44d
 }
