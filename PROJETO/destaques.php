@@ -17,31 +17,56 @@
             <div id="principais-noticias">
                 <div class="box-noticia">
                     <img src="img/002.jpg" alt="" class="img-main-noticia" title="" >
+                    
+                    <div class="box-noticia-titulo" style="">
+                        <a href="#" style="text-decoration: none;color:white;">
+                            <h1>
+                                TEST TEST TEST
+                            </h1>
+                        </a>
+                    </div>
                 </div>
-                <div class="box-noticia-titulo"  style="position:absolute; background-color:rgba(255,187,51,0.6); margin: 0px px 0px 0px;">
                 
-                </div>
                 <div class="box-noticia">
                     <img src="img/001.jpg" class="img-main-noticia" alt="" title="" >
+                    
+                    <div class="box-noticia-titulo" style="">
+                        <a href="#" style="text-decoration: none;color:white;">
+                            <h1>
+                                TEST TEST TEST
+                            </h1>
+                        </a>
+                    </div>
+                    
                 </div>
-                <div class="box-noticia-titulo" style="position:absolute; background-color:rgba(255,187,51,0.6); margin: 0px 0px 0px 0px;">
                 
-                </div>
                 <div class="box-noticia">
                     <img src="img/004.jpg" alt="" class="img-main-noticia" title="" >
+                        <div class="box-noticia-titulo" style="">
+                            <a href="#" style="text-decoration: none;color:white;">
+                                <h1>
+                                    TEST TEST TEST
+                                </h1>
+                            </a>
+                        </div>
                 </div>
-                <div class="box-noticia-titulo" style="position:absolute; background-color:rgba(255,187,51,0.6); margin: 0px 0px 0px 0px;">
                 
-                </div>
             </div>
             <div class="noticias">
                 <div class="conteudo-noticia">
                     <div class="box-img-noticia">
-                    
+                        <img src="img/004.jpg" alt="" class="img-main-noticia" title="" >
                     </div>
-                    <div >
-                    
-                    
+                    <div class="text-noticia">
+                        <h1>TEST TEST TEST TEST TEST TEST TEST TEST</h1>
+                        <p>
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                        </p>
                     </div>
                 
                 </div>
@@ -50,11 +75,18 @@
             <div class="noticias">
                 <div class="conteudo-noticia">
                     <div class="box-img-noticia">
-                    
+                        <img src="img/004.jpg" alt="" class="img-main-noticia" title="" >
                     </div>
-                    <div>
-                    
-                    
+                    <div class="text-noticia">
+                        <h1>TEST TEST TEST TEST TEST TEST TEST TEST</h1>
+                        <p>
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                        </p>
                     </div>
                 
                 </div>
@@ -63,11 +95,38 @@
             <div class="noticias">
                 <div class="conteudo-noticia">
                     <div class="box-img-noticia">
-                    
+                        <img src="img/004.jpg" alt="" class="img-main-noticia" title="" >
                     </div>
-                    <div>
-                    
-                    
+                    <div class="text-noticia">
+                        <h1>TEST TEST TEST TEST TEST TEST TEST TEST</h1>
+                        <p>
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                        </p>
+                    </div>
+                
+                </div>
+            
+            </div>
+            <div class="noticias">
+                <div class="conteudo-noticia">
+                    <div class="box-img-noticia">
+                        <img src="img/004.jpg" alt="" class="img-main-noticia" title="" >
+                    </div>
+                    <div class="text-noticia">
+                        <h1>TEST TEST TEST TEST TEST TEST TEST TEST</h1>
+                        <p>
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                            TEST TEST TEST TEST TEST TEST TEST TEST
+                        </p>
                     </div>
                 
                 </div>
