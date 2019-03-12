@@ -18,6 +18,7 @@
                 <div class="main-sobre" style="">
                     <p style="padding: 55px 20px 20px 20px;">
                         <span style="padding-left:25px;">A Realbras atua no mercado de terceirização Industrial, montagem, acondicionamento</span> e desenvolvimento de soluções tecnológicas para a indústria em geral e agências de marketing.Fundada em agosto de 2004 com o nome RealGraf, na cidade de Jandira/ SP, é voltada para o mercado de montagem de válvulas Pump, montagem de kits promocionais e impressão de dados variáveis.
+                        Tudo começou em uma sala de 30 m² com apenas dez funcionários para retrabalhar alguns materiais de cosméticos, oriundos de importação e com isso, após percepção de carência nesta área, foram dados os primeiros passos no ramo de terceirização industrial. Aos poucos a empresa foi crescendo em número de funcionários e também em suas áreas operacionais, o que tornou possível atender outro mercado.
 
                     </p>
                 </div>
@@ -49,7 +50,7 @@
                 </div>
                 <div class="main-sobre" style="">
                     <p style="padding: 20px 20px 20px 20px;">
-                        <span style="padding-left:25px;">Tudo começou em uma sala de 30 m² com apenas dez funcionários para retrabalhar</span> alguns materiais de cosméticos, oriundos de importação e com isso, após percepção de carência nesta área, foram dados os primeiros passos no ramo de terceirização industrial. Aos poucos a empresa foi crescendo em número de funcionários e também em suas áreas operacionais, o que tornou possível atender outro mercado. O objetivo era a empresa fornecer diversas linhas de trabalhos em um único local, visando qualidade, tempo e menor custo, partindo para armazenagem, industrialização e controles de entregas.Em meados de 2007, mesmo em um mercado restrito a multinacionais, houve a oportunidade de atuação na área de cartões GSM, garantindo segurança e qualidade. A tecnologia e toda a estrutura de montagem e validação dos cartões foram desenvolvidas pela RealGraf, sendo uma das pioneiras neste segmento. Atualmente, atende todas as bandeiras de cartões GSM.
+                        <span style="padding-left:25px;">O objetivo era a empresa fornecer diversas linhas de trabalhos em um único</span> local, visando qualidade, tempo e menor custo, partindo para armazenagem, industrialização e controles de entregas.Em meados de 2007, mesmo em um mercado restrito a multinacionais, houve a oportunidade de atuação na área de cartões GSM, garantindo segurança e qualidade. A tecnologia e toda a estrutura de montagem e validação dos cartões foram desenvolvidas pela RealGraf, sendo uma das pioneiras neste segmento. Atualmente, atende todas as bandeiras de cartões GSM.
 
                     </p>
                 </div>
