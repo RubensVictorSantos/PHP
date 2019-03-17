@@ -1,7 +1,66 @@
 <?php
+/*if(isset($_POST["btnsalvar"])){
+        
+        $nome = $_POST["txtnome"];
+        $telefone = $_POST["txttelefone"];
+        $celular = $_POST["txtcelular"];
+        $email = $_POST["txtemai"];
+        $home_page = $_POST["txthomepage"];
+        $facebook = $_POST["txtfacebook"];
+        $sugestao = $_POST["txtsugestao"];
+        //$produto = $_POST[""]
+        $sexo = $_POST["radio"];
+        
+        $data_nasc = explode("/", $_POST["txtdtnasc"]);
+        $obs = $_POST["txtobs"];
+        $dt_nasc = $data_nasc[2]."-".$data_nasc[1]."-".$data_nasc[0];
+        
+        //var_dump($data_nasc."<br>");
+        //var_dump($dt_nasc."<br>");
+        
+        if($_POST['btnsalvar'] == 'salvar'){
+        
+            $sql = "INSERT INTO tblcontatos(nome, endereco, bairro, cep, telefone, celular, email, sexo, data_nasc, obs) VALUES ('".$nome."','".$endereco."','".$bairro."','".$cep."','".$telefone."','".$celular."','".$email."','".$sexo."','".$dt_nasc."','".$obs."')";
 
-    require_once('menu.php');
-?>
+            /*echo($nome."<br>" 
+                 .$endereco ."<br>" 
+                 .$bairro ."<br>" 
+                 .$cep."<br>" 
+                 .$tel."<br>" 
+                 .$cel."<br>"
+                 .$email.$sexo."<br>"
+                 .$data_nasc."<br>"
+                 .$obs."<br>");*/
+            //echo($sql);
+
+        
+        /*}elseif($_POST['btnsalvar'] == 'editar'){
+            
+            $sql = "UPDATE tblcontatos SET nome='".$nome."',
+                                            endereco='".$endereco."',
+                                            bairro='".$bairro."',
+                                            cep='".$cep."',
+                                            telefone='".$telefone."',
+                                            celular='".$celular."',
+                                            email='".$email."',
+                                            sexo='".$sexo."',
+                                            data_nasc='".$dt_nasc."',
+                                            obs='".$obs."' 
+                                            WHERE codigo = ".$_SESSION['idRegistro'];
+                                            
+            
+        }
+        
+        /*echo($sql);*/
+        /*if(mysqli_query($conexao, $sql)){
+            //redireciona para uma nova pagina
+            header("location:formulario_contatos.php");
+        }else{
+            
+            echo("<script>alert('erro!')</script>");
+            
+        }
+*/?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,6 +70,10 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+        <?php
+
+            require_once('menu.php');
+        ?>
         <div id="conteudo" class="center">
             <form name="frmfale-conosco" method="POST" action="fale-conosco.php">
                 <div id="main-fale-conosco" class="center">
@@ -56,7 +119,7 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txtcep" >
+                        <input class="input-fale-conosco" type="email" name="txtcep" >
                     </div>
                     </div>
                     <div class="box_campos">
@@ -77,26 +140,6 @@
                         </div>
                     <div class="box-text-cad">
                         <input class="input-fale-conosco" type="text" name="txtcel" >
-                    </div>
-                    </div>
-                    <div class="campo-obs">
-                        <div class="box-label">
-                            <label>
-                                Sugestões:
-                            </label>
-                        </div>
-                    <div id="box-textarea" >
-                        <textarea name="txtobs"></textarea>
-                    </div>
-                    </div>
-                    <div class="box_campos">
-                        <div class="box-label">
-                            <label>
-                                Email:
-                            </label>
-                        </div>
-                    <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="email" name="txtemail" >
                     </div>
                     </div>
                     <div class="box_campos">
@@ -121,8 +164,18 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txtdtnasc">
+                        <input class="input-fale-conosco" type="text" name="txtdtnasc" pattern="[0-9]{2} [0-9]{4} [0-9]{4}" placeholder=" ( _ _ )_ _ _ _ - _ _ _ _ ">
                     </div>
+                    </div>
+                    <div class="campo-obs">
+                        <div class="box-label">
+                            <label>
+                                Sugestões:
+                            </label>
+                        </div>
+                        <div id="box-textarea" >
+                            <textarea name="txtobs"></textarea>
+                        </div>
                     </div>
                     <div class="box_campos">
                         <div class="box-label" >
