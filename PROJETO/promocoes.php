@@ -203,6 +203,31 @@
                                 <a href="#">Detalhes</a>
                             </div>
                         </div>
+                        
+                        <div class="card">
+                            <div class="img-card center">
+                                <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="" class="img-card">
+                            </div>
+                            <div class="nome-card">
+                                <p>
+                                    Mountain Bike Caloi Aluminum Sport
+                                </p>
+                            </div>
+                            <div class="desc-card">
+                                <p>
+                                    Aro 26 Freio V-Brake 21 Marchas
+                                </p>
+                            </div>
+                            <div class="preco-card text-promo">
+                                <p class="">
+                                    R$854,05
+                                    10x de R$85,41
+                                </p>
+                            </div>
+                            <div class="detalhes">
+                                <a href="#">Detalhes</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
         

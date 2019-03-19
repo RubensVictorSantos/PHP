@@ -935,3 +935,8 @@ textarea{
     color:#ffbb33;
     
 }
+
+.text-promo{
+    
+    text-decoration:line-through;
+}
