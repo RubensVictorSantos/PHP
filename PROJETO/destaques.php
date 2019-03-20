@@ -9,14 +9,14 @@
     <body>
         <?php 
 
-            require_once('menu.php');
+            //require_once('menu.php');
 
         ?>
         <div id="conteudo" class="center" >
         
             <div id="principais-noticias">
                 <div class="box-noticia">
-                    <img src="img/002.jpg" alt="" class="img-main-noticia" title="" >
+                    <!--<img src="img/002.jpg" alt="" class="img-main-noticia" title="" >-->
                     
                     <div class="box-noticia-titulo" style="">
                         <a href="#" style="text-decoration: none;color:white;">
@@ -28,7 +28,7 @@
                 </div>
                 
                 <div class="box-noticia">
-                    <img src="img/001.jpg" class="img-main-noticia" alt="" title="" >
+                    <!--<img src="img/001.jpg" class="img-main-noticia" alt="" title="" >-->
                     
                     <div class="box-noticia-titulo" style="">
                         <a href="#" style="text-decoration: none;color:white;">
@@ -41,7 +41,8 @@
                 </div>
                 
                 <div class="box-noticia">
-                    <img src="img/004.jpg" alt="" class="img-main-noticia" title="" >
+                    <!--<img src="img/004.jpg" alt="" class="img-main-noticia" title="" >-->
+                    
                         <div class="box-noticia-titulo" style="">
                             <a href="#" style="text-decoration: none;color:white;">
                                 <h1>
