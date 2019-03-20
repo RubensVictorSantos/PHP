@@ -128,7 +128,7 @@ li a:visited{
     margin: 8px 0px 0px 10%;
     /*background-color: aliceblue;*/
     overflow: hidden;
-    box-sizing: border-box;
+    box-sizing:border-box;
     float: left;
 }
 
@@ -693,6 +693,7 @@ textarea{
     /*position: relative;*/
 }
 
+<<<<<<< HEAD
 /*#principais-noticias:hover>.box-noticia-titulo{
     
     width: 520px;
@@ -701,6 +702,14 @@ textarea{
     background-color:rgba(255,187,51,0.7);
     position: relative;
 }*/
+=======
+#principais-noticias .box-noticia:hover>.img-main-noticia{
+    
+    width: 620px;
+    height: 400px;
+    
+}
+>>>>>>> fb083f53ec4b0c85cc8bd61874335a6226092421
 
 
 .box-noticia{
@@ -724,6 +733,22 @@ textarea{
     
 }
 
+<<<<<<< HEAD
+=======
+
+.img-noticia-conteudo{
+    
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    
+}
+
+
+>>>>>>> fb083f53ec4b0c85cc8bd61874335a6226092421
 .box-noticia-titulo{
     
     width:512px;
@@ -736,8 +761,13 @@ textarea{
     font-size: 35px;
     float: left;
     word-wrap: break-word;
+<<<<<<< HEAD
     position:relative;
     margin: 0px 0px 0px 0px;
+=======
+    position:absolute;
+    margin: -389px 0px 0px 0px;
+>>>>>>> fb083f53ec4b0c85cc8bd61874335a6226092421
     background-color:rgba(255,187,51,0.5);
     text-transform:capitalize;
     box-sizing: border-box;
@@ -749,11 +779,18 @@ textarea{
     
     width: 520px;
     height: inherit;
+<<<<<<< HEAD
     /*margin-top: -404px;
     background-color:rgba(255,187,51,0.7);
     position: relative;
     background-color: aqua;
 }*/
+=======
+    margin-top: -404px;
+    background-color:rgba(255,187,51,0.7);
+    /*background-color: aqua;*/
+}
+>>>>>>> fb083f53ec4b0c85cc8bd61874335a6226092421
 
 .noticias{
     
@@ -816,6 +853,8 @@ textarea{
     padding: 20px 20px 20px 20px;
     font-size: 25px;
     text-transform:uppercase;
+<<<<<<< HEAD
+=======
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -843,4 +882,253 @@ textarea{
 .links-noticia:visited{
     
     color: black;
+}
+
+
+/*********************************PROMOÇÕES**********************************/
+
+#box-catalogo-promo{
+    
+    width: inherit;
+    min-height: 1000px;
+    margin: 0px 100px 0px 0px;
+    /*background-color: #ffefef;*/
+    overflow:hidden;
+    box-sizing: border-box;
+    
+}
+
+.card-box-promo{
+    
+    width:inherit;
+    height: 490px;
+    /*background-color: #fedeee;*/
+    box-sizing: border-box;
+    
+}
+
+.card{
+    
+    width: 360px;
+    height: 450px;
+    margin: 20px 0px 0px 20px;
+    /*background-color: #eeefff;*/
+    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
+    float:left;
+    box-sizing: border-box;
+    
+}
+
+/*#menu-catalogo::-webkit-scrollbar { 
+	display: none;
+}*/
+
+.img-card{
+    
+    width: 300px;
+    height: 261px;
+    /*margin: 30px 65px 30px 65px;*/
+    background-color: #feefee;
+    box-sizing: border-box;
+}
+
+.box-img-card{
+    
+    width: 360px;
+    height: 261px;
+    background-color: #f99f99;
+    position:absolute;
+    margin: -265px 0px 0px -30px;
+    padding: 30px 0px 0px 0px;
+    background-color:rgba(51, 255, 119,0.5);
+    color: rgba(255,255,255,0.8);
+    font-weight: bold;
+    letter-spacing: -10px;
+    text-align: center;
+    font-size: 170px;
+    box-sizing: border-box;
+    overflow: hidden;
+    visibility: collapse;
+    opacity: 1;
+    
+}
+
+.card:hover .box-img-card{
+    
+    visibility:visible;
+    transition: 2s;
+    opacity: 0;
+}
+
+.nome-card{
+    
+    width:inherit;
+    height: 47px;
+    padding:6px 15px 0px 15px;
+    /*background-color:#fedfff;*/
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+
+.desc-card{
+    
+    width:inherit;
+    height: 48px;
+    padding:6px 15px 0px 15px;
+    /*background-color:#e0ffff;*/
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.preco-card-promo{
+    
+    width:inherit;
+    height: 47px;
+    padding:6px 15px 0px 15px;
+    /*background-color:#ffffe0;*/
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #00ee44;
+    /*overflow: hidden;*/
+    box-sizing: border-box;
+}
+
+.detalhes{
+    
+    width:inherit;
+    height: 47px;
+    padding:6px 15px 0px 15px;
+    background-color: white;
+    text-align: right;
+>>>>>>> fb083f53ec4b0c85cc8bd61874335a6226092421
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.detalhes a{
+    
+    padding: 10px;
+    font-weight: bold;
+    color:#ffbb33;
+    
+}
+
+.text-promo{
+    
+    text-decoration:line-through;
+}
+
+.titulo-promo{
+    
+    
+    font-size: 90px;
+    background-color:#ffbb33;
+    text-align:center;
+    letter-spacing: -8px;
+    padding: 8px 0px 0px 0px;
+    color:white;
+    box-sizing: border-box;
+<<<<<<< HEAD
+}
+
+.formatacao-titulo-noticia{
+=======
+    overflow: hidden;
+}
+
+/**************************NOSSAS LOJAS*************************/
+
+.container-lojas{
+    
+    width: inherit;
+    height: 350px;
+    padding: 19px 19px 19px 19px;
+/*    background-color: #efffff;*/
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+.conteudo-container-loja{
+    
+    width:1513px;
+    height: 315px;
+/*    background-color: #efeff0;*/
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.conteudo-container-loja:hover{
+    
+    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55)
+}
+
+.conteudo-container-loja:hover>.text-noticia{
+    
+    border-left: 4px solid #33ff77;
+    
+}
+
+.text-noticia{
+    
+    width: 1000px;
+    height: inherit;
+/*    background-color: #feeeEf;*/
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    font-size: 25px;
+    text-transform:uppercase;
+    overflow: hidden;
+    box-sizing: border-box;
+    float: left;
+}
+
+.titulo-lojas{
+>>>>>>> fb083f53ec4b0c85cc8bd61874335a6226092421
+    
+    text-transform:capitalize;
+    color: #3f7;
+    
+}
+
+.fomatacao-texto-destaque{
+    
+    
+
+}
+
+.links-noticia:link{
+    
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.links-noticia:visited{
+    
+    color: black;
+<<<<<<< HEAD
+=======
+}
+
+.mapouter{
+    position:relative;
+    text-align:right;
+    height:inherit;
+    width:350;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.gmap_canvas{
+
+    overflow:hidden;
+    background:none!important;
+    height:100%;
+    width:100%;
+>>>>>>> fb083f53ec4b0c85cc8bd61874335a6226092421
 }
