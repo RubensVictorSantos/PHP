@@ -1,6 +1,6 @@
 <?php
 
-    //require_once('menu.php');
+    require_once('menu.php');
     
     require_once('bd/conexao.php');
     
@@ -103,7 +103,7 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txtemail"  value="<?php echo($email)?>">
+                        <input class="input-fale-conosco" type="email" name="txtemail"  value="<?php echo($email)?>">
                     </div>
                     </div>
                     <div class="box_campos">

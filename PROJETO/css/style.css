@@ -896,14 +896,16 @@ textarea{
     font-size: 170px;
     box-sizing: border-box;
     overflow: hidden;
-    /*visibility: collapse;*/
-    opacity: 0;
+    visibility: collapse;
+    opacity: 1;
+    
 }
 
 .card:hover .box-img-card{
     
-    /*visibility:visible;*/
-    opacity: 1;
+    visibility:visible;
+    transition: 2s;
+    opacity: 0;
 }
 
 .nome-card{
@@ -971,10 +973,100 @@ textarea{
 .titulo-promo{
     
     
-    font-size: 50px;
+    font-size: 90px;
+    background-color:#ffbb33;
     text-align:center;
-    padding: 15px 0px 0px 0px;
-    color:#ffbb33;
+    letter-spacing: -8px;
+    padding: 8px 0px 0px 0px;
+    color:white;
     box-sizing: border-box;
     overflow: hidden;
+}
+
+/**************************NOSSAS LOJAS*************************/
+
+.container-lojas{
+    
+    width: inherit;
+    height: 350px;
+    padding: 19px 19px 19px 19px;
+/*    background-color: #efffff;*/
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+.conteudo-container-loja{
+    
+    width:1513px;
+    height: 315px;
+/*    background-color: #efeff0;*/
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.conteudo-container-loja:hover{
+    
+    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55)
+}
+
+.conteudo-container-loja:hover>.text-noticia{
+    
+    border-left: 4px solid #33ff77;
+    
+}
+
+.text-noticia{
+    
+    width: 1000px;
+    height: inherit;
+/*    background-color: #feeeEf;*/
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    font-size: 25px;
+    text-transform:uppercase;
+    overflow: hidden;
+    box-sizing: border-box;
+    float: left;
+}
+
+.titulo-lojas{
+    
+    text-transform:capitalize;
+    color: #3f7;
+    
+}
+
+.fomatacao-texto-destaque{
+    
+    
+
+}
+
+.links-noticia:link{
+    
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.links-noticia:visited{
+    
+    color: black;
+}
+
+.mapouter{
+    position:relative;
+    text-align:right;
+    height:inherit;
+    width:350;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.gmap_canvas{
+
+    overflow:hidden;
+    background:none!important;
+    height:100%;
+    width:100%;
 }
