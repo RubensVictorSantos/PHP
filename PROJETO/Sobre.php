@@ -14,7 +14,8 @@
 
         ?>
         <div id="conteudo" class="center">
-            <div>
+            <div id="conteudo-catalogo" class="center">
+                <div>
                 <div class="main-sobre" style="">
                     <p style="padding: 55px 20px 20px 20px;">
                         <span style="padding-left:25px;">A Realbras atua no mercado de terceirização Industrial, montagem, acondicionamento</span> e desenvolvimento de soluções tecnológicas para a indústria em geral e agências de marketing.Fundada em agosto de 2004 com o nome RealGraf, na cidade de Jandira/ SP, é voltada para o mercado de montagem de válvulas Pump, montagem de kits promocionais e impressão de dados variáveis.
@@ -35,7 +36,7 @@
                     </p>
                 </div>
             </div>
-            <div>
+                <div>
                 <div class="main-sobre box-img-sobre" style="margin: 333px 0px 0px 0px;">
                     <p>
 
@@ -55,7 +56,7 @@
                     </p>
                 </div>
             </div>
-            <div>
+                <div>
                 <div class="main-sobre" style="">
                     <p style="padding: 55px 20px 20px 20px;">
                         <span style="padding-left:25px;">Em 2014, a RealGraf completa 10 anos de mercado e dado seu crescimento e sua</span> evolução a empresa está passando por uma reestruturação adotando o nome Realbras. A mudança de nome veio através de estudos mostrando que o nome com final GRAF estava nos direcionando para um segmento específico do mercado gráfico.Em todos esses anos, a Realbras sempre procurou uma evolução contínua para acompanhar o mercado atual e entregar o produto final do cliente visando a máxima qualidade. A empresa atende todos os SLAs com controles rigorosos de qualidade e investe em software de gestão e equipamentos, procurando sempre surpreender seus clientes e a cada dia se tornar uma empresa conceituada no mercado.
@@ -74,6 +75,12 @@
 
                     </p>
                 </div>
+            </div>
+                <?php
+
+                    require_once("redes.php");
+
+                ?>
             </div>
         </div>
         <?php
