@@ -1,0 +1,244 @@
+*{
+                
+    font-family: arial;
+
+}
+
+body, h2, h3, p{
+
+    margin:0;
+    padding:0;
+}
+
+div{
+
+    /*border: 1px solid black;*/
+    font-size: 14.8px;
+    box-sizing: border-box;
+    background-color:#d4cfc6;
+
+}
+
+/*#titulo{
+
+    width:444px;
+    height:40px;
+    padding:5px;
+    color:white;
+    font-size: 18px;
+    text-align:center;
+    background-color: #748fbe;
+}*/
+
+#caixa_menu{
+    
+    width:388;
+	height: 50px;
+    background-color: #ff000f;
+}
+
+#caixa_icone{
+    
+    width: 50px;
+	height: 50px;
+    float: left;
+}
+
+#icone{
+    
+    width: 50px;
+	height: 50px;
+	background-image: url(../img/menu_mobile.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+    float:left;
+}
+
+.menu{
+    
+    width: 135px;
+	height: 130px;
+    margin-top: 50px;
+    opacity: 0;
+	visibility: hidden;
+    position: absolute;
+    
+    
+}
+#sub_menu{
+    
+    width: 135px;
+	height: 30px;
+	box-sizing: border-box;
+}
+
+#menu2{
+    
+    width: 135px;
+	height: 97px;
+    margin-top: -19px;
+    margin-left: 135px;
+    opacity: 0;*
+	visibility: hidden;
+    /*background-color: rgba(116, 143, 190,0.9);
+    /*position: absolute;*/
+    box-sizing: border-box;
+    
+}
+
+#sub_menu:hover > #menu2{
+	
+	opacity: 1;
+	visibility: visible;
+    position: absolute;
+    background-color: rgba(116, 143, 190,0.9);
+	
+}
+
+
+
+.itens_menu{
+    
+    width: 135px;
+	height: 30px;
+    color:white;
+    text-align: center;
+    margin-bottom: 3px;
+    background-color: transparent;
+	box-sizing: border-box;
+    font-weight: bold;
+    
+}
+
+.itens_menu:hover{
+	
+    
+    background-color: rgba(116, 143, 190,0.9);
+    visibility: visible;
+}
+
+#caixa_icone:hover > .menu{
+	
+	opacity: 1;
+    transition: 0.1s;
+	visibility: visible;
+    background-color: rgba(116, 143, 190,0.8);
+	
+}
+
+#titulo{
+
+    width:394px;
+    height:inherit;
+    padding: 10px 0px 0px 0px;
+    color:white;
+    text-align:center;
+    background-color: #748fbe;
+    margin-left: 50px;
+    font-size:25px;
+}
+
+
+#caixa-principal{
+
+    width:450px;
+    height:257px;
+    /*border: 1px solid black;*/
+    border-radius:0px 0px 2px 2px;
+    border-top: none;
+    border-style:outset;
+    /*background-color:#001111;*/
+
+}
+
+#caixa-valores{
+
+    width:240px;
+    height:200px;
+    float:left;
+    background-color:#0000ff;
+    /*border: 1px solid black;*/
+}
+
+#saida{
+
+    width:200px;
+    height:205;
+    float:left;
+    padding: 7px 0px 0px 5px;
+    /*background-color:#dd11dd;
+    /*border: 1px solid black;*/
+
+}
+
+#titulo-resultado{
+
+    width:189px;
+    padding:5px;
+    font-size: 18px;
+    text-align:center;
+    color:black;
+    /*border: 1px solid black;*/
+}
+
+#caixa-texto{
+
+    padding:3px;
+    width:inherit;
+    height:56px;
+    box-sizing: border-box;
+    /*background-color:#d4cfdd;*/
+}
+
+.input{
+
+    margin-bottom: 5px;
+    border-style:inset;
+    text-align: center;
+}
+
+#caixa-radio{
+
+    padding:5px;
+    width:inherit;
+    height:87px;
+    /*background-color:#d4ddc6;*/
+
+}
+
+#caixa-alert{
+
+    padding:5px;
+    text-align: center;
+    width:inherit;
+    height:31px;
+    /*background-color:#ddcfc6;*/
+
+}
+
+#caixa-botao{
+
+    padding:5px 0px 0px 90px;
+    width:inherit;
+    height:31px;
+    /*background-color:#dddfc6;*/
+
+}
+
+#caixa-resultado{
+
+    width: 189px;
+    height: 158px;
+    padding-top: 20%;
+    font-size: 50px;
+    text-align: center;
+    border-style:inset;
+    overflow: auto;
+    background-color:white;
+}
+
+#btncal{
+
+     border-style:outset;
+
+}
