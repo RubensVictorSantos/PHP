@@ -20,7 +20,7 @@
             </h1>
             <div class="container-lojas">
                 <div class="conteudo-container-loja">
-                    <div class="text-noticia">
+                    <div class="text-noticia-loja">
                         <h1 class="titulo-lojas">São Paulo</h1>
                         <p class="formatacao-texto-destaque">
                             AVENIDA JOAO NAVES DE AVILA 1331<br>
@@ -42,7 +42,7 @@
             </div>
             <div class="container-lojas">
                 <div class="conteudo-container-loja">
-                    <div class="text-noticia">
+                    <div class="text-noticia-loja">
                         <h1 class="titulo-lojas">São Paulo</h1>
                         <p class="formatacao-texto-destaque">
                             AVENIDA JOAO NAVES DE AVILA 1331<br>
@@ -64,7 +64,7 @@
             </div>
             <div class="container-lojas">
                 <div class="conteudo-container-loja">
-                    <div class="text-noticia">
+                    <div class="text-noticia-loja">
                         <h1 class="titulo-lojas">São Paulo</h1>
                         <p class="formatacao-texto-destaque">
                             AVENIDA JOAO NAVES DE AVILA 1331<br>

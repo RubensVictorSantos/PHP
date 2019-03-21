@@ -768,7 +768,7 @@ textarea{
     
     width:1510px;
     height: 200px;
-    /*background-color: #efeffe;*/
+/*    background-color: #efeffe;*/
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -995,6 +995,7 @@ textarea{
     overflow: hidden;
 
 }
+
 .conteudo-container-loja{
     
     width:1513px;
@@ -1009,13 +1010,13 @@ textarea{
     -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55)
 }
 
-.conteudo-container-loja:hover>.text-noticia{
+.conteudo-container-loja:hover>.text-noticia-loja{
     
     border-left: 4px solid #33ff77;
     
 }
 
-.text-noticia{
+.text-noticia-loja{
     
     width: 1000px;
     height: inherit;
@@ -1034,24 +1035,6 @@ textarea{
     text-transform:capitalize;
     color: #3f7;
     
-}
-
-.fomatacao-texto-destaque{
-    
-    
-
-}
-
-.links-noticia:link{
-    
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-.links-noticia:visited{
-    
-    color: black;
 }
 
 .mapouter{
