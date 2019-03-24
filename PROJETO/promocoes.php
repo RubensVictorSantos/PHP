@@ -14,24 +14,26 @@
 
         ?>
         <div id="conteudo" class="center">
-            <h1 class="titulo-promo">
-            
-                PROMOÇÕES
-            
-            </h1>
-            <div id="box-catalogo-promo">
+            <div id="conteudo-catalogo" class="center">
+                <h1 class="titulo-promo">
+
+                    PROMOÇÕES
+
+                </h1>
+                <div id="box-catalogo-promo">
+
                     <div class="card-box-promo">
                         <div class="card">
                             <div class="img-card center">
                                 <img src="img/imgbikes_MountainBikeCaloiLotus.jpg" alt="" class="img-card">
-                                
-                                
+
+
                                 <div class="box-img-card">
-                                    
-                                    30%
-                                    
+
+                                    -30%
+
                                 </div>
-                                
+
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -55,17 +57,17 @@
 
                             </div>
                         </div>
-                        
+
                         <div class="card">
                             <div class="img-card center">
                                 <img src="img/imgbikes_MountainBikeCaloiLotus.jpg" alt="" class="img-card">
-                                
+
                                 <div class="box-img-card">
-                                    
-                                    30%
-                                    
+
+                                    -30%
+
                                 </div>
-                                
+
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -83,7 +85,7 @@
                                         R$589,99
                                     </span>
                                     Por R$250,00 ou 10X R$25,00
-                                    
+
                                 </p>
                             </div>
                             <div class="detalhes">
@@ -96,13 +98,13 @@
                         <div class="card">
                             <div class="img-card center">
                                 <img src="img/imgbikes_MountainBikeTrackBikesTKS.jpg" alt="" class="img-card">
-                                
+
                                 <div class="box-img-card">
-                                    
-                                    30%
-                                    
+
+                                    -30%
+
                                 </div>
-                                
+
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -132,13 +134,13 @@
                         <div class="card">
                             <div class="img-card center">
                                 <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="" class="img-card">
-                                
+
                                 <div class="box-img-card">
-                                    
-                                    30%
-                                    
+
+                                    -30%
+
                                 </div>
-                                
+
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -153,9 +155,9 @@
                             <div class="preco-card-promo">
                                 <p>
                                     <span class="text-promo">
-                                    
+
                                         R$850,44
-                                        
+
                                     </span>
                                     Por R$850,41
                                 </p>
@@ -164,19 +166,20 @@
                                 <a href="#">Detalhes</a>
                             </div>
                         </div>
+        
                     </div>
                     
                     <div class="card-box-promo">
                         <div class="card">
                             <div class="img-card center">
                                 <img src="img/imgbikes_MountainBikeCaloiLotus.jpg" alt="" class="img-card">
-                                
+
                                 <div class="box-img-card">
-                                    
-                                    60%
-                                    
+
+                                    -60%
+
                                 </div>
-                                
+
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -191,9 +194,9 @@
                             <div class="preco-card-promo">
                                 <p>
                                     <span class="text-promo">
-                                    
+
                                         R$824,00
-                                        
+
                                     </span>
                                     Por R$700,00
                                 </p>
@@ -208,13 +211,13 @@
                         <div class="card">
                             <div class="img-card center">
                                 <img src="img/imgbikes_MountainBikeTrackBikesTKS.jpg" alt="" class="img-card">
-                                
+
                                 <div class="box-img-card">
-                                    
-                                    30%
-                                    
+
+                                    -30%
+
                                 </div>
-                                
+
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -242,13 +245,13 @@
                         <div class="card">
                             <div class="img-card center">
                                 <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="" class="img-card">
-                                
+
                                 <div class="box-img-card">
-                                    
-                                    30%
-                                    
+
+                                    -30%
+
                                 </div>
-                                
+
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -270,17 +273,17 @@
                                 <a href="#">Detalhes</a>
                             </div>
                         </div>
-                        
+
                         <div class="card">
                             <div class="img-card center">
                                 <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="" class="img-card">
-                                
+
                                 <div class="box-img-card">
-                                    
-                                    30%
-                                    
+
+                                    -30%
+
                                 </div>
-                                
+
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -301,9 +304,16 @@
                                 <a href="#">Detalhes</a>
                             </div>
                         </div>
-                    </div>
-                </div>
         
+                    </div>
+                    
+                </div>
+            </div>
+            <?php
+
+                require_once('redes.php');
+
+            ?>
         </div>
         <?php
 

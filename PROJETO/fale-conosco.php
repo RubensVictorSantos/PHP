@@ -1,6 +1,4 @@
 <?php
-
-    require_once('menu.php');
     
     require_once('bd/conexao.php');
     
@@ -35,9 +33,9 @@
         $sexo = $_POST["radio"];
         $profissao = $_POST["txtprofissao"];
         
-        $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
+        $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, poduto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
         
-        //echo($sql);
+        echo($sql);
 
         
         if(mysqli_query($conexao, $sql)){
@@ -54,12 +52,18 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <tilulo>Fale conosco</tilulo>
+            <title>Fale conosco</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+        <?php
+    
+            require_once('menu.php');
+    
+        ?>
         <div id="conteudo" class="center">
-            <form name="frmfale-conosco" method="POST" action="fale-conosco.php">
+            <div id="conteudo-catalogo" class="center">
+                <form name="frmfale-conosco" method="POST" action="fale-conosco.php">
                 <div id="main-fale-conosco" class="center">
                     <div id="titulo-cadastro" class="center">
                         <h1>
@@ -83,7 +87,8 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txttel"  value="<?php echo($telefone)?>">
+                        <input class="input-fale-conosco" type="tel" name="txttel"  value="<?php echo($telefone)?>" pattern="^(\(11\) [9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$" required>
+                        
                     </div>
                     </div>
                     <div class="box_campos">
@@ -93,7 +98,7 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txtcel"  value="<?php echo($celular)?>">
+                        <input class="input-fale-conosco" type="text" name="txtcel"  value="<?php echo($celular)?>" required>
                     </div>
                     </div>
                     <div class="box_campos">
@@ -113,7 +118,7 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txthomep"  value="<?php echo($homep)?>">
+                        <input class="input-fale-conosco" type="url" name="txthomep"  value="<?php echo($homep)?>">
                     </div>    
                     </div>
                     <div class="box_campos">
@@ -185,7 +190,11 @@
                         </div>
                     </div>
                 </div>
-            </form> 
+            </form>
+            </div>
+            <?php
+                require_once('redes.php');
+            ?>
         </div>
         <?php
             require_once('footer.php');

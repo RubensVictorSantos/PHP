@@ -1,8 +1,3 @@
-<?php
-
-    require_once('menu.php');
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,6 +11,11 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+        <?php
+
+            require_once('menu.php');
+
+        ?>
         <div id="conteudo" class="center">
             <div id="box-slider" class="center">
                 
@@ -95,19 +95,7 @@
                         <div>
                             <img data-u="image" src="img/20140727-PELOTON-PHOTOS-HOMEPAGE.jpg"/>
                             
-                            <div data-t="0" data-ts="preserve-3d" style="position:absolute;top:120px;left:75px;width:470px;height:220px;">
-                                
-                                <!--<img style="position:absolute;top:0px;left:0px;width:470px;height:220px;max-width:470px;" src="full-width-slider.slider.jquery/img/c-phone-horizontal.png" />-->
-                                
-                                <div data-ts="preserve-3d" style="position:absolute;top:4px;left:45px;width:379px;height:213px;overflow:hidden;">
-                                    
-                                    <!--<img data-t="1" style="position:absolute;top:0px;left:0px;width:379px;height:213px;max-width:379px;" src="full-width-slider.slider.jquery/img/c-slide-1.jpg" />-->
-                                    <!--<img data-t="2" style="position:absolute;top:0px;left:379px;width:379px;height:213px;max-width:379px;" src="full-width-slider.slider.jquery/img/c-slide-3.jpg" />-->
-                                </div>
-                                <img style="position:absolute;top:4px;left:45px;width:379px;height:213px;max-width:379px;" src="img/c-navigator-horizontal.png" />
-                                <!--<img data-t="3" style="position:absolute;top:476px;left:454px;width:63px;height:77px;max-width:63px;" src="img/hand.png" />-->
                             
-                            </div>
                         </div>
                         <div>
                             <img data-u="image" src="img/Almaty-Cycling-1300x500.jpg" />
@@ -389,25 +377,11 @@
                         </div>
                     </div>
                 </div>
-                <div id="redes">
-                    <div class="box-redes">
-                        <a href="https://www.facebook.com/">
-                            <img src="img/ico/facebook.png" alt="Facebook" height="64" width="64">
-                        </a>
-                    </div>
-
-                    <div class="box-redes">
-                        <a href="https://www.twitter.com/">
-                            <img src="img/ico/twitter.png" alt="Twitter" height="64" width="64">
-                        </a>
-                    </div>
-
-                    <div class="box-redes">
-                        <a href="https://www.youtube.com/">
-                            <img src="img/ico/youtube.png" alt="Youtube" height="64" width="64">
-                        </a>
-                    </div>
-                </div>
+                <?php
+                
+                    require_once('redes.php');
+                
+                ?>
             </div>
         </div>
         <?php
