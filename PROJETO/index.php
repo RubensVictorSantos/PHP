@@ -1,8 +1,3 @@
-<?php
-
-    require_once('menu.php');
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,6 +11,11 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+        <?php
+
+            require_once('menu.php');
+
+        ?>
         <div id="conteudo" class="center">
             <div id="box-slider" class="center">
                 
@@ -378,7 +378,7 @@
                     </div>
                 </div>
                 <?php
-                47
+                
                     require_once('redes.php');
                 
                 ?>
@@ -390,4 +390,4 @@
             
         ?>
     </body>
-</html>8/
+</html>

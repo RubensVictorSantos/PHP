@@ -8,7 +8,7 @@
             <div id="logo">
                 <!--Road Runner-->
                 <a href="index.php" title="Página inicial" >
-                    <img src="img/ico/logo.png" style=" "alt="bicicleta logo da empresa" id="imag">
+                    <img src="img/ico/logo.png" style=" " alt="bicicleta logo da empresa" id="imag">
                 </a>
             </div>
             <nav id="menu" class="center">
@@ -24,13 +24,13 @@
             <div id="login">
                 <form name="frmRoadRunnerCrossBikes" method="post" action="index.php">
                     <div class="box-login center">
-                        <label for="usuario">
+                        <label>
                             Usuário
                         </label><br>
                         <input type="text" name="txt-usuario" id="txtUser">
                     </div>
                     <div class="box-login center">
-                        <label for="senha">
+                        <label >
                             Senha
                         </label><br>
                         <input type="password" name="txt-senha" id="txtPass">

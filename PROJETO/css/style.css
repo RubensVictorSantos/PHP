@@ -30,7 +30,7 @@ header{
     position:fixed;
     top: 0;
     background-color:#33ff77;
-    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.80);
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.80);
     box-sizing:border-box;
     z-index: 999;
 }
@@ -246,10 +246,19 @@ input{
     height: 450px;
     margin: 20px 0px 0px 20px;
     /*background-color: #eeefff;*/
-    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
     float:left;
     box-sizing: border-box;
     
+}
+
+.card:hover{
+    
+    width: 359px;
+    height: 449px;
+    border: 1px solid #c9c9c9;
+    box-shadow:none;
+    overflow: hidden;
 }
 
 /*#menu-catalogo::-webkit-scrollbar { 
@@ -377,8 +386,7 @@ input{
     width: 1552px;
     min-height: 1000px;
     max-height: inherit;
-    /*margin: 0% 9.2% 0% 9.3%;*/
-    -webkit-box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);
+    box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);
     overflow: hidden;
     box-sizing: border-box;
     /*background-color: #0f0f0f;*/
@@ -406,10 +414,12 @@ input{
 .jssorb032 {
     position:absolute;
 }
+
 .jssorb032 .i{
     position:absolute;
     cursor:pointer;
 }
+
 .jssorb032 .i .b {
     fill:#fff;
     fill-opacity:0.7;
@@ -418,18 +428,21 @@ input{
     stroke-miterlimit:10;
     stroke-opacity:0.25;
 }
+
 .jssorb032 .i:hover .b {
     fill:#000;
     fill-opacity:.6;
     stroke:#fff;
     stroke-opacity:.35;
 }
+
 .jssorb032 .iav .b {
     fill:rgba(255,255,255,0.9);
     fill-opacity:1;
     stroke:#fff;
     stroke-opacity:.35;
 }
+
 .jssorb032 .i.idn {
     opacity:.3;
 }
@@ -440,6 +453,7 @@ input{
     position:absolute;
     cursor:pointer;
 }
+
 .jssora051 .a {
     fill:none;
     stroke:#fff;
@@ -450,21 +464,23 @@ input{
 .jssora051:hover {
     opacity:.8;
 }
+
 .jssora051.jssora051dn {
     opacity:.5;
 }
+
 .jssora051.jssora051ds {
     opacity:.3;
     pointer-events:none;
 }
 
-/***********************************CADASTRO**********************************/
+/*******************************FALE-CONOSCO********************************/
 
 
 #main-fale-conosco{
     
     width: 600px;
-    height: 800px;
+    height: 805px;
     margin-top: 50px;
     font-weight: bold;
     border-radius: 5px 5px 5px 5px;
@@ -473,7 +489,6 @@ input{
     box-sizing: border-box;
     overflow: hidden;
 }
-
 
 #titulo-cadastro{
     
@@ -534,6 +549,7 @@ input{
     border: 1px solid #ffdd55;
     
 }
+
 .campo-obs{
     
     height: 155px;
@@ -546,7 +562,7 @@ input{
 
 #box-textarea{
     
-    width: 400px;
+    width: 405px;
     height: inherit;
     padding: 10px;
     text-align: center;
@@ -564,7 +580,8 @@ textarea{
     padding: 10px;
     border: 1px solid #ffdd55;
     border-radius: 5px 5px 5px 5px;
-    overflow-y: scroll;
+    overflow-y:scroll;
+    box-sizing: border-box;
 }
 
 #box-buttons{
@@ -602,7 +619,6 @@ textarea{
 }
 
 /*************************************Sobre a Empresa***********************************/
-
 
 .main-sobre{
     width:50%;
@@ -657,35 +673,10 @@ textarea{
     width: inherit;
     height: 400px;
     padding: 7px 0px 0px 8px;
-    /*background-color: #efaf9f;*/
+/*    background-color: #efaf9f;*/
+    border: 1px solid #e7e7e7;
     box-sizing: border-box;
     overflow: hidden;
-}
-
-#principais-noticias:hover{
-    
-    padding: 0px;
-}
-
-#principais-noticias:hover>.box-noticia{
-    
-    width: 517.3px;
-    height: inherit;
-    
-}
-
-#principais-noticias .box-noticia:hover>.img-main-noticia{
-    
-    width: 620px;
-    height: 400px;
-    
-}
-
-#principais-noticias .box-noticia:hover>.img-main-noticia{
-    
-    width: 620px;
-    height: 400px;
-    
 }
 
 
@@ -693,7 +684,7 @@ textarea{
     
     width:512px;
     height: 385px;
-    /*background-color: #9faaef;*/
+/*    background-color: #9faaef;*/
     float: left;
     overflow: hidden;
     box-sizing: border-box;
@@ -746,9 +737,9 @@ textarea{
 
 .box-noticia-titulo:hover {
     
-    width: 517.3px;
+    width: 512px;
     height: inherit;
-    margin-top: -404px;
+/*    margin-top: -404px;*/
     background-color:rgba(255,187,51,0.7);
     /*background-color: aqua;*/
 }
@@ -766,16 +757,18 @@ textarea{
 
 .conteudo-noticia{
     
-    width:1510px;
-    height: 200px;
+    width:1512px;
+    height: 202px;
 /*    background-color: #efeffe;*/
+    border: 1px solid #e7e7e7;
     box-sizing: border-box;
     overflow: hidden;
 }
 
 .conteudo-noticia:hover{
     
-    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55)
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55);
+    
 }
 
 .conteudo-noticia:hover>.text-noticia{
@@ -788,7 +781,7 @@ textarea{
     
     width: 350px;
     height: inherit;
-    background-color: aliceblue;
+/*    background-color: aliceblue;*/
     box-sizing: border-box;
     overflow: hidden;
     float: left;
@@ -814,11 +807,6 @@ textarea{
     
 }
 
-.fomatacao-texto-destaque{
-    
-    
-
-}
 
 .links-noticia:link{
     
@@ -861,7 +849,7 @@ textarea{
     height: 450px;
     margin: 20px 0px 0px 20px;
     /*background-color: #eeefff;*/
-    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
     float:left;
     box-sizing: border-box;
     
@@ -968,6 +956,7 @@ textarea{
 .text-promo{
     
     text-decoration:line-through;
+    color: #ffbb33;
 }
 
 .titulo-promo{
@@ -1007,7 +996,7 @@ textarea{
 
 .conteudo-container-loja:hover{
     
-    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55)
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55)
 }
 
 .conteudo-container-loja:hover>.text-noticia-loja{
