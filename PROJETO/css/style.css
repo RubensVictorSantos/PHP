@@ -330,6 +330,8 @@ input{
     
 }
 
+/***********************REDES********************/
+
 #redes{
     
     width: 70px;
@@ -349,7 +351,7 @@ input{
     border-radius: 50%;
     background-color: transparent;
 }
-
+/****************FOOTER**************************/
 #footer{
     
     width: 100%;
@@ -362,15 +364,21 @@ input{
     
     width: 387px;
     height: inherit;
-    color:white;
     padding: 20px;
-    list-style: none;
     text-align: center;
-    font-size: 25px;
     background-color: transparent;
     overflow: hidden;
     float:left;
     box-sizing: border-box;
+    
+}
+
+.conteudo-footer ul{
+    
+    font-size: 25px;
+    color:white;
+    text-decoration: none;
+    list-style: none;
     
 }
 
@@ -475,7 +483,6 @@ input{
 }
 
 /*******************************FALE-CONOSCO********************************/
-
 
 #main-fale-conosco{
     
@@ -679,7 +686,6 @@ textarea{
     overflow: hidden;
 }
 
-
 .box-noticia{
     
     width:512px;
@@ -701,7 +707,6 @@ textarea{
     
 }
 
-
 .img-noticia-conteudo{
     
     width: 100%;
@@ -712,7 +717,6 @@ textarea{
     background-size:cover;
     
 }
-
 
 .box-noticia-titulo{
     
@@ -807,7 +811,6 @@ textarea{
     
 }
 
-
 .links-noticia:link{
     
     text-decoration: none;
@@ -819,7 +822,6 @@ textarea{
     
     color: black;
 }
-
 
 /*********************************PROMOÇÕES**********************************/
 
@@ -839,6 +841,7 @@ textarea{
     width:inherit;
     height: 490px;
     /*background-color: #fedeee;*/
+    overflow: hidden;
     box-sizing: border-box;
     
 }
@@ -851,6 +854,7 @@ textarea{
     /*background-color: #eeefff;*/
     box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
     float:left;
+    overflow: hidden;
     box-sizing: border-box;
     
 }
@@ -1041,4 +1045,49 @@ textarea{
     background:none!important;
     height:100%;
     width:100%;
+}
+
+/*********************************EVENTOS**************************/
+
+.container-evento{
+    
+    width:inherit;
+    height: 450px;
+/*    background-color: #fafee0;*/
+    margin: 35px 0px 0px 0px;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+    
+}
+
+.box-evento{
+    
+    width:776px;
+    height: inherit;
+/*    background-color: #eeafaf;*/
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+.box-img-evento{
+    
+    width: 500px;
+    height: 350px;
+    background-color: #eeefff;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+.texto-evento{
+    
+    width: 500px;
+    height: 100px;
+    background-color: #affaaf;
+    overflow: hidden;
+    box-sizing: border-box;
+    
 }

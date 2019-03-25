@@ -33,9 +33,9 @@
         $sexo = $_POST["radio"];
         $profissao = $_POST["txtprofissao"];
         
-        $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, poduto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
+        $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
         
-//        echo($sql);
+        echo($sql);
 
         if(mysqli_query($conexao, $sql)){
             header("location:fale-conosco.php");

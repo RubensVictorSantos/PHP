@@ -22,9 +22,9 @@
                 <!-- #region Jssor Slider Begin -->
                 <!-- Generator: Jssor Slider Maker -->
                 <!-- Source: https://www.jssor.com -->
-                <script src="full-width-slider.slider.jquery/js/jquery-1.11.3.min.js" type="text/javascript"></script>
-                <script src="full-width-slider.slider.jquery/js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
-                <script type="text/javascript">
+                <script src="full-width-slider.slider.jquery/js/jquery-1.11.3.min.js" ></script>
+                <script src="full-width-slider.slider.jquery/js/jssor.slider-27.5.0.min.js"></script>
+                <script>
                     jQuery(document).ready(function ($) {
 
                         var jssor_1_SlideoTransitions = [
@@ -110,9 +110,13 @@
                         <div>
                             <img data-u="image" src="img/granfondo-2-1500-1300x500.jpg"/>
                             
-                            <div class="msg-slider" style="position:absolute;top:15px;left:100px;width:800px;-webkit-text-stroke-width: 2px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:70px;text-shadow: 5px 0px #3d7;color:white;line-height:1.0;padding:5px 5px 5px 5px;box-sizing:border-box;background-clip:padding-box;text-align:center;">"Participe da maior corrida
+                            <div class="msg-slider" style="position:absolute;top:15px;left:100px;width:800px;-webkit-text-stroke-width: 2px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:70px;text-shadow: 5px 0px #3d7;color:white;line-height:1.0;padding:5px 5px 5px 5px;box-sizing:border-box;background-clip:padding-box;text-align:center;">
+                                
+<!--
+                                "Participe da maior corrida
                                 <br/>
                                 de bikes do Brasil !!!"
+-->
                             
                             </div>
                             
@@ -120,7 +124,10 @@
                         <div>
                             <img data-u="image" src="img/imgslide_pegBikeRe-Ciclo.jpg" />
                             
-                            <div class="msg-slider" style="position:absolute;top:15px;left:50px;width:800px;-webkit-text-stroke-width: 2px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:70px;text-shadow: 5px 0px #3d7;color:white;line-height:1.0;padding:5px 5px 5px 5px;box-sizing:border-box;background-clip:padding-box;text-align:center;">Bike-sharing nova proposta ecologica!
+                            <div class="msg-slider" style="position:absolute;top:15px;left:50px;width:800px;-webkit-text-stroke-width: 2px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:70px;text-shadow: 5px 0px #3d7;color:white;line-height:1.0;padding:5px 5px 5px 5px;box-sizing:border-box;background-clip:padding-box;text-align:center;">
+                                
+<!--                                Bike-sharing nova proposta ecologica!-->
+                            
                             </div>
                             
                         </div>
@@ -152,7 +159,7 @@
             </div>
             <div id="conteudo-catalogo" class="center">
                 <div id="menu-catalogo">
-                    <lu >
+                    <ul >
                         <li class="itens-catalogo">
                             <strong>
                                 CAPACETES
@@ -212,7 +219,7 @@
                         
                         
                         
-                    </lu>
+                    </ul>
                 </div>
                 <div id="box-catalogo">
                     <div class="card-box">

@@ -14,7 +14,45 @@
         ?>
         <div id="conteudo" class="center" >
         
-        
+            
+            <div class="container-evento">
+                <div class="box-evento">
+                    <div class="box-img-evento center">
+                        <img src="" alt="" class="img-evento">
+                    </div>
+                    <div class="texto-evento center">
+                    
+                    </div>
+                </div>
+                <div class="box-evento">
+                    <div class="box-img-evento center">
+                        <img src="" alt="" class="img-evento">
+                    </div>
+                    <div class="texto-evento center">
+                    
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container-evento">
+                <div class="box-evento">
+                    <div class="box-img-evento center">
+                        <img src="" alt="" class="img-evento">
+                    </div>
+                    <div class="texto-evento center">
+                    
+                    </div>
+                </div>
+                <div class="box-evento">
+                    <div class="box-img-evento center">
+                        <img src="" alt="" class="img-evento">
+                    </div>
+                    <div class="texto-evento center">
+                    
+                    </div>
+                </div>
+            </div>
+            
         </div>
         <?php
         
