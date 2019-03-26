@@ -30,7 +30,7 @@ header{
     position:fixed;
     top: 0;
     background-color:#33ff77;
-    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.80);
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.80);
     box-sizing:border-box;
     z-index: 999;
 }
@@ -110,9 +110,9 @@ li a:visited{
     float: left;
 }
 
-#imag{
+#imag-logo{
     
-	width: 100px;
+	width: 90px;
     height: 55px;
     padding: 8px 0px 0px 50px;
     background-position: left;
@@ -246,7 +246,7 @@ input{
     height: 450px;
     margin: 20px 0px 0px 20px;
     /*background-color: #eeefff;*/
-    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
     float:left;
     box-sizing: border-box;
     
@@ -257,7 +257,7 @@ input{
     width: 359px;
     height: 449px;
     border: 1px solid #c9c9c9;
-    -webkit-box-shadow:none;
+    box-shadow:none;
     overflow: hidden;
 }
 
@@ -330,6 +330,8 @@ input{
     
 }
 
+/***********************REDES********************/
+
 #redes{
     
     width: 70px;
@@ -349,7 +351,7 @@ input{
     border-radius: 50%;
     background-color: transparent;
 }
-
+/****************FOOTER**************************/
 #footer{
     
     width: 100%;
@@ -362,15 +364,21 @@ input{
     
     width: 387px;
     height: inherit;
-    color:white;
     padding: 20px;
-    list-style: none;
-    text-align: center;
-    font-size: 25px;
-    background-color: transparent;
+/*    background-color: #aaffea;*/
     overflow: hidden;
     float:left;
     box-sizing: border-box;
+    
+}
+
+.conteudo-footer ul{
+    
+    font-size: 25px;
+    color:white;
+    text-align: left;
+    text-decoration: none;
+    list-style: none;
     
 }
 
@@ -386,12 +394,43 @@ input{
     width: 1552px;
     min-height: 1000px;
     max-height: inherit;
-    /*margin: 0% 9.2% 0% 9.3%;*/
-    -webkit-box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);
+    box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);
     overflow: hidden;
     box-sizing: border-box;
     /*background-color: #0f0f0f;*/
 }
+
+#logo-footer{
+    
+    width: 100px;
+    height: 65px;
+    margin: 0px 0px 0px 250px;
+    padding: 5px;
+/*    background-color: #fefffe;*/
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+#imag-logo-footer{
+    
+    width: 90px;
+    height: 55px;
+    padding: 0px 0px 0px 0px;
+    background-position: left;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+}
+
+.titulo-footer{
+    
+    font-size: 25px;
+    text-align: center;
+    color: #ffffff;
+    
+}
+
 
 /****************jssor slider loading skin spin css*****************/
 
@@ -475,8 +514,7 @@ input{
     pointer-events:none;
 }
 
-/***********************************CADASTRO**********************************/
-
+/*******************************FALE-CONOSCO********************************/
 
 #main-fale-conosco{
     
@@ -563,7 +601,7 @@ input{
 
 #box-textarea{
     
-    width: 400px;
+    width: 405px;
     height: inherit;
     padding: 10px;
     text-align: center;
@@ -581,7 +619,8 @@ textarea{
     padding: 10px;
     border: 1px solid #ffdd55;
     border-radius: 5px 5px 5px 5px;
-    overflow-y: scroll;
+    overflow-y:scroll;
+    box-sizing: border-box;
 }
 
 #box-buttons{
@@ -618,8 +657,7 @@ textarea{
     
 }
 
-/*************************************Sobre a Empresa***********************************/
-
+/**************************Sobre a Empresa***********************************/
 
 .main-sobre{
     width:50%;
@@ -674,43 +712,17 @@ textarea{
     width: inherit;
     height: 400px;
     padding: 7px 0px 0px 8px;
-    background-color: #efaf9f;
+/*    background-color: #efaf9f;*/
+    border: 1px solid #e7e7e7;
     box-sizing: border-box;
     overflow: hidden;
 }
-
-#principais-noticias:hover{
-    
-    padding: 0px;
-}
-
-#principais-noticias:hover>.box-noticia{
-    
-    width: 517.3px;
-    height: inherit;
-    
-}
-
-#principais-noticias .box-noticia:hover>.img-main-noticia{
-    
-    width: 620px;
-    height: 400px;
-    
-}
-
-#principais-noticias .box-noticia:hover>.img-main-noticia{
-    
-    width: 620px;
-    height: 400px;
-    
-}
-
 
 .box-noticia{
     
     width:512px;
     height: 385px;
-    background-color: #9faaef;
+/*    background-color: #9faaef;*/
     float: left;
     overflow: hidden;
     box-sizing: border-box;
@@ -727,7 +739,6 @@ textarea{
     
 }
 
-
 .img-noticia-conteudo{
     
     width: 100%;
@@ -738,7 +749,6 @@ textarea{
     background-size:cover;
     
 }
-
 
 .box-noticia-titulo{
     
@@ -761,11 +771,18 @@ textarea{
     
 }
 
+.box-noticia a{
+    
+    width:512px;
+    height: 385px;
+    
+}
+
 .box-noticia-titulo:hover {
     
-    width: 517.3px;
+    width: 512px;
     height: inherit;
-    margin-top: -404px;
+/*    margin-top: -404px;*/
     background-color:rgba(255,187,51,0.7);
     /*background-color: aqua;*/
 }
@@ -793,7 +810,7 @@ textarea{
 
 .conteudo-noticia:hover{
     
-    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55);
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55);
     
 }
 
@@ -807,7 +824,7 @@ textarea{
     
     width: 350px;
     height: inherit;
-    background-color: aliceblue;
+/*    background-color: aliceblue;*/
     box-sizing: border-box;
     overflow: hidden;
     float: left;
@@ -833,12 +850,6 @@ textarea{
     
 }
 
-.fomatacao-texto-destaque{
-    
-    
-
-}
-
 .links-noticia:link{
     
     text-decoration: none;
@@ -850,7 +861,6 @@ textarea{
     
     color: black;
 }
-
 
 /*********************************PROMOÇÕES**********************************/
 
@@ -870,6 +880,7 @@ textarea{
     width:inherit;
     height: 490px;
     /*background-color: #fedeee;*/
+    overflow: hidden;
     box-sizing: border-box;
     
 }
@@ -880,8 +891,9 @@ textarea{
     height: 450px;
     margin: 20px 0px 0px 20px;
     /*background-color: #eeefff;*/
-    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
     float:left;
+    overflow: hidden;
     box-sizing: border-box;
     
 }
@@ -1027,7 +1039,7 @@ textarea{
 
 .conteudo-container-loja:hover{
     
-    -webkit-box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55)
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.55)
 }
 
 .conteudo-container-loja:hover>.text-noticia-loja{
@@ -1072,4 +1084,60 @@ textarea{
     background:none!important;
     height:100%;
     width:100%;
+}
+
+/*********************************EVENTOS**************************/
+
+.container-evento{
+    
+    width:inherit;
+    height: 450px;
+/*    background-color: #fafee0;*/
+    margin: 35px 0px 0px 0px;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+    
+}
+
+.box-evento{
+    
+    width:776px;
+    height: inherit;
+/*    background-color: #eeafaf;*/
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+.box-img-evento{
+    
+    width: 500px;
+    height: 350px;
+    background-color: #eeefff;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+.texto-evento{
+    
+    width: 500px;
+    height: 100px;
+    background-color: #affaaf;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+.img-evento{
+    
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    
 }

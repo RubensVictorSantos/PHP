@@ -33,19 +33,20 @@
         $sexo = $_POST["radio"];
         $profissao = $_POST["txtprofissao"];
         
-        $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, poduto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
+        $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
         
         echo($sql);
 
-        
         if(mysqli_query($conexao, $sql)){
             header("location:fale-conosco.php");
         }else{
-            
-            echo("<script>alert('erro!')</script>");
+
+//            echo("<script>alert(die('Connection failed: ' . mysqli_connect_error());)</script>");
+            echo("<script>alert('erros!')");
             
         }
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +88,7 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="tel" name="txttel"  value="<?php echo($telefone)?>" pattern="^(\(11\) [9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$" required>
+                        <input class="input-fale-conosco" type="tel" name="txttel"  value="<?php echo($telefone)?>"  required>
                         
                     </div>
                     </div>
@@ -137,9 +138,9 @@
                                 Sugestões:
                             </label>
                         </div>
-                    <div id="box-textarea" >
-                        <textarea name="txtsugestoes" value="<?php echo($sugestoes)?>"></textarea>
-                    </div>
+                        <div id="box-textarea" >
+                            <textarea name="txtsugestoes" value="<?php echo($sugestoes)?>"></textarea>
+                        </div>
                     </div>
                     <div class="box_campos">
                         <div class="box-label">

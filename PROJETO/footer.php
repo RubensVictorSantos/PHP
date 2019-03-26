@@ -6,39 +6,39 @@
         <div id="footer" class="center">
             <div id="main-footer" class="center">
                 <div class="conteudo-footer">
-                    <lu>
-                        <li>Sobre nós </li>
-                        <li>Política de privacidade</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-
-                    </lu>
+                    <div id="logo-footer">
+                        <a href="index.php" title="Logotipo" >
+                            <img src="img/ico/logo.png" style=" " alt="bicicleta logo da empresa" id="imag-logo-footer">
+                        </a>
+                    </div>
                 </div>
                 <div class="conteudo-footer">
-                    <lu>
-                        <li></li>
-                        <li>Trabalhe conosco</li>
-                        <li></li>
+                    <h3 class="titulo-footer">Contato</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>Sobre</li>
+                        <li>Serviços</li>
                         <li></li>
 
-                    </lu>
+                    </ul>
                 </div>
                 <div class="conteudo-footer">
-                    <lu>
-                        <li>Contatos</li>
-                        <li>www.roadrunnercrossbikes@outlook.com</li>
+                    <h3 class="titulo-footer">Contato</h3>
+                    <ul>
+                        <li>www.roadrunner@gmail.com</li>
                         <li>cel: (11)95880-8525</li>
-                    </lu>
+                        <li>tel: (11)4444-4645</li>
+                    </ul>
                 </div>
                 <div class="conteudo-footer">
-                    <lu>
-                        <li>escrever qualquer  </li>
-                        <li>coisa p/ ver </li>
+                    <h3 class="titulo-footer">Test</h3>
+                    <ul>
+                        <li> Facebook</li>
+                        <li> </li>
                         <li>se fica bom o </li>
                         <li>rodapé</li>
                         <li></li>
-                    </lu>
+                    </ul>
                 </div>
             </div>
         </div>'

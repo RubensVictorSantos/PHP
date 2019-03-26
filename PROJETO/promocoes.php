@@ -231,7 +231,7 @@
                             </div>
                             <div class="preco-card-promo">
                                 <p>
-                                    <span class="text-promo"></span>R$854,05
+                                    <span class="text-promo">R$900,00</span> Por R$854,05
                                     10x de R$85,41
                                 </p>
                             </div>
@@ -265,7 +265,7 @@
                             </div>
                             <div class="preco-card-promo">
                                 <p>
-                                    <span class="text-promo"></span>R$854,05
+                                    <span class="text-promo">R$900,55</span> Por R$854,05
                                     10x de R$85,41
                                 </p>
                             </div>

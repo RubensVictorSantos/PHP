@@ -17,38 +17,36 @@
             <div id="principais-noticias">
                 <div class="box-noticia">
                     <img src="img/002.jpg" alt="" class="img-main-noticia" title="" >
-                    
-                    <div class="box-noticia-titulo" style="">
-                        <a href="#" style="text-decoration: none;color:white;">
+                    <a href="#" style="text-decoration: none;color:white;">
+                        <div class="box-noticia-titulo" style="">
                             <h1>
                                 Nasa Manda a 1° Bike para a Lua.
                             </h1>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 
                 <div class="box-noticia">
                     <img src="img/001.jpg" class="img-main-noticia" alt="" title="" >
-                    
-                    <div class="box-noticia-titulo" style="">
-                        <a href="#" style="text-decoration: none;color:white;">
+                    <a href="#" style="text-decoration: none;color:white;">
+                        <div class="box-noticia-titulo" style="">
                             <h1>
                                 Campeonato Mundial de Bikes 14/03
                             </h1>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                     
                 </div>
                 
                 <div class="box-noticia">
                     <img src="img/004.jpg" alt="" class="img-main-noticia" title="" >
+                    <a href="#" style="text-decoration: none;color:white;">
                         <div class="box-noticia-titulo" style="">
-                            <a href="#" style="text-decoration: none;color:white;">
-                                <h1>
-                                    O Gerente Enlouqueceu!, 30% de Desconto em Tudo!
-                                </h1>
-                            </a>
+                            <h1>
+                                O Gerente Enlouqueceu!, 30% de Desconto em Tudo!
+                            </h1>
                         </div>
+                    </a>
                 </div>
                 
             </div>
