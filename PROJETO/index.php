@@ -8,7 +8,6 @@
             Road Runner Cross Bikes
         </title>
         <link rel="icon" href="img/ico/logo.png">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
         <?php
@@ -19,66 +18,9 @@
         <div id="conteudo" class="center">
             <div id="box-slider" class="center">
                 
-                <!-- #region Jssor Slider Begin -->
-                <!-- Generator: Jssor Slider Maker -->
-                <!-- Source: https://www.jssor.com -->
-                <script src="full-width-slider.slider.jquery/js/jquery-1.11.3.min.js" ></script>
-                <script src="full-width-slider.slider.jquery/js/jssor.slider-27.5.0.min.js"></script>
-                <script>
-                    jQuery(document).ready(function ($) {
-
-                        var jssor_1_SlideoTransitions = [
-                          [{b:-1,d:1,o:-0.7}],
-                          [{b:900,d:2000,x:-379,e:{x:7}}],
-                          [{b:900,d:2000,x:-379,e:{x:7}}],
-                          [{b:-1,d:1,o:-1,sX:2,sY:2},{b:0,d:900,x:-171,y:-341,o:1,sX:-2,sY:-2,e:{x:3,y:3,sX:3,sY:3}},{b:900,d:1600,x:-283,o:-1,e:{x:16}}]
-                        ];
-
-                        var jssor_1_options = {
-                          $AutoPlay: 1,
-                          $SlideDuration: 800,
-                          $SlideEasing: $Jease$.$OutQuint,
-                          $CaptionSliderOptions: {
-                            $Class: $JssorCaptionSlideo$,
-                            $Transitions: jssor_1_SlideoTransitions
-                          },
-                          $ArrowNavigatorOptions: {
-                            $Class: $JssorArrowNavigator$
-                          },
-                          $BulletNavigatorOptions: {
-                            $Class: $JssorBulletNavigator$
-                          }
-                        };
-
-                        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-                        /*#region responsive code begin*/
-
-                        var MAX_WIDTH = 3000;
-
-                        function ScaleSlider() {
-                            var containerElement = jssor_1_slider.$Elmt.parentNode;
-                            var containerWidth = containerElement.clientWidth;
-
-                            if (containerWidth) {
-
-                                var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
-                                jssor_1_slider.$ScaleWidth(expectedWidth);
-                            }
-                            else {
-                                window.setTimeout(ScaleSlider, 30);
-                            }
-                        }
-
-                        ScaleSlider();
-
-                        $(window).bind("load", ScaleSlider);
-                        $(window).bind("resize", ScaleSlider);
-                        $(window).bind("orientationchange", ScaleSlider);
-                        /*#endregion responsive code end*/
-                    });
-                </script>
+                <script src="js/jquery-1.11.3.min.js" ></script>
+                <script src="js/jssor.slider-27.5.0.min.js"></script>
+                <script src="js/slider.js"></script>
                 
                 <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,regular,italic,700,700italic&subset=latin-ext,greek-ext,cyrillic-ext,greek,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
 

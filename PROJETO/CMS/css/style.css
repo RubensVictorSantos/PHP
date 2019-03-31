@@ -1,0 +1,129 @@
+/*CSS*/
+
+
+/***************Padrões*************/
+
+*{
+    
+    font-family: arial;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.center{
+    
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#box-main{
+    
+    width: 1000px;
+    height: 1000px;
+    background-color: #cccccc;
+    margin-top: 1%;
+    border-radius: 40px;
+    overflow: hidden;
+    box-sizing: border-box;    
+}
+
+#logo{
+    
+    width: inherit;
+    height: 200px;
+    background-color: #afafaf;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#box-titulo{
+    
+    width: 650px;
+    height: inherit;
+    padding-top: 83px; 
+    background-color: #a2afaf;
+    text-align: center;
+    font-size: 30px; 
+    overflow: hidden;
+    box-sizing: border-box;
+    float: left;
+}
+
+#box-img-logo{
+    
+    width: 350px;
+    height: inherit;
+    background-color: #ffddde;
+    float: left;
+}
+
+#img-logo{
+    
+    width: 250px;
+    height: 150px;
+    background-color: #eeffff;
+    margin-top: 25px;
+}
+
+#menu{
+    
+    width: inherit;
+    height: 175px;
+    background-color: #fefaf9; 
+    
+}
+
+.option{
+    
+    width: 187px;
+    height: inherit;
+    padding-top: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.img-option{
+    
+    width: 100px;
+    height: 100px;
+    background-color: #ffeaad;
+    
+}
+
+#box-info-user{
+    
+    width: 252px;
+    height: inherit;
+    background-color: #affeff;
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

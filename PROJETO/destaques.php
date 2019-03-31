@@ -5,6 +5,7 @@
         <title>
             Destaques
         </title>
+        <link rel="icon" href="img/ico/logo.png">
     </head>
     <body>
         <?php 
