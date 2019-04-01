@@ -8,7 +8,6 @@
             Road Runner Cross Bikes
         </title>
         <link rel="icon" href="img/ico/logo.png">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
         <?php
@@ -19,6 +18,7 @@
         <div id="conteudo" class="center">
             <div id="box-slider" class="center">
                 
+<<<<<<< HEAD
                 <!-- #region Jssor Slider Begin -->
                 <!-- Generator: Jssor Slider Maker -->
                 <!-- Source: https://www.jssor.com -->
@@ -79,6 +79,11 @@
                         /*#endregion responsive code end*/
                     });
                 </script>
+=======
+                <script src="js/jquery-1.11.3.min.js" ></script>
+                <script src="js/jssor.slider-27.5.0.min.js"></script>
+                <script src="js/slider.js"></script>
+>>>>>>> e3391cc4befdd58b0cec24434baa9515eec50792
                 
                 <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,regular,italic,700,700italic&subset=latin-ext,greek-ext,cyrillic-ext,greek,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
 

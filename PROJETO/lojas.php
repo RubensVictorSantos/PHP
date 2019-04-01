@@ -5,6 +5,7 @@
         <title>
             Nossas Lojas
         </title>
+        <link rel="icon" href="img/ico/logo.png">
     </head>
     <body>
         <?php

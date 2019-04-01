@@ -5,7 +5,7 @@
         <title>
             Sobre a empresa
         </title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="icon" href="img/ico/logo.png">
     </head>
     <body>
         <?php
