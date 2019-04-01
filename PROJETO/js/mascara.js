@@ -45,6 +45,7 @@ function validar(caracter,blockType,campo){
 
         //Bloqueio de Numeros de 0 até 9 e outros caracteres
         if(letra>=33 && letra<=64){
+            
             return false;
         }
 
@@ -56,9 +57,7 @@ function validar(caracter,blockType,campo){
            //traço = 45 , espaço = 32 e backspace = 8
            if(letra!=45 && letra!=32 && letra!=8 && letra!=40 && letra!=41 ){
 
-               //document.getElementById('campo').style="background-color:red;border:10;border-color:blue;";
-
-//                                document.getElementById(campo).style="background-color:red;border:10;border-color:blue;";
+               document.getElementById(campo).style="background-color:#ffeeee;border:10;border-color:#ff9999;";
 
                return false;
 
