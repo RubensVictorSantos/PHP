@@ -86,19 +86,19 @@
                     <!-- Loading Screen -->
                     <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
                         
-                        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+                        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" alt="Imgem que representa o carregamento do slid" />
                         
-                    </div>
+                    </div> 
                     
                     <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
                         
                         <div>
-                            <img data-u="image" src="img/20140727-PELOTON-PHOTOS-HOMEPAGE.jpg"/>
+                            <img data-u="image" src="img/20140727-PELOTON-PHOTOS-HOMEPAGE.jpg" alt="Imagem do slid, corrida de bicicleta" />
                             
                             
                         </div>
                         <div>
-                            <img data-u="image" src="img/Almaty-Cycling-1300x500.jpg" />
+                            <img data-u="image" src="img/Almaty-Cycling-1300x500.jpg" alt="Ciclista no topo de um cume olhando para uma montanha"/>
                            
                             <!--
                             <div style="position:absolute;top:300px;left:30px;width:480px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:30px;color:#000000;line-height:1.27;padding:5px 5px 5px 5px;box-sizing:border-box;background-color:rgba(255,188,5,0.8);background-clip:padding-box;">
@@ -108,7 +108,7 @@
                             </div>-->
                         </div>
                         <div>
-                            <img data-u="image" src="img/granfondo-2-1500-1300x500.jpg"/>
+                            <img data-u="image" src="img/granfondo-2-1500-1300x500.jpg" alt="Corrida de ciclitas"/>
                             
                             <div class="msg-slider" style="position:absolute;top:15px;left:100px;width:800px;-webkit-text-stroke-width: 2px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:70px;text-shadow: 5px 0px #3d7;color:white;line-height:1.0;padding:5px 5px 5px 5px;box-sizing:border-box;background-clip:padding-box;text-align:center;">
                                 
@@ -122,7 +122,7 @@
                             
                         </div>
                         <div>
-                            <img data-u="image" src="img/imgslide_pegBikeRe-Ciclo.jpg" />
+                            <img data-u="image" src="img/imgslide_pegBikeRe-Ciclo.jpg" alt="Bicicleta reciclavel" />
                             
                             <div class="msg-slider" style="position:absolute;top:15px;left:50px;width:800px;-webkit-text-stroke-width: 2px;height:130px;font-family:'Roboto Condensed',sans-serif;font-size:70px;text-shadow: 5px 0px #3d7;color:white;line-height:1.0;padding:5px 5px 5px 5px;box-sizing:border-box;background-clip:padding-box;text-align:center;">
                                 
@@ -225,7 +225,7 @@
                     <div class="card-box">
                         <div class="card">
                             <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeCaloiLotus.jpg" alt="" class="img-card">
+                                <img src="img/imgbikes_MountainBikeCaloiLotus.jpg" alt="    Bicicleta MountainBike Caloi Lotus" class="img-card">
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -252,7 +252,7 @@
 
                         <div class="card">
                             <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeTrackBikesTKS.jpg" alt="" class="img-card">
+                                <img src="img/imgbikes_MountainBikeTrackBikesTKS.jpg" alt="Bicicleta  MountainBike Track Bikes TKS" class="img-card">
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -279,7 +279,7 @@
 
                         <div class="card">
                             <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="" class="img-card">
+                                <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="Bicicleta MountainBike Caloi Sport" class="img-card">
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -306,7 +306,7 @@
                     <div class="card-box">
                         <div class="card">
                             <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeCaloiLotus.jpg" alt="" class="img-card">
+                                <img src="img/imgbikes_MountainBikeCaloiLotus.jpg" alt="Bicicleta MountainBike Caloi Lotus" class="img-card">
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -333,7 +333,7 @@
 
                         <div class="card">
                             <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeTrackBikesTKS.jpg" alt="" class="img-card">
+                                <img src="img/imgbikes_MountainBikeTrackBikesTKS.jpg" alt="Bicicleta MountainBike Track Bikes TKS" class="img-card">
                             </div>
                             <div class="nome-card">
                                 <p>
@@ -360,7 +360,7 @@
 
                         <div class="card">
                             <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="" class="img-card">
+                                <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="Bicicleta MountainBike Caloi Sport" class="img-card">
                             </div>
                             <div class="nome-card">
                                 <p>

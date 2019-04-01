@@ -78,58 +78,58 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txtnome"  value="<?php echo($nome)?>">
+                        <input class="input-fale-conosco" type="text" title="Preencha o campo nome" name="txtnome"  id="nome" value="<?php echo($nome)?>" required>
                     </div>
                     </div>  
                     <div class="box_campos">
                         <div class="box-label">
-                            <label >
+                            <label for="telefone">
                                 Telefone:
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="tel" name="txttel"  value="<?php echo($telefone)?>"  required>
+                        <input class="input-fale-conosco" type="tel" name="txttel"  id="telefone" value="<?php echo($telefone)?>" placeholder="Ex.: (00) 0000-0000">
                         
                     </div>
                     </div>
                     <div class="box_campos">
                         <div class="box-label">
-                            <label>
+                            <label for="celular">
                                 Celular*:
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txtcel"  value="<?php echo($celular)?>" required>
+                        <input class="input-fale-conosco" type="text" name="txtcel"  id="celular" value="<?php echo($celular)?>" placeholder="Ex.: (00) 00000-0000" required>
                     </div>
                     </div>
                     <div class="box_campos">
                         <div class="box-label">
-                            <label>
+                            <label for="email">
                                 Email*:
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="email" name="txtemail"  value="<?php echo($email)?>">
+                        <input class="input-fale-conosco" type="email" name="txtemail"  id="email" value="<?php echo($email)?>" required>
                     </div>
                     </div>
                     <div class="box_campos">
                         <div class="box-label">
-                            <label>
+                            <label for="home-page">
                                 Home Page:
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="url" name="txthomep"  value="<?php echo($homep)?>">
+                        <input class="input-fale-conosco" type="url" name="txthomep" id="home-page" value="<?php echo($homep)?>">
                     </div>    
                     </div>
                     <div class="box_campos">
                         <div class="box-label">
-                            <label>
+                            <label for="facebook">
                                 Facebook:
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txtface"  value="<?php echo($facebook)?>">
+                        <input class="input-fale-conosco" type="text" id="facebook" name="txtface"  value="<?php echo($facebook)?>">
                     </div>
                     </div>
                     <div class="campo-obs">
@@ -139,42 +139,42 @@
                             </label>
                         </div>
                         <div id="box-textarea" >
-                            <textarea name="txtsugestoes" value="<?php echo($sugestoes)?>"></textarea>
+                            <textarea name="txtsugestoes"></textarea>
                         </div>
                     </div>
                     <div class="box_campos">
                         <div class="box-label">
-                            <label>
+                            <label for="produto">
                                 Infomações Produto:
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txtproduto"  value="<?php echo($produto)?>">
+                        <input class="input-fale-conosco" type="text" id="produto" name="txtproduto"  value="<?php echo($produto)?>">
                     </div>
                     </div>
                     <div class="box_campos">
                         <div class="box-label">
                             <label>
-                                Sexo:
+                                Sexo*:
                             </label>
                         </div>
                     <div class="box-text-cad" style="padding:15px;" >
                         <label>
-                            <input type="radio" name="radio" value="M" value="<?php echo($rdosexoM)?>">Masculino 
+                            <input type="radio" name="radio" value="M" required >Masculino 
                         </label>
                         <label>
-                            <input type="radio" name="radio" value="F" value="<?php echo($rdosexoF)?>">Feminino
+                            <input type="radio" name="radio" value="F" required>Feminino
                         </label>
                     </div>
                     </div>
                     <div class="box_campos">
                         <div class="box-label">
-                            <label>    
-                                Profissão:
+                            <label for="profissao">    
+                                Profissão*:
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input class="input-fale-conosco" type="text" name="txtprofissao" value="<?php echo($profissao)?>">
+                        <input class="input-fale-conosco" type="text" id="profissao" name="txtprofissao" value="<?php echo($profissao)?>">
                     </div>
                     </div>
                     <div class="box_campos">
@@ -200,5 +200,6 @@
         <?php
             require_once('footer.php');
         ?>
+        <script src="js/Mascara.js"></script>
     </body>
 </html>
