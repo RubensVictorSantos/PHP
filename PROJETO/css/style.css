@@ -260,13 +260,6 @@ input{
     box-shadow:none;
     overflow: hidden;
 }
-<<<<<<< HEAD
-
-/*#menu-catalogo::-webkit-scrollbar { 
-	display: none;
-}*/
-=======
->>>>>>> e3391cc4befdd58b0cec24434baa9515eec50792
 
 .img-card{
     
@@ -367,11 +360,7 @@ input{
     
     width: 387px;
     height: inherit;
-<<<<<<< HEAD
-    padding: 5px;
-=======
     padding: 20px;
->>>>>>> e3391cc4befdd58b0cec24434baa9515eec50792
 /*    background-color: #aaffea;*/
     overflow: hidden;
     float:left;
@@ -388,10 +377,6 @@ input{
     text-align: left;
     text-decoration: none;
     list-style: none;
-<<<<<<< HEAD
-    font-weight: bold;
-=======
->>>>>>> e3391cc4befdd58b0cec24434baa9515eec50792
     
 }
 
@@ -616,11 +601,7 @@ input{
 #box-textarea{
     
     width: 405px;
-<<<<<<< HEAD
-    height: inherit;
-=======
     height: 155px;
->>>>>>> e3391cc4befdd58b0cec24434baa9515eec50792
     padding: 10px;
     text-align: center;
 /*    background-color: #ffa;*/
@@ -637,11 +618,7 @@ textarea{
     padding: 10px;
     border: 1px solid #ffaa00;
     border-radius: 5px 5px 5px 5px;
-<<<<<<< HEAD
-    overflow-y:scroll;
-=======
     overflow-y:auto;
->>>>>>> e3391cc4befdd58b0cec24434baa9515eec50792
     box-sizing: border-box;
 }
 
@@ -679,12 +656,6 @@ textarea{
     border-radius: 5px 5px 5px 5px;
     
 }
-
-<<<<<<< HEAD
-/**************************Sobre a Empresa***********************************/
-=======
-
->>>>>>> e3391cc4befdd58b0cec24434baa9515eec50792
 
 /**************************Sobre a Empresa***********************************/
 
