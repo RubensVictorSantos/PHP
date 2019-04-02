@@ -215,9 +215,11 @@ input{
 .itens-catalogo:hover{
     
     /*transition: 0.5s;*/
-    color:#ffbb33;
-    background-color:rgba(255, 255, 255, 255);
-    
+/*    color:#ffbb33;
+    */
+    color:white;
+/*    background-color:rgba(255, 255, 255, 255);*/
+    background-color:#cc8800;
 }
 
 #box-catalogo{
@@ -322,7 +324,7 @@ input{
     
     padding: 10px;
     font-weight: bold;
-    color:#ffbb33;
+    color:#e69900;
     
 }
 
@@ -972,40 +974,20 @@ textarea{
     box-sizing: border-box;
 }
 
-.detalhes{
-    
-    width:inherit;
-    height: 47px;
-    padding:6px 15px 0px 15px;
-    background-color: white;
-    text-align: right;
-    overflow: hidden;
-    cursor: pointer;
-    box-sizing: border-box;
-}
-
-.detalhes a{
-    
-    padding: 10px;
-    font-weight: bold;
-    color:#ffbb33;
-    
-}
-
 .text-promo{
     
     text-decoration:line-through;
-    color: #ffbb33;
+    color: #e69900;
 }
 
 .titulo-promo{
     
     
     font-size: 90px;
-    background-color:#ffbb33;
+    background-color:#e69900;
     text-align:center;
     letter-spacing: -8px;
-    padding: 8px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
     color:white;
     box-sizing: border-box;
     overflow: hidden;
