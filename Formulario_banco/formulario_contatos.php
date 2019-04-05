@@ -91,7 +91,7 @@
         $sexo = $_POST["radio"];
         
         
-        /*Explode busca uma caracter padrão na string e automaticamente quebra a sua string em vetor, colocando cada infirmação encontrada em um indice*/
+        /*Explode busca uma caracter padrão na string e automaticamente quebra a sua string em vetor, colocando cada infiormalção encontrada em um indice*/
         
         $data_nasc = explode("/", $_POST["txtdtnasc"]);
         $obs = $_POST["txtobs"];
@@ -156,26 +156,44 @@
         </title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="js/jquery.js"></script>
-        
+<!--
+        document = area do navegador 
+        ready = evento de abertura do navegador
+        fazer isso sempre que eu for precisar usar qualquer funÃ§ao do jQuery
+-->
         <script>
         
             $(document).ready(function(){
                 
                 $('.visualizar').click(function(){
-                $('#container').fadeIn(400);  
-
-
+                    jQuery('#container').fadeIn(400);
                 });
-                
             });
             
-            function visualizardados(idItem);
-        
+            function visualizardados(idItem)
+            {
+				$.ajax({
+                    //metodo
+                   type:"GET",
+                    //pagina que sera descarregada a informacao
+                   url:"modal.php",
+                    //e o parametro de informacao
+                    data:{codigo:idItem},
+                    //havendo sucesso na requisicao dos dados
+                    //descarregamos o resultado da modal, dentro da div modal
+                    //a div(#modal) receberá os dados do html
+                    success: function(dados){
+                        $('#modal').html(dados);
+                    //alert(dados); alert para trazer o html caso tenha erros(comentar a linha de cima)
+                    }
+                });
+			}
         </script>
     </head>
     <body>
-        <div id="container"></div>
-        <div id="modal" class="center"></div>
+        <div id="container">
+            <div id="modal" class="center"></div>
+        </div>
         <div id="box-main" class="center">
             <form class="center" name="frmcontatos" method="POST" action="formulario_contatos.php">
                     <div class="box_campos">
@@ -328,13 +346,13 @@
                     </td>
                     <td>
                         <a href="formulario_contatos.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja relmanete excluir?');">
-                            <img src="img/x-button.png">&nbsp; &nbsp;
+                            <img src="img/x-button.png" width="24px" height="24px">&nbsp; &nbsp;
                         </a>
                         <a href="formulario_contatos.php?modo=buscar&id=<?php echo($rscontatos['codigo']);?>;">
-                            <img src="img/search.png">&nbsp; &nbsp;
+                            <img src="img/search.png" width="24px" height="24px" >&nbsp; &nbsp;
                         </a>
                         <a href="#" >
-                            <img src="img/exchange.png" class="visualizar" width="24px" height="24px" onclick="visualizardados(<?php ?>)">&nbsp; &nbsp;
+                            <img src="img/exchange.png" class="visualizar" width="24px" height="24px" onclick="visualizardados(<?php echo($rscontatos['codigo']);?>);">
                         </a>
                     </td>
                 </tr>
