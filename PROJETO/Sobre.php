@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="zxx">
     <head>
         <meta charset="utf-8">
         <title>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="main-sobre" style="">
                     <p>
-                        <img src="img/003.jpg" class="img-sobre"/>
+                        <img src="img/003.jpg" alt="" class="img-sobre"/>
 
                     </p>
                 </div>
@@ -45,7 +45,7 @@
                 <div class="main-sobre" style="">
                     <p>
 
-                        <img src="img/001.jpg" class="img-sobre"/>
+                        <img src="img/001.jpg" alt="" class="img-sobre"/>
                     </p>
                 </div>
                 <div class="main-sobre" style="">
@@ -65,7 +65,7 @@
                 <div class="main-sobre" >
                     <p>
 
-                        <img src="img/002.jpg" class="img-sobre"/>
+                        <img src="img/002.jpg" alt="" class="img-sobre"/>
                     </p>
                 </div>
                 <div class="main-sobre box-img-sobre" style="margin: 666px 0px 0px 776px;">

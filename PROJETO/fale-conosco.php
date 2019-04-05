@@ -17,7 +17,7 @@
     $sql = null;
     $rdosexoF = null;
     $rdosexoM = null;
-    
+    $btn = "salvar";
     
     if(isset($_POST["btnsalvar"])){
         
@@ -33,17 +33,18 @@
         $sexo = $_POST["radio"];
         $profissao = $_POST["txtprofissao"];
         
-        $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
+        if($_POST['btnsalvar'] == "salvar"){
         
-        echo($sql);
-
+            $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
+        
+        }
+        
         if(mysqli_query($conexao, $sql)){
             header("location:fale-conosco.php");
         }else{
 
-//            echo("<script>alert(die('Connection failed: ' . mysqli_connect_error());)</script>");
+            //echo("<script>alert(die('Connection failed: ' . mysqli_connect_error());)</script>");
             echo("<script>alert('erros!')");
-            
         }
     }
 
@@ -54,8 +55,7 @@
     <head>
         <meta charset="utf-8">
         <title>Fale conosco</title>
-           <script src="js/mascara.js" type="text/javascript">
-        </script>
+        <script src="js/mascara.js" type="text/javascript"></script>
         <link rel="icon" href="img/ico/logo.png">
     </head>
     <body>
@@ -157,7 +157,7 @@
                     <div class="box_campos">
                         <div class="box-label">
                             <label>
-                                Sexo:
+                                Sexo*:
                             </label>
                         </div>
                     <div class="box-text-cad" style="padding:15px;" >
@@ -171,7 +171,7 @@
                     </div>
                     <div class="box_campos">
                         <div class="box-label">
-                            <label for="profissao">    
+                            <label for="profissao">
                                 Profissão:
                             </label>
                         </div>
@@ -188,7 +188,7 @@
                                 <input type="submit" class="btn-fale-conosco" name="btnsalvar" id="btnsalvar" value="salvar">
                             </div>
                             <div class="box-btn">
-                                <input type="button" class="btn-fale-conosco" value="sair">
+                                <input type="submit" class="btn-fale-conosco" value="sair">
                             </div>
                         </div>
                     </div>
@@ -202,6 +202,5 @@
         <?php
             require_once('footer.php');
         ?>
-        <script src="js/mascara.js"></script>
     </body>
 </html>
