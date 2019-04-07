@@ -30,10 +30,14 @@
 
 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 //modal
 =======
 <link rel="stylesheet" type="text/css" href="css/style.css">
 >>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
+=======
+<link rel="stylesheet" type="text/css" href="css/style.css">
+>>>>>>> 17de3d8cbcbdd118d2faf6fccf9c47a684038621
 <script>
     $(document).ready(function(){
         $('#fechar').click(function(){
@@ -43,25 +47,37 @@
 </script>
 <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <a href="#" id="fechar">fechar</a>
 =======
+=======
+>>>>>>> 17de3d8cbcbdd118d2faf6fccf9c47a684038621
     <a href="#" id="fechar">
         <input type="button" id="btn-fechar" value="X">    
         
     </a>
+<<<<<<< HEAD
 >>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
+=======
+>>>>>>> 17de3d8cbcbdd118d2faf6fccf9c47a684038621
 </div>
 <table>
     <tr>
         <td>Nome:</td>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <td><?php echo($nome)?></td>
 =======
+=======
+>>>>>>> 17de3d8cbcbdd118d2faf6fccf9c47a684038621
         <td><?php
                 echo($nome);
             ?>
         </td>
+<<<<<<< HEAD
 >>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
+=======
+>>>>>>> 17de3d8cbcbdd118d2faf6fccf9c47a684038621
     </tr>
     <tr>
         <td>Endereço:</td>
