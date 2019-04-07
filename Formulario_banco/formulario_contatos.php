@@ -346,6 +346,7 @@
                     </td>
                     <td>
                         <a href="formulario_contatos.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja relmanete excluir?');">
+<!--
 <<<<<<< HEAD
                             <img src="img/x-button.png">&nbsp; &nbsp;
                         </a>
@@ -355,6 +356,7 @@
                         <a href="#" >
                             <img src="img/exchange.png" class="visualizar" width="24px" height="24px" onclick="visualizardados(<?php ?>)">&nbsp; &nbsp;
 =======
+-->
                             <img src="img/x-button.png" width="24px" height="24px">&nbsp; &nbsp;
                         </a>
                         <a href="formulario_contatos.php?modo=buscar&id=<?php echo($rscontatos['codigo']);?>;">
@@ -362,7 +364,7 @@
                         </a>
                         <a href="#" >
                             <img src="img/exchange.png" class="visualizar" width="24px" height="24px" onclick="visualizardados(<?php echo($rscontatos['codigo']);?>);">
->>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
+<!-->>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9-->
                         </a>
                     </td>
                 </tr>
