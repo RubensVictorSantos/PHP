@@ -15,7 +15,13 @@
 	$email = null;
 	$obs = null;
 	$data_nasc = null;
+<<<<<<< HEAD
 	$botao = "Salvar";
+=======
+    $dt_nasc = null;
+	$botao = "Salvar";
+    $sql = null;
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 
     //conexao com o bd
 	require_once('bd/conexao.php');
@@ -42,16 +48,27 @@
 		//excluir um registro
 		if($modo=='excluir')
 		{
+<<<<<<< HEAD
 			$sql = "delete from tbl_contato where codigo=".$id;
 			mysqli_query($conexao, $sql);
 		
+=======
+			$sql = "delete from tblcontatos where codigo=".$id;
+			mysqli_query($conexao, $sql);
+		      
+            echo($select);
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 		//carrega os dados na tela
 		//buscar o registro a ser atualizado	
 		}elseif($modo=='buscar')
 		{
 			$sql = "select * from tblcontatos where codigo=".$id;
 			$select = mysqli_query($conexao, $sql);
+<<<<<<< HEAD
 			
+=======
+            
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 			if($rscontato = mysqli_fetch_array($select))
 			{
 				$nome = $rscontato['nome'];
@@ -63,8 +80,13 @@
 				$email = $rscontato['email'];
 				
 				//formata a data do padrao americano para o brasileiro
+<<<<<<< HEAD
 				$data_nasc = explode("-", $rscontato['data_nasc']);
 				$data_nasc = $data_nasc[2]. "/".$data_nasc[1]. "/".$data_nasc[0];
+=======
+				$data_nasc = explode("-",$rscontato['data_nasc']);
+                $data_nasc = $data_nasc[2] . "/".$data_nasc[1]."/".$data_nasc[0];
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 				
 				if($rscontato['sexo'] == "F")
 					$rdoSexoF = "checked";
@@ -91,9 +113,18 @@
 		$telefone = $_POST['txttelefone'];
 		$celular = $_POST['txtcelular'];
 		$email = $_POST['txtemail'];
+<<<<<<< HEAD
 		$dtnascimento= explode("/",$_POST['txtdtnascimento']);
 		//var_dump($dtnascimento);
 		$dt_nasc = $dtnascimento[2]."-".$dtnascimento[1]."-".$dtnascimento[0];
+=======
+		$data_nasc= explode("/",$_POST['txtdtnascimento']);
+		//var_dump($dtnascimento);
+		$dt_nasc = $data_nasc[2]."-".$data_nasc[1]."-".$data_nasc[0];
+        
+        var_dump($data_nasc."<br>");
+        var_dump($dt_nasc."<br>");
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 		//explode busca um caractere padrao na string e automaticamente
 		//quebra a sua string em vetor, colocando cada informacao
 		//encontrada em um indice
@@ -103,7 +134,11 @@
 		
 		if($_POST['btnSalvar'] == "Salvar")
 		
+<<<<<<< HEAD
 		$sql = "insert into tbl_contato 
+=======
+		$sql = "insert into tblcontatos 
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 			(
 			nome, endereco, bairro, cep, telefone,
 			celular, email, data_nasc, sexo, obs
@@ -123,7 +158,12 @@
 		
 		elseif($_POST['btnSalvar']=="Editar")
 			$sql="update tblcontatos set nome='".$nome."',
+<<<<<<< HEAD
 									endereco='".$endereco."',
+=======
+            
+            endereco='".$endereco."',
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 									bairro='".$bairro."',
 									cep='".$cep."',
 									telefone='".$telefone."',
@@ -142,7 +182,11 @@
 		//passar o script para o banco
 		//primeiro a variavel de conexao, dps a sql
 		//mysqli_query($conexao, $sql);
+<<<<<<< HEAD
 		
+=======
+		echo($sql);
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 		if(mysqli_query($conexao, $sql))
 		//redireciona o usuario para uma nova pagina e nao gravar
 		//varias vezes no banco  a mesma coisa
@@ -272,7 +316,11 @@
 					<input type="text" name="txttelefone" onkeypress="" value="<?php echo($telefone)?>" placeholder="00 0000-0000"><br><br>
 					<input type="text" name="txtcelular" onkeypress="" value="<?php echo($celular)?>"><br><br>
 					<input type="text" name="txtemail" onkeypress="" value="<?php echo($email)?>"><br><br>
+<<<<<<< HEAD
 					<input type="text" name="txtdtnascimento" onkeypress="" value="<?php echo($data_nasc)?>"><br><br>
+=======
+					<input type="text" name="txtdtnascimento" onkeypress="" value=""><br><br>
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 					<input type="radio" name="rdo" value="f" <?php echo($rdoSexoF)?> /><b>Feminino</b>
 					<input type="radio" name="rdo" value="m" <?php echo($rdoSexoM)?> /><b>Masculino</b><br><br>
 					<textarea name="obs"><?php echo($obs)?></textarea><br><br>

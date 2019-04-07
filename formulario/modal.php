@@ -29,7 +29,11 @@
     }
 
 ?>
+<<<<<<< HEAD
 //modal
+=======
+<link rel="stylesheet" type="text/css" href="css/style.css">
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 <script>
     $(document).ready(function(){
         $('#fechar').click(function(){
@@ -38,12 +42,26 @@
     });
 </script>
 <div>
+<<<<<<< HEAD
     <a href="#" id="fechar">fechar</a>
+=======
+    <a href="#" id="fechar">
+        <input type="button" id="btn-fechar" value="X">    
+        
+    </a>
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
 </div>
 <table>
     <tr>
         <td>Nome:</td>
+<<<<<<< HEAD
         <td><?php echo($nome)?></td>
+=======
+        <td><?php
+                echo($nome);
+            ?>
+        </td>
+>>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9
     </tr>
     <tr>
         <td>Endereço:</td>
