@@ -34,61 +34,41 @@
     });
 </script>
 <div id="box-btn-modal">
-    <a href="fale-conosco-cms.php">
+    <a href="cms-fale-conosco.php">
         <input type="button" id="btn-fechar" value="X">
     </a>
 </div>
 <div id="tbl-modal">
     <div id="labels">
         <div>
-            <lable>
-                Nome:
-            </lable>
+            <lable>Nome:</lable>
         </div>
         <div>
-            <lable>
-                Telefone:
-            </lable>
+            <lable>Telefone:</lable>
         </div>
         <div>
-            <lable>
-                Celular:
-            </lable>
+            <lable>Celular:</lable>
         </div>
         <div>
-            <lable>
-                Email:
-            </lable>
+            <lable>Email:</lable>
         </div>
         <div>
-            <lable>
-                Home Page:
-            </lable>
+            <lable>Home Page:</lable>
         </div>
         <div>
-            <lable>
-                facebook:
-            </lable>
+            <lable>facebook:</lable>
         </div>
         <div>
-            <lable>
-                Produto:
-            </lable>
+            <lable>Produto:</lable>
         </div>
         <div>
-            <lable>
-                Profissão:
-            </lable>
+            <lable>Profissão:</lable>
         </div>
         <div>
-            <lable>
-                Sugestões.:
-            </lable>
+            <lable>Sugestões.:</lable>
         </div>
         <div>
-            <lable>
-                Sexo:
-            </lable>
+            <lable>Sexo:</lable>
         </div>
         
     </div>

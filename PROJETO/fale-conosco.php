@@ -80,7 +80,7 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input onkeypress="return validar(event,'number')" id="nome" class="input-fale-conosco" type="text" name="txtnome"  placeholder="Digite seu nome" value="<?php echo($nome)?>" required >
+                        <input onkeypress="return validar(event,'number','nome')" id="nome" class="input-fale-conosco" type="text" name="txtnome"  placeholder="Digite seu nome" value="<?php echo($nome)?>" required >
                     </div>
                     </div>  
                     <div class="box_campos">
@@ -102,6 +102,8 @@
                         </div>
                     <div class="box-text-cad">
                         <input onkeypress="return validar(event,'caracter','celular')" id="celular" maxlength="15" class="input-fale-conosco" type="text" name="txtcel"  placeholder="( _ _ ) _ _ _ _ _-_ _ _ _" value="<?php echo($celular)?>" required>
+                        
+                        
                     </div>
                     </div>
                     <div class="box_campos">

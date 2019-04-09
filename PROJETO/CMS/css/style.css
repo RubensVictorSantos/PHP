@@ -74,12 +74,14 @@
     box-sizing: border-box; 
 }
 
+/*************************Menu*******************/
+
 #menu{
     
     width: inherit;
     height: 175px;
     background-color: #ffffff;
-    border-bottom: 1px solid #003311;
+/*    border-bottom: 1px solid #003311;*/
     overflow: hidden;
     box-sizing: border-box; 
 }
@@ -89,6 +91,7 @@
     width: 187px;
     height: inherit;
     padding-top: 20px;
+/*    background-color: #ffadda;*/
     overflow: hidden;
     box-sizing: border-box;
     float: left;
@@ -206,8 +209,8 @@ label{
     
     width: 500px;
     height: 136px;
-    padding: 23px 20px 23px 50px;
-    background-color: #e6ffee;
+    padding: 23px 0px 23px 50px;
+/*    background-color: #e6ffee;*/
     overflow: hidden;
     box-sizing: border-box;
     float: left;
@@ -237,11 +240,13 @@ label{
 
 .text-conteudo{
     
-    width: 300px;
+    width: 360px;
     height: 50px;
-    padding: 5px 0px 0px 5px;
+    margin: 30px 0px 0px 0px;
+    padding: 0px 0px 0px 10px;
     color: #003311;
     font-weight: bold;
+    font-size: 23px;
     overflow: hidden;
     box-sizing: border-box;
     float:left;
@@ -299,7 +304,7 @@ label{
 
 .titulos{
     
-    width: 20%;
+    width: 23%;
     height: inherit;
     float: left;
     overflow: hidden;
@@ -320,10 +325,18 @@ label{
 
 .campos-db{
     
-    width: 20%;
+    width: 23%;
     height: inherit;
     overflow: hidden;
     box-sizing: border-box;
+    float: left;
+    
+}
+
+.campo-opcoes{
+    
+    width: 70px;
+    height: inherit;
     float: left;
     
 }
@@ -335,15 +348,23 @@ label{
     float: left;
 }
 
+.option a{
+    
+    text-decoration: none;
+    
+}
+
+/*
 #test{
     
     width: inherit;
     min-height: 450px;
-    border: 1px solid #003311;
+    border: 1px solid #031;
     margin-bottom: 20px;
     overflow: hidden;
     box-sizing: border-box;
 }
+*/
 
 /*****************MODAL***********/
 #container{
