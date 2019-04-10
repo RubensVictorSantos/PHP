@@ -4,6 +4,8 @@
     
     $conexao = conexaoMysql();
     
+
+    //$newstr = filter_var($str, FILTER_SANITIZE_STRING);
     $nome = null;
     $telefone = null;
     $celular = null;
@@ -22,16 +24,16 @@
     if(isset($_POST["btnsalvar"])){
         
         
-        $nome = $_POST["txtnome"];
-        $telefone = $_POST["txttel"];
-        $celular = $_POST["txtcel"];
-        $email = $_POST["txtemail"];
-        $homep = $_POST["txthomep"];
-        $facebook = $_POST["txtface"];
-        $sugestoes = $_POST["txtsugestoes"];
-        $produto = $_POST["txtproduto"];
+        $nome = filter_var($_POST["txtnome"], FILTER_SANITIZE_STRING);
+        $telefone = filter_var($_POST["txttel"], FILTER_SANITIZE_STRING);
+        $celular = filter_var($_POST["txtcel"], FILTER_SANITIZE_STRING);
+        $email = filter_var($_POST["txtemail"], FILTER_SANITIZE_STRING);
+        $homep = filter_var($_POST["txthomep"], FILTER_SANITIZE_STRING);
+        $facebook = filter_var($_POST["txtface"], FILTER_SANITIZE_STRING);
+        $sugestoes = filter_var($_POST["txtsugestoes"], FILTER_SANITIZE_STRING);
+        $produto = filter_var($_POST["txtproduto"], FILTER_SANITIZE_STRING);
         $sexo = $_POST["radio"];
-        $profissao = $_POST["txtprofissao"];
+        $profissao = filter_var($_POST["txtprofissao"], FILTER_SANITIZE_STRING);
         
         if($_POST['btnsalvar'] == "salvar"){
         
@@ -43,7 +45,7 @@
             header("location:fale-conosco.php");
         }else{
 
-            //echo("<script>alert(die('Connection failed: ' . mysqli_connect_error());)</script>");
+            echo("<script>alert(die('Connection failed: 1'.mysqli_connect_error());)</script>");
             echo("<script>alert('erros!')");
         }
     }
@@ -133,7 +135,7 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input id="facebook" class="input-fale-conosco" type="text" name="txtface" placeholder="http://facebook.com" value="<?php echo($facebook)?>">
+                        <input id="facebook" class="input-fale-conosco" type="url" name="txtface" placeholder="http://facebook.com" value="<?php echo($facebook)?>">
                     </div>
                     </div>
                     <div class="campo-obs">

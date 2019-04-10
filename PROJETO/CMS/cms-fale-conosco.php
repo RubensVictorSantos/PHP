@@ -122,7 +122,7 @@
                         <div class="titulos">
                             E-mail:
                         </div>
-                        <div class="campo-opcoes">
+                        <div class="titulo-campo-opcoes">
                             Opções:
                         </div>
                     </div>
@@ -143,9 +143,7 @@
                         ?>
                         <div class="tbl-dados-db">
                             <div class="campos-db">
-                                <?php echo($rscontatos['nome'])
-                                
-                                ?>	
+                                <?php echo($rscontatos['nome'])?>	
                             </div>
                             <div class="campos-db">
                                 <?php echo($rscontatos['telefone'])?>	
@@ -163,7 +161,7 @@
                                 <div class="opcoes">
                                     <a href= "cms-fale-conosco.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
 
-                                        <input type="image" src="../img/excluir.png" width="24" height="24" class="img center">
+                                        <input type="image" src="../img/excluir.png" width="24px" height="24px" class="img center">
                                     </a>
                                 </div>
                             </div>

@@ -11,7 +11,13 @@
     
             ?>
             <div id="conteudo">
-            
+                
+                <img src="" alt="" class="img-card">
+                <div class="nome">
+                    
+                    
+                
+                </div>
             </div>
             <div id="footer">
                 <h3>

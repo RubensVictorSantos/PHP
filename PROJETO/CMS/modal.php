@@ -20,7 +20,7 @@
                 $sugestoes = $rscontato['sugestoes'];
                 $produto = $rscontato['produto'];
                 $sexo = $rscontato['sexo'];
-                $profissao = $rscontato['produto'];
+                $profissao = $rscontato['profissao'];
         }
     }
 
@@ -73,15 +73,15 @@
         
     </div>
     <div id="dados-cliente">
-        <div><?php echo($nome)?></div>
-        <div><?php echo($telefone)?></div>
-        <div><?php echo($celular)?></div>
-        <div><?php echo($email)?></div>
-        <div><?php echo($homep)?></div>
-        <div><?php echo($facebook)?></div>
-        <div><?php echo($produto)?></div>
-        <div><?php echo($profissao)?></div>
-        <div><?php echo($sugestoes)?></div>
-        <div><?php echo($sexo)?></div>
+        <div><?php echo(@$nome)?></div>
+        <div><?php echo(@$telefone)?></div>
+        <div><?php echo(@$celular)?></div>
+        <div><?php echo(@$email)?></div>
+        <div><?php echo(@$homep)?></div>
+        <div><?php echo(@$facebook)?></div>
+        <div><?php echo(@$produto)?></div>
+        <div><?php echo(@$profissao)?></div>
+        <div><?php echo(@$sugestoes)?></div>
+        <div><?php echo(@$sexo)?></div>
     </div>
 </div>

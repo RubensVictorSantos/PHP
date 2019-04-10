@@ -1,3 +1,4 @@
+
 <html>
     <head>
         <title>
@@ -20,7 +21,7 @@
                     <div class="option-conteudo">
                         <a href="cms-noticias.php">
                             <div class="conteudo-img">
-                                <img src="" id="i" class="img-cms">
+                                <img src="" id="" class="img-cms">
                             </div>
                             <div class="text-conteudo">
                                 <label>

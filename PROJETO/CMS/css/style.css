@@ -186,7 +186,7 @@ label{
 #conteudo{
     
     width: inherit;
-    height: 545px;
+    min-height: 545px;
     background-color: #e6ffee;
     overflow: hidden;
     box-sizing: border-box;
@@ -196,7 +196,7 @@ label{
 .conteudo-cms{
     
     width: 50%;
-    height: inherit;
+    min-height: 525px;
     box-sizing: border-box;
     background-color: #effefe;
     overflow: hidden;
@@ -271,6 +271,7 @@ label{
     width:inherit;
     min-height:505px;
     margin: 20px 0px 20px 0px;
+/*    border: 1px solid black;*/
     overflow-y: auto;
     box-sizing: border-box;
 }
@@ -293,23 +294,39 @@ label{
     
     width:inherit;
     height: 30px;
-    padding: 5px 0px 0px 0px;
     font-weight: bold;
     text-align: center;
 /*    background-color: #99eeff;*/
     overflow: hidden;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
     box-sizing: border-box;
     
 }
 
 .titulos{
     
-    width: 23%;
-    height: inherit;
+    width: 23.2%;
+    height: 30px;
+    padding: 5px 0px 0px 0px;
     float: left;
     overflow: hidden;
     box-sizing: border-box;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
     
+}
+
+.titulo-campo-opcoes{
+    
+    width: 71.9px;
+    height: 30px;
+/*    background-color: red;*/
+    padding: 5px 0px 0px 0px;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .tbl-dados-db{
@@ -319,15 +336,19 @@ label{
 /*    padding: 5px 0px 0px 0px;*/
     text-align: center;
 /*    background-color: #f9eeff;*/
+    
     box-sizing: border-box;
     
 }
 
 .campos-db{
     
-    width: 23%;
+    width: 23.2%;
     height: inherit;
     overflow: hidden;
+    border: 1px solid #e6ffee;
+    
+    background-color: #99ffb9;
     box-sizing: border-box;
     float: left;
     
@@ -336,16 +357,23 @@ label{
 .campo-opcoes{
     
     width: 70px;
-    height: inherit;
+    height:inherit;
+/*    background-color: #99ffb9;*/
+    overflow: hidden;
+    box-sizing: border-box;
     float: left;
     
 }
 
 .opcoes{
     
-    width: 50%;
+    width: 35px;
     height: inherit;
     float: left;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .option a{
@@ -435,8 +463,55 @@ label{
 }
 
 
+.titulos-cms{
+    
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    background-color: #031;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
 
+/*********************************cms-noticias************************/
 
+.img-cms-noticias{
+    
+    width: 400px;
+    height: 208px;
+    margin: 10px;
+    
+}
 
+.container-input{
+    
+    height: 320px;
+    padding: 10px 10px 10px 25px;
+/*    background-color: #eeaafF;*/
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+/**************************CMS-PROMO********************************/
+
+.img-card{
+    
+    width: 300px;
+    height: 261px;
+    margin: 20px 0px 0px 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.nome{
+    
+    width: 20px;
+    height: 30px;
+/*    background-color:pink;*/
+}
 
 
