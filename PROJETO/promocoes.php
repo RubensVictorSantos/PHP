@@ -36,8 +36,8 @@
 
                             </div>
                             <div class="nome-card">
-                                <p>
-                                   Mountain Bike Caloi Lotus
+                                <p >
+                                     
                                 </p>
                             </div>
                             <div class="desc-card">

@@ -33,10 +33,16 @@
         });
     });
 </script>
-<div id="box-btn-modal">
-    <a href="cms-fale-conosco.php">
-        <input type="button" id="btn-fechar" value="X">
-    </a>
+<div>
+    <div id="titulo-modal" style="float:left;">
+
+
+    </div>
+    <div id="box-btn-modal">
+        <a href="cms-fale-conosco.php">
+            <input type="button" id="btn-fechar" value="X">
+        </a>
+    </div>
 </div>
 <div id="tbl-modal">
     <div id="labels">

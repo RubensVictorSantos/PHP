@@ -156,12 +156,13 @@
                             </div>
                             <div class="campo-opcoes">
                                 <div class="opcoes">
-                                    <input type="image" class="visualizar" onclick="visualizarDados(<?php echo($rscontatos['codigo']);?>);" src="../img/pesquisar.png" width="24px" height="24px" class="img center">
+                                    <input type="image" class="visualizar" onclick="visualizarDados(<?php echo($rscontatos['codigo']);?>);" src="../img/pesquisar.png" width="20px" height="20px" class="center" style="margin-top:4px;">
                                 </div>
                                 <div class="opcoes">
                                     <a href= "cms-fale-conosco.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
 
-                                        <input type="image" src="../img/excluir.png" width="24px" height="24px" class="img center">
+                                        <input type="image" src="../img/excluir.png" width="24px" height="24px" class="img center"
+                                        style="margin-top:2px;">
                                     </a>
                                 </div>
                             </div>

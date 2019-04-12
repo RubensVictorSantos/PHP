@@ -17,7 +17,7 @@
     margin-right: auto;
     
 }
-
+/********************************************************************/
 #box-main{
     
     width: 1000px;
@@ -394,10 +394,11 @@ label{
 }
 */
 
-/*****************MODAL***********/
+/********************************MODAL********************************/
 #container{
 	width:100%;
 	height:100%;
+    margin-top: -1%;
 	background-color:rgba(0,0,0,0.7);
 	position:fixed;
 	z-index:999;
@@ -411,7 +412,11 @@ label{
 	margin-right:auto;
 	background-color:#ffffff;
 	margin-top:150px;
+    box-sizing: border-box;
+    
 }
+
+
 
 #box-btn-modal{
     
@@ -503,15 +508,26 @@ label{
     margin: 20px 0px 0px 20px;
     background-color: #ffffff;
     box-sizing: border-box;
-    float: left;
     
 }
 
-.nome{
+.nome-produto{
     
-    width: 20px;
-    height: 30px;
+    width: 300px;
+    height: 40px;
+    padding: 5px 0px 0px 20px;
 /*    background-color:pink;*/
+    
+}
+
+.input-cms-promo{
+    
+    width: 300px;
+    height:35px;
+    text-align: center;
+    border-radius: 2px 2px;
+    border: 1px solid #eeff55;
+    
 }
 
 

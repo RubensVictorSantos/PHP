@@ -11,13 +11,34 @@
     
             ?>
             <div id="conteudo">
-                
-                <img src="" alt="" class="img-card">
-                <div class="nome">
+                <div>
+                    <img src="" alt="" class="img-card">
+                </div>
+                <div class="nome-produto">
+                    <input type="file">
+                </div>
+                <div class="nome-produto">
                     
-                    
+                    <input type="text" class="input-cms-promo" maxlength="65" placeholder="Digite o nome do produto">
                 
                 </div>
+                <div class="nome-produto">
+                    
+                    <input type="text" class="input-cms-promo" maxlength="65" placeholder=" Digite o preço do produto">
+                
+                </div>
+                <div class="nome-produto">
+                    
+                    <input type="text" class="input-cms-promo" maxlength="65" placeholder="Digite a descrição do produto">
+                
+                </div>
+                <div class="nome-produto">
+                    
+                    <input type="radio">
+                    <input type="radio">
+                
+                </div>
+                
             </div>
             <div id="footer">
                 <h3>
