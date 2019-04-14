@@ -6,7 +6,7 @@ function conexaoMysql(){
     $server = "localhost";
     $user = "root";
 //    $password = "bcd127";
-    $password = "binho250398";
+    $password = "bcd127";
     $database = "db_bicicleta";
 
     $conexao = mysqli_connect($server, $user, $password, $database);

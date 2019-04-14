@@ -17,7 +17,7 @@
     margin-right: auto;
     
 }
-
+/********************************************************************/
 #box-main{
     
     width: 1000px;
@@ -74,12 +74,14 @@
     box-sizing: border-box; 
 }
 
+/*************************Menu*******************/
+
 #menu{
     
     width: inherit;
     height: 175px;
     background-color: #ffffff;
-    border-bottom: 1px solid #003311;
+/*    border-bottom: 1px solid #003311;*/
     overflow: hidden;
     box-sizing: border-box; 
 }
@@ -89,6 +91,7 @@
     width: 187px;
     height: inherit;
     padding-top: 20px;
+/*    background-color: #ffadda;*/
     overflow: hidden;
     box-sizing: border-box;
     float: left;
@@ -183,7 +186,7 @@ label{
 #conteudo{
     
     width: inherit;
-    height: 545px;
+    min-height: 545px;
     background-color: #e6ffee;
     overflow: hidden;
     box-sizing: border-box;
@@ -193,7 +196,7 @@ label{
 .conteudo-cms{
     
     width: 50%;
-    height: inherit;
+    min-height: 525px;
     box-sizing: border-box;
     background-color: #effefe;
     overflow: hidden;
@@ -206,8 +209,8 @@ label{
     
     width: 500px;
     height: 136px;
-    padding: 23px 20px 23px 50px;
-    background-color: #e6ffee;
+    padding: 23px 0px 23px 50px;
+/*    background-color: #e6ffee;*/
     overflow: hidden;
     box-sizing: border-box;
     float: left;
@@ -237,11 +240,13 @@ label{
 
 .text-conteudo{
     
-    width: 300px;
+    width: 360px;
     height: 50px;
-    padding: 5px 0px 0px 5px;
+    margin: 30px 0px 0px 0px;
+    padding: 0px 0px 0px 10px;
     color: #003311;
     font-weight: bold;
+    font-size: 23px;
     overflow: hidden;
     box-sizing: border-box;
     float:left;
@@ -266,6 +271,7 @@ label{
     width:inherit;
     min-height:505px;
     margin: 20px 0px 20px 0px;
+/*    border: 1px solid black;*/
     overflow-y: auto;
     box-sizing: border-box;
 }
@@ -288,23 +294,39 @@ label{
     
     width:inherit;
     height: 30px;
-    padding: 5px 0px 0px 0px;
     font-weight: bold;
     text-align: center;
 /*    background-color: #99eeff;*/
     overflow: hidden;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
     box-sizing: border-box;
     
 }
 
 .titulos{
     
-    width: 20%;
-    height: inherit;
+    width: 23.2%;
+    height: 30px;
+    padding: 5px 0px 0px 0px;
     float: left;
     overflow: hidden;
     box-sizing: border-box;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
     
+}
+
+.titulo-campo-opcoes{
+    
+    width: 71.9px;
+    height: 30px;
+/*    background-color: red;*/
+    padding: 5px 0px 0px 0px;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .tbl-dados-db{
@@ -314,14 +336,29 @@ label{
 /*    padding: 5px 0px 0px 0px;*/
     text-align: center;
 /*    background-color: #f9eeff;*/
+    
     box-sizing: border-box;
     
 }
 
 .campos-db{
     
-    width: 20%;
+    width: 23.2%;
     height: inherit;
+    overflow: hidden;
+    border: 1px solid #e6ffee;
+    
+    background-color: #99ffb9;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.campo-opcoes{
+    
+    width: 70px;
+    height:inherit;
+/*    background-color: #99ffb9;*/
     overflow: hidden;
     box-sizing: border-box;
     float: left;
@@ -330,25 +367,38 @@ label{
 
 .opcoes{
     
-    width: 50%;
+    width: 35px;
     height: inherit;
     float: left;
-}
-
-#test{
-    
-    width: inherit;
-    min-height: 450px;
-    border: 1px solid #003311;
-    margin-bottom: 20px;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
     overflow: hidden;
     box-sizing: border-box;
 }
 
-/*****************MODAL***********/
+.option a{
+    
+    text-decoration: none;
+    
+}
+
+/*
+#test{
+    
+    width: inherit;
+    min-height: 450px;
+    border: 1px solid #031;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+*/
+
+/********************************MODAL********************************/
 #container{
 	width:100%;
 	height:100%;
+    margin-top: -1%;
 	background-color:rgba(0,0,0,0.7);
 	position:fixed;
 	z-index:999;
@@ -362,7 +412,11 @@ label{
 	margin-right:auto;
 	background-color:#ffffff;
 	margin-top:150px;
+    box-sizing: border-box;
+    
 }
+
+
 
 #box-btn-modal{
     
@@ -414,8 +468,66 @@ label{
 }
 
 
+.titulos-cms{
+    
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    background-color: #031;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
 
+/*********************************cms-noticias************************/
 
+.img-cms-noticias{
+    
+    width: 400px;
+    height: 208px;
+    margin: 10px;
+    
+}
 
+.container-input{
+    
+    height: 320px;
+    padding: 10px 10px 10px 25px;
+/*    background-color: #eeaafF;*/
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+/**************************CMS-PROMO********************************/
+
+.img-card{
+    
+    width: 300px;
+    height: 261px;
+    margin: 20px 0px 0px 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    
+}
+
+.nome-produto{
+    
+    width: 300px;
+    height: 40px;
+    padding: 5px 0px 0px 20px;
+/*    background-color:pink;*/
+    
+}
+
+.input-cms-promo{
+    
+    width: 300px;
+    height:35px;
+    text-align: center;
+    border-radius: 2px 2px;
+    border: 1px solid #55ff55;
+    
+}
 
 

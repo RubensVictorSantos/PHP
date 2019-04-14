@@ -4,6 +4,8 @@
     
     $conexao = conexaoMysql();
     
+
+    //$newstr = filter_var($str, FILTER_SANITIZE_STRING);
     $nome = null;
     $telefone = null;
     $celular = null;
@@ -18,20 +20,23 @@
     $rdosexoF = null;
     $rdosexoM = null;
     $btn = "salvar";
+    $data_nasc = null;
+    $dt_nasc = null;
+
     
     if(isset($_POST["btnsalvar"])){
         
         
-        $nome = $_POST["txtnome"];
-        $telefone = $_POST["txttel"];
-        $celular = $_POST["txtcel"];
-        $email = $_POST["txtemail"];
-        $homep = $_POST["txthomep"];
-        $facebook = $_POST["txtface"];
-        $sugestoes = $_POST["txtsugestoes"];
-        $produto = $_POST["txtproduto"];
+        $nome = filter_var($_POST["txtnome"], FILTER_SANITIZE_STRING);
+        $telefone = filter_var($_POST["txttel"], FILTER_SANITIZE_STRING);
+        $celular = filter_var($_POST["txtcel"], FILTER_SANITIZE_STRING);
+        $email = filter_var($_POST["txtemail"], FILTER_SANITIZE_STRING);
+        $homep = filter_var($_POST["txthomep"], FILTER_SANITIZE_STRING);
+        $facebook = filter_var($_POST["txtface"], FILTER_SANITIZE_STRING);
+        $sugestoes = filter_var($_POST["txtsugestoes"], FILTER_SANITIZE_STRING);
+        $produto = filter_var($_POST["txtproduto"], FILTER_SANITIZE_STRING);
         $sexo = $_POST["radio"];
-        $profissao = $_POST["txtprofissao"];
+        $profissao = filter_var($_POST["txtprofissao"], FILTER_SANITIZE_STRING);
         
         if($_POST['btnsalvar'] == "salvar"){
         
@@ -39,12 +44,14 @@
         
         }
         
+        echo($sql);
+        
         if(mysqli_query($conexao, $sql)){
             header("location:fale-conosco.php");
         }else{
 
-            //echo("<script>alert(die('Connection failed: ' . mysqli_connect_error());)</script>");
-            echo("<script>alert('erros!')");
+            //echo("<script>alert(die('Connection failed: 1'.mysqli_connect_error());)</script>");
+            //echo("<script>alert('erros!')");
         }
     }
 
@@ -80,7 +87,7 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input onkeypress="return validar(event,'number')" id="nome" class="input-fale-conosco" type="text" name="txtnome"  placeholder="Digite seu nome" value="<?php echo($nome)?>" required >
+                        <input onkeypress="return validar(event,'number','nome')" id="nome" class="input-fale-conosco" type="text" name="txtnome"  placeholder="Digite seu nome" value="<?php echo($nome)?>" required >
                     </div>
                     </div>  
                     <div class="box_campos">
@@ -102,6 +109,8 @@
                         </div>
                     <div class="box-text-cad">
                         <input onkeypress="return validar(event,'caracter','celular')" id="celular" maxlength="15" class="input-fale-conosco" type="text" name="txtcel"  placeholder="( _ _ ) _ _ _ _ _-_ _ _ _" value="<?php echo($celular)?>" required>
+                        
+                        
                     </div>
                     </div>
                     <div class="box_campos">
@@ -131,7 +140,7 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input id="facebook" class="input-fale-conosco" type="text" name="txtface" placeholder="http://facebook.com" value="<?php echo($facebook)?>">
+                        <input id="facebook" class="input-fale-conosco" type="url" name="txtface" placeholder="http://facebook.com" value="<?php echo($facebook)?>">
                     </div>
                     </div>
                     <div class="campo-obs">

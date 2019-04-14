@@ -18,7 +18,7 @@
     $sql = null;
     $rdosexoF = null;
     $rdosexoM = null;
-
+    
     if(isset($_GET['modo'])){
         
         $modo = $_GET['modo'];
@@ -96,92 +96,14 @@
 		
         </div>
         <div id="box-main" class="center">
-            <div id="logo">
-                <div id="box-titulo">
-                        <span style="font-weight:bold;" >CMS</span> - Sistema de gerenciamento do site
-                    
-                </div>
-                <div id="box-img-logo">
-                    <figure id="img-logo" class="center">
-                        <img src="../img/ico/logo.png">
-                        <!--id="img-logo"-->
-                    </figure>
-                </div>
-            </div>
-            <div id="menu">
-                <div class="option">
-                    <div class="img-option center">
-                        <a href="cms.php">
-                            <input src="../img/ico/writing.png" id="btn-content" type="image" class="img-cms">
-                        </a>
-                    </div>
-                    <div class="text-cms center">
-                        <label for="btn-content">
-                            <p>
-                                Adm. Conteúdo
-                            </p>
-                        </label>
-                    
-                    </div>
-                </div>
-                <div class="option">
-                    <div class="img-option center">
-                        <a href="#">
-                            <input src="../img/ico/contact.png" id="btn-fc" type="image" class="img-cms">
-                        </a>
-                    </div>
-                    <div class="text-cms center">
-                        <label for="btn-fc">
-                            <p>
-                                Adm. Fale conosco
-                            </p>
-                        </label>
-                    
-                    </div>
-                </div>
-                <div class="option">
-                    <div class="img-option center">
-                        <a href="#">
-                            <input src="../img/ico/product.png" id="btn-produtos" type="image" class="img-cms">
-                        </a>
-                    </div>
-                    <div class="text-cms center">
-                        <label for="btn-produtos">
-                            <p>
-                                Adm. Produtos
-                            </p>
-                        </label>
-                    
-                    </div>
-                </div>
-                <div class="option">
-                    <div class="img-option center">
-                        <a href="#">
-                            <input src="../img/ico/man.png" id="btn-user" type="image" class="img-cms">
-                        </a>
-                    </div>
-                    <div class="text-cms center">
-                        <label for="btn-user">
-                            <p>
-                                Adm. Usuários
-                            </p>
-                        </label>
-                    </div>
-                </div>
-                <div id="box-info-user">
-                    <div id="text-name-user">
-                        <label for="name-user">
-                            <h4>
-                                Bem Vindo,<span id="name-user"> xxxxxx</span>
-                            </h4>
-                        </label>
-                    </div>
-                    <div id="box-btn">
-                        <input type="button" id="btn-logout" value="Logout">
-                    </div>
-                </div>
-            </div>
             
+            <?php
+    
+                require_once('cms-menu.php');
+    
+            ?>
+            
+            <!--CONTEÚDO-->
             <div id="conteudo">
                 <div id="table">
                     <div class="titulo-tbl">
@@ -200,7 +122,7 @@
                         <div class="titulos">
                             E-mail:
                         </div>
-                        <div class="titulos">
+                        <div class="titulo-campo-opcoes">
                             Opções:
                         </div>
                     </div>
@@ -211,11 +133,10 @@
                             //select retorna dados, por isso precisamos de uma variavel
                             //guarda o retorno do bd em uma variavel local
                             $select = mysqli_query($conexao, $sql);
-
                             //rs = recod set, retorna os dados do banco
                             //mysql_fetch_array transforma uma lista de retorno do banco de dados
                             //de dados em uma matriz de dados
-                            //no caso o select, e guarda na variavel rscontatos
+                            //no caso o select, e guarda na variavel rscontatos   
                             while($rscontatos=mysqli_fetch_array($select))
                             {
                         ?>
@@ -232,14 +153,15 @@
                             <div class="campos-db">
                                 <?php echo($rscontatos['email'])?>	
                             </div>
-                            <div class="campos-db">
+                            <div class="campo-opcoes">
                                 <div class="opcoes">
-                                    <input type="image" class="visualizar" onclick="visualizarDados(<?php echo($rscontatos['codigo']);?>);" src="../img/pesquisar.png" width="24px" height="20px" class="img center">
+                                    <input type="image" class="visualizar" onclick="visualizarDados(<?php echo($rscontatos['codigo']);?>);" src="../img/pesquisar.png" width="20px" height="20px" class="center" style="margin-top:4px;">
                                 </div>
                                 <div class="opcoes">
-                                    <a href= "fale-conosco-cms.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
+                                    <a href= "cms-fale-conosco.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
 
-                                        <input type="image" src="../img/excluir.png" width="24" height="24" class="img center">
+                                        <input type="image" src="../img/excluir.png" width="24px" height="24px" class="img center"
+                                        style="margin-top:2px;">
                                     </a>
                                 </div>
                             </div>

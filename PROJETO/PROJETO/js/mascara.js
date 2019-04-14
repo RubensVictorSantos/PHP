@@ -1,5 +1,5 @@
 function validar(caracter,blockType,campo){
-
+    
     /*Tratamento para verificar por qual navegador esta vindo 
     o evento, caso seja pelo IE o evento retorna pela 
     propriedade window.event*/
@@ -46,25 +46,30 @@ function validar(caracter,blockType,campo){
         //Bloqueio de Numeros de 0 até 9 e outros caracteres
         if(letra>=33 && letra<=64){
             
+            document.getElementById(campo).style="background-color:#ffeeee;border:10;border-color:#ffaaaa;";
+            
             return false;
+        }else{
+            
+            document.getElementById(campo).style="background-color:#ffffff;";
+            
         }
-
     }else if (blockType=='caracter'){
         //Bloqueio de Caracteres
-       if(letra<48 || letra >57){
+        if(letra<48 || letra >57){
 
-           //Ativar algumas teclas necessárias
-           //traço = 45 , espaço = 32 e backspace = 8
-           if(letra!=45 && letra!=32 && letra!=8 && letra!=40 && letra!=41 ){
+            //Ativar algumas teclas necessárias
+            //traço = 45 , espaço = 32 e backspace = 8
+            if(letra!=45 && letra!=32 && letra!=8 && letra!=40 && letra!=41 ){
 
-               document.getElementById(campo).style="background-color:#ffeeee;border:10;border-color:#ff9999;";
+                document.getElementById(campo).style="background-color:#ffeeee;border:10;border-color:#ff9999;";
 
-               return false;
+                return false;
 
-           }else{
-               
-               document.getElementById(campo).style="background-color:#ffffff;";        
-           }
+            }else{
+
+               document.getElementById(campo).style="background-color:#ffffff;";
+            }
        }
-    }
+    }  
 }

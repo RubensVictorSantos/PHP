@@ -20,7 +20,7 @@
                 $sugestoes = $rscontato['sugestoes'];
                 $produto = $rscontato['produto'];
                 $sexo = $rscontato['sexo'];
-                $profissao = $rscontato['produto'];
+                $profissao = $rscontato['profissao'];
         }
     }
 
@@ -33,75 +33,61 @@
         });
     });
 </script>
-<div id="box-btn-modal">
-    <a href="fale-conosco-cms.php">
-        <input type="button" id="btn-fechar" value="X">
-    </a>
+<div>
+    <div id="titulo-modal" style="float:left;">
+
+
+    </div>
+    <div id="box-btn-modal">
+        <a href="cms-fale-conosco.php">
+            <input type="button" id="btn-fechar" value="X">
+        </a>
+    </div>
 </div>
 <div id="tbl-modal">
     <div id="labels">
         <div>
-            <lable>
-                Nome:
-            </lable>
+            <lable>Nome:</lable>
         </div>
         <div>
-            <lable>
-                Telefone:
-            </lable>
+            <lable>Telefone:</lable>
         </div>
         <div>
-            <lable>
-                Celular:
-            </lable>
+            <lable>Celular:</lable>
         </div>
         <div>
-            <lable>
-                Email:
-            </lable>
+            <lable>Email:</lable>
         </div>
         <div>
-            <lable>
-                Home Page:
-            </lable>
+            <lable>Home Page:</lable>
         </div>
         <div>
-            <lable>
-                facebook:
-            </lable>
+            <lable>facebook:</lable>
         </div>
         <div>
-            <lable>
-                Produto:
-            </lable>
+            <lable>Produto:</lable>
         </div>
         <div>
-            <lable>
-                Profissão:
-            </lable>
+            <lable>Profissão:</lable>
         </div>
         <div>
-            <lable>
-                Sugestões.:
-            </lable>
+            <lable>Sugestões.:</lable>
         </div>
         <div>
-            <lable>
-                Sexo:
-            </lable>
+            <lable>Sexo:</lable>
         </div>
         
     </div>
     <div id="dados-cliente">
-        <div><?php echo($nome)?></div>
-        <div><?php echo($telefone)?></div>
-        <div><?php echo($celular)?></div>
-        <div><?php echo($email)?></div>
-        <div><?php echo($homep)?></div>
-        <div><?php echo($facebook)?></div>
+        <div><?php echo(@$nome)?></div>
+        <div><?php echo(@$telefone)?></div>
+        <div><?php echo(@$celular)?></div>
+        <div><?php echo(@$email)?></div>
+        <div><?php echo(@$homep)?></div>
+        <div><?php echo(@$facebook)?></div>
         <div><?php echo($produto)?></div>
-        <div><?php echo($profissao)?></div>
-        <div><?php echo($sugestoes)?></div>
-        <div><?php echo($sexo)?></div>
+        <div><?php echo(@$profissao)?></div>
+        <div><?php echo(@$sugestoes)?></div>
+        <div><?php echo(@$sexo)?></div>
     </div>
 </div>

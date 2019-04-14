@@ -13,7 +13,7 @@
             </div>
             <nav id="menu" class="center">
                 <ul class="center">
-                    <li><a href="Destaques.php">Destaques</a></li>
+                    <li><a href="noticias.php">Destaques</a></li>
                     <li><a href="promocoes.php">Promoções</a></li>
                     <li><a href="eventos.php">Eventos</a></li>
                     <li><a href="fale-conosco.php">Fale Conosco</a></li>
@@ -42,5 +42,3 @@
     </header>
     '
     );
-
-?>

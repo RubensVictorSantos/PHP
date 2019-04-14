@@ -239,7 +239,7 @@ input{
     box-sizing: border-box;
     
 }
-
+/*******************************CARD******************************/
 .card{
     
     width: 360px;
@@ -940,8 +940,9 @@ textarea{
     width:inherit;
     height: 47px;
     padding:6px 15px 0px 15px;
+    white-space:normal;
     /*background-color:#fedfff;*/
-    overflow: hidden;
+/*    overflow: hidden;*/
     text-align: center;
     box-sizing: border-box;
     
