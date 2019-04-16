@@ -85,7 +85,7 @@
                     <div class="option-conteudo">
                         <a href="cms-lojas.php">
                             <div class="conteudo-img">
-                                <img src="" id="" type="image" class="img-cms">
+                                <img src="../img/ico/icon-cms/location.png" id="" type="image" class="img-cms">
 
                             </div>
                             <div class="text-conteudo">
