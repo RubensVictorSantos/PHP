@@ -4,8 +4,6 @@
 /***************Padrões*************/
 
 *{
-    
-    font-family: arial;
     margin: 0;
     padding: 0;
     
@@ -24,6 +22,7 @@
     min-height: 1000px;
 /*    background-color: #cccccc;*/
 /*    background-color: #003311;*/
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: 1%;
     border: 1px solid #003311;
     border-radius: 40px;
@@ -199,7 +198,7 @@ label{
     min-height: 525px;
     box-sizing: border-box;
     background-color: #effefe;
-    overflow: hidden;
+/*    overflow: hidden;*/
     float: left;
     
     
@@ -219,8 +218,8 @@ label{
 
 .conteudo-img{
     
-    width: 90px;
-    height: 90px;
+    width: 64px;
+    height: 64px;
     overflow: hidden;
     box-sizing: border-box;
     float: left;
@@ -501,11 +500,34 @@ label{
 
 /**************************CMS-PROMO********************************/
 
-.img-card{
+.conteudo-cms-promo{
+    
+    width: 40%;
+    min-height: 525px;
+    box-sizing: border-box;
+    background-color: #effefe;
+    float: left;
+    
+    
+}
+
+.conteudo-cms-tbl{
+    
+    width: 60%;
+    min-height: 525px;
+    box-sizing: border-box;
+    background-color: #effefe;
+    float: left;
+    
+    
+}
+
+#img-card{
     
     width: 300px;
     height: 261px;
     margin: 20px 0px 0px 20px;
+/*    border: 1px solid #003311;*/
     background-color: #ffffff;
     box-sizing: border-box;
     
@@ -513,11 +535,29 @@ label{
 
 .nome-produto{
     
-    width: 300px;
+    width: 100%;
     height: 40px;
     padding: 5px 0px 0px 20px;
 /*    background-color:pink;*/
+    box-sizing: border-box;
     
+}
+
+#box-file{
+    
+    width: 300px;
+    height: 35px;
+/*    background-color: #00ffff;*/
+    box-sizing: border-box;
+    float: left;
+    
+    
+}
+
+#input-file{
+    
+    width: 300px;
+    margin: 7px 0px 0px 0px;
 }
 
 .input-cms-promo{
@@ -526,8 +566,192 @@ label{
     height:35px;
     text-align: center;
     border-radius: 2px 2px;
-    border: 1px solid #eeff55;
+    border: 1px solid #003311;
+    box-sizing: border-box;
     
 }
 
+.box-rdo{
+    
+    width: 30%;
+    height: inherit;
+    overflow: hidden;
+    padding: 10px 5px 5px 5px;
+    text-align: center;
+    font-weight: bold;
+    color:#003311;
+    box-sizing: border-box;
+    float: left;
+    
+}
 
+.info{
+    
+    width: 80px;
+    height: 35px;
+    padding: 6px;
+    text-align: center;
+/*    overflow: hidden;*/
+    box-sizing: border-box;
+/*    background-color: #ff9a9a;*/
+    float: left;
+}
+
+.retangulo{
+    
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+/*    margin:-58px 0px 0px -7px; */
+    border-radius: 2px 2px;
+    background-color: rgba(150,150,150,0.9);
+    box-sizing: border-box;
+}
+
+.triangulo{
+    
+    width: 0px;
+    height: 0px;
+    margin: 0px 0px 0px 10px;
+    border-left: 8px solid transparent; 
+    border-right: 8px solid transparent; 
+    border-top: 10px solid rgba(150,150,150,0.9);
+    
+}
+
+.box-info{
+    
+    width: 310px;
+    height: 70px;
+    padding: 5px;
+    margin: -63px 0px 0px -13px;
+    position:absolute;
+/*    background-color: rgba(255,150,150,0.6);*/
+    box-sizing: border-box;
+    display: none;
+/*    visibility: collapse;*/
+/*    opacity: 0;*/
+}
+
+.btn-informacoes{
+    
+    width: 20px;
+    height: 20px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    border-radius: 50px 50px;
+    color: white;
+    font-weight: bold;
+    padding: 1px 3px 3px 2px;
+    background-color: #003311;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.btn-informacoes:hover>.box-info{
+    
+    display: block;
+/*    visibility:visible;*/
+/*    transition: 2s;*/
+/*    opacity: 1;*/
+    
+}
+
+.box-input-promo{
+    
+    width: 300px;
+    height: 35px;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.titulos-promo{
+    
+    width: 21.9%;
+    height: 30px;
+    padding: 5px 0px 0px 0px;
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
+    
+}
+
+.titulo-campo-opcoes{
+    
+    width: 74px;
+    height: 30px;
+/*    background-color: red;*/
+    padding: 5px 0px 0px 0px;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.campos-tbl-promo{
+    
+    width: 22%;
+    height: inherit;
+    overflow: hidden;
+    border: 1px solid #e6ffee;
+    
+    background-color: #99ffb9;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.campo-opcoes{
+    
+    width: 70px;
+    height:inherit;
+/*    background-color: #99ffb9;*/
+    overflow: hidden;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.opcoes{
+    
+    width: 35px;
+    height: inherit;
+    float: left;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.option a{
+    
+    text-decoration: none;
+    
+}
+
+.btn-fale-conosco{
+    
+    width: 70px;
+    height: 20px;
+    color:white;
+    border:none;
+    background-color: rgba(0,51,17,0.9);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px 2px;
+    
+}
+
+.opcoes-promo{
+    
+    width: 23px;
+    height: inherit;
+    float: left;
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
+    overflow: hidden;
+    box-sizing: border-box;
+}

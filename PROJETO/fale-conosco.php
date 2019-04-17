@@ -20,6 +20,9 @@
     $rdosexoF = null;
     $rdosexoM = null;
     $btn = "salvar";
+    $data_nasc = null;
+    $dt_nasc = null;
+
     
     if(isset($_POST["btnsalvar"])){
         
@@ -41,12 +44,14 @@
         
         }
         
+        echo($sql);
+        
         if(mysqli_query($conexao, $sql)){
             header("location:fale-conosco.php");
         }else{
 
-            echo("<script>alert(die('Connection failed: 1'.mysqli_connect_error());)</script>");
-            echo("<script>alert('erros!')");
+            //echo("<script>alert(die('Connection failed: 1'.mysqli_connect_error());)</script>");
+            //echo("<script>alert('erros!')");
         }
     }
 
@@ -166,10 +171,10 @@
                         </div>
                     <div class="box-text-cad" style="padding:15px;" >
                         <label>
-                            <input type="radio" name="radio" value="M" value="<?php echo($rdosexoM)?>" checked required >Masculino 
+                            <input type="radio" name="radio" value="M" value="<?php echo($rdosexoM)?>" checked>Masculino 
                         </label>
                         <label>
-                            <input type="radio" name="radio" value="F" value="<?php echo($rdosexoF)?>" required >Feminino
+                            <input type="radio" name="radio" value="F" value="<?php echo($rdosexoF)?>">Feminino
                         </label>
                     </div>
                     </div>

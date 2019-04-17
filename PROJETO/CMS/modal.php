@@ -85,7 +85,7 @@
         <div><?php echo(@$email)?></div>
         <div><?php echo(@$homep)?></div>
         <div><?php echo(@$facebook)?></div>
-        <div><?php echo(@$produto)?></div>
+        <div><?php echo($produto)?></div>
         <div><?php echo(@$profissao)?></div>
         <div><?php echo(@$sugestoes)?></div>
         <div><?php echo(@$sexo)?></div>

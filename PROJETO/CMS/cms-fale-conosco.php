@@ -133,7 +133,6 @@
                             //select retorna dados, por isso precisamos de uma variavel
                             //guarda o retorno do bd em uma variavel local
                             $select = mysqli_query($conexao, $sql);
-
                             //rs = recod set, retorna os dados do banco
                             //mysql_fetch_array transforma uma lista de retorno do banco de dados
                             //de dados em uma matriz de dados

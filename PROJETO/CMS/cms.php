@@ -21,7 +21,7 @@
                     <div class="option-conteudo">
                         <a href="cms-noticias.php">
                             <div class="conteudo-img">
-                                <img src="" id="" class="img-cms">
+                                <img src="../img/ico/icon-cms/newspaper%20(3).png" id="" class="img-cms">
                             </div>
                             <div class="text-conteudo">
                                 <label>
@@ -36,7 +36,7 @@
                     <div class="option-conteudo">
                         <a href="cms-promocoes.php">
                             <div class="conteudo-img">
-                                <img src="" id="" type="image" class="img-cms">
+                                <img src="../img/ico/icon-cms/offer.png" id="" type="image" class="img-cms">
                             </div>
                             <div class="text-conteudo">
                                 <label>
@@ -51,7 +51,7 @@
                     <div class="option-conteudo">
                         <a href="cms-eventos.php">
                             <div class="conteudo-img">
-                                    <img src="" id="" type="image" class="img-cms">
+                                    <img src="../img/ico/icon-cms/calendar.png" id="" type="image" class="img-cms">
 
                             </div>
                             <div class="text-conteudo">
@@ -67,7 +67,7 @@
                     <div class="option-conteudo">
                         <a href="cms-sobre.php">
                             <div class="conteudo-img">
-                                <img src="" id="" type="image" class="img-cms">
+                                <img src="../img/ico/icon-cms/help.png" id="" type="image" class="img-cms">
 
                             </div>
                             <div class="text-conteudo">
