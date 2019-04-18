@@ -118,14 +118,16 @@
                             <input type="file" id="input-file">
                         </div>
                         <div class="info">
-                            <div class="box-info">
-                                <div class="retangulo">
-                                    Informações sobre a imagem
-                                </div>
-                                <div class="triangulo"></div>
-                            </div>
                             <div class="btn-informacoes">
                                 <p>i</p>
+                                <div class="box-info">
+                                    <div class="retangulo">
+                                        <p>
+                                            A imagem deve conter no minimo 300x261px p/ não ficar distorcida
+                                        </p>
+                                    </div>
+                                    <div class="triangulo"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -134,14 +136,16 @@
                             <input type="text" id="textnomep" class="input-cms-promo" value="<?php echo($nome)?>" maxlength="65" placeholder="Digite o nome do produto">
                         </div>
                         <div class="info">
-                            <div class="box-info">
-                                <div class="retangulo">
-                                    Informações sobre a imagem
-                                </div>
-                                <div class="triangulo"></div>
-                            </div>
                             <div class="btn-informacoes">
                                 <p>i</p>
+                                <div class="box-info">
+                                    <div class="retangulo">
+                                        <p>
+                                            Esse campo deve conter no maximo " " caracteres
+                                        </p>
+                                    </div>
+                                    <div class="triangulo"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -150,14 +154,16 @@
                             <input type="text" id="text-desc-p" class="input-cms-promo" maxlength="65" placeholder="Digite a descrição do produto">
                         </div>
                         <div class="info">
-                            <div class="box-info">
-                                <div class="retangulo">
-                                    Informações sobre a imagem
-                                </div>
-                                <div class="triangulo"></div>
-                            </div>
                             <div class="btn-informacoes">
                                 <p>i</p>
+                                <div class="box-info">
+                                    <div class="retangulo">
+                                        <p>
+                                           Esse campo deve conter no maximo " " caracteres
+                                        </p>
+                                    </div>
+                                    <div class="triangulo"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -166,14 +172,14 @@
                             <input type="text" id="text-preco-p" class="input-cms-promo" maxlength="65" placeholder=" Digite o preço atual do produto">
                         </div>
                         <div class="info">
-                            <div class="box-info">
-                                <div class="retangulo">
-                                    Informações sobre a imagem
-                                </div>
-                                <div class="triangulo"></div>
-                            </div>
                             <div class="btn-informacoes">
                                 <p>i</p>
+                                <div class="box-info">
+                                    <div class="retangulo">
+                                        <p>Esse campo deve conter no maximo " " caracteres</p>
+                                    </div>
+                                    <div class="triangulo"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -182,14 +188,17 @@
                             <input type="text" id="text-preco-desc" class="input-cms-promo" maxlength="65" placeholder=" Digite o preço do produto com desconto">
                         </div>
                         <div class="info">
-                            <div class="box-info">
-                                <div class="retangulo">
-                                    Informações sobre a imagem
-                                </div>
-                                <div class="triangulo"></div>
-                            </div>
+                            
                             <div class="btn-informacoes">
-                                i
+                                <p>i</p>
+                                <div class="box-info">
+                                    <div class="retangulo">
+                                        <p>
+                                             Esse campo deve conter no maximo " " caracteres
+                                        </p>
+                                    </div>
+                                    <div class="triangulo"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -202,7 +211,7 @@
                             <input type="radio" name="radio" id="rdo-desativado" checked><label for="rdo-desativado"> Desativado</label>
                         </div>
                         <div class="box-rdo">
-                            <input type="submit" id="" class="btn-fale-conosco" name="btnsalvar" id="btnsalvar" value="salvar">
+                            <input type="submit" id="" class="btn-salvar" name="btnsalvar" id="btnsalvar" value="salvar">
                         </div>
                     </div>
                     </form>
