@@ -171,10 +171,10 @@
                         </div>
                     <div class="box-text-cad" style="padding:15px;" >
                         <label>
-                            <input type="radio" name="radio" value="M" value="<?php echo($rdosexoM)?>" checked>Masculino 
+                            <input type="radio" name="radio" value="M" checked>Masculino 
                         </label>
                         <label>
-                            <input type="radio" name="radio" value="F" value="<?php echo($rdosexoF)?>">Feminino
+                            <input type="radio" name="radio" value="F">Feminino
                         </label>
                     </div>
                     </div>

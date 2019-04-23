@@ -415,8 +415,6 @@ label{
     
 }
 
-
-
 #box-btn-modal{
     
     width: inherit;
@@ -466,7 +464,6 @@ label{
     
 }
 
-
 .titulos-cms{
     
     width: 100%;
@@ -478,23 +475,36 @@ label{
     box-sizing: border-box;
 }
 
-/*********************************cms-noticias************************/
+/*****************   CMS-NOTICIAS    ************************/
 
 .img-cms-noticias{
     
-    width: 400px;
-    height: 208px;
-    margin: 10px;
-    
+    width: 300px;
+    height: 158px;
+    margin: 10px 0px 10px 0px;
+    background-color: #ffffff;
 }
 
 .container-input{
     
     height: 320px;
     padding: 10px 10px 10px 25px;
-/*    background-color: #eeaafF;*/
     overflow: hidden;
     box-sizing: border-box;
+    
+}
+
+.container-noticias-corpo{
+    
+    height: 250px;
+    padding: 0px 0px 0px 25px;
+    
+}
+
+.cms-textarea{
+    
+    width: 300px;
+    height: 126px;
     
 }
 
@@ -595,7 +605,7 @@ label{
     float: left;
 }
 
-    .retangulo{
+.retangulo{
     
     width: 250px;
     height: 50px;

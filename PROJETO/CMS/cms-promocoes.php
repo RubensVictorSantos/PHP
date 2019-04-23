@@ -1,95 +1,150 @@
 <?php
+    
+    function conexaoMysql(){
+    
+    $conexao = null;
+    $server = "localhost";
+    $user = "root";
+    $password = "binho250398";
+    $database = "db_site";
 
-    require_once('../bd/conexao.php');
+    $conexao = mysqli_connect($server, $user, $password, $database);
+    
+        return $conexao;
+    
+    }
     
     $conexao = conexaoMysql();
     session_start();
 
     $nome = null;
-    $telefone = null;
-    $celular = null;
-    $email = null;
-    $homep = null;
-    $facebook = null;
-    $sugestoes = null;
-    $produto = null;
-    $sexo = null;
-    $profissao = null;
+    $imagem = null;
+    $descricao = null;
+    $preco = null;
+    $valor_desconto = null;
+    $status = null;
     $sql = null;
     $rdoativado = null;
     $rdodesativado = null;
-
-    if(isset($_POST["btnsalvar"])){
-        
-        
-        $nome = $_POST["textnomep"];
-        $telefone = filter_var($_POST["txttel"], FILTER_SANITIZE_STRING);
-        $celular = filter_var($_POST["txtcel"], FILTER_SANITIZE_STRING);
-        $email = filter_var($_POST["txtemail"], FILTER_SANITIZE_STRING);
-        $homep = filter_var($_POST["txthomep"], FILTER_SANITIZE_STRING);
-        $facebook = filter_var($_POST["txtface"], FILTER_SANITIZE_STRING);
-        $sugestoes = filter_var($_POST["txtsugestoes"], FILTER_SANITIZE_STRING);
-        $produto = filter_var($_POST["txtproduto"], FILTER_SANITIZE_STRING);
-        $sexo = $_POST["radio"];
-        $profissao = filter_var($_POST["txtprofissao"], FILTER_SANITIZE_STRING);
-        
-        if($_POST['btnsalvar'] == "salvar"){
-        
-            $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
-        
-        }
-        
-        echo($sql);
-        
-        if(mysqli_query($conexao, $sql)){
-            header("location:cms-promocoes.php");
-        }else{
-
-            //echo("<script>alert(die('Connection failed: 1'.mysqli_connect_error());)</script>");
-            //echo("<script>alert('erros!')");
-        }
-    }
-
-
+    $rs = null;
+    $id = null;
+    
+    
     if(isset($_GET['modo'])){
         
         $modo = $_GET['modo'];
         $id = $_GET['id'];
-        $select = null;
-        $_SESSION['idRegistro'] = $id;
         
         //excluir
         if($modo == 'excluir'){
+            $nomefoto = $_GET['nomefoto'];
             
-            $sql = "DELETE FROM tbl_contato WHERE codigo =".$id;
+            
+            $sql = "DELETE FROM tbl_produto WHERE codigo =".$id;
+            mysqli_query($conexao, $sql);
+            
+            unlink($nomefoto);
+            
+            header('location:cms-promocoes.php');
+            
+        }elseif($modo == 'editar'){
+            
+            $sql = "SELECT * FROM tbl_produto WHERE codigo =".$id;
             $select = mysqli_query($conexao, $sql);
             
-        }
-        if($modo == 'editar'){
-            
-            $sql = "UPDATE tbl_contato SET nome='".$nome."',
-            telefone='".$telefone."',
-            celular='".$celular."',
-            email='".$email."',
-            home_page='".$homep."',
-            facebook='".$facebook."',
-            sugestoes='".$sugestoes."',
-            produto='".$produto."',
-            sexo='".$sexo."',
-            profissao='".$profissao."'
-
-            WHERE codigo =".$_SESSION['idRegistro'];
-            
-            echo('<script>alert("isso")</script>');
+            if($rs = mysqli_fetch_array($select)){
+                
+                $nome = $rs['nome'];
+                $nomefoto = $rs['imagem'];
+                $descricao = $rs['descricao'];
+                $preco = $rs['preco'];
+                $valor_desconto = $rs['valor_desconto'];
+//                $status = $rs['radio'];
+                
+                if($rs['status'] == 'a'){
+                    
+                    $rdoativado = 'checked';
+                    
+                }else{
+                    
+                    $rdodesativado = 'checked';
+                    
+                }
+                
+            }
             
         }
         
     }
+    
+    
+    if(isset($_POST["btnsalvar"])){
+        
+        
+        $nome = $_POST["textnomep"];
+        $descricao = $_POST["textdescricao"];
+        $preco = $_POST["textpreco"];
+        $valor_desconto = $_POST["textvdesconto"];
+        $status = $_POST["radio"];
+        
+        $diretorio = "arquivos/";
+        $arquivos_permitidos = array(".jpg",".jpeg",".png");
+        $arquivo = $_FILES['flefoto']['name'];
+        $tamanho_arquivo = $_FILES['flefoto']['size'];
+        $tamanho_arquivo = round($tamanho_arquivo/1024);
+        $extensao_arquivos = strrchr($arquivo,".");
+        $nome_arquivo = pathinfo($arquivo, PATHINFO_FILENAME);
+        
+        if(in_array($extensao_arquivos, $arquivos_permitidos)){
+            
+            
+            if($tamanho_arquivo<=5000){
+                
+                
+                $arquivo_tmp = $_FILES['flefoto']['tmp_name'];
+                
+                //Criamos o novo nome do arquivo com a sua extensão
+                $foto = $diretorio . $nome_arquivo . $extensao_arquivos;
+                
+                if(move_uploaded_file($arquivo_tmp, $foto)){
+                    
+                    $sql = "INSERT INTO tbl_produto(nome, imagem,descricao, preco, valor_desconto, status) VALUES ('".$nome."','".$foto."','".$descricao."','".$preco."','".$valor_desconto."','".$status."')";
+                    
+                    if(mysqli_query($conexao, $sql)){
+                        
+//                        var_dump($foto);
+                        
+                        header("location:cms-promocoes.php");
+                    }else{
 
+                        echo("<script>alert('erros!')");
+                    }
+
+                    
+                }else{
+                    
+                    echo("<script>alert('Erro ao enviar o arquivo para o servidor')</script>");
+                    
+                }
+                
+            }else{
+                
+                echo("<script>alert('Tamanho do arquivo invalido')</script>");    
+                
+            }
+            
+            
+        }else{
+            
+            echo("<script>alert('Extensão Invalida!')</script>");
+            
+        }
+    }
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
     <head>
         <title>
             cms-promoções
@@ -109,14 +164,34 @@
             </div>
             <div id="conteudo">
                 <div class="conteudo-cms-promo">
-                    <form name="frmcms-promocoes" method="POST" action="cms-promocoes.php">
-                    <div>
-                        <img src="" alt="" id="img-card">
+                    <form name="frmcms-promocoes" method="POST" action="cms-promocoes.php" enctype="multipart/form-data">
+                    <div>  
+                        <?php
+                            if(isset($nomefoto)){
+                                
+//                                echo("<script>alert('var_dump($arquivo)')</script>");
+                        ?>
+
+                        <img src="<?php echo($nomefoto);?>" alt="" id="img-card">
+
+
+                        <?php
+                            }else{
+                        ?>
+                        <div id="img-card" style="border:1px solid black;border-radius:2px 2px;">
+                            
+                        </div>
+                        <?php 
+                        }
+
+                        ?>
                     </div>
                     <div class="nome-produto">
+
                         <div id="box-file">
-                            <input type="file" id="input-file">
+                            <input type="file"  name="flefoto" value="<?php echo($nomefoto);?>" onclick="" required>
                         </div>
+
                         <div class="info">
                             <div class="btn-informacoes">
                                 <p>i</p>
@@ -133,7 +208,7 @@
                     </div>
                     <div class="nome-produto">
                         <div class="box-input-promo">
-                            <input type="text" id="textnomep" class="input-cms-promo" value="<?php echo($nome)?>" maxlength="65" placeholder="Digite o nome do produto">
+                            <input type="text" name="textnomep" class="input-cms-promo" value="<?php echo($nome)?>" maxlength="65" placeholder="Digite o nome do produto">
                         </div>
                         <div class="info">
                             <div class="btn-informacoes">
@@ -151,7 +226,7 @@
                     </div>
                     <div class="nome-produto">
                         <div class="box-input-promo">
-                            <input type="text" id="text-desc-p" class="input-cms-promo" maxlength="65" placeholder="Digite a descrição do produto">
+                            <input type="text" name="textdescricao" class="input-cms-promo" value="<?php echo($descricao)?>" maxlength="65" placeholder="Digite a descrição do produto">
                         </div>
                         <div class="info">
                             <div class="btn-informacoes">
@@ -169,7 +244,7 @@
                     </div>
                     <div class="nome-produto">
                         <div class="box-input-promo">
-                            <input type="text" id="text-preco-p" class="input-cms-promo" maxlength="65" placeholder=" Digite o preço atual do produto">
+                            <input type="text" name="textpreco" class="input-cms-promo" value="<?php echo($preco)?>" maxlength="65" placeholder=" Digite o preço atual do produto">
                         </div>
                         <div class="info">
                             <div class="btn-informacoes">
@@ -185,7 +260,7 @@
                     </div>
                     <div class="nome-produto">
                         <div class="box-input-promo">
-                            <input type="text" id="text-preco-desc" class="input-cms-promo" maxlength="65" placeholder=" Digite o preço do produto com desconto">
+                            <input type="text" name="textvdesconto" class="input-cms-promo" value="<?php echo($valor_desconto)?>" maxlength="65" placeholder=" Digite o preço do produto com desconto">
                         </div>
                         <div class="info">
                             
@@ -205,10 +280,10 @@
 
                     <div class="nome-produto">
                         <div class="box-rdo">
-                            <input type="radio" name="radio" id="rdo-ativado"><label for="rdo-ativado"> Ativado</label>
+                            <input type="radio" name="radio" value="<?php echo($rdoativado) ?>" id="rdo-ativado"><label for="rdo-ativado" required > Ativado</label>
                         </div>
                         <div class="box-rdo">
-                            <input type="radio" name="radio" id="rdo-desativado" checked><label for="rdo-desativado"> Desativado</label>
+                            <input type="radio" name="radio" value="<?php echo($rdodesativado) ?>" id="rdo-desativado"><label for="rdo-desativado" required > Desativado</label>
                         </div>
                         <div class="box-rdo">
                             <input type="submit" id="" class="btn-salvar" name="btnsalvar" id="btnsalvar" value="salvar">
@@ -238,8 +313,9 @@
                             </div>
                         </div>
                         <?php
-
-                            $sql = "SELECT * FROM tbl_contato ORDER BY codigo DESC";
+                            
+                            //TABELA VINDO DIRETO DO BANCO
+                            $sql = "SELECT * FROM tbl_produto ORDER BY codigo DESC";
 
                             $select = mysqli_query($conexao, $sql);
 
@@ -251,27 +327,27 @@
                                 <?php echo($rscontatos['nome'])?>	
                             </div>
                             <div class="campos-tbl-promo">
-                                <?php echo($rscontatos['telefone'])?>	
+                                <?php echo($rscontatos['imagem'])?>	
                             </div>
                             <div class="campos-tbl-promo">
-                                <?php echo($rscontatos['celular'])?>
+                                <?php echo($rscontatos['preco'])?>
                             </div>
                             <div class="campos-tbl-promo">
-                                <?php echo($rscontatos['email'])?>	
+                                <?php echo($rscontatos['valor_desconto'])?>	
                             </div>
                             <div class="campo-opcoes">
                                 <div class="opcoes-promo">
-                                    <input type="image" class="visualizar" onclick="visualizarDados(<?php echo($rscontatos['codigo']);?>);" src="../img/pesquisar.png" width="20px" height="20px" class="center" style="margin-top:4px;">
-                                </div>
-                                <div class="opcoes-promo">
-                                    <a href= "cms-promocoes.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
+                                    
+                                    <a href= "cms-promocoes.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>&nomefoto=<?php echo($rscontatos['imagem']);?>" onclick="return confirm('Deseja realmente excluir?');">
 
                                         <input type="image" src="../img/excluir.png" width="24px" height="24px" class="img center"
                                         style="margin-top:2px;">
                                     </a>
                                 </div>
                                 <div class="opcoes-promo">
+                                    
                                     <a href="cms-promocoes.php?modo=editar&id=<?php echo($rscontatos['codigo']);?>">
+                                        
                                         <img src="../img/editar24.png" width="20px" height="23px" class="img center" style="margin-top:2px;">
                                     </a>
                                 </div>
