@@ -1,18 +1,8 @@
 <?php
-    
-    function conexaoMysql(){
-    
-    $conexao = null;
-    $server = "localhost";
-    $user = "root";
-    $password = "binho250398";
-    $database = "db_site";
 
-    $conexao = mysqli_connect($server, $user, $password, $database);
+    require_once('../modulo.php');
+    require_once('../bd/conexao.php');
     
-        return $conexao;
-    
-    }
     
     $conexao = conexaoMysql();
     session_start();
@@ -24,11 +14,10 @@
     $valor_desconto = null;
     $status = null;
     $sql = null;
-    $rdoativado = null;
-    $rdodesativado = null;
     $rs = null;
     $id = null;
-    
+    $rdoativado = null;
+    $rdodesativado = null;
     
     if(isset($_GET['modo'])){
         
@@ -49,17 +38,20 @@
             
         }elseif($modo == 'editar'){
             
+            
             $sql = "SELECT * FROM tbl_produto WHERE codigo =".$id;
             $select = mysqli_query($conexao, $sql);
             
             if($rs = mysqli_fetch_array($select)){
+                
+//                var_dump($rs);
                 
                 $nome = $rs['nome'];
                 $nomefoto = $rs['imagem'];
                 $descricao = $rs['descricao'];
                 $preco = $rs['preco'];
                 $valor_desconto = $rs['valor_desconto'];
-//                $status = $rs['radio'];
+                $status = $rs['radio'];
                 
                 if($rs['status'] == 'a'){
                     
@@ -191,99 +183,40 @@
                         <div id="box-file">
                             <input type="file"  name="flefoto" value="<?php echo($nomefoto);?>" onclick="" required>
                         </div>
-
-                        <div class="info">
-                            <div class="btn-informacoes">
-                                <p>i</p>
-                                <div class="box-info">
-                                    <div class="retangulo">
-                                        <p>
-                                            A imagem deve conter no minimo 300x261px p/ não ficar distorcida
-                                        </p>
-                                    </div>
-                                    <div class="triangulo"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            
+                            $msg = "Imagen tem que ter no minimo 300x300px.";
+                            
+                            info($msg);
+                        ?>
                     </div>
                     <div class="nome-produto">
                         <div class="box-input-promo">
                             <input type="text" name="textnomep" class="input-cms-promo" value="<?php echo($nome)?>" maxlength="65" placeholder="Digite o nome do produto">
-                        </div>
-                        <div class="info">
-                            <div class="btn-informacoes">
-                                <p>i</p>
-                                <div class="box-info">
-                                    <div class="retangulo">
-                                        <p>
-                                            Esse campo deve conter no maximo " " caracteres
-                                        </p>
-                                    </div>
-                                    <div class="triangulo"></div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="nome-produto">
                         <div class="box-input-promo">
                             <input type="text" name="textdescricao" class="input-cms-promo" value="<?php echo($descricao)?>" maxlength="65" placeholder="Digite a descrição do produto">
                         </div>
-                        <div class="info">
-                            <div class="btn-informacoes">
-                                <p>i</p>
-                                <div class="box-info">
-                                    <div class="retangulo">
-                                        <p>
-                                           Esse campo deve conter no maximo " " caracteres
-                                        </p>
-                                    </div>
-                                    <div class="triangulo"></div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="nome-produto">
                         <div class="box-input-promo">
                             <input type="text" name="textpreco" class="input-cms-promo" value="<?php echo($preco)?>" maxlength="65" placeholder=" Digite o preço atual do produto">
-                        </div>
-                        <div class="info">
-                            <div class="btn-informacoes">
-                                <p>i</p>
-                                <div class="box-info">
-                                    <div class="retangulo">
-                                        <p>Esse campo deve conter no maximo " " caracteres</p>
-                                    </div>
-                                    <div class="triangulo"></div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="nome-produto">
                         <div class="box-input-promo">
                             <input type="text" name="textvdesconto" class="input-cms-promo" value="<?php echo($valor_desconto)?>" maxlength="65" placeholder=" Digite o preço do produto com desconto">
                         </div>
-                        <div class="info">
-                            
-                            <div class="btn-informacoes">
-                                <p>i</p>
-                                <div class="box-info">
-                                    <div class="retangulo">
-                                        <p>
-                                             Esse campo deve conter no maximo " " caracteres
-                                        </p>
-                                    </div>
-                                    <div class="triangulo"></div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="nome-produto">
                         <div class="box-rdo">
-                            <input type="radio" name="radio" value="<?php echo($rdoativado) ?>" id="rdo-ativado"><label for="rdo-ativado" required > Ativado</label>
+                            <input type="radio" name="radio" value="a" id="rdo-ativado"><label for="rdo-ativado" required > Ativado</label>
                         </div>
                         <div class="box-rdo">
-                            <input type="radio" name="radio" value="<?php echo($rdodesativado) ?>" id="rdo-desativado"><label for="rdo-desativado" required > Desativado</label>
+                            <input type="radio" name="radio" value="d" id="rdo-desativado"><label for="rdo-desativado" required > Desativado</label>
                         </div>
                         <div class="box-rdo">
                             <input type="submit" id="" class="btn-salvar" name="btnsalvar" id="btnsalvar" value="salvar">
