@@ -2,7 +2,7 @@
     echo('
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <div id="logo" class="center">
-            <div id="box-titulo">
+            <div id="box-titulo-cms">
                     <span style="font-weight:bold;" >CMS</span> - Sistema de gerenciamento do site
             </div>
             <div id="box-img-logo">
@@ -12,10 +12,10 @@
             </div>
         </div>
         <div id="menu" class="center">
-            <div class="option">
+            <div class="option-cms">
                 <a href="cms.php">
-                    <div class="img-option center">
-                        <img src="../img/ico/writing.png" id="btn-content" class="img-cms">
+                    <div class="img-option-cms center">
+                        <img src="../img/ico/writing.png" id="btn-content" class="img-menu-cms">
                     </div>
                     <div class="text-cms center">
                         <label for="btn-content">
@@ -27,10 +27,10 @@
                     </div>
                 </a>
             </div>
-            <div class="option">
+            <div class="option-cms">
                 <a href="cms-fale-conosco.php">
-                    <div class="img-option center">
-                        <img src="../img/ico/contact.png" id="btn-fc" class="img-cms">
+                    <div class="img-option-cms center">
+                        <img src="../img/ico/contact.png" id="btn-fc" class="img-menu-cms">
                     </div>
                     <div class="text-cms center">
                         <label for="btn-fc">
@@ -42,10 +42,10 @@
                     </div>
                 </a>
             </div>
-            <div class="option">
+            <div class="option-cms">
                 <a href="#">
-                    <div class="img-option center">
-                        <input src="../img/ico/product.png" id="btn-produtos" type="image" class="img-cms">
+                    <div class="img-option-cms center">
+                        <input src="../img/ico/product.png" id="btn-produtos" type="image" class="img-menu-cms">
                     </div>
                     <div class="text-cms center">
                         <label for="btn-produtos">
@@ -57,10 +57,10 @@
                     </div>
                 </a>
             </div>
-            <div class="option">
+            <div class="option-cms">
                 <a href="#">
-                    <div class="img-option center">
-                        <input src="../img/ico/man.png" id="btn-user" type="image" class="img-cms">
+                    <div class="img-option-cms center">
+                        <input src="../img/ico/man.png" id="btn-user" type="image" class="img-menu-cms">
                     </div>
                     <div class="text-cms center">
                         <label for="btn-user">

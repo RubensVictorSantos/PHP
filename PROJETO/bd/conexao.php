@@ -7,7 +7,7 @@ function conexaoMysql(){
     $user = "root";
     $password = "binho250398";
 //    $password = "bcd127";
-    $database = "db_bicicleta";
+    $database = "db_site";
 
     $conexao = mysqli_connect($server, $user, $password, $database);
     

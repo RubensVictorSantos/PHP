@@ -20,7 +20,7 @@ body, ul, h1, h2, h3, h4, h5, p{
     
 }
 
-/****************************************MENU***********************************/
+/**************************************** MENU ***********************************/
 
 header{
     width:100%;
@@ -512,7 +512,7 @@ input{
     pointer-events:none;
 }
 
-/*******************************FALE-CONOSCO********************************/
+/******************************* FALE-CONOSCO ********************************/
 
 #main-fale-conosco{
     
@@ -520,7 +520,7 @@ input{
     height: 805px;
     margin-top: 50px;
     font-weight: bold;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px;
     /*background-color: #3f9;*/
     box-shadow: 2px 2px 4px 4px rgba(100, 100, 100,0.5);
     box-sizing: border-box;
@@ -617,9 +617,10 @@ textarea{
     height: 135px;
     padding: 10px;
     border: 1px solid #ffaa00;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 2px;
     overflow-y:auto;
     box-sizing: border-box;
+    resize: none;
 }
 
 #box-buttons{
@@ -653,7 +654,7 @@ textarea{
     font-weight: bold;
     cursor: pointer;
     font-size: 20px;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 2px;
     
 }
 

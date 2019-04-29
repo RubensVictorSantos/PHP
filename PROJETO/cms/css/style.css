@@ -1,7 +1,7 @@
-/*CSS*/
+/* CSS CMS */
 
 
-/***************Padrões*************/
+/********************************* PADRÕES ***************************/
 
 *{
     margin: 0;
@@ -15,20 +15,26 @@
     margin-right: auto;
     
 }
-/********************************************************************/
+
+label{
+    
+    cursor: pointer;
+}
+
+/********************************* CMS *******************************/
+
 #box-main{
     
-    width: 1000px;
+    width: 1300px;
     min-height: 1000px;
-/*    background-color: #cccccc;*/
-/*    background-color: #003311;*/
+    background-color: #cccccc;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 1%;
     border: 1px solid #003311;
-    border-radius: 40px;
     overflow: hidden;
     box-sizing: border-box;    
 }
+
+/********************************* MENU ******************************/
 
 #logo{
     
@@ -40,12 +46,11 @@
     box-sizing: border-box;
 }
 
-#box-titulo{
+#box-titulo-cms{
     
     width: 650px;
     height: inherit;
-    padding-top: 83px; 
-/*    background-color: #a2afaf;*/
+    padding-top: 83px;
     text-align: center;
     font-size: 30px; 
     overflow: hidden;
@@ -73,8 +78,6 @@
     box-sizing: border-box; 
 }
 
-/*************************Menu*******************/
-
 #menu{
     
     width: inherit;
@@ -85,7 +88,7 @@
     box-sizing: border-box; 
 }
 
-.option{
+.option-cms{
     
     width: 187px;
     height: inherit;
@@ -97,7 +100,7 @@
     
 }
 
-.img-option{
+.img-option-cms{
     
     width: 90px;
     height: 90px;
@@ -108,7 +111,7 @@
     
 }
 
-.img-cms{
+.img-menu-cms{
     
     width: 100%;
     height: 100%;
@@ -117,16 +120,6 @@
     background-attachment:fixed;
     background-size:cover;
     
-}
-
-#box-info-user{
-    
-    width: 252px;
-    height: inherit;
-/*    background-color: #affeff;*/
-    float: left;
-    overflow: hidden;
-    box-sizing: border-box; 
 }
 
 .text-cms{
@@ -141,9 +134,14 @@
     box-sizing: border-box; 
 }
 
-label{
+#box-info-user{
     
-    cursor: pointer;
+    width: 252px;
+    height: inherit;
+/*    background-color: #affeff;*/
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box; 
 }
 
 #text-name-user{
@@ -179,8 +177,7 @@ label{
     
 }
 
-
-/*****************************conteudo****************************/
+/********************************* CONTEÚDO **************************/
 
 #conteudo{
     
@@ -192,7 +189,7 @@ label{
     
 } 
 
-.conteudo-cms{
+.container-conteudo-cms{
     
     width: 50%;
     min-height: 525px;
@@ -250,7 +247,9 @@ label{
     box-sizing: border-box;
     float:left;
 }
-/*************************************FOOTER*****************************/
+
+/********************************* FOOTER *****************************/
+
 #footer{
     
     width: inherit;
@@ -263,30 +262,16 @@ label{
     overflow: hidden;
     box-sizing: border-box;
 }
-/*******************FALE-CONOSCO-CMS*********/
 
-#table{
+/********************************* FALE-CONOSCO ***********************/
+
+#table-fale-conosco{
     
     width:inherit;
-    min-height:505px;
-    margin: 20px 0px 20px 0px;
-/*    border: 1px solid black;*/
+    height:100%;
+    margin: 0px 0px 20px 0px;
     overflow-y: auto;
     box-sizing: border-box;
-}
-
-.titulo-tbl{
-    
-    width:inherit;
-    height: 30px;
-    padding: 5px 0px 0px 0px;
-    font-weight: bold;
-/*    border: 1px solid black;*/
-    text-align: center;
-/*    background-color: #99ffbb;*/
-    overflow: hidden;
-    box-sizing: border-box;
-    
 }
 
 .cabecalho{
@@ -295,15 +280,13 @@ label{
     height: 30px;
     font-weight: bold;
     text-align: center;
-/*    background-color: #99eeff;*/
     overflow: hidden;
-    border: 1px solid #e6ffee;
     background-color: #99ffb9;
     box-sizing: border-box;
     
 }
 
-.titulos{
+.tbl-titulos{
     
     width: 23.2%;
     height: 30px;
@@ -311,7 +294,6 @@ label{
     float: left;
     overflow: hidden;
     box-sizing: border-box;
-    border: 1px solid #e6ffee;
     background-color: #99ffb9;
     
 }
@@ -320,9 +302,7 @@ label{
     
     width: 71.9px;
     height: 30px;
-/*    background-color: red;*/
     padding: 5px 0px 0px 0px;
-    border: 1px solid #e6ffee;
     background-color: #99ffb9;
     overflow: hidden;
     box-sizing: border-box;
@@ -332,11 +312,9 @@ label{
     
     width:inherit;
     height: 30px;
-/*    padding: 5px 0px 0px 0px;*/
     text-align: center;
-/*    background-color: #f9eeff;*/
-    
     box-sizing: border-box;
+    background-color: #ccffdd;
     
 }
 
@@ -345,9 +323,7 @@ label{
     width: 23.2%;
     height: inherit;
     overflow: hidden;
-    border: 1px solid #e6ffee;
-    
-    background-color: #99ffb9;
+    padding: 5px 0px 0px 0px;
     box-sizing: border-box;
     float: left;
     
@@ -357,7 +333,6 @@ label{
     
     width: 70px;
     height:inherit;
-/*    background-color: #99ffb9;*/
     overflow: hidden;
     box-sizing: border-box;
     float: left;
@@ -369,36 +344,21 @@ label{
     width: 35px;
     height: inherit;
     float: left;
-    border: 1px solid #e6ffee;
-    background-color: #99ffb9;
     overflow: hidden;
     box-sizing: border-box;
 }
 
-.option a{
+/********************************* MODAL ********************************/
+
+#titulo-modal{
     
-    text-decoration: none;
-    
+    float:left;    
 }
 
-/*
-#test{
-    
-    width: inherit;
-    min-height: 450px;
-    border: 1px solid #031;
-    margin-bottom: 20px;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-*/
-
-/********************************MODAL********************************/
 #container{
 	width:100%;
 	height:100%;
-    margin-top: -1%;
-	background-color:rgba(0,0,0,0.7);
+	background-color:rgba(0 ,0 ,0 ,0.7);
 	position:fixed;
 	z-index:999;
 	display:none;	
@@ -410,12 +370,11 @@ label{
 	margin-left:auto;
 	margin-right:auto;
 	background-color:#ffffff;
+    font-family: Arial, Helvetica, sans-serif;
 	margin-top:150px;
     box-sizing: border-box;
     
 }
-
-
 
 #box-btn-modal{
     
@@ -424,16 +383,15 @@ label{
     
 }
 
-#btn-fechar{
+#fechar{
     
     width: 40px;
-    height: 20px;
+    height: 100%;
     color: white;
     background-color: red;
     border-color: red;
-    left: 460;
-    position: relative;
     font-weight: bold;
+    float: left;
     
 }
 
@@ -466,6 +424,7 @@ label{
     
 }
 
+/********************************* CMS-NOTICIAS *************************/
 
 .titulos-cms{
     
@@ -478,34 +437,45 @@ label{
     box-sizing: border-box;
 }
 
-/*********************************cms-noticias************************/
-
 .img-cms-noticias{
     
-    width: 400px;
-    height: 208px;
-    margin: 10px;
-    
+    width: 300px;
+    height: 158px;
+    margin: 10px 0px 10px 0px;
+    background-color: #ffffff;
 }
 
 .container-input{
     
     height: 320px;
     padding: 10px 10px 10px 25px;
-/*    background-color: #eeaafF;*/
     overflow: hidden;
     box-sizing: border-box;
     
 }
 
-/**************************CMS-PROMO********************************/
+.container-noticias-corpo{
+    
+    height: 250px;
+    padding: 0px 0px 0px 25px;
+    
+}
+
+.cms-textarea{
+    
+    width: 300px;
+    height: 126px;
+    
+}
+
+/********************************* CMS-PROMO ****************************/
 
 .conteudo-cms-promo{
     
     width: 40%;
     min-height: 525px;
     box-sizing: border-box;
-    background-color: #effefe;
+    background-color: #e6ffee;
     float: left;
     
     
@@ -514,9 +484,9 @@ label{
 .conteudo-cms-tbl{
     
     width: 60%;
-    min-height: 525px;
+    min-height: 100%;
     box-sizing: border-box;
-    background-color: #effefe;
+    background-color: #ccffdd;
     float: left;
     
     
@@ -526,7 +496,7 @@ label{
     
     width: 300px;
     height: 261px;
-    margin: 20px 0px 0px 20px;
+    margin: 0px 0px 10px 20px;
 /*    border: 1px solid #003311;*/
     background-color: #ffffff;
     box-sizing: border-box;
@@ -547,6 +517,7 @@ label{
     
     width: 300px;
     height: 35px;
+    padding: 8px 0px 0px 0px;
 /*    background-color: #00ffff;*/
     box-sizing: border-box;
     float: left;
@@ -580,10 +551,108 @@ label{
     text-align: center;
     font-weight: bold;
     color:#003311;
+/*    background-color:yellow;*/
     box-sizing: border-box;
     float: left;
     
 }
+
+.box-input-promo{
+    
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.btn-salvar{
+    
+    width: 70px;
+    height: 20px;
+    color:white;
+    border:none;
+    background-color: rgba(0,51,17,0.9);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px 2px;
+    
+}
+
+.titulos-promo{
+    
+    width: 21.9%;
+    height: 30px;
+    padding: 5px 0px 0px 0px;
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+.titulo-campo-opcoes{
+    
+    width: 74px;
+    height: 30px;
+    padding: 5px 0px 0px 0px;
+/*    border: 1px solid #e6ffee;*/
+/*    background-color: #99ffb9;*/
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.campos-tbl-promo{
+    
+    width: 22%;
+    height: inherit;
+    overflow: hidden;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.campo-opcoes{
+    
+    width: 70px;
+    height:inherit;
+    overflow: hidden;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.opcoes{
+    
+    width: 35px;
+    height: inherit;
+    float: left;
+/*    border: 1px solid #e6ffee;*/
+/*    background-color: #99ffb9;*/
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.option-cms a{
+    
+    text-decoration: none;
+    
+}
+
+.opcoes-promo{
+    
+    width: 23px;
+    height: inherit;
+    float: left;
+/*
+    border: 1px solid #e6ffee;
+    background-color: #99ffb9;
+*/
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/******************** icone informações***************************/
 
 .info{
     
@@ -595,7 +664,7 @@ label{
     float: left;
 }
 
-    .retangulo{
+.retangulo{
     
     width: 250px;
     height: 50px;
@@ -655,106 +724,4 @@ label{
 /*    transition: 2s;*/
 /*    opacity: 1;*/
     
-}
-
-.box-input-promo{
-    
-    width: 300px;
-    height: 35px;
-    box-sizing: border-box;
-    float: left;
-    
-}
-
-.btn-salvar{
-    
-    width: 70px;
-    height: 20px;
-    color:white;
-    border:none;
-    background-color: rgba(0,51,17,0.9);
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 2px 2px;
-    
-}
-
-.titulos-promo{
-    
-    width: 21.9%;
-    height: 30px;
-    padding: 5px 0px 0px 0px;
-    float: left;
-    overflow: hidden;
-    box-sizing: border-box;
-/*
-    border: 1px solid #e6ffee;
-    background-color: #99ffb9;
-*/
-    
-}
-
-.titulo-campo-opcoes{
-    
-    width: 74px;
-    height: 30px;
-    padding: 5px 0px 0px 0px;
-/*    border: 1px solid #e6ffee;*/
-/*    background-color: #99ffb9;*/
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.campos-tbl-promo{
-    
-    width: 22%;
-    height: inherit;
-    overflow: hidden;
-/*    border: 1px solid #e6ffee;*/
-    
-/*    background-color: #99ffb9;*/
-    box-sizing: border-box;
-    float: left;
-    
-}
-
-.campo-opcoes{
-    
-    width: 70px;
-    height:inherit;
-/*    background-color: #99ffb9;*/
-    overflow: hidden;
-    box-sizing: border-box;
-    float: left;
-    
-}
-
-.opcoes{
-    
-    width: 35px;
-    height: inherit;
-    float: left;
-/*    border: 1px solid #e6ffee;*/
-/*    background-color: #99ffb9;*/
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.option a{
-    
-    text-decoration: none;
-    
-}
-
-.opcoes-promo{
-    
-    width: 23px;
-    height: inherit;
-    float: left;
-/*
-    border: 1px solid #e6ffee;
-    background-color: #99ffb9;
-*/
-    overflow: hidden;
-    box-sizing: border-box;
 }

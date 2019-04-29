@@ -2,25 +2,25 @@
     if(isset($_GET['codigo']))
     {
         require_once('../bd/conexao.php');
+        
 	    $conexao = conexaoMysql();
         
         $codigo = $_GET['codigo'];
-        $sql = "SELECT * FROM tbl_contato WHERE codigo =".$codigo;
+        $sql = "SELECT * FROM tbl_cadastro_cliente WHERE codigo =".$codigo;
         $select = mysqli_query($conexao, $sql);
         
-        //recordset(rsContatos)=result, retorna dados do banco
-        if($rscontato=mysqli_fetch_array($select))
+        if($rscontato = mysqli_fetch_array($select))
         {
-                $nome = $rscontato['nome'];
-				$telefone = $rscontato['telefone'];
-				$celular = $rscontato['celular'];
-				$email = $rscontato['email'];
-                $homep = $rscontato['home_page'];
-                $facebook = $rscontato['facebook'];
-                $sugestoes = $rscontato['sugestoes'];
-                $produto = $rscontato['produto'];
-                $sexo = $rscontato['sexo'];
-                $profissao = $rscontato['profissao'];
+            $nome = $rscontato['nome'];
+            $telefone = $rscontato['telefone'];
+            $celular = $rscontato['celular'];
+            $email = $rscontato['email'];
+            $homep = $rscontato['home_page'];
+            $facebook = $rscontato['facebook'];
+            $sugestoes = $rscontato['sugestoes'];
+            $produto = $rscontato['produto'];
+            $sexo = $rscontato['sexo'];
+            $profissao = $rscontato['profissao'];
         }
     }
 
@@ -33,16 +33,13 @@
         });
     });
 </script>
-<div>
-    <div id="titulo-modal" style="float:left;">
-
-
+<div style="width:100%; heigth: 20px;">
+    <div id="titulo-modal" class="titulos-cms">
+        <p>Cliente <?php echo($nome)?></p>
     </div>
-    <div id="box-btn-modal">
-        <a href="cms-fale-conosco.php">
-            <input type="button" id="btn-fechar" value="X">
-        </a>
-    </div>
+    <a href="cms-fale-conosco.php">
+        <input type="button" id="fechar" value="X">
+    </a>
 </div>
 <div id="tbl-modal">
     <div id="labels">
@@ -85,7 +82,7 @@
         <div><?php echo(@$email)?></div>
         <div><?php echo(@$homep)?></div>
         <div><?php echo(@$facebook)?></div>
-        <div><?php echo($produto)?></div>
+        <div><?php echo(@$produto)?></div>
         <div><?php echo(@$profissao)?></div>
         <div><?php echo(@$sugestoes)?></div>
         <div><?php echo(@$sexo)?></div>

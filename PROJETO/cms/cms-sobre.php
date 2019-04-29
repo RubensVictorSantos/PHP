@@ -1,4 +1,5 @@
-<head>
+<!DOCTYPE html>
+<html lang="pt-br">
     <head>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
@@ -11,14 +12,15 @@
     
             ?>
             <div id="conteudo">
-            
+                <div class="titulos-cms">
+                    <h3>Página Sobre</h3>
+                </div>
             </div>
             <div id="footer">
                 <h3>
                     Desenvolvido por: Rubens Victor
                 </h3>
-            
             </div>
         </div>
     </body>
-</head>
+</html>

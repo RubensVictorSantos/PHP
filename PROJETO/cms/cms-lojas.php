@@ -1,5 +1,8 @@
-<head>
+<!DOCTYPE html>
+<html lang="pt-br">
     <head>
+        
+        <title>cms-lojas</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
@@ -11,7 +14,12 @@
     
             ?>
             <div id="conteudo">
-            
+                <div class="titulos-cms">
+                    <h3>Página Nossas lojas</h3>
+                </div>
+                
+                
+                
             </div>
             <div id="footer">
                 <h3>
@@ -21,4 +29,4 @@
             </div>
         </div>
     </body>
-</head>
+</html>

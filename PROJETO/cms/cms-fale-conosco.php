@@ -1,9 +1,9 @@
 <?php
 
     require_once('../bd/conexao.php');
-    
-    $conexao = conexaoMysql();
     session_start();
+
+    $conexao = conexaoMysql();
 
     $nome = null;
     $telefone = null;
@@ -26,39 +26,22 @@
         $select = null;
         $_SESSION['idRegistro'] = $id;
         
-        //excluir
+        /******************************* EXCLUIR *******************************/
         if($modo == 'excluir'){
             
-            $sql = "DELETE FROM tbl_contato WHERE codigo =".$id;
+            $sql = "DELETE FROM tbl_cadastro_cliente WHERE codigo =".$id;
             $select = mysqli_query($conexao, $sql);
             
         }
-        if($modo == 'editar'){
-            
-            $sql = "UPDATE tbl_contato SET nome='".$nome."',
-            telefone='".$telefone."',
-            celular='".$celular."',
-            email='".$email."',
-            home_page='".$homep."',
-            facebook='".$facebook."',
-            sugestoes='".$sugestoes."',
-            produto='".$produto."',
-            sexo='".$sexo."',
-            profissao='".$profissao."'
-
-            WHERE codigo =".$_SESSION['idRegistro'];
-        }
-        
     }
 ?>
-
+<!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <title>
-            CMS-fale-conosco
+            CMS Fale Conosco
         </title>
-        <link rel="icon" href="img/ico/logo.png">
         <link rel="icon" href="../img/ico/logo.png">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="../js/jquery.js"></script>
@@ -90,8 +73,8 @@
         </script>
     </head>
     <body>
+        <!--****************************** MODAL ****************************-->
         <div id="container">
-            
 			<div id="modal"></div>
 		
         </div>
@@ -102,24 +85,23 @@
                 require_once('cms-menu.php');
     
             ?>
-            
-            <!--CONTEÚDO-->
+            <div class="titulos-cms">
+                <h3>Consulta cadastro clientes</h3>
+            </div>
+            <!--*********************** CONTEÚDO ******************************-->
             <div id="conteudo">
-                <div id="table">
-                    <div class="titulo-tbl">
-                        Consulta de contatos
-                    </div> 
+                <div id="table-fale-conosco">
                     <div class="cabecalho">
-                        <div class="titulos">
+                        <div class="tbl-titulos">
                             Nome:
                         </div>
-                        <div class="titulos">
+                        <div class="tbl-titulos">
                             Telefone:
                         </div>
-                        <div class="titulos">
+                        <div class="tbl-titulos">
                             Celular:
                         </div>
-                        <div class="titulos">
+                        <div class="tbl-titulos">
                             E-mail:
                         </div>
                         <div class="titulo-campo-opcoes">
@@ -128,19 +110,15 @@
                     </div>
                         <?php
 
-                            $sql = "SELECT * FROM tbl_contato ORDER BY codigo DESC";
+                            $sql = "SELECT * FROM tbl_cadastro_cliente ORDER BY codigo DESC";
 
-                            //select retorna dados, por isso precisamos de uma variavel
-                            //guarda o retorno do bd em uma variavel local
                             $select = mysqli_query($conexao, $sql);
-                            //rs = recod set, retorna os dados do banco
-                            //mysql_fetch_array transforma uma lista de retorno do banco de dados
-                            //de dados em uma matriz de dados
-                            //no caso o select, e guarda na variavel rscontatos   
+                             
                             while($rscontatos=mysqli_fetch_array($select))
                             {
                         ?>
                         <div class="tbl-dados-db">
+                            
                             <div class="campos-db">
                                 <?php echo($rscontatos['nome'])?>	
                             </div>

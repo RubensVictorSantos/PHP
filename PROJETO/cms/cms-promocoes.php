@@ -1,100 +1,165 @@
 <?php
 
+    require_once('../modulo.php');
     require_once('../bd/conexao.php');
+    session_start();
     
     $conexao = conexaoMysql();
-    session_start();
 
     $nome = null;
-    $telefone = null;
-    $celular = null;
-    $email = null;
-    $homep = null;
-    $facebook = null;
-    $sugestoes = null;
-    $produto = null;
-    $sexo = null;
-    $profissao = null;
+    $imagem = null;
+    $descricao = null;
+    $preco = null;
+    $valor_desconto = null;
+    $status = null;
     $sql = null;
+    $rs = null;
+    $id = null;
     $rdoativado = null;
     $rdodesativado = null;
-
-    if(isset($_POST["btnsalvar"])){
-        
-        
-        $nome = $_POST["textnomep"];
-        $telefone = filter_var($_POST["txttel"], FILTER_SANITIZE_STRING);
-        $celular = filter_var($_POST["txtcel"], FILTER_SANITIZE_STRING);
-        $email = filter_var($_POST["txtemail"], FILTER_SANITIZE_STRING);
-        $homep = filter_var($_POST["txthomep"], FILTER_SANITIZE_STRING);
-        $facebook = filter_var($_POST["txtface"], FILTER_SANITIZE_STRING);
-        $sugestoes = filter_var($_POST["txtsugestoes"], FILTER_SANITIZE_STRING);
-        $produto = filter_var($_POST["txtproduto"], FILTER_SANITIZE_STRING);
-        $sexo = $_POST["radio"];
-        $profissao = filter_var($_POST["txtprofissao"], FILTER_SANITIZE_STRING);
-        
-        if($_POST['btnsalvar'] == "salvar"){
-        
-            $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
-        
-        }
-        
-        echo($sql);
-        
-        if(mysqli_query($conexao, $sql)){
-            header("location:cms-promocoes.php");
-        }else{
-
-            //echo("<script>alert(die('Connection failed: 1'.mysqli_connect_error());)</script>");
-            //echo("<script>alert('erros!')");
-        }
-    }
-
-
+    $botao = 'salvar';
+    
     if(isset($_GET['modo'])){
         
         $modo = $_GET['modo'];
         $id = $_GET['id'];
-        $select = null;
-        $_SESSION['idRegistro'] = $id;
         
-        //excluir
+        /***************************** EXCLUIR ************************/
         if($modo == 'excluir'){
+            $nomefoto = $_GET['nomefoto'];
             
-            $sql = "DELETE FROM tbl_contato WHERE codigo =".$id;
+            
+            $sql = "DELETE FROM tbl_produto WHERE codigo =".$id;
+            mysqli_query($conexao, $sql);
+            
+            unlink($nomefoto);
+            
+            header('location:cms-promocoes.php');
+            
+        }elseif($modo == 'consultar'){
+            
+            $sql = "SELECT * FROM tbl_produto WHERE codigo =".$id;
             $select = mysqli_query($conexao, $sql);
             
+            if($rs = mysqli_fetch_array($select)){
+                
+                $nome = $rs['nome'];
+                $nomefoto = $rs['imagem'];
+                $descricao = $rs['descricao'];
+                $preco = $rs['preco'];
+                $valor_desconto = $rs['valor_desconto'];
+                
+                if($rs['status'] == 'a'){
+                    $rdoativado = 'checked';
+                
+                }else{
+                    $rdodesativado = 'checked';
+                
+                }
+                $botao = 'editar';
+                
+                $_SESSION['id'] = $id;
+                $_SESSION['nomefoto'] = $nomefoto;
+                $_SESSION['path_foto'] = null;
+                
+            }
         }
-        if($modo == 'editar'){
-            
-            $sql = "UPDATE tbl_contato SET nome='".$nome."',
-            telefone='".$telefone."',
-            celular='".$celular."',
-            email='".$email."',
-            home_page='".$homep."',
-            facebook='".$facebook."',
-            sugestoes='".$sugestoes."',
-            produto='".$produto."',
-            sexo='".$sexo."',
-            profissao='".$profissao."'
-
-            WHERE codigo =".$_SESSION['idRegistro'];
-            
-            echo('<script>alert("isso")</script>');
-            
-        }
-        
     }
 
+    if(isset($_POST['btnsalvar'])){
+        
+        $nome = $_POST["textnomep"];
+        $descricao = $_POST['textdescricao'];
+        $preco = $_POST['textpreco'];
+        $valor_desconto = $_POST['textvdesconto'];
+        $status = $_POST['radio'];
+        $foto = "";
+        
+        if(isset($_SESSION['path_foto'])){
+            $foto = $_SESSION['path_foto'];
+        }
+        
+        /***************************** SALVAR ************************/
+        if($_POST['btnsalvar']=='salvar'){
+            
+            if(isset($_SESSION['path_foto']) && $_SESSION['path_foto']!=null){
+            
+                $sql = "INSERT INTO tbl_produto(nome, imagem,descricao, preco, valor_desconto, status) VALUES ('".$nome."','".$foto."','".$descricao."','".$preco."','".$valor_desconto."','".$status."')";
+                
+                if(mysqli_query($conexao, $sql)){
+
+                    $_SESSION['path_foto'] = null;
+                    $_SESSION['nomefoto'] = null;
+                }
+                
+            }else{
+                
+                echo("<script>alert('Erro ao salvar')</script>");
+                
+            }
+            
+        /***************************** EDITAR ************************/
+        }elseif($_POST['btnsalvar']=='editar'){
+            
+            if(isset($_SESSION['path_foto']) && $_SESSION['path_foto']!=null){
+                
+                $sql = "UPDATE tbl_produto SET nome = '".$nome."',
+                                            imagem ='".$foto."',
+                                            descricao = '".$descricao."',
+                                            preco = '".$preco."',
+                                            valor_desconto = '".$valor_desconto."',
+                                            status = '".$status."'
+                                            WHERE codigo =".$_SESSION['id'];
+                
+                if(mysqli_query($conexao, $sql)){
+                    unlink($_SESSION['nomefoto']);
+                    $_SESSION['path_foto'] = null;
+                    $_SESSION['nomefoto'] = null;
+
+                }
+            }else{
+                
+                $sql = "UPDATE tbl_produto SET nome = '".$nome."',
+                                            foto ='".$foto."',
+                                            descricao = '".$descricao."',
+                                            preco = '".$preco."',
+                                            valor_desconto = '".$valor_desconto."',
+                                            status = '".$status."'
+                                            WHERE codigo =".$_SESSION['id'];
+                
+                mysqli_query($conexao, $sql);
+            }
+        }
+        header("location:cms-promocoes.php");
+    }
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
     <head>
         <title>
             cms-promoções
         </title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script>
+            $(document).ready(function(){
+                
+                $('#filefoto').live('change', function(){
+                    
+                    $('#fotos').ajaxForm({
+                        
+                        target: '#visualizar_foto'
+                        
+                    }).submit();
+                    
+                });
+                
+            });
+            
+        </script>
     </head>
     <body>
         <div id="box-main" class="center">
@@ -109,114 +174,70 @@
             </div>
             <div id="conteudo">
                 <div class="conteudo-cms-promo">
-                    <form name="frmcms-promocoes" method="POST" action="cms-promocoes.php">
-                    <div>
-                        <img src="" alt="" id="img-card">
-                    </div>
-                    <div class="nome-produto">
-                        <div id="box-file">
-                            <input type="file" id="input-file">
-                        </div>
-                        <div class="info">
-                            <div class="btn-informacoes">
-                                <p>i</p>
-                                <div class="box-info">
-                                    <div class="retangulo">
-                                        <p>
-                                            A imagem deve conter no minimo 300x261px p/ não ficar distorcida
-                                        </p>
-                                    </div>
-                                    <div class="triangulo"></div>
-                                </div>
+                    <form id="fotos" name="frmFotos" method="POST" action="upload.php" enctype="multipart/form-data">
+                        <div class="nome-produto">
+                            <div id="box-file">
+                                <input type="file" id="filefoto" name="flefoto" required>
+                                
                             </div>
                         </div>
-                    </div>
-                    <div class="nome-produto">
-                        <div class="box-input-promo">
-                            <input type="text" id="textnomep" class="input-cms-promo" value="<?php echo($nome)?>" maxlength="65" placeholder="Digite o nome do produto">
-                        </div>
-                        <div class="info">
-                            <div class="btn-informacoes">
-                                <p>i</p>
-                                <div class="box-info">
-                                    <div class="retangulo">
-                                        <p>
-                                            Esse campo deve conter no maximo " " caracteres
-                                        </p>
-                                    </div>
-                                    <div class="triangulo"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nome-produto">
-                        <div class="box-input-promo">
-                            <input type="text" id="text-desc-p" class="input-cms-promo" maxlength="65" placeholder="Digite a descrição do produto">
-                        </div>
-                        <div class="info">
-                            <div class="btn-informacoes">
-                                <p>i</p>
-                                <div class="box-info">
-                                    <div class="retangulo">
-                                        <p>
-                                           Esse campo deve conter no maximo " " caracteres
-                                        </p>
-                                    </div>
-                                    <div class="triangulo"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nome-produto">
-                        <div class="box-input-promo">
-                            <input type="text" id="text-preco-p" class="input-cms-promo" maxlength="65" placeholder=" Digite o preço atual do produto">
-                        </div>
-                        <div class="info">
-                            <div class="btn-informacoes">
-                                <p>i</p>
-                                <div class="box-info">
-                                    <div class="retangulo">
-                                        <p>Esse campo deve conter no maximo " " caracteres</p>
-                                    </div>
-                                    <div class="triangulo"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nome-produto">
-                        <div class="box-input-promo">
-                            <input type="text" id="text-preco-desc" class="input-cms-promo" maxlength="65" placeholder=" Digite o preço do produto com desconto">
-                        </div>
-                        <div class="info">
+                    </form>
+                    
+                    <form name="frmcms-promocoes" method="POST" action="cms-promocoes.php" enctype="multipart/form-data">
+                    <div id="visualizar_foto">  
+                        <?php
+                            if(isset($nomefoto)){
+                                
+                        ?>
+
+                        <img src="<?php echo($nomefoto);?>" alt="" id="img-card">
+
+
+                        <?php
+                            }else{
+                        ?>
+                        <div id="img-card" style="border:1px solid #003311;border-radius:2px 2px;">
                             
-                            <div class="btn-informacoes">
-                                <p>i</p>
-                                <div class="box-info">
-                                    <div class="retangulo">
-                                        <p>
-                                             Esse campo deve conter no maximo " " caracteres
-                                        </p>
-                                    </div>
-                                    <div class="triangulo"></div>
-                                </div>
-                            </div>
+                        </div>
+                        <?php 
+                        }
+
+                        ?>
+                    </div>
+                    <div class="nome-produto">
+                        <div class="box-input-promo">
+                            <input type="text" name="textnomep" class="input-cms-promo" value="<?php echo($nome)?>" maxlength="65" placeholder="Digite o nome do produto" required>
+                        </div>
+                    </div>
+                    <div class="nome-produto">
+                        <div class="box-input-promo">
+                            <input type="text" name="textdescricao" class="input-cms-promo" value="<?php echo($descricao)?>" maxlength="65" placeholder="Digite a descrição do produto" required>
+                        </div>
+                    </div>
+                    <div class="nome-produto">
+                        <div class="box-input-promo">
+                            <input type="text" name="textpreco" class="input-cms-promo" value="<?php echo($preco)?>" maxlength="65" placeholder=" Digite o preço atual do produto" required>
+                        </div>
+                    </div>
+                    <div class="nome-produto">
+                        <div class="box-input-promo">
+                            <input type="text" name="textvdesconto" class="input-cms-promo" value="<?php echo($valor_desconto)?>" maxlength="65" placeholder=" Digite o preço do produto com desconto" required>
                         </div>
                     </div>
 
                     <div class="nome-produto">
                         <div class="box-rdo">
-                            <input type="radio" name="radio" id="rdo-ativado"><label for="rdo-ativado"> Ativado</label>
+                            <input type="radio" name="radio" value="a" id="rdo-ativado" <?php echo($rdoativado)?> required ><label for="rdo-ativado"> Ativado</label>
                         </div>
                         <div class="box-rdo">
-                            <input type="radio" name="radio" id="rdo-desativado" checked><label for="rdo-desativado"> Desativado</label>
+                            <input type="radio" name="radio" value="d" id="rdo-desativado" <?php echo($rdodesativado)?> required ><label for="rdo-desativado"> Desativado</label>
                         </div>
                         <div class="box-rdo">
-                            <input type="submit" id="" class="btn-salvar" name="btnsalvar" id="btnsalvar" value="salvar">
+                            <input type="submit" class="btn-salvar" name="btnsalvar" id="btnsalvar" value="<?php echo($botao)?>">
                         </div>
                     </div>
                     </form>
                 </div>
-                
                 <div class="conteudo-cms-tbl">
                     <div></div>
                     <div id="tbl-promocoes">
@@ -238,8 +259,9 @@
                             </div>
                         </div>
                         <?php
-
-                            $sql = "SELECT * FROM tbl_contato ORDER BY codigo DESC";
+                            
+                            //VISUALIZAR DADOS DO BANCO
+                            $sql = "SELECT * FROM tbl_produto ORDER BY codigo DESC";
 
                             $select = mysqli_query($conexao, $sql);
 
@@ -251,27 +273,27 @@
                                 <?php echo($rscontatos['nome'])?>	
                             </div>
                             <div class="campos-tbl-promo">
-                                <?php echo($rscontatos['telefone'])?>	
+                                <?php echo($rscontatos['imagem'])?>	
                             </div>
                             <div class="campos-tbl-promo">
-                                <?php echo($rscontatos['celular'])?>
+                                <?php echo($rscontatos['preco'])?>
                             </div>
                             <div class="campos-tbl-promo">
-                                <?php echo($rscontatos['email'])?>	
+                                <?php echo($rscontatos['valor_desconto'])?>	
                             </div>
                             <div class="campo-opcoes">
                                 <div class="opcoes-promo">
-                                    <input type="image" class="visualizar" onclick="visualizarDados(<?php echo($rscontatos['codigo']);?>);" src="../img/pesquisar.png" width="20px" height="20px" class="center" style="margin-top:4px;">
-                                </div>
-                                <div class="opcoes-promo">
-                                    <a href= "cms-promocoes.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
+                                    
+                                    <a href= "cms-promocoes.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>&nomefoto=<?php echo($rscontatos['imagem']);?>" onclick="return confirm('Deseja realmente excluir?');">
 
                                         <input type="image" src="../img/excluir.png" width="24px" height="24px" class="img center"
                                         style="margin-top:2px;">
                                     </a>
                                 </div>
                                 <div class="opcoes-promo">
-                                    <a href="cms-promocoes.php?modo=editar&id=<?php echo($rscontatos['codigo']);?>">
+                                    
+                                    <a href="cms-promocoes.php?modo=consultar&id=<?php echo($rscontatos['codigo']);?>">
+                                        
                                         <img src="../img/editar24.png" width="20px" height="23px" class="img center" style="margin-top:2px;">
                                     </a>
                                 </div>

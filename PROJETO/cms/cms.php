@@ -1,5 +1,5 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
     <head>
         <title>
             CMS
@@ -17,7 +17,7 @@
             ?>
             
             <div id="conteudo">
-                <div class="conteudo-cms">
+                <div class="container-conteudo-cms">
                     <div class="option-conteudo">
                         <a href="cms-noticias.php">
                             <div class="conteudo-img">
@@ -81,7 +81,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="conteudo-cms">
+                <div class="container-conteudo-cms">
                     <div class="option-conteudo">
                         <a href="cms-lojas.php">
                             <div class="conteudo-img">

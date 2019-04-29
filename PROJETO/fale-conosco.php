@@ -4,8 +4,6 @@
     
     $conexao = conexaoMysql();
     
-
-    //$newstr = filter_var($str, FILTER_SANITIZE_STRING);
     $nome = null;
     $telefone = null;
     $celular = null;
@@ -23,9 +21,7 @@
     $data_nasc = null;
     $dt_nasc = null;
 
-    
     if(isset($_POST["btnsalvar"])){
-        
         
         $nome = filter_var($_POST["txtnome"], FILTER_SANITIZE_STRING);
         $telefone = filter_var($_POST["txttel"], FILTER_SANITIZE_STRING);
@@ -40,18 +36,26 @@
         
         if($_POST['btnsalvar'] == "salvar"){
         
-            $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
+            $sql = "INSERT INTO tbl_cadastro_cliente(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao)
+                    VALUES('".$nome."',
+                            '".$telefone."',
+                            '".$celular."',
+                            '".$email."',
+                            '".$homep."',
+                            '".$facebook."',
+                            '".$sugestoes."',
+                            '".$produto."',
+                            '".$sexo."',
+                            '".$profissao."'
+                            )";
         
         }
-        
-        echo($sql);
         
         if(mysqli_query($conexao, $sql)){
             header("location:fale-conosco.php");
         }else{
-
-            //echo("<script>alert(die('Connection failed: 1'.mysqli_connect_error());)</script>");
-            //echo("<script>alert('erros!')");
+            
+            echo("<script>alert('Erro ao salvar')</script>");
         }
     }
 
@@ -171,10 +175,10 @@
                         </div>
                     <div class="box-text-cad" style="padding:15px;" >
                         <label>
-                            <input type="radio" name="radio" value="M" value="<?php echo($rdosexoM)?>" checked>Masculino 
+                            <input type="radio" name="radio" value="M" checked>Masculino 
                         </label>
                         <label>
-                            <input type="radio" name="radio" value="F" value="<?php echo($rdosexoF)?>">Feminino
+                            <input type="radio" name="radio" value="F">Feminino
                         </label>
                     </div>
                     </div>
