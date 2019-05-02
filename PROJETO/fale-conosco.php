@@ -67,7 +67,7 @@
         <meta charset="utf-8">
         <title>Fale conosco</title>
         <script src="js/mascara.js" type="text/javascript"></script>
-        <link rel="icon" href="img/ico/logo.png">
+        <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
     </head>
     <body>
         <?php
@@ -91,7 +91,13 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input onkeypress="return validar(event,'number','nome')" id="nome" class="input-fale-conosco" type="text" name="txtnome"  placeholder="Digite seu nome" value="<?php echo($nome)?>" required >
+                        <input onkeypress="return validar(event,'number','nome')"
+                               id="nome"
+                               class="input-fale-conosco"
+                               type="text" name="txtnome" 
+                               placeholder="Digite seu nome"
+                               value="<?php echo($nome)?>"
+                               required>
                     </div>
                     </div>  
                     <div class="box_campos">
@@ -160,7 +166,7 @@
                     <div class="box_campos">
                         <div class="box-label">
                             <label for="produto">
-                                Infomações Produto:
+                                Produto:
                             </label>
                         </div>
                     <div class="box-text-cad">

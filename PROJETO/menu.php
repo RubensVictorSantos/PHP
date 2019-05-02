@@ -9,6 +9,7 @@
                 <!--Road Runner-->
                 <a href="index.php" title="Página inicial" >
                     <img src="img/ico/logo.png" style=" " alt="bicicleta logo da empresa" id="imag-logo">
+                    
                 </a>
             </div>
             <nav id="menu" class="center">
@@ -42,3 +43,4 @@
     </header>
     '
     );
+    

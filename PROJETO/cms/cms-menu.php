@@ -1,4 +1,8 @@
 <?php
+
+    $username = null;
+    $username = 'Rubens Victor';
+
     echo('
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <div id="logo" class="center">
@@ -71,11 +75,11 @@
                     </div>
                 </a>
             </div>
-            <div id="box-info-user">
+            <div id="box-user">
                 <div id="text-name-user">
                     <label for="name-user">
                         <h4>
-                            Bem Vindo,<span id="name-user"> xxxxxx</span>
+                            Bem Vindo,<span id="name-user"> '.$username.'</span>
                         </h4>
                     </label>
                 </div>

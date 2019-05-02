@@ -1,7 +1,8 @@
 /*CSS*/
 
 
-/*#####CSS PADRÃO#####*/
+/************************* CSS PADRÃO **************/
+
 *{
     
     font-family: arial;
@@ -166,6 +167,7 @@ input{
     z-index: -1;
     background-color:gray;
 }
+
 /******************************************HOME*********************************/
 
 .msg-slider{
@@ -240,6 +242,7 @@ input{
     
 }
 /*******************************CARD******************************/
+
 .card{
     
     width: 360px;
@@ -248,14 +251,13 @@ input{
     /*background-color: #eeefff;*/
     box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
     float:left;
+    overflow: hidden;
     box-sizing: border-box;
     
 }
 
 .card:hover{
     
-    width: 359px;
-    height: 449px;
     border: 1px solid #c9c9c9;
     box-shadow:none;
     overflow: hidden;
@@ -347,7 +349,9 @@ input{
     border-radius: 50%;
     background-color: transparent;
 }
+
 /****************FOOTER**************************/
+
 #footer{
     
     width: 100%;
@@ -428,7 +432,6 @@ input{
     color: #ffffff;
     
 }
-
 
 /****************jssor slider loading skin spin css*****************/
 
@@ -658,7 +661,7 @@ textarea{
     
 }
 
-/**************************Sobre a Empresa***********************************/
+/************************** SOBRE A EMPRESA ***********************************/
 
 .main-sobre{
     width:50%;
@@ -705,8 +708,7 @@ textarea{
     background-size:cover;
 }
 
-/****************************DESTAQUES*****************************/
-
+/**************************** DESTAQUES *****************************/
 
 #principais-noticias{
     
@@ -817,7 +819,7 @@ textarea{
 
 .conteudo-noticia:hover>.text-noticia{
     
-    border-right: 4px solid #33ff77;
+    border-right: 4px solid #003311;
     
 }
 
@@ -881,19 +883,6 @@ textarea{
     width:inherit;
     height: 490px;
     /*background-color: #fedeee;*/
-    overflow: hidden;
-    box-sizing: border-box;
-    
-}
-
-.card{
-    
-    width: 360px;
-    height: 450px;
-    margin: 20px 0px 0px 20px;
-    /*background-color: #eeefff;*/
-    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
-    float:left;
     overflow: hidden;
     box-sizing: border-box;
     

@@ -23,7 +23,6 @@
             $profissao = $rscontato['profissao'];
         }
     }
-
 ?>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script>
@@ -34,12 +33,20 @@
     });
 </script>
 <div style="width:100%; heigth: 20px;">
-    <div id="titulo-modal" class="titulos-cms">
-        <p>Cliente <?php echo($nome)?></p>
+    <div id="titulo-modal" >
+        <p>Cliente
+            <?php
+                if(isset($nome)){
+                    echo($nome);
+                }
+            ?>
+        </p>
     </div>
-    <a href="cms-fale-conosco.php">
-        <input type="button" id="fechar" value="X">
-    </a>
+    <div id="box-btn-modal">
+        <a href="cms-fale-conosco.php">
+            <input type="button" id="fechar" value="X">
+        </a>
+    </div>
 </div>
 <div id="tbl-modal">
     <div id="labels">
@@ -76,15 +83,75 @@
         
     </div>
     <div id="dados-cliente">
-        <div><?php echo(@$nome)?></div>
-        <div><?php echo(@$telefone)?></div>
-        <div><?php echo(@$celular)?></div>
-        <div><?php echo(@$email)?></div>
-        <div><?php echo(@$homep)?></div>
-        <div><?php echo(@$facebook)?></div>
-        <div><?php echo(@$produto)?></div>
-        <div><?php echo(@$profissao)?></div>
-        <div><?php echo(@$sugestoes)?></div>
-        <div><?php echo(@$sexo)?></div>
+        <div>
+            <?php
+                if(isset($nome)){
+                    echo($nome);
+                }
+            ?>
+        </div>
+        <div>
+            <?php
+                if(isset($telefone)){
+                    echo($telefone);
+                }
+            ?>
+        </div>
+        <div>
+            <?php
+                if(isset($celular)){
+                    echo($celular);
+                }
+            ?>
+        </div>
+        <div>
+            <?php
+                if(isset($email)){
+                    echo($email);
+                }
+            ?>
+        </div>
+        <div>
+            <?php
+                if(isset($homep)){
+                    echo($homep);
+                }
+            ?>
+        </div>
+        <div>
+            <?php
+                if(isset($facebook)){
+                    echo($facebook);
+                }
+            ?>
+        </div>
+        <div>
+            <?php
+                if(isset($produto)){
+                    echo($produto);
+                }
+            ?>
+        </div>
+        <div>
+            <?php
+                if(isset($profissao)){
+                    echo($profissao);
+                }
+            ?>
+        </div>
+        <div>
+            <?php
+                if(isset($sugestoes)){
+                    echo($sugestoes);
+                }
+            ?>
+        </div>
+        <div>
+            <?php
+                if(isset($sexo)){
+                    echo($sexo);
+                }
+            ?>
+        </div>
     </div>
 </div>

@@ -4,7 +4,7 @@
         <title>
             CMS
         </title>
-        <link rel="icon" href="../img/ico/">
+        <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>

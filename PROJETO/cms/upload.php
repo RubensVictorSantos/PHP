@@ -1,6 +1,5 @@
 <?php
 
-    // Valida se os dados enviados para esse arquivo serão do tipo post
     if(isset($_POST)){
         
         if(!empty($_FILES['flefoto']['name'])){

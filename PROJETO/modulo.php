@@ -1,11 +1,9 @@
 <?php
 
-/* Essa função vai fazer aparecer um icone feito com div de informações na tela
-    
-*/
+/* Essa função vai fazer aparecer um icone feito com div de informações na tela*/
 function info($a){
     
-    $msg = "";
+    $msg = null;
     $msg = $a;
     
     echo('

@@ -5,7 +5,7 @@
         <title>
             Eventos
         </title>
-        <link rel="icon" href="img/ico/logo.png">
+        <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
     </head>
     <body>
         <?php
