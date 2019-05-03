@@ -28,7 +28,6 @@
         if($modo == 'excluir'){
             $nomefoto = $_GET['nomefoto'];
             
-            
             $sql = "DELETE FROM tbl_produto WHERE codigo =".$id;
             mysqli_query($conexao, $sql);
             
@@ -36,6 +35,7 @@
             
             header('location:cms-promocoes.php');
             
+        /***************************** CONSULTAR **********************/
         }elseif($modo == 'consultar'){
             
             $sql = "SELECT * FROM tbl_produto WHERE codigo =".$id;
@@ -49,7 +49,7 @@
                 $preco = $rs['preco'];
                 $valor_desconto = $rs['valor_desconto'];
                 
-                if($rs['status'] == 'a'){
+                if($rs['status'] == 'A'){
                     $rdoativado = 'checked';
                 
                 }else{
@@ -77,6 +77,7 @@
         
         if(isset($_SESSION['path_foto'])){
             $foto = $_SESSION['path_foto'];
+
         }
         
         /***************************** SALVAR ************************/
@@ -87,15 +88,12 @@
                 $sql = "INSERT INTO tbl_produto(nome, imagem,descricao, preco, valor_desconto, status) VALUES ('".$nome."','".$foto."','".$descricao."',".$preco.",".$valor_desconto.",'".$status."')";
                 
                 if(mysqli_query($conexao, $sql)){
-
                     $_SESSION['path_foto'] = null;
                     $_SESSION['nomefoto'] = null;
+                    
                 }
                 
-                echo($sql);
-                
             }else{
-                
                 echo("<script>alert('Erro ao salvar')</script>");
                 
             }
@@ -113,8 +111,6 @@
                                             status = '".$status."'
                                             WHERE codigo =".$_SESSION['id'];
                 
-                echo($sql);
-                
                 if(mysqli_query($conexao, $sql)){
                     unlink($_SESSION['nomefoto']);
                     $_SESSION['path_foto'] = null;
@@ -129,8 +125,6 @@
                                             valor_desconto = ".$valor_desconto.",
                                             status = '".$status."'
                                             WHERE codigo =".$_SESSION['id'];
-                
-                echo($sql);
                 
                 mysqli_query($conexao, $sql);
             }
@@ -163,199 +157,229 @@
                     }).submit();
                     
                 });
-                
             });
-            
         </script>
     </head>
     <body>
-        <div id="box-main" class="center">
-            
+        <div id="box-main" class="center">   
             <?php
-    
                 require_once('cms-menu.php');
     
             ?>
             <div class="titulos-cms">
                 <h3>Página Promoções</h3>
+                
             </div>
             <div id="conteudo">
                 <div class="conteudo-cms-promo">
                     <form id="fotos" name="frmFotos" method="POST" action="upload.php" enctype="multipart/form-data">
-                        <div class="nome-produto">
+                        <div class="input-text-cms">
                             <div id="box-file">
-                                <input type="file" id="filefoto" name="flefoto" required>
+                                <input type="file"
+                                       id="filefoto"
+                                       name="flefoto"
+                                       required>
                                 
                             </div>
                         </div>
                     </form>
                     
                     <form name="frmcms-promocoes" method="POST" action="cms-promocoes.php" enctype="multipart/form-data">
-                    <div id="visualizar_foto">  
-                        <?php
-                            if(isset($nomefoto)){
-                                
-                        ?>
+                        <div id="visualizar_foto">  
+                            <?php
+                                if(isset($nomefoto)){
 
-                        <img src="<?php echo($nomefoto);?>" alt="" id="img-card" >
+                            ?>
+
+                            <img src="<?php echo($nomefoto);?>" alt="" id="img-card" >
 
 
-                        <?php
-                            }else{
-                        ?>
-                        <div id="img-card" style="border:1px solid #003311;border-radius:2px 2px;">
-                            
-                        </div>
-                        <?php 
-                        }
+                            <?php
+                                }else{
+                            ?>
+                            <div id="img-card" style="border:1px solid #003311;border-radius:2px 2px;"></div>
 
-                        ?>
-                    </div>
-                    <div class="nome-produto">
-                        <div class="box-input-promo">
-                            <input onkeypress="return validar(event,'number','nome')"
-                                   type="text"
-                                   name="textnomep"
-                                   id="nome"
-                                   class="input-cms-promo"
-                                   value="<?php echo($nome)?>"
-                                   maxlength="65"
-                                   placeholder="Digite o nome do produto"
-                                   required>
-                        </div>
-                    </div>
-                    <div class="nome-produto">
-                        <div class="box-input-promo">
-                            <input type="text"
-                                   name="textdescricao"
-                                   class="input-cms-promo"
-                                   value="<?php echo($descricao)?>"
-                                   maxlength="65"
-                                   placeholder="Digite a descrição do produto"
-                                   required>
-                        </div>
-                    </div>
-                    <div class="nome-produto">
-                        <div class="box-input-promo">
-                            <input onkeypress="return validar(event,'decimal','preco')"
-                                   type="text"
-                                   name="textpreco"
-                                   id="preco"
-                                   class="input-cms-promo"
-                                   value="<?php echo($preco)?>"
-                                   maxlength="65"
-                                   placeholder=" Digite o preço atual do produto"
-                                   required>
-                        </div>
-                    </div>
-                    <div class="nome-produto">
-                        <div class="box-input-promo">
-                            <input type="text"
-                                   name="textvdesconto"
-                                   class="input-cms-promo"
-                                   value="<?php echo($valor_desconto)?>"
-                                   maxlength="65"
-                                   placeholder=" Digite o preço promocional"
-                                   required>
-                        </div>
-                    </div>
+                            <?php 
+                                }
 
-                    <div class="nome-produto">
-                        <div class="box-rdo">
-                            <input type="radio"
-                                   name="radio"
-                                   value="a"
-                                   id="rdo-ativado" <?php echo($rdoativado)?>
-                                   required >
-                            <label for="rdo-ativado"> Ativado</label>
+                            ?>
                         </div>
-                        <div class="box-rdo">
-                            <input type="radio"
-                                   name="radio"
-                                   value="d"
-                                   id="rdo-desativado" <?php echo($rdodesativado)?>
-                                   required >
-                            <label for="rdo-desativado"> Desativado</label>
+                        <div class="input-text-cms">
+                            <div class="box-input-promo">
+                                <input onkeypress="return validar(event,'number','nome')"
+                                       type="text"
+                                       name="textnomep"
+                                       id="nome"
+                                       class="input-cms-promo"
+                                       value="<?php echo($nome)?>"
+                                       maxlength="65"
+                                       placeholder="Digite o nome do produto"
+                                       required>
+
+                            </div>
                         </div>
-                        <div class="box-rdo">
-                            <input type="submit"
-                                   class="btn-salvar"
-                                   name="btnsalvar"
-                                   id="btnsalvar"
-                                   value="<?php echo($botao)?>">
+                        <div class="input-text-cms">
+                            <div class="box-input-promo">
+                                <input type="text"
+                                       name="textdescricao"
+                                       class="input-cms-promo"
+                                       value="<?php echo($descricao)?>"
+                                       maxlength="65"
+                                       placeholder="Digite a descrição do produto"
+                                       required>
+
+                            </div>
                         </div>
-                    </div>
+                        <div class="input-text-cms">
+                            <div class="box-input-promo">
+                                <input onkeypress="return validar(event,'decimal','preco')"
+                                       type="text"
+                                       name="textpreco"
+                                       id="preco"
+                                       class="input-cms-promo"
+                                       value="<?php echo($preco)?>"
+                                       maxlength="65"
+                                       placeholder=" Digite o preço atual do produto"
+                                       required>
+
+                            </div>
+                        </div>
+                        <div class="input-text-cms">
+                            <div class="box-input-promo">
+                                <input type="text"
+                                       name="textvdesconto"
+                                       class="input-cms-promo"
+                                       value="<?php echo($valor_desconto)?>"
+                                       maxlength="65"
+                                       placeholder=" Digite o preço promocional"
+                                       required>
+
+                            </div>
+                        </div>
+                        <div class="input-text-cms">
+                            <div class="box-rdo">
+                                <input type="radio"
+                                       name="radio"
+                                       value="A"
+                                       id="rdo-ativado" <?php echo($rdoativado)?>
+                                       required>
+
+                                <label for="rdo-ativado"> Ativar</label>
+                            </div>
+                            <div class="box-rdo">
+                                <input type="radio"
+                                       name="radio"
+                                       value="D"
+                                       id="rdo-desativado" <?php echo($rdodesativado)?>
+                                       required>
+
+                                <label for="rdo-desativado"> Desativar</label>
+                            </div>
+                            <div class="box-rdo">
+                                <input type="submit"
+                                       class="btn-salvar"
+                                       name="btnsalvar"
+                                       id="btnsalvar"
+                                       value="<?php echo($botao)?>">
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="conteudo-cms-tbl">
-                    <div></div>
                     <div id="tbl-promocoes">
                         <div class="cabecalho">
                             <div class="titulos-promo" style="width:300px;">
-                                Produto
+                                <p>
+                                    Produto
+                                </p>
+                                
                             </div>
                             <div class="titulos-promo" style="width:200px;">
-                                Imagem
+                                <p>
+                                    Imagem
+                                </p>
+                                
                             </div>
                             <div class="titulos-promo" style="width:120px;">
-                                Preço
+                                <p>
+                                    Preço
+                                </p>
+                                
                             </div>
                             <div class="titulos-promo" style="width:120px;">
-                                Desconto
+                                <p>
+                                    Desconto
+                                </p>
+                                
                             </div>
                             <div class="titulos-promo" style="width:120px;">
-                                status
+                                <p>
+                                    Status
+                                </p>
+                                
                             </div>
                             <div class="titulo-campo-opcoes">
-                                Opções
+                                <p>
+                                    Opções
+                                </p>
+                                
                             </div>
                         </div>
                         <?php
                             
-                            //VISUALIZAR DADOS DO BANCO
+                            /********************* VISUALIZAR DADOS DO BANCO ************************/
                             $sql = "SELECT * FROM tbl_produto ORDER BY codigo DESC";
-
                             $select = mysqli_query($conexao, $sql);
 
-                            while($rscontatos=mysqli_fetch_array($select))
-                            {
+                            while($rscontatos=mysqli_fetch_array($select)){
+                                
                         ?>
                         <div class="tbl-dados-db">
                             <div class="campos-tbl-promo" style="width:300px;">
-                                <?php echo($rscontatos['nome'])?>	
+                                <?php echo($rscontatos['nome'])?>
+                                
                             </div>
                             <div class="campos-tbl-promo" style="width:200px;">
-                                <?php echo($rscontatos['imagem'])?>	
+                                <?php echo($rscontatos['imagem'])?>
+                                
                             </div>
                             <div class="campos-tbl-promo" style="width:120px;">
                                 <?php echo($rscontatos['preco'])?>
+                                
                             </div>
                             <div class="campos-tbl-promo" style="width:120px;">
-                                <?php echo($rscontatos['valor_desconto'])?>	
+                                <?php echo($rscontatos['valor_desconto'])?>
+                                
                             </div>
                             <div class="campos-tbl-promo" style="width:120px;">
                                 <?php
-                                    if($rscontatos['status'] == 'a'){
-                                        echo('ativado');
+                                    if($rscontatos['status'] == 'A'){
+                                        echo('Ativado');
+                                        
                                     }else{
-                                        echo('desativado');
+                                        echo('Desativado');
+                                        
                                     }
                                 ?>	
                             </div>
+                            
                             <div class="campo-opcoes">
                                 <div class="opcoes-promo">
-                                    
                                     <a href= "cms-promocoes.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>&nomefoto=<?php echo($rscontatos['imagem']);?>" onclick="return confirm('Deseja realmente excluir?');">
 
-                                        <input type="image" src="../img/excluir.png" width="24px" height="24px" class="img center"
-                                        style="margin-top:2px;">
+                                        <input type="image"
+                                               src="../img/excluir.png"
+                                               width="24px"
+                                               height="24px"
+                                               class="img center"
+                                               style="margin-top:2px;">
+                                        
                                     </a>
                                 </div>
                                 <div class="opcoes-promo">
-                                    
                                     <a href="cms-promocoes.php?modo=consultar&id=<?php echo($rscontatos['codigo']);?>">
-                                        
                                         <img src="../img/editar24.png" width="20px" height="23px" class="img center" style="margin-top:2px;">
+                                        
                                     </a>
                                 </div>
                             </div>

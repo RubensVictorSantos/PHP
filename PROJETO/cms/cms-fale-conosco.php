@@ -55,18 +55,16 @@
 			function visualizarDados (idItem)
 			{
 				$.ajax({
-                    //metodo
+                   
                    type:"GET",
-                    //pagina que sera descarregada a informacao
+                
                    url:"modal.php",
-                    //e o parametro de informacao
+                    
                     data:{codigo:idItem},
-                    //havendo sucesso na requisicao dos dados
-                    //descarregamos o resultado da modal, dentro da div modal
-                    //a div(#modal) receberá os dados do html
+                    
                     success: function(dados){
                         $('#modal').html(dados);
-                    //alert(dados); alert para trazer o html caso tenha erros(comentar a linha de cima)
+                    
                     }
                 });
 			}
@@ -79,67 +77,84 @@
 		
         </div>
         <div id="box-main" class="center">
-            
             <?php
-    
                 require_once('cms-menu.php');
     
             ?>
             <div class="titulos-cms">
                 <h3>Consulta cadastro clientes</h3>
+            
             </div>
             <!--*********************** CONTEÚDO ******************************-->
             <div id="conteudo">
                 <div id="table-fale-conosco">
                     <div class="cabecalho">
                         <div class="tbl-titulos">
-                            Nome:
+                            Nome
+                            
                         </div>
                         <div class="tbl-titulos">
-                            Telefone:
+                            Telefone
+                            
                         </div>
                         <div class="tbl-titulos">
-                            Celular:
+                            Celular
+                            
                         </div>
                         <div class="tbl-titulos">
-                            E-mail:
+                            E-mail
+                            
                         </div>
                         <div class="titulo-campo-opcoes">
-                            Opções:
+                            Opções
+                            
                         </div>
                     </div>
                         <?php
 
                             $sql = "SELECT * FROM tbl_cadastro_cliente ORDER BY codigo DESC";
-
                             $select = mysqli_query($conexao, $sql);
                              
-                            while($rscontatos=mysqli_fetch_array($select))
-                            {
+                            while($rscontatos=mysqli_fetch_array($select)){
+                                
                         ?>
                         <div class="tbl-dados-db">
-                            
                             <div class="campos-db">
-                                <?php echo($rscontatos['nome'])?>	
+                                <?php echo($rscontatos['nome'])?>
+                                
                             </div>
                             <div class="campos-db">
-                                <?php echo($rscontatos['telefone'])?>	
+                                <?php echo($rscontatos['telefone'])?>
+                                
                             </div>
                             <div class="campos-db">
                                 <?php echo($rscontatos['celular'])?>
+                                
                             </div>
                             <div class="campos-db">
-                                <?php echo($rscontatos['email'])?>	
+                                <?php echo($rscontatos['email'])?>
+                                
                             </div>
                             <div class="campo-opcoes">
                                 <div class="opcoes">
-                                    <input type="image" class="visualizar" onclick="visualizarDados(<?php echo($rscontatos['codigo']);?>);" src="../img/pesquisar.png" width="20px" height="20px" class="center" style="margin-top:4px;">
+                                    <input type="image"
+                                           class="visualizar center"
+                                           onclick="visualizarDados(<?php echo($rscontatos['codigo']);?>);"
+                                           src="../img/pesquisar.png"
+                                           width="20px"
+                                           height="20px"
+                                           style="margin-top:4px;">
+                                    
                                 </div>
                                 <div class="opcoes">
                                     <a href= "cms-fale-conosco.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
-
-                                        <input type="image" src="../img/excluir.png" width="24px" height="24px" class="img center"
-                                        style="margin-top:2px;">
+                                        <input type="image"
+                                               src="../img/excluir.png"
+                                               width="24px"
+                                               height="24px"
+                                               class="img center"
+                                               style="margin-top:2px;">
+                                        
                                     </a>
                                 </div>
                             </div>

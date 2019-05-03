@@ -73,17 +73,15 @@
                     ?>  
                         <div class="card">
                             <div class="img-card center">
-                                <img src="cms/<?php
-                                            echo($nomefoto);
-                                          ?>" alt="" class="img-card">
-
+                                
+                                    <img src="cms/<?php echo($nomefoto);?>" alt="" class="img-card">
+                                
+                                
                                 <div class="box-img-card">
 
                                     <?php
                                         
-                                        $porcentagem = 0;        
-                                
-                                        $porcentagem = (100/$preco)*$valor_desconto;
+                                        $porcentagem = (100*$valor_desconto)/$preco;
                                         
                                         echo(round($porcentagem).'<span>%</span>');
                                 

@@ -34,8 +34,9 @@
             
             unlink($nomefoto);
             
-            header('location:cms-promocoes.php');
+            header('location:cms-noticias.php');
             
+        /***************************** CONSULTAR ************************/
         }elseif($modo == 'consultar'){
             
             $sql = "SELECT * FROM tbl_produto WHERE codigo =".$id;
@@ -49,7 +50,7 @@
                 $preco = $rs['preco'];
                 $valor_desconto = $rs['valor_desconto'];
                 
-                if($rs['status'] == 'a'){
+                if($rs['status'] == 'A'){
                     $rdoativado = 'checked';
                 
                 }else{
@@ -130,7 +131,7 @@
                 mysqli_query($conexao, $sql);
             }
         }   
-        header("location:cms-promocoes.php");
+        header("location:cms-noticias.php");
     }
 ?>
 <!DOCTYPE html>
@@ -141,6 +142,23 @@
         </title>
         <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="../js/mascara.js" type="text/javascript"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script>
+            $(document).ready(function(){
+                
+                $('#filefoto').live('change', function(){
+                    
+                    $('#fotos').ajaxForm({
+                        
+                        target: '#visualizar_foto'
+                        
+                    }).submit();
+                    
+                });
+            });
+        </script>
     </head>
     <body>
         <div id="box-main" class="center">
@@ -153,41 +171,60 @@
                 <form name="frm-cms-noticia" method="POST" action="cms-noticia.php">
                     <div class="titulos-cms">
                         <h3>Página Notícia</h3>
+                        
                     </div>
                     <div class="container-conteudo-cms">
                         <div class="container-input">
-                            <h4>Noticia em destaque:</h4>
-                            <div >
-                                <input type="text" class="input-cms-promo" placeholder="Digite o titulo da noticia">
+                            <h4 style="margin-right:20px;">Noticia em destaque:</h4>
+                            
+                            <div class="input-text-cms">
+                                <input type="text"
+                                       class="input-cms-promo"
+                                       placeholder="Digite o titulo da noticia">
+                                
                             </div>
                             <div style="clear:both;">
-                                <img src="" class="img-cms-noticias">
+                                <div src="" class="img-cms-noticias" style="border:1px solid #003311;border-radius:2px 2px;">
+                                </div>
                             </div>
-                            <div>
+                            <div class="input-text-cms">
                                 <input type="file">
                             </div>
-                             <div class="nome-produto">
+                             <div class="input-text-cms">
                                 <div class="box-rdo">
-                                    <input type="radio" name="radio" value="<?php echo($rdoativado) ?>" id="rdo-ativado"><label for="rdo-ativado" required > Ativado</label>
+                                    <input type="radio"
+                                           name="radio"
+                                           value="A"
+                                           id="rdo-ativado" <?php echo($rdoativado)?>
+                                           required>
+
+                                    <label for="rdo-ativado"> Ativar</label>
                                 </div>
                                 <div class="box-rdo">
-                                    <input type="radio" name="radio" value="<?php echo($rdodesativado) ?>" id="rdo-desativado"><label for="rdo-desativado" required > Desativado</label>
+                                    <input type="radio"
+                                           name="radio"
+                                           value="D"
+                                           id="rdo-desativado" <?php echo($rdodesativado)?>
+                                           required>
+
+                                    <label for="rdo-desativado"> Desativar</label>
                                 </div>
-<!--
-                                <div class="box-rdo">
-                                    <input type="submit" id="" class="btn-salvar" name="btnsalvar" id="btnsalvar" value="salvar">
-                                </div>
--->
                             </div>
                         </div>
                         <div class="container-noticias-corpo">
                             <h4>Noticia em destaque:</h4>
-                            <div >
-                                <input type="text" class="input-cms-promo" placeholder="Digite o titulo da noticia">
+                            <div class="input-text-cms">
+                                <input type="text"
+                                       class="input-cms-promo"
+                                       placeholder="Digite o titulo da noticia">
+                                
                             </div>
                             <div>
                                 <div style="float:left;">
-                                    <img src="" width="128px" height="128px" >
+                                    <figure>
+                                        <img src="" width="128px" height="128px" >
+                                    </figure>
+                                    
                                 </div>
                                 <div >
                                     <input type="file">
@@ -200,43 +237,51 @@
                                 
                                 </textarea>
                             </div>
-                             <div class="nome-produto">
+                             <div class="input-text-cms">
                                 <div class="box-rdo">
-                                    <input type="radio" name="radio" value="<?php echo($rdoativado) ?>" id="rdo-ativado"><label for="rdo-ativado" required > Ativado</label>
+                                    <input type="radio"
+                                           name="radio"
+                                           value="A"
+                                           id="rdo-ativado" <?php echo($rdoativado)?>
+                                           required>
+
+                                    <label for="rdo-ativado"> Ativar</label>
                                 </div>
                                 <div class="box-rdo">
-                                    <input type="radio" name="radio" value="<?php echo($rdodesativado) ?>" id="rdo-desativado"><label for="rdo-desativado" required > Desativado</label>
-                                </div>
-                                <div class="box-rdo">
-                                    <input type="submit" id="" class="btn-salvar" name="btnsalvar" id="btnsalvar" value="salvar">
+                                    <input type="radio"
+                                           name="radio"
+                                           value="D"
+                                           id="rdo-desativado" <?php echo($rdodesativado)?>
+                                           required>
+
+                                    <label for="rdo-desativado"> Desativar</label>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                     <div class="conteudo-cms">
                         <div id="tbl-promocoes">
                             <div class="cabecalho">
                                 <div class="titulos-promo">
-                                    Nome produto:
+<!--                                    Nome produto-->
                                 </div>
                                 <div class="titulos-promo">
-                                    Imagem:
+<!--                                    Imagem-->
                                 </div>
                                 <div class="titulos-promo">
-                                    Preço:
+<!--                                    Preço-->
                                 </div>
                                 <div class="titulos-promo">
-                                    Desconto:
+<!--                                    Desconto-->
                                 </div>
                                 <div class="titulo-campo-opcoes">
-                                    Opções:
+<!--                                    Opções-->
                                 </div>
                             </div>
                             <?php
 
                                 //TABELA VINDO DIRETO DO BANCO
-                                $sql = "SELECT * FROM tbl_produto ORDER BY codigo DESC";
+                                $sql = "SELECT * FROM  tbl_noticias ORDER BY codigo DESC";
 
                                 $select = mysqli_query($conexao, $sql);
 
@@ -261,8 +306,13 @@
 
                                         <a href= "cms-promocoes.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>&nomefoto=<?php echo($rscontatos['imagem']);?>" onclick="return confirm('Deseja realmente excluir?');">
 
-                                            <input type="image" src="../img/excluir.png" width="24px" height="24px" class="img center"
-                                            style="margin-top:2px;">
+                                            <input type="image"
+                                                   src="../img/excluir.png"
+                                                   width="24px"
+                                                   height="24px"
+                                                   class="img center"
+                                                   style="margin-top:2px;">
+                                            
                                         </a>
                                     </div>
                                     <div class="opcoes-promo">
