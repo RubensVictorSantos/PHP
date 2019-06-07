@@ -1,0 +1,222 @@
+-- MySQL dump 10.13  Distrib 5.7.25, for Win32 (AMD64)
+--
+-- Host: localhost    Database: db_site
+-- ------------------------------------------------------
+-- Server version	5.7.25-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `tbl_cadastro_cliente`
+--
+
+DROP TABLE IF EXISTS `tbl_cadastro_cliente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_cadastro_cliente` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `telefone` varchar(100) DEFAULT NULL,
+  `celular` varchar(20) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `home_page` varchar(100) DEFAULT NULL,
+  `facebook` varchar(100) DEFAULT NULL,
+  `sugestoes` text,
+  `produto` varchar(100) DEFAULT NULL,
+  `sexo` char(1) DEFAULT NULL,
+  `profissao` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_cadastro_cliente`
+--
+
+LOCK TABLES `tbl_cadastro_cliente` WRITE;
+/*!40000 ALTER TABLE `tbl_cadastro_cliente` DISABLE KEYS */;
+INSERT INTO `tbl_cadastro_cliente` VALUES (1,'Rubens Victor Santos','(11) 9588-2532','(11) 95880-8525','rubensvictorsantos@gmail.com','http://mysite.com.br','http://myfacebook.com.br','Primeiro cadastro na tbl_cadastro_cliente','bike 01','M','Programador'),(2,'Roney Victor Santos','(11) 6548-9845','(11) 95642-5621','roneyvictor@gmail.com','http://theroneyssite.com','http://theroneysfacebook.com','Segundo cadastro na tbl_cadastro_cliente','bike','M','algo relacionado a redes');
+/*!40000 ALTER TABLE `tbl_cadastro_cliente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_eventos`
+--
+
+DROP TABLE IF EXISTS `tbl_eventos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_eventos` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `imagem` varchar(100) DEFAULT NULL,
+  `conteudo` text,
+  `status` char(1) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_eventos`
+--
+
+LOCK TABLES `tbl_eventos` WRITE;
+/*!40000 ALTER TABLE `tbl_eventos` DISABLE KEYS */;
+INSERT INTO `tbl_eventos` VALUES (1,'arquivos/4848466c89ce43bd950e26bc750d71d9.jpg','TESTE EDITAR IMAGEM EVENTOS','D'),(2,'arquivos/41e0d2c479210903f8e24a6a6cf45ebe.jpg','Eventos em novo horizontino','A'),(3,'arquivos/9a12b1279b239f9606a03d0fbae8162a.jpg','Corrida ','A'),(4,'arquivos/7c9b72369f62beaaf41991e05ab6d33c.png','Brasil ','A');
+/*!40000 ALTER TABLE `tbl_eventos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_nivel`
+--
+
+DROP TABLE IF EXISTS `tbl_nivel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_nivel` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `nivel` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_nivel`
+--
+
+LOCK TABLES `tbl_nivel` WRITE;
+/*!40000 ALTER TABLE `tbl_nivel` DISABLE KEYS */;
+INSERT INTO `tbl_nivel` VALUES (1,'Operador Básico'),(2,'Cataloguista'),(3,'Administrador');
+/*!40000 ALTER TABLE `tbl_nivel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_noticia`
+--
+
+DROP TABLE IF EXISTS `tbl_noticia`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_noticia` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) DEFAULT NULL,
+  `imagem` varchar(100) DEFAULT NULL,
+  `conteudo` text,
+  `status` char(1) DEFAULT NULL,
+  `statusnoticia` char(1) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_noticia`
+--
+
+LOCK TABLES `tbl_noticia` WRITE;
+/*!40000 ALTER TABLE `tbl_noticia` DISABLE KEYS */;
+INSERT INTO `tbl_noticia` VALUES (1,'TESTE UPDATE 01','arquivos/b3ba67ca2cc98d3b0f03da9e6df9331e.jpg','http://localhost/PROJETO/cms/cms-noticias.php?modo=consultar&id=1','A','P'),(2,'TESTE UPDATE 02','arquivos/d5249c22ae3debe70b8f3f82a082abe6.jpg','Deu muito certo!!!!!','A','P'),(3,'TESTE UPDATE 03','arquivos/f8af3acc261398e8c8e5a6fd343aee04.jpg','TESTE UPDATE 03','A','P'),(4,'TESTE UPDATE 04','arquivos/155c3a446845bb519f670b588c54effc.jpg','http://localhost/PROJETO/cms/cms-noticias.php','A','S'),(5,'TESTE UPDATE 05','arquivos/8890d8e1ff0a14c43963fb4a0f1aaaa5.jpg','http://localhost/PROJETO/cms/cms-noticias.php ','A','S'),(6,'TESTE UPDATE 06','arquivos/e296eecf95aba22822d405c08cac946f.jpg','http://localhost/PROJETO/cms/cms-noticias.php','D','P'),(7,'TESTE UPDATE 07','arquivos/1443d66d2cce466dc3b9948c3af40d1a.png','http://localhost/PROJETO/cms/cms-noticias.php','D','P'),(8,'TESTE UPDATE 08','arquivos/1202d8f132876801997a9fd430f365d7.jpg','http://localhost/PROJETO/cms/cms-noticias.php     ','D','S'),(9,'TESTE UPDATE 09','arquivos/be47966ff21c17cdc013e61183cdcdf7.jpg','http://localhost/PROJETO/cms/cms-noticias.php','D','S');
+/*!40000 ALTER TABLE `tbl_noticia` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_produto`
+--
+
+DROP TABLE IF EXISTS `tbl_produto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_produto` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `produto` varchar(100) DEFAULT NULL,
+  `imagem` varchar(100) DEFAULT NULL,
+  `descricao` varchar(100) DEFAULT NULL,
+  `preco` decimal(6,2) DEFAULT NULL,
+  `valor_desconto` decimal(6,2) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_produto`
+--
+
+LOCK TABLES `tbl_produto` WRITE;
+/*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
+INSERT INTO `tbl_produto` VALUES (38,'Raleigh','arquivos/8b720f5c1290e8e0d0df2f6e8f9463d5.jpg','Um chuchu de bike',600.57,20.00,'A'),(39,'Giant','arquivos/4cffb0cfa0e43cdd52f618fc856ab90b.jpg','Um bike feita com amor e carinho',788.00,600.00,'A'),(40,'Specialized','arquivos/df266d456b5be80f9883e1e166d49030.jpg','Bike legal',800.00,500.30,'A'),(41,'Trek 7.3FX ','arquivos/d78735ee54f055a5c3795822a33c74e3.jpg','bike muito legal',600.88,542.77,'A'),(42,'Eddy Merckx','arquivos/a6d92d9b5317d3a66be60aeb06a84d4b.jpg','bicicleta de muita qualidade',651.22,332.55,'A'),(43,'Pinarello','arquivos/9e96fa4472867eaada38b4dc6f51d52d.jpg','bicicleta de outro mundo',766.11,542.77,'A'),(44,'BMC','arquivos/f56f5c86abf4f0b0dd510cd070226a45.jpg','bicicleta educada',635.44,255.11,'A'),(47,'Caloi Big Master Supreme','arquivos/4db1a5d31770bdf88cef53a9321ca2a8.jpg','Cor ver freio ABS corrente cromada ',1000.00,800.00,'A'),(48,'Caloi Zika da balada 2000','arquivos/b38014a3f8de815d95c573f5133402a5.jpg','A melhor bike do mundo',766.11,500.00,'A');
+/*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_sobre`
+--
+
+DROP TABLE IF EXISTS `tbl_sobre`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_sobre` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `imagem` varchar(100) DEFAULT NULL,
+  `conteudo` text,
+  `status` char(1) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_sobre`
+--
+
+LOCK TABLES `tbl_sobre` WRITE;
+/*!40000 ALTER TABLE `tbl_sobre` DISABLE KEYS */;
+INSERT INTO `tbl_sobre` VALUES (3,'arquivos/98beac841b3145628566b7ae97dd3f73.jpg','                                                                                                \r\n                                                              A Road Runner Cross Bikes atua no mercado de  vendas, montagem, acondicionamento Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate odio ut enim blandit. Magna sit amet purus gravida quis. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Vel pretium lectus quam id leo. Sit amet massa vitae tortor condimentum lacinia quis vel eros. Id ornare arcu odio ut sem. Leo integer malesuada eget arcu dictum varius. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Porttitor massa id neque aliquam. Id consectetur purus ut faucibus pulvinar. Nec feugiat nisl pretium fusce id velit ut tortor. Sit amet aliquam id diam. Id consectetur purus ut faucibus. Cras ornare arcu dui vivamu.        \r\n                            \r\n                            ','D'),(4,'arquivos/64b517fccbbc580da0f25db4723b3522.jpg',' A Road Runner Cross Bikes atua no mercado de vendas, montagem, acondicionamento Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate odio ut enim blandit. Magna sit amet purus gravida quis. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Vel pretium lectus quam id leo. Sit amet massa vitae tortor condimentum lacinia quis vel eros. Id ornare arcu odio ut sem. Leo integer malesuada eget arcu dictum varius. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Porttitor massa id neque aliquam. Id consectetur purus ut faucibus pulvinar. Nec feugiat nisl pretium fusce id velit ut tortor. Sit amet aliquam id diam. Id consectetur purus ut faucibus. Cras ornare arcu dui vivamus. ','A'),(6,'arquivos/d9ab86c591dbcc0db75580c3d02dd67a.jpg','O objetivo da nossa empresa Ã© a venda des Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate odio ut enim blandit. Magna sit amet purus gravida quis. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Vel pretium lectus quam id leo. Sit amet massa vitae tortor condimentum lacinia quis vel eros. Id ornare arcu odio ut sem. Leo integer malesuada eget arcu dictum varius. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Porttitor massa id neque aliquam. Id consectetur purus ut faucibus pulvinar. Nec feugiat nisl pretium fusce id velit ut tortor. Sit amet aliquam id diam. Id consectetur purus ut faucibus. Cras ornare arcu dui vivamus.','A'),(8,'arquivos/3e1a5dc7dffcf6cc1e1d3ca870490a55.jpg','Em 2014, a Road Runner Cross Bikes completa 10 anos de mercado e dado seu crescimento e sua evoluÃ§Ã£o a empresa estÃ¡ passando por uma reestruturaÃ§Ã£o adotando o Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate odio ut enim blandit. Magna sit amet purus gravida quis. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Vel pretium lectus quam id leo. Sit amet massa vitae tortor condimentum lacinia quis vel eros. Id ornare arcu odio ut sem. Leo integer malesuada eget arcu dictum varius. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Porttitor massa id neque aliquam. Id consectetur purus ut faucibus pulvinar. Nec feugiat nisl pretium fusce id velit ut tortor. Sit amet aliquam id diam. Id consectetur purus ut faucibus. Cras ornare arcu dui vivamus.','A');
+/*!40000 ALTER TABLE `tbl_sobre` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_usuario`
+--
+
+DROP TABLE IF EXISTS `tbl_usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_usuario` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `senha` varchar(25) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `cod_nivel` int(11) DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `fk_nivel_usuario` (`cod_nivel`),
+  CONSTRAINT `fk_nivel_usuario` FOREIGN KEY (`cod_nivel`) REFERENCES `tbl_nivel` (`codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_usuario`
+--
+
+LOCK TABLES `tbl_usuario` WRITE;
+/*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
+INSERT INTO `tbl_usuario` VALUES (2,'Rubens Victor','binho250398',NULL,1),(7,'Roney Victor','123','A',1);
+/*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-05-05 23:50:32

@@ -1,7 +1,7 @@
 /*CSS*/
 
+/************************* CSS PADRÃO **************/
 
-/*#####CSS PADRÃO#####*/
 *{
     
     font-family: arial;
@@ -19,14 +19,14 @@ body, ul, h1, h2, h3, h4, h5, p{
     margin-right: auto;
     
 }
-
-/****************************************MENU***********************************/
+    
+/************************* MENU **************/
 
 header{
     width:100%;
     height:70px;
     display: block;
-    overflow: hidden;
+/*    overflow: hidden;*/
     position:fixed;
     top: 0;
     background-color:#003311;
@@ -39,7 +39,7 @@ header{
     
     width:1552px;
     height: inherit;
-    /*background-color: #fee0ee;*/
+/*    background-color: #fee0ee;*/
     
 }
 
@@ -151,7 +151,7 @@ input{
     border: none;
 }
 
-#btnOk{
+#btn-login{
     
     font-weight: bold;
     color:white;
@@ -166,23 +166,28 @@ input{
     z-index: -1;
     background-color:gray;
 }
-/******************************************HOME*********************************/
 
-.msg-slider{
-    
-    /*background-color: rgba(255,250,255,0.3);*/
-    
-}
+/************************* HOME **************/
 
 #conteudo-catalogo{
     
     width: 1550px;
     min-height: 1000px;
-    /*-webkit-box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);*/
-    /*background-color: #f0f0f0;*/
     overflow: hidden;
     box-sizing: border-box;
     
+}
+
+#conteudo{
+    
+    margin-top: 52px;
+    width: 1552px;
+    min-height: 1000px;
+    max-height: inherit;
+    box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);
+    overflow: hidden;
+    box-sizing: border-box;
+/*    background-color: black;*/
 }
 
 #menu-catalogo{
@@ -239,7 +244,9 @@ input{
     box-sizing: border-box;
     
 }
-/*******************************CARD******************************/
+
+/************************* CARD **************/
+
 .card{
     
     width: 360px;
@@ -248,14 +255,13 @@ input{
     /*background-color: #eeefff;*/
     box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
     float:left;
+    overflow: hidden;
     box-sizing: border-box;
     
 }
 
 .card:hover{
     
-    width: 359px;
-    height: 449px;
     border: 1px solid #c9c9c9;
     box-shadow:none;
     overflow: hidden;
@@ -326,7 +332,7 @@ input{
     
 }
 
-/***********************REDES********************/
+/************************* REDES **************/
 
 #redes{
     
@@ -347,7 +353,9 @@ input{
     border-radius: 50%;
     background-color: transparent;
 }
-/****************FOOTER**************************/
+
+/************************* FOOTER **************/
+
 #footer{
     
     width: 100%;
@@ -386,18 +394,6 @@ input{
     height: 170px;
 }
 
-#conteudo{
-    
-    margin-top: 52px;
-    width: 1552px;
-    min-height: 1000px;
-    max-height: inherit;
-    box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);
-    overflow: hidden;
-    box-sizing: border-box;
-    /*background-color: #0f0f0f;*/
-}
-
 #logo-footer{
     
     width: 100px;
@@ -429,8 +425,7 @@ input{
     
 }
 
-
-/****************jssor slider loading skin spin css*****************/
+/************************* jssor slider loading skin spin css **************/
 
 .jssorl-009-spin img {
     animation-name: jssorl-009-spin;
@@ -448,7 +443,7 @@ input{
     }
 }
 
-/*jssor slider bullet skin 032 css*/
+/************************* jssor slider bullet skin 032 css **************/
 .jssorb032 {
     position:absolute;
 }
@@ -512,7 +507,7 @@ input{
     pointer-events:none;
 }
 
-/*******************************FALE-CONOSCO********************************/
+/************************* FALE-CONOSCO **************/
 
 #main-fale-conosco{
     
@@ -520,7 +515,7 @@ input{
     height: 805px;
     margin-top: 50px;
     font-weight: bold;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px;
     /*background-color: #3f9;*/
     box-shadow: 2px 2px 4px 4px rgba(100, 100, 100,0.5);
     box-sizing: border-box;
@@ -617,9 +612,10 @@ textarea{
     height: 135px;
     padding: 10px;
     border: 1px solid #ffaa00;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 2px;
     overflow-y:auto;
     box-sizing: border-box;
+    resize: none;
 }
 
 #box-buttons{
@@ -653,11 +649,11 @@ textarea{
     font-weight: bold;
     cursor: pointer;
     font-size: 20px;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 2px;
     
 }
 
-/**************************Sobre a Empresa***********************************/
+/************************* SOBRE A EMPRESA **************/
 
 .main-sobre{
     width:50%;
@@ -690,6 +686,7 @@ textarea{
     
     width:776px;
     height:334px;
+    margin-top: -340px;
     position:absolute;
     background-color:rgba(255, 187, 51,0.4);
 }
@@ -704,8 +701,7 @@ textarea{
     background-size:cover;
 }
 
-/****************************DESTAQUES*****************************/
-
+/************************* NOTÍCIAS **************/
 
 #principais-noticias{
     
@@ -816,7 +812,7 @@ textarea{
 
 .conteudo-noticia:hover>.text-noticia{
     
-    border-right: 4px solid #33ff77;
+    border-right: 4px solid #003311;
     
 }
 
@@ -862,7 +858,7 @@ textarea{
     color: black;
 }
 
-/*********************************PROMOÇÕES**********************************/
+/************************* PROMOÇÕES **************/
 
 #box-catalogo-promo{
     
@@ -880,19 +876,6 @@ textarea{
     width:inherit;
     height: 490px;
     /*background-color: #fedeee;*/
-    overflow: hidden;
-    box-sizing: border-box;
-    
-}
-
-.card{
-    
-    width: 360px;
-    height: 450px;
-    margin: 20px 0px 0px 20px;
-    /*background-color: #eeefff;*/
-    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
-    float:left;
     overflow: hidden;
     box-sizing: border-box;
     
@@ -1012,7 +995,7 @@ textarea{
     overflow: hidden;
 }
 
-/**************************NOSSAS LOJAS*************************/
+/************************* NOSSAS LOJAS **************/
 
 .container-lojas{
     
@@ -1041,7 +1024,7 @@ textarea{
 
 .conteudo-container-loja:hover>.text-noticia-loja{
     
-    border-left: 4px solid #33ff77;
+    border-left: 4px solid #031;
     
 }
 
@@ -1053,6 +1036,7 @@ textarea{
     text-align: center;
     padding: 20px 20px 20px 20px;
     font-size: 25px;
+    white-space: normal;
     text-transform:uppercase;
     overflow: hidden;
     box-sizing: border-box;
@@ -1070,7 +1054,7 @@ textarea{
     position:relative;
     text-align:right;
     height:inherit;
-    width:350;
+    width:513px;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -1083,24 +1067,13 @@ textarea{
     width:100%;
 }
 
-/*********************************EVENTOS**************************/
-
-.container-evento{
-    
-    width:inherit;
-    height: 450px;
-/*    background-color: #fafee0;*/
-    margin: 35px 0px 0px 0px;
-    overflow: hidden;
-    box-sizing: border-box;
-    
-    
-}
+/************************* EVENTOS **************/
 
 .box-evento{
     
     width:776px;
     height: inherit;
+    margin: 25px 0px 25px 0px;
 /*    background-color: #eeafaf;*/
     float: left;
     overflow: hidden;
@@ -1112,7 +1085,7 @@ textarea{
     
     width: 500px;
     height: 350px;
-    background-color: #eeefff;
+/*    background-color: #eeefff;*/
     overflow: hidden;
     box-sizing: border-box;
     
@@ -1122,7 +1095,9 @@ textarea{
     
     width: 500px;
     height: 100px;
-    background-color: #affaaf;
+    padding: 10px;
+    font-weight:550;;
+    background-color: rgba(0, 100, 50,0.1);
     overflow: hidden;
     box-sizing: border-box;
     
@@ -1155,4 +1130,102 @@ textarea{
 	margin-right:auto;
 	background-color:#ffffff;
 	margin-top:150px;
+}
+
+/*********************** CSS PARA MOBILE ***********************/
+
+@media screen and (max-width:680px){
+    
+    header{  
+        
+        width: 100%;
+        height: 50px;
+        padding: 0px;
+        background-color: #003311;
+        box-sizing: none;
+        
+    }
+    
+    #box-main-header{
+        
+        display: none;
+    }
+    
+    #icone_menu{
+    
+        width: 50px;
+        height: 50px;
+        padding: 9px 10px 0px 10px;
+        background-color: #003311;
+        box-sizing: border-box;
+        
+    }
+
+    .barra-menu{
+
+        width: 30px;
+        height: 4px;
+        margin: 5px 0px 5px 0px;
+        background-color: white;
+    }
+
+    #menu_mobile{
+        width: 150px;
+        height: 300px;
+        background-color: #003311;
+        color: white;
+    }
+    
+    .itens-menu-mobile{
+
+        width: 150px;
+        height: 50px;
+        text-align: center;
+        padding-top: 5px;
+        background-color: #0033;
+        overflow: hidden;
+        box-sizing: border-box;
+
+    }
+    
+    .menu_mobile_close{
+    
+    margin-left: 0px;
+    transition:  1s;
+    visibility: hidden;
+/*    visibility: visible;*/
+    
+    }
+
+    .menu_mobile_open{
+
+    margin-left: 0px;
+    transition:  2s;
+    visibility: visible;
+
+    }
+    
+    #conteudo{
+    
+    margin-top: 50px;
+    width: 680px;
+    min-height: 800px;
+    max-height: inherit;
+    box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: black;
+}
+    
+    #box-slider{
+        
+        width:100%;
+        height: 300px;
+        background-color:gray;
+    }
+    
+    #footer{
+        
+        width: 680px;
+    }
 }

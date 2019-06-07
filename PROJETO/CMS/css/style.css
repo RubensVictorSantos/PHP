@@ -1,7 +1,7 @@
-/*CSS*/
+/* CSS CMS */
 
 
-/***************Padrões*************/
+/********************************* PADRÕES ***************************/
 
 *{
     margin: 0;
@@ -15,19 +15,27 @@
     margin-right: auto;
     
 }
-/********************************************************************/
+
+label{
+    
+    cursor: pointer;
+}
+
+/********************************* CMS *******************************/
+
 #box-main{
     
-    width: 1000px;
-    min-height: 1000px;
-/*    background-color: #cccccc;*/
-/*    background-color: #003311;*/
+    width: 1300px;
+    min-height: 1100px;
+    background-color: #cccccc;
     font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid #003311;
-/*    border-radius: 40px;*/
+/*    border: 1px solid #003311;*/
+    box-shadow: 2px 2px 10px 1px rgba(50, 50, 50, 0.45);
     overflow: hidden;
     box-sizing: border-box;    
 }
+
+/********************************* CMS-MENU ******************************/
 
 #logo{
     
@@ -39,12 +47,11 @@
     box-sizing: border-box;
 }
 
-#box-titulo{
+#box-titulo-cms{
     
     width: 650px;
     height: inherit;
-    padding-top: 83px; 
-/*    background-color: #a2afaf;*/
+    padding-top: 83px;
     text-align: center;
     font-size: 30px; 
     overflow: hidden;
@@ -72,8 +79,6 @@
     box-sizing: border-box; 
 }
 
-/*************************Menu*******************/
-
 #menu{
     
     width: inherit;
@@ -84,7 +89,7 @@
     box-sizing: border-box; 
 }
 
-.option{
+.option-cms{
     
     width: 187px;
     height: inherit;
@@ -96,7 +101,13 @@
     
 }
 
-.img-option{
+.option-cms a{
+    
+    text-decoration: none;
+    
+}
+
+.img-option-cms{
     
     width: 90px;
     height: 90px;
@@ -107,7 +118,7 @@
     
 }
 
-.img-cms{
+.img-menu-cms{
     
     width: 100%;
     height: 100%;
@@ -116,16 +127,6 @@
     background-attachment:fixed;
     background-size:cover;
     
-}
-
-#box-info-user{
-    
-    width: 252px;
-    height: inherit;
-/*    background-color: #affeff;*/
-    float: left;
-    overflow: hidden;
-    box-sizing: border-box; 
 }
 
 .text-cms{
@@ -140,9 +141,15 @@
     box-sizing: border-box; 
 }
 
-label{
+#box-user{
     
-    cursor: pointer;
+    width: 252px;
+    height: inherit;
+    margin: 0% 0% 0% 20%;
+/*    background-color: #affeff;*/
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box; 
 }
 
 #text-name-user{
@@ -178,20 +185,19 @@ label{
     
 }
 
-
-/*****************************conteudo****************************/
+/********************************* CMS-CONTEÚDO **************************/
 
 #conteudo{
     
     width: inherit;
-    min-height: 545px;
+    min-height: 645px;
     background-color: #e6ffee;
     overflow: hidden;
     box-sizing: border-box;
     
 } 
 
-.conteudo-cms{
+.container-conteudo-cms{
     
     width: 50%;
     min-height: 525px;
@@ -249,7 +255,9 @@ label{
     box-sizing: border-box;
     float:left;
 }
-/*************************************FOOTER*****************************/
+
+/********************************* CMS-FOOTER *****************************/
+
 #footer{
     
     width: inherit;
@@ -262,30 +270,16 @@ label{
     overflow: hidden;
     box-sizing: border-box;
 }
-/*******************FALE-CONOSCO-CMS*********/
 
-#table{
+/********************************* CMS-FALE-CONOSCO ***********************/
+
+#table-fale-conosco{
     
     width:inherit;
-    min-height:505px;
-    margin: 20px 0px 20px 0px;
-/*    border: 1px solid black;*/
+    height:100%;
+    margin: 0px 0px 20px 0px;
     overflow-y: auto;
     box-sizing: border-box;
-}
-
-.titulo-tbl{
-    
-    width:inherit;
-    height: 30px;
-    padding: 5px 0px 0px 0px;
-    font-weight: bold;
-/*    border: 1px solid black;*/
-    text-align: center;
-/*    background-color: #99ffbb;*/
-    overflow: hidden;
-    box-sizing: border-box;
-    
 }
 
 .cabecalho{
@@ -294,15 +288,13 @@ label{
     height: 30px;
     font-weight: bold;
     text-align: center;
-/*    background-color: #99eeff;*/
     overflow: hidden;
-    border: 1px solid #e6ffee;
     background-color: #99ffb9;
     box-sizing: border-box;
     
 }
 
-.titulos{
+.tbl-titulos{
     
     width: 23.2%;
     height: 30px;
@@ -310,7 +302,6 @@ label{
     float: left;
     overflow: hidden;
     box-sizing: border-box;
-    border: 1px solid #e6ffee;
     background-color: #99ffb9;
     
 }
@@ -319,9 +310,7 @@ label{
     
     width: 71.9px;
     height: 30px;
-/*    background-color: red;*/
     padding: 5px 0px 0px 0px;
-    border: 1px solid #e6ffee;
     background-color: #99ffb9;
     overflow: hidden;
     box-sizing: border-box;
@@ -331,11 +320,9 @@ label{
     
     width:inherit;
     height: 30px;
-/*    padding: 5px 0px 0px 0px;*/
     text-align: center;
-/*    background-color: #f9eeff;*/
-    
     box-sizing: border-box;
+    background-color: #ccffdd;
     
 }
 
@@ -344,9 +331,7 @@ label{
     width: 23.2%;
     height: inherit;
     overflow: hidden;
-    border: 1px solid #e6ffee;
-    
-    background-color: #99ffb9;
+    padding: 5px 0px 0px 0px;
     box-sizing: border-box;
     float: left;
     
@@ -356,7 +341,6 @@ label{
     
     width: 70px;
     height:inherit;
-/*    background-color: #99ffb9;*/
     overflow: hidden;
     box-sizing: border-box;
     float: left;
@@ -365,39 +349,19 @@ label{
 
 .opcoes{
     
-    width: 35px;
+    width: 50%;
     height: inherit;
     float: left;
-    border: 1px solid #e6ffee;
-    background-color: #99ffb9;
     overflow: hidden;
     box-sizing: border-box;
 }
 
-.option a{
-    
-    text-decoration: none;
-    
-}
+/********************************* CMS-MODAL ********************************/
 
-/*
-#test{
-    
-    width: inherit;
-    min-height: 450px;
-    border: 1px solid #031;
-    margin-bottom: 20px;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-*/
-
-/********************************MODAL********************************/
 #container{
 	width:100%;
 	height:100%;
-    margin-top: -1%;
-	background-color:rgba(0,0,0,0.7);
+	background-color:rgba(0 ,0 ,0 ,0.7);
 	position:fixed;
 	z-index:999;
 	display:none;	
@@ -408,46 +372,60 @@ label{
 	height:500px;
 	margin-left:auto;
 	margin-right:auto;
-	background-color:#ffffff;
+    font-family: Arial, Helvetica, sans-serif;
 	margin-top:150px;
     box-sizing: border-box;
     
 }
 
-#box-btn-modal{
+#titulo-modal{
     
-    width: inherit;
+    width: 460px;
     height: 20px;
-    
+    padding: 2px;
+    background-color: #031;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    float:left;    
 }
 
-#btn-fechar{
+#box-btn-modal{
     
     width: 40px;
     height: 20px;
+    background-color: aqua;
+    float: left;
+    
+}
+
+#fechar{
+    
+    width: 100%;
+    height: 100%;
     color: white;
     background-color: red;
-    border-color: red;
-    left: 460;
-    position: relative;
+    border: none;
     font-weight: bold;
-    
 }
 
 #tbl-modal{
     
-    width: inherit;
+    width: 500px;
     height: 480px;
     overflow: hidden;
+    background-color: white;
     box-sizing: border-box;
+    clear: both;
 }
 
 #labels{
     
     width: 150px;
     height: inherit;
-    padding: 5px;
+    padding: 5px 5px 5px 20px;
     float: left;
+    font-weight: bold;
     box-sizing: border-box;
     
 }
@@ -463,6 +441,18 @@ label{
     
 }
 
+/********************************* CMS-NOTICIAS *************************/
+
+.container-noticia{
+    
+    width: 30%;
+    min-height: 525px;
+    box-sizing: border-box;
+    background-color: #effefe;
+    overflow: hidden;
+    float: left;
+}
+
 .titulos-cms{
     
     width: 100%;
@@ -474,20 +464,10 @@ label{
     box-sizing: border-box;
 }
 
-/*****************   CMS-NOTICIAS    ************************/
-
-.img-cms-noticias{
-    
-    width: 300px;
-    height: 158px;
-    margin: 10px 0px 10px 0px;
-    background-color: #ffffff;
-}
-
 .container-input{
     
-    height: 320px;
-    padding: 10px 10px 10px 25px;
+    height: inherit;
+    padding: 10px 10px 10px 0px;
     overflow: hidden;
     box-sizing: border-box;
     
@@ -500,21 +480,29 @@ label{
     
 }
 
-.cms-textarea{
+textarea{
     
     width: 300px;
-    height: 126px;
-    
+    height: 158px;
+/*    padding: 10px;*/
+    margin: 10px 0px 10px 20px;
+    text-align: left;
+    border: 1px solid #003311;
+    border-radius: 2px;
+    overflow-x:none;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    resize: none;
 }
 
-/**************************CMS-PROMO********************************/
+/********************************* CMS-PROMOÇÕES *************************/
 
 .conteudo-cms-promo{
     
-    width: 40%;
+    width: 28%;
     min-height: 525px;
     box-sizing: border-box;
-    background-color: #effefe;
+    background-color: #e6ffee;
     float: left;
     
     
@@ -522,12 +510,11 @@ label{
 
 .conteudo-cms-tbl{
     
-    width: 60%;
-    min-height: 525px;
+    width: 72%;
+    min-height: 100%;
     box-sizing: border-box;
-    background-color: #effefe;
+    background-color: #ccffdd;
     float: left;
-    
     
 }
 
@@ -535,19 +522,24 @@ label{
     
     width: 300px;
     height: 261px;
-    margin: 20px 0px 0px 20px;
+    margin: 0px 0px 10px 20px;
 /*    border: 1px solid #003311;*/
     background-color: #ffffff;
+    background-position: center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
     box-sizing: border-box;
     
 }
 
-.nome-produto{
+.input-text-cms{
     
     width: 100%;
     height: 40px;
     padding: 5px 0px 0px 20px;
 /*    background-color:pink;*/
+    overflow: hidden;
     box-sizing: border-box;
     
 }
@@ -556,6 +548,7 @@ label{
     
     width: 300px;
     height: 35px;
+    padding: 8px 0px 0px 0px;
 /*    background-color: #00ffff;*/
     box-sizing: border-box;
     float: left;
@@ -582,13 +575,14 @@ label{
 
 .box-rdo{
     
-    width: 30%;
+    width: 120px;
     height: inherit;
     overflow: hidden;
     padding: 10px 5px 5px 5px;
     text-align: center;
     font-weight: bold;
     color:#003311;
+/*    background-color:yellow;*/
     box-sizing: border-box;
     float: left;
     
@@ -596,7 +590,7 @@ label{
 
 .box-input-promo{
     
-    width: 300px;
+    width: 100%;
     height: 35px;
     box-sizing: border-box;
     float: left;
@@ -618,86 +612,127 @@ label{
 
 .titulos-promo{
     
-    width: 21.9%;
+    width: 18%;
     height: 30px;
     padding: 5px 0px 0px 0px;
     float: left;
     overflow: hidden;
     box-sizing: border-box;
-/*
-    border: 1px solid #e6ffee;
-    background-color: #99ffb9;
-*/
     
-}
-
-.titulo-campo-opcoes{
-    
-    width: 74px;
-    height: 30px;
-    padding: 5px 0px 0px 0px;
-/*    border: 1px solid #e6ffee;*/
-/*    background-color: #99ffb9;*/
-    overflow: hidden;
-    box-sizing: border-box;
 }
 
 .campos-tbl-promo{
     
-    width: 22%;
+    width: 18.5%;
     height: inherit;
-    overflow: hidden;
-/*    border: 1px solid #e6ffee;*/
-    
-/*    background-color: #99ffb9;*/
-    box-sizing: border-box;
-    float: left;
-    
-}
-
-.campo-opcoes{
-    
-    width: 70px;
-    height:inherit;
-/*    background-color: #99ffb9;*/
+    padding: 6px;
     overflow: hidden;
     box-sizing: border-box;
     float: left;
-    
-}
-
-.opcoes{
-    
-    width: 35px;
-    height: inherit;
-    float: left;
-/*    border: 1px solid #e6ffee;*/
-/*    background-color: #99ffb9;*/
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.option a{
-    
-    text-decoration: none;
     
 }
 
 .opcoes-promo{
     
-    width: 23px;
+    width: 50%;
     height: inherit;
     float: left;
-/*
-    border: 1px solid #e6ffee;
-    background-color: #99ffb9;
-*/
     overflow: hidden;
     box-sizing: border-box;
 }
 
+/***************************** CMS-SOBRE ***************************/
 
-/******************** icone informações***************************/
+.conteudo-sobre{
+    
+    width: 30%;
+    height: 545px;
+/*    background-color: #aeafaf;*/
+    overflow: hidden;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.conteudo-tbl-sobre{
+    
+    width: 70%;
+    min-height: 100%;
+    box-sizing: border-box;
+    background-color: #ccffdd;
+    float: left;
+    
+}
+
+/***************************** CMS-NOSSA-LOJAS ***************************/
+
+.conteudo-lojas{
+    
+    width: 30%;
+    height: 700px;
+    padding-top: 25px;
+/*    background-color: #aeafaf;*/
+    overflow: hidden;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+.input-text-endereco{
+    
+    width: 100%;
+    height: 40px;
+    padding: 0px 0px 0px 20px;
+/*    background-color:darkcyan;*/
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+
+.box-input-endereco{
+    
+    width: 70.5%;
+    height: 35px;
+    box-sizing: border-box;
+/*    background-color:blue;*/
+    float: left;
+    
+}
+
+.box-input-numero{
+    
+    width: 11%;
+    height: 35px;
+    box-sizing: border-box;
+/*    background-color:red;*/
+    float: left;
+    
+}
+
+.conteudo-tbl-lojas{
+    
+    width: 70%;
+    min-height: 100%;
+    box-sizing: border-box;
+    background-color: #ccffdd;
+    float: left;
+    
+}
+
+/***************************** CMS-EVENTOS ***************************/
+
+.conteudo-cms-eventos{
+    
+    width: 30%;
+    height: 545px;
+/*    background-color: #aeafaf;*/
+    overflow: hidden;
+    box-sizing: border-box;
+    float: left;
+    
+}
+
+/***************************** ICONE INFORMAÇÕES ***************************/
 
 .info{
     
@@ -768,5 +803,29 @@ label{
 /*    visibility:visible;*/
 /*    transition: 2s;*/
 /*    opacity: 1;*/
+    
+}
+
+/***************************** CMS-ADM-USUARIO ***************************/
+
+.conteudo-adm{
+    
+    width: 30%;
+    height: 545px;
+/*    background-color: #ffeefa;*/
+    margin: 30px 0px 0px 0px;
+    overflow: inherit;
+    box-sizing: border-box;
+    float: left;
+}
+
+.conteudo-tbl-adm-user{
+    
+    width: 70%;
+/*    min-height: 585px;*/
+    overflow-x: none;
+    box-sizing: border-box;
+    background-color: #ccffdd;
+    float: left;
     
 }

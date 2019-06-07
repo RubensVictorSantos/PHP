@@ -1,12 +1,9 @@
 <?php
     
-    
     require_once('bd/conexao.php');
     
     $conexao = conexaoMysql();
     
-
-    //$newstr = filter_var($str, FILTER_SANITIZE_STRING);
     $nome = null;
     $telefone = null;
     $celular = null;
@@ -24,9 +21,7 @@
     $data_nasc = null;
     $dt_nasc = null;
 
-    
     if(isset($_POST["btnsalvar"])){
-        
         
         $nome = filter_var($_POST["txtnome"], FILTER_SANITIZE_STRING);
         $telefone = filter_var($_POST["txttel"], FILTER_SANITIZE_STRING);
@@ -41,18 +36,26 @@
         
         if($_POST['btnsalvar'] == "salvar"){
         
-            $sql = "INSERT INTO tbl_contato(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao) VALUES ('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
+            $sql = "INSERT INTO tbl_cadastro_cliente(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao)
+                    VALUES('".$nome."',
+                            '".$telefone."',
+                            '".$celular."',
+                            '".$email."',
+                            '".$homep."',
+                            '".$facebook."',
+                            '".$sugestoes."',
+                            '".$produto."',
+                            '".$sexo."',
+                            '".$profissao."'
+                            )";
         
         }
-        
-        echo($sql);
         
         if(mysqli_query($conexao, $sql)){
             header("location:fale-conosco.php");
         }else{
-
-            //echo("<script>alert(die('Connection failed: 1'.mysqli_connect_error());)</script>");
-            //echo("<script>alert('erros!')");
+            
+            echo("<script>alert('Erro ao salvar')</script>");
         }
     }
 
@@ -64,7 +67,7 @@
         <meta charset="utf-8">
         <title>Fale conosco</title>
         <script src="js/mascara.js" type="text/javascript"></script>
-        <link rel="icon" href="img/ico/logo.png">
+        <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
     </head>
     <body>
         <?php
@@ -88,7 +91,13 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input onkeypress="return validar(event,'number','nome')" id="nome" class="input-fale-conosco" type="text" name="txtnome"  placeholder="Digite seu nome" value="<?php echo($nome)?>" required >
+                        <input onkeypress="return validar(event,'number','nome')"
+                               id="nome"
+                               class="input-fale-conosco"
+                               type="text" name="txtnome" 
+                               placeholder="Digite seu nome"
+                               value="<?php echo($nome)?>"
+                               required>
                     </div>
                     </div>  
                     <div class="box_campos">
@@ -98,7 +107,14 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input onkeypress="return validar(event,'caracter','telefone')" id="telefone" maxlength="14" class="input-fale-conosco" type="tel" name="txttel" placeholder="( _ _ ) _ _ _ _-_ _ _ _" value="<?php echo($telefone)?>">
+                        <input onkeypress="return validar(event,'caracter','telefone')"
+                               id="telefone"
+                               maxlength="14"
+                               class="input-fale-conosco"
+                               type="tel"
+                               name="txttel"
+                               placeholder="( _ _ ) _ _ _ _-_ _ _ _"
+                               value="<?php echo($telefone)?>">
                         
                     </div>
                     </div>
@@ -109,8 +125,15 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input onkeypress="return validar(event,'caracter','celular')" id="celular" maxlength="15" class="input-fale-conosco" type="text" name="txtcel"  placeholder="( _ _ ) _ _ _ _ _-_ _ _ _" value="<?php echo($celular)?>" required>
-                        
+                        <input onkeypress="return validar(event,'caracter','celular')"
+                               id="celular"
+                               maxlength="15"
+                               class="input-fale-conosco"
+                               type="text"
+                               name="txtcel" 
+                               placeholder="( _ _ ) _ _ _ _ _-_ _ _ _"
+                               value="<?php echo($celular)?>"
+                               required>
                         
                     </div>
                     </div>
@@ -121,7 +144,13 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input id="email" class="input-fale-conosco" type="email" name="txtemail" placeholder="seuEmail@dominio.com" value="<?php echo($email)?>" required >
+                        <input id="email"
+                               class="input-fale-conosco"
+                               type="email"
+                               name="txtemail"
+                               placeholder="seuEmail@dominio.com"
+                               value="<?php echo($email)?>"
+                               required>
                     </div>
                     </div>
                     <div class="box_campos">
@@ -131,7 +160,13 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input id="home-page" class="input-fale-conosco" type="url" name="txthomep" placeholder="http://seuSite.com.br" value="<?php echo($homep)?>">
+                         
+                        <input id="home-page"
+                               class="input-fale-conosco"
+                               type="url"
+                               name="txthomep"
+                               placeholder="http://seuSite.com.br"
+                               value="<?php echo($homep)?>">
                     </div>    
                     </div>
                     <div class="box_campos">
@@ -141,7 +176,12 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input id="facebook" class="input-fale-conosco" type="url" name="txtface" placeholder="http://facebook.com" value="<?php echo($facebook)?>">
+                        <input id="facebook"
+                               class="input-fale-conosco"
+                               type="url"
+                               name="txtface"
+                               placeholder="http://facebook.com"
+                               value="<?php echo($facebook)?>">
                     </div>
                     </div>
                     <div class="campo-obs">
@@ -157,11 +197,16 @@
                     <div class="box_campos">
                         <div class="box-label">
                             <label for="produto">
-                                Infomações Produto:
+                                Produto:
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input id="produto" class="input-fale-conosco" type="text" name="txtproduto"  value="<?php echo($produto)?>">
+                        <input id="produto"
+                               class="input-fale-conosco"
+                               type="text"
+                               name="txtproduto"
+                               placeholder=""
+                               value="<?php echo($produto)?>">
                     </div>
                     </div>
                     <div class="box_campos">
@@ -186,11 +231,18 @@
                             </label>
                         </div>
                     <div class="box-text-cad">
-                        <input id="profissao" class="input-fale-conosco" type="text" name="txtprofissao" placeholder="Digite sua profissão" value="<?php echo($profissao)?>">
+                        <input id="profissao"
+                               class="input-fale-conosco"
+                               type="text"
+                               name="txtprofissao"
+                               placeholder="Digite sua profissão"
+                               value="<?php echo($profissao)?>">
                     </div>
                     </div>
                     <div class="box_campos">
                         <div class="box-label" >
+                            
+                            
 
                         </div>
                         <div id="box-buttons">

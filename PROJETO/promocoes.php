@@ -1,3 +1,27 @@
+<?php
+    
+    require_once('bd/conexao.php');
+    session_start();
+    
+    $conexao = conexaoMysql();
+
+    $nomeProduto = null;
+    $imagem = null;
+    $descricao = null;
+    $preco = null;
+    $valor_desconto = null;
+    $status = null;
+    $sql = null;
+    $rdoativado = null;
+    $rdodesativado = null;
+    
+    if(isset($_SESSION['path_foto'])){
+        $foto = $_SESSION['path_foto'];
+    }
+    
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -5,7 +29,7 @@
         <title>
             Promoções
         </title>
-        <link rel="icon" href="img/ico/logo.png">
+        <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
     </head>
     <body>
         <?php
@@ -21,34 +45,76 @@
 
                 </h1>
                 <div id="box-catalogo-promo">
+                    <?php
 
-                    <div class="card-box-promo">
+                        $nomeProduto = null;
+                        $nomefoto = null;
+                        $descricao = null;
+                        $preco = null;
+                        $valor_desconto = null;
+                        $status = null;
+
+                        $sql = "SELECT * FROM tbl_produto WHERE status LIKE 'A%'";
+
+                        $select = mysqli_query($conexao, $sql);
+                        
+                        
+                        while($rscontatos=mysqli_fetch_array($select))
+                        {
+
+                            $nomeProduto = $rscontatos['produto'];
+                            $nomefoto = $rscontatos['imagem'];
+                            $descricao = $rscontatos['descricao'];
+                            $preco = $rscontatos['preco'];
+                            $valor_desconto = $rscontatos['valor_desconto'];
+
+                    ?>  
                         <div class="card">
                             <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeCaloiLotus.jpg" alt="" class="img-card">
-
-
+                                
+                                    <img src="cms/<?php echo($nomefoto);?>" alt="" class="img-card">
+                                
+                                
                                 <div class="box-img-card">
 
-                                    -30%
+                                    <?php
+                                        
+                                        $porcentagem = (100*$valor_desconto)/$preco;
+//                                        $porcentagem = (100$preco)/$valor_desconto;
+                                        
+                                        echo(round($porcentagem).'<span>%</span>');
+                                
+                                    ?>
 
                                 </div>
 
                             </div>
                             <div class="nome-card">
                                 <p >
-                                     
+                                    <?php 
+                                        echo($nomeProduto);
+                                    
+                                    ?>
                                 </p>
                             </div>
                             <div class="desc-card">
                                 <p>
-                                    Aro 29 Freio a Disco 21 Marchas Feminina
+                                    <?php 
+                                        echo($descricao);
+                                    
+                                    ?>
                                 </p>
                             </div>
                             <div class="preco-card-promo">
                                 <p>
-                                    <span class="text-promo">R$750,99
-                                    </span> Por R$700,00
+                                    <span class="text-promo">R$<?php 
+                                        echo($preco);
+                                    
+                                    ?>
+                                    </span> Por R$<?php 
+                                        echo($valor_desconto);
+                                    
+                                    ?>
                                 </p>
                             </div>
                             <div class="detalhes">
@@ -57,256 +123,10 @@
 
                             </div>
                         </div>
-
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeCaloiLotus.jpg" alt="" class="img-card">
-
-                                <div class="box-img-card">
-
-                                    -30%
-
-                                </div>
-
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                   Mountain Bike Caloi Lotus
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 29 Freio a Disco 21 Marchas Feminina
-                                </p>
-                            </div>
-                            <div class="preco-card-promo">
-                                <p>
-                                    <span class="text-promo">
-                                        R$589,99
-                                    </span>
-                                    Por R$250,00 ou 10X R$25,00
-
-                                </p>
-                            </div>
-                            <div class="detalhes">
-
-                                <a href="#">Detalhes</a>
-
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeTrackBikesTKS.jpg" alt="" class="img-card">
-
-                                <div class="box-img-card">
-
-                                    -30%
-
-                                </div>
-
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                    Mountain Bike Track Bikes TKS
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 29 Freio a Disco Câmbio Shimano 21 Marchas
-                                </p>
-                            </div>
-                            <div class="preco-card-promo">
-                                <p>
-                                    <span class="text-promo">
-                                        R$954,55
-                                    </span>
-                                    Por R$800,00 em até 20x sem juros
-                                </p>
-                            </div>
-                            <div class="detalhes">
-
-                                <a href="#">Detalhes</a>
-
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="" class="img-card">
-
-                                <div class="box-img-card">
-
-                                    -30%
-
-                                </div>
-
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                    Mountain Bike Caloi Aluminum Sport
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 26 Freio V-Brake 21 Marchas
-                                </p>
-                            </div>
-                            <div class="preco-card-promo">
-                                <p>
-                                    <span class="text-promo">
-
-                                        R$850,44
-
-                                    </span>
-                                    Por R$850,41
-                                </p>
-                            </div>
-                            <div class="detalhes">
-                                <a href="#">Detalhes</a>
-                            </div>
-                        </div>
-        
-                    </div>
-                    
-                    <div class="card-box-promo">
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeCaloiLotus.jpg" alt="" class="img-card">
-
-                                <div class="box-img-card">
-
-                                    -60%
-
-                                </div>
-
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                   Mountain Bike Caloi Lotus
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 29 Freio a Disco 21 Marchas Feminina
-                                </p>
-                            </div>
-                            <div class="preco-card-promo">
-                                <p>
-                                    <span class="text-promo">
-
-                                        R$824,00
-
-                                    </span>
-                                    Por R$700,00
-                                </p>
-                            </div>
-                            <div class="detalhes">
-
-                                <a href="#">Detalhes</a>
-
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeTrackBikesTKS.jpg" alt="" class="img-card">
-
-                                <div class="box-img-card">
-
-                                    -30%
-
-                                </div>
-
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                    Mountain Bike Track Bikes TKS
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 29 Freio a Disco Câmbio Shimano 21 Marchas
-                                </p>
-                            </div>
-                            <div class="preco-card-promo">
-                                <p>
-                                    <span class="text-promo">R$900,00</span> Por R$854,05
-                                    10x de R$85,41
-                                </p>
-                            </div>
-                            <div class="detalhes">
-
-                                <a href="#">Detalhes</a>
-
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="" class="img-card">
-
-                                <div class="box-img-card">
-
-                                    -30%
-
-                                </div>
-
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                    Mountain Bike Caloi Aluminum Sport
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 26 Freio V-Brake 21 Marchas
-                                </p>
-                            </div>
-                            <div class="preco-card-promo">
-                                <p>
-                                    <span class="text-promo">R$900,55</span> Por R$854,05
-                                    10x de R$85,41
-                                </p>
-                            </div>
-                            <div class="detalhes">
-                                <a href="#">Detalhes</a>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/imgbikes_MountainBikeCaloiSport.jpg" alt="" class="img-card">
-
-                                <div class="box-img-card">
-
-                                    -30%
-
-                                </div>
-
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                    Mountain Bike Caloi Aluminum Sport
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 26 Freio V-Brake 21 Marchas
-                                </p>
-                            </div>
-                            <div class="preco-card-promo">
-                                <p>
-                                    <span class="text-promo">R$854,05</span> por R$750,99
-                                </p>
-                            </div>
-                            <div class="detalhes">
-                                <a href="#">Detalhes</a>
-                            </div>
-                        </div>
-        
-                    </div>
-                    
+                        <?php
+                                
+                            }
+                        ?>
                 </div>
             </div>
             <?php

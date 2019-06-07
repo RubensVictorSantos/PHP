@@ -71,5 +71,21 @@ function validar(caracter,blockType,campo){
                document.getElementById(campo).style="background-color:#ffffff;";
             }
        }
+    }else if(blockType=='decimal'){
+             
+        if(letra<48 || letra>57){
+            
+            if(letra!=46){
+            //  document.getElementById(campo).placeholder="Caracter invalido!";
+                document.getElementById(campo).style="background-color:#ffeeee;border:10;border-color:#ff9999;";
+
+
+                return false;
+            }else{
+
+               document.getElementById(campo).style="background-color:#ffffff;";
+
+            }
+        }
     }  
 }
