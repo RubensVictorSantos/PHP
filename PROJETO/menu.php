@@ -4,6 +4,8 @@
     echo(
     '
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/menu-mobile.js"></script>
     <header class="center">
         <div id="box-main-header" class="center">
             <div id="logo">
@@ -24,36 +26,46 @@
                 </ul>
             </nav>
         </div>
+        <!-- MENU MOBILE -->
+        <div id="icone_menu">
+            <div class="barra-menu"></div>
+            <div class="barra-menu"></div>
+            <div class="barra-menu"></div>
+        </div>
+        <nav id="menu_mobile" class="menu_mobile_close">
+            <ul class="center">
+                <li class="itens-menu-mobile">
+                    <a href="noticias.php" class="link">
+                        Destaques
+                    </a>
+                </li>
+                <li class="itens-menu-mobile">
+                    <a href="promocoes.php" class="link">
+                        Promoções
+                    </a>
+                </li>
+                <li class="itens-menu-mobile">
+                    <a href="eventos.php" class="link">
+                        Eventos
+                    </a>
+                </li>
+                <li class="itens-menu-mobile">
+                    <a href="fale-conosco.php" class="link">
+                        Fale Conosco
+                    </a>
+                </li>
+                <li class="itens-menu-mobile">
+                    <a href="Sobre.php" class="link">
+                        Sobre
+                    </a>
+                </li>
+                <li class="itens-menu-mobile">
+                    <a href="lojas.php" class="link">
+                        Nossas Lojas
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
     '
     );
-    
-//            <div id="login">
-//                <form name="frmlogin" id="frmlogin" method="post" action="ope.php">
-//                    <div class="box-login center">
-//                        <label>
-//                            Usuário
-//                        </label><br>
-//                        
-//                        <input type="text"
-//                                name="txt-usuario"
-//                                id="txt-user">
-//                                
-//                    </div>
-//                    <div class="box-login center">
-//                        <label >
-//                            Senha
-//                        </label><br>
-//                        
-//                        <input type="password" 
-//                                name="txt-senha" 
-//                                id="txtPass">
-//                                
-//                        <input type="submit"
-//                                value="Ok"
-//                                name="btn-ok"
-//                                id="btnOk">
-//                                
-//                    </div>
-//                </form>
-//            </div>

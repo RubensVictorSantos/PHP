@@ -151,7 +151,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <head>
         <title>
-            CMS Adm. Produto
+            CMS Categoria
         </title>
         
         <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
@@ -159,20 +159,6 @@
         <script src="../js/mascara.js" type="text/javascript"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>
-        <script>
-            $(document).ready(function(){
-                
-                $('#filefoto').live('change', function(){
-                    
-                    $('#fotos').ajaxForm({
-                        
-                        target: '#visualizar_foto'
-                        
-                    }).submit();
-                    
-                });
-            });
-        </script>
     </head>
     <body>
         <div id="box-main" class="center">
@@ -185,43 +171,13 @@
             
             <!--********************* CONTEÚDO ****************-->
             <div class="titulos-cms">
-                <h3>Administrar Produtos</h3>
+                <h3>Cadastrar Categoria</h3>
             </div>
             
             <div id="conteudo">
                 <div class="conteudo-produto">
-                    <form id="fotos" name="frmFotos" method="POST" action="upload.php" enctype="multipart/form-data">
-                        
-                        <div class="input-text-cms">
-                            <div id="box-file">
-                                <input type="file"
-                                       id="filefoto"
-                                       name="flefoto"
-                                       requered>
-                            </div>
-                        
-                        </div>
-                    
-                    </form>
                     
                     <form name="frm-produto" method="post" action="cms-produto.php" enctype="multipart/form-data">
-                        <div id="visualizar_foto">
-                            <?php
-                                if(isset($nomefoto)){
-                            ?>
-                            
-                            <img src="<?php echo($nomefoto);?>" alt="" id="img-card">
-                                
-                            <?php
-                                }else{
-                            ?>
-                            
-                            <div id="img-card" style="border:1px solid #003311;border-radius:2px 2px;"></div>
-                            
-                            <?php
-                                }
-                            ?>
-                        </div>
                         <div class="input-text-cms">
                             <div class="box-input-promo">
                                 <input onkeypress="return validar(event,'number','nome')"
@@ -231,36 +187,42 @@
                                        class="input-cms-promo"
                                        value="<?php echo($nomeProduto)?>"
                                        maxlength="90"
-                                       placeholder="Digite o nome do produto"
+                                       placeholder=""
                                        required>
                             </div>
                         </div>
-                        <div class="input-text-cms">
+<!--
+                       <div class="input-text-cms">
                             <div class="box-input-promo">
-                                <input type="text"
-                                       name="textdescricao"
-                                       class="input-cms-promo"
-                                       value="<?php echo($descricao)?>"
-                                       maxlength="65"
-                                       placeholder="Digite a descrição do produto"
-                                       required>
+
+                                <select name="combobox" class="input-cms-promo" id="combobox" required>
+                                    <option>
+                                        Selecione nivel de usuário
+                                    </option>
+
+                                    <?php
+
+                                        $sql = "SELECT * FROM tbl_nivel order by codigo";
+                                        $select = mysqli_query($conexao, $sql);
+
+                                        while($rscontatos=mysqli_fetch_array($select)){
+
+                                    ?>
+
+                                    <option value="<?php echo($rscontatos['codigo'])?>">
+
+                                        <?php echo($rscontatos['nivel'])?>
+
+                                    </option>
+
+                                    <?php
+                                        }
+                                    ?>
+                                </select>
 
                             </div>
                         </div>
-                        <div class="input-text-cms">
-                            <div class="box-input-promo">
-                                <input onkeypress="return validar(event,'decimal','preco')"
-                                       type="text"
-                                       name="textpreco"
-                                       id="preco"
-                                       class="input-cms-promo"
-                                       value="<?php echo($preco)?>"
-                                       maxlength="6"
-                                       placeholder=" Digite o preço atual do produto"
-                                       required>
-
-                            </div>
-                        </div>
+-->
                         <div class="input-text-cms">
                             <div class="box-rdo" style="width:85px;">
                                 <input type="radio"

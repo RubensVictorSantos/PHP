@@ -63,7 +63,7 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
                 </a>
             </div>
             <div class="option-cms">
-                <a href="cms-produto.php">
+                <a href="cms-adm-produto.php">
                     <div class="img-option-cms center">
                         <figure>
                             <img src="../img/ico/product.png" id="btn-fc" class="img-menu-cms">
@@ -100,22 +100,35 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
                 </a>
             </div>
             <div id="box-user">
-                <div id="text-name-user">
-                    <label for="name-user">
-                        <h4>
-                            <p>
-                                Bem vindo, <span id="name-user">'.$usuario.'</span>
-                            </p>
-                        
-                        </h4>
-                    </label>
-                </div>
-                <div id="box-btn">
-                    <input type="button"
-                            id="btn-logout"
-                            value="Logout">
-                                
-                </div>
+                <form name="frmlogout" id="frmlogout" method="post" action="cms-menu.php">
+                    <div id="text-name-user">
+                        <label for="name-user">
+                            <h4>
+                                <p>
+                                    Bem vindo, <span id="name-user">'.$usuario.'</span>
+                                </p>
+
+                            </h4>
+                        </label>
+                    </div>
+                    <div id="box-btn">
+                        <input type="button"
+                                id="btn-logout"
+                                name="btn-logout"
+                                value="Logout">
+
+                    </div>
+                </form>
             </div>
         </div>
     ');
+
+if(isset($_POST['btn-logout'])){
+
+    
+    echo("logout!!");
+    unset($_SESSION['login']);
+    unset($_SESSION['senha']);
+    header("location:../index.php");
+
+}

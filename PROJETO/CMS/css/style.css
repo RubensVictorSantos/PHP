@@ -1,6 +1,5 @@
 /* CSS CMS */
 
-
 /********************************* PADRÕES ***************************/
 
 *{
@@ -639,6 +638,29 @@ textarea{
     float: left;
     overflow: hidden;
     box-sizing: border-box;
+}
+
+/***************************** CMS-PRODUTO *************************/
+
+.conteudo-produto{
+    
+    width: 28%;
+    min-height: 525px;
+    box-sizing: border-box;
+    background-color: #e6ffee;
+    float: left;
+    
+    
+}
+
+.conteudo-cms-tbl{
+    
+    width: 72%;
+    min-height: 100%;
+    box-sizing: border-box;
+    background-color: #ccffdd;
+    float: left;
+    
 }
 
 /***************************** CMS-SOBRE ***************************/

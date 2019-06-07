@@ -12,7 +12,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <head>
         <title>
-            CMS Adm. Usuário
+            CMS Adm. Produto
         </title>
         
         <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
@@ -30,19 +30,24 @@
             
             <!--********************* CONTEÚDO ****************-->
             <div class="titulos-cms">
-                <h3>Administrar Usuarios</h3>
+                <h3>Administrar Produtos</h3>
             </div>
             
             <div id="conteudo">
                 
                 <div>
                     
-                    <a href="cms-usuario.php">Cadastrar Usuário</a>
+                    <a href="cms-categoria.php">Cadastrar Categoria</a>
                     
                 </div>
                 <div>
                     
-                    <a href="cms-nivel-usuario.php">Cadastrar Nível Usuário</a>
+                    <a href="cms-produto.php">Cadastrar Produto</a>
+                    
+                </div>
+                <div>
+                    
+                    <a href="cms-subcategoria.php">Cadastrar Subcategoria</a>
                     
                 </div>
                 
