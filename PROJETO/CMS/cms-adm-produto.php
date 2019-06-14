@@ -14,10 +14,7 @@
         <title>
             CMS Adm. Produto
         </title>
-        
         <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-
     </head>
     <body>
         <div id="box-main" class="center">
@@ -36,8 +33,7 @@
             <div id="conteudo">
                 
                 <div>
-                    
-                    <a href="cms-categoria.php">Cadastrar Categoria</a>
+                    <a href="cms-categoria-subcategoria.php">Cadastrar Categoria e Subcategoria</a>
                     
                 </div>
                 <div>
@@ -47,7 +43,7 @@
                 </div>
                 <div>
                     
-                    <a href="cms-subcategoria.php">Cadastrar Subcategoria</a>
+                    <a href="cms-referencias.php">Cadastrar Referencias</a>
                     
                 </div>
                 

@@ -126,8 +126,10 @@
         <title>
             CMS Eventos
         </title>
+<!--
         <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+-->
         <script src="../js/mascara.js" type="text/javascript"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>

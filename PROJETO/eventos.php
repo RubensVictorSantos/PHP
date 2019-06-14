@@ -27,11 +27,52 @@
         <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
     </head>
     <body>
+        <header>
         <?php
         
-            require_once('menu.php');
+            include('menu.php');
         
         ?>
+        <div id="icone_menu">
+            <div class="barra-menu"></div>
+            <div class="barra-menu"></div>
+            <div class="barra-menu"></div>
+        </div>
+        <nav id="menu_mobile" class="menu_mobile_close">
+            <ul class="center">
+                <li class="itens-menu-mobile">
+                    <a href="noticias.php" class="link">
+                        Destaques
+                    </a>
+                </li>
+                <li class="itens-menu-mobile">
+                    <a href="promocoes.php" class="link">
+                        Promoções
+                    </a>
+                </li>
+                <li class="itens-menu-mobile">
+                    <a href="eventos.php" class="link">
+                        Eventos
+                    </a>
+                </li>
+                <li class="itens-menu-mobile">
+                    <a href="fale-conosco.php" class="link">
+                        Fale Conosco
+                    </a>
+                </li>
+                <li class="itens-menu-mobile">
+                    <a href="Sobre.php" class="link">
+                        Sobre
+                    </a>
+                </li>
+                <li class="itens-menu-mobile">
+                    <a href="lojas.php" class="link">
+                        Nossas Lojas
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        </header>
         <div id="conteudo" class="center" >
             <?php
                 

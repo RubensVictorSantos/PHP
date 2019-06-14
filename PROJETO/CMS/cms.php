@@ -1,4 +1,8 @@
 <?php
+    
+    require_once('../bd/conexao.php');
+
+    $conexao = conexaoMysql();
 
     /* esse bloco de código em php verifica se existe a sessão, pois o usuário pode
      simplesmente não fazer o login e digitar na barra de endereço do seu navegador 
@@ -19,6 +23,21 @@
         unset($_SESSION['senha']);
         header("location:../index.php");
         
+    }else{
+        
+        $usuario = $_SESSION['login'];
+        $codnivel = $_SESSION['nivel'];
+
+        $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
+
+        $select = mysqli_query($conexao, $sql);
+
+        while($rs=mysqli_fetch_array($select))
+        {
+            $admconteudo = $rs['admconteudo'];
+
+        }
+        
     }
 ?>
 
@@ -38,6 +57,11 @@
     
             ?>
             <div id="conteudo">
+                <?php
+                    
+                    if($admconteudo == '1'){
+
+                ?>
                 <div class="container-conteudo-cms">
                     <div class="option-conteudo"><!--Notícia-->
                         <a href="cms-noticias.php">
@@ -133,6 +157,15 @@
                         </a>
                     </div>
                 </div>
+                
+                <?php
+                        }else{
+                    
+                ?>
+                    <h1>Bem Vindo!</h1>
+                <?php
+                    }
+                ?>
             </div>
             <div id="footer">
                 <h3>

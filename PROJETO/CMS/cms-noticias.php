@@ -129,8 +129,6 @@
                     $_SESSION['nomefoto'] = null;
 
                 }
-//                echo($titulo.'<br><br>');
-//                echo($sql);
                 
             }else{
                 
@@ -154,8 +152,6 @@
         <title>
             CMS Notícias
         </title>
-        <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="../js/mascara.js" type="text/javascript"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>
@@ -178,7 +174,7 @@
         <div id="box-main" class="center">
             <?php
     
-                require_once('cms-menu.php');
+                include'cms-menu.php';
     
             ?>
             <div id="conteudo">
@@ -286,16 +282,13 @@
                                 <div class="titulos-promo" style="width:250px;">
                                     Titulo
                                 </div>
-                                <div class="titulos-promo" style="width:250px;">
-                                    Imagem
-                                </div>
-                                <div class="titulos-promo" style="width:100px;">
+                                <div class="titulos-promo" style="width:380px;">
                                     Conteúdo
                                 </div>
                                 <div class="titulos-promo" style="width:100px;">
                                     Status
                                 </div>
-                                <div class="titulos-promo" style="width:120px;">
+                                <div class="titulos-promo" style="width:100px;">
                                     Tipo Noticia
                                 </div>
                                 <div class="titulo-campo-opcoes" style="width:80px;">
@@ -316,11 +309,7 @@
                                 <?php echo($rscontatos['titulo'])?>
                                 
                             </div>
-                            <div class="campos-tbl-promo" style="width:250px;">
-                                <?php echo($rscontatos['imagem'])?>
-                                
-                            </div>
-                            <div class="campos-tbl-promo" style="width:120px;">
+                            <div class="campos-tbl-promo" style="width:385px;">
                                 <?php echo($rscontatos['conteudo'])?>
                                 
                             </div>

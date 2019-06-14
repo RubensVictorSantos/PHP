@@ -100,8 +100,10 @@
 <html lang="pt-br">
     <head>
         <title>CMS Sobre</title>
+<!--
         <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+-->
         <script src="../js/mascara.js" type="text/javascript"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>
@@ -122,7 +124,10 @@
                 <div class="conteudo-lojas">
                     <form name="frmcms-promocoes" method="POST" action="cms-lojas.php" enctype="multipart/form-data">
                         <div id="visualizar_foto">  
-
+                            <?php
+                                if(isset($_GET['modo'])){
+                            ?>
+                            
                             <div id="img-card" style="border:1px solid #003311;border-radius:2px 2px;">
                                 
                                 <div class="mapouter">
@@ -138,6 +143,17 @@
                                 </div>
 
                             </div>
+                                
+                            <?php
+                                }else{
+                            ?>
+                            
+                            <div id="img-card" style="border:1px solid #003311;border-radius:2px 2px;">
+                            </div>
+                            
+                            <?php
+                                }
+                            ?>
                         </div>
                         <div class="input-text-endereco">
                             <div class="box-input-endereco">
@@ -235,30 +251,25 @@
                                     N°
                                 </p>
                                 
-                            </div><div class="titulos-promo" style="width:130px;">
+                            </div>
+                            <div class="titulos-promo" style="width:285px;">
                                 <p>
                                     Endereço
                                 </p>
                                 
-                            </div><div class="titulos-promo" style="width:120px;">
+                            </div><div class="titulos-promo" style="width:196px;">
                                 <p>
                                     Bairro
                                 </p>
                                 
                             </div>
-                            <div class="titulos-promo" style="width:125px;">
+                            <div class="titulos-promo" style="width:170px;">
                                 <p>
                                     Cidade
                                 </p>
                                 
                             </div>
-                            <div class="titulos-promo" style="width:300px;">
-                                <p>
-                                    Conteúdo
-                                </p>
-                                
-                            </div>
-                            <div class="titulos-promo" style="width:120px;">
+                            <div class="titulos-promo" style="width:150px;">
                                 <p>
                                     Status
                                 </p>
@@ -286,27 +297,21 @@
                                 <?php echo($rscontatos['numero'])?>
                                 
                             </div>
-                            <div class="campos-tbl-promo" style="width:130px;">
+                            <div class="campos-tbl-promo" style="width:285px;">
                                 <?php echo($rscontatos['endereco'])?>
                                 
                             </div>
-                            <div class="campos-tbl-promo" style="width:130px;">
+                            <div class="campos-tbl-promo" style="width:196px;">
                                 <?php echo($rscontatos['bairro'])?>
                                 
                             </div>
-                            <div class="campos-tbl-promo" style="width:120px;">
+                            <div class="campos-tbl-promo" style="width:170px;">
                                 <?php 
                                     echo($rscontatos['cidade']);
                                 ?>
                                 
                             </div>
-                            <div class="campos-tbl-promo" style="width:300px;">
-                                <?php 
-                                    echo($rscontatos['conteudo']);
-                                ?>
-                                
-                            </div>
-                            <div class="campos-tbl-promo" style="width:120px;">
+                            <div class="campos-tbl-promo" style="width:150px;">
                                 <?php
                                     if($rscontatos['status'] == 'A'){
                                         echo('Ativado');

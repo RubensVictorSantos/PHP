@@ -153,9 +153,6 @@
         <title>
             CMS Adm. Produto
         </title>
-        
-        <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="../js/mascara.js" type="text/javascript"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>
@@ -191,7 +188,9 @@
             <div id="conteudo">
                 <div class="conteudo-produto">
                     <form id="fotos" name="frmFotos" method="POST" action="upload.php" enctype="multipart/form-data">
-                        
+                        <div class="input-text-cms">
+                            <h3>Cadastrar Produto</h3>
+                        </div>
                         <div class="input-text-cms">
                             <div id="box-file">
                                 <input type="file"
@@ -312,18 +311,6 @@
                                 </p>
                                 
                             </div>
-                            <div class="titulos-promo" style="width:120px;">
-                                <p>
-                                    Categoria
-                                </p>
-                                
-                            </div>
-                            <div class="titulos-promo" style="width:110px;">
-                                <p>
-                                    Subcategoria
-                                </p>
-                                
-                            </div>
                             <div class="titulos-promo" style="width:110px;">
                                 <p>
                                     Status
@@ -357,14 +344,6 @@
                             </div>
                             <div class="campos-tbl-promo" style="width:120px;">
                                 <?php echo($rscontatos['preco'])?>
-                                
-                            </div>
-                            <div class="campos-tbl-promo" style="width:110px;">
-                                <?php //echo($rscontatos['valor_desconto'])?>
-                                
-                            </div>
-                            <div class="campos-tbl-promo" style="width:110px;">
-                                <?php //echo($rscontatos['valor_desconto'])?>
                                 
                             </div>
                             <div class="campos-tbl-promo" style="width:120px;">

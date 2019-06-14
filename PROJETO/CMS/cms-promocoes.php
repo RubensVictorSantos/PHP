@@ -68,7 +68,6 @@
 
     if(isset($_POST['btnsalvar'])){
         
-        $nomeProduto = filter_var($_POST["textnomep"], FILTER_SANITIZE_STRING);
         $descricao = filter_var($_POST['textdescricao'], FILTER_SANITIZE_STRING);
         $preco = filter_var($_POST['textpreco'], FILTER_SANITIZE_STRING);
         $valor_desconto = filter_var($_POST['textvdesconto'], FILTER_SANITIZE_STRING);
@@ -159,8 +158,6 @@
         <title>
             cms-promoções
         </title>
-        <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="../js/mascara.js" type="text/javascript"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>
@@ -182,7 +179,7 @@
     <body>
         <div id="box-main" class="center">   
             <?php
-                require_once('cms-menu.php');
+                include'cms-menu.php';
     
             ?>
             <div class="titulos-cms">

@@ -203,10 +203,8 @@ input{
 #menu-catalogo{
     
     width:250px;
-    min-height:1000px;
-    /*background-color:rgba(102, 255, 153, 0.5);*/
+    height:inherit;
     background-color:#ffaa00;
-    overflow: hidden;
     float: left;
     
 }
@@ -217,7 +215,6 @@ input{
     height: 65px;
     list-style:none;
     text-align:center;
-    margin-bottom:5px;
     padding:20px 15px 15px 20px;
     font-weight: bold;
     color: white;
@@ -229,8 +226,56 @@ input{
 
 .itens-catalogo:hover{
     
-    /*transition: 0.5s;*/
     color:#ffbb33;
+    background-color:rgba(255, 255, 255, 255);
+}
+
+#menu-catalogo .itens-catalogo:hover> #submenu{
+    
+    width:250px;
+    min-height:65px;
+    margin-top: -40px;
+    margin-left: 230px;
+    display: block;
+    
+}
+
+#submenu{
+    
+    width:250px;
+    min-height:65px;
+    margin-top: -40px;
+    margin-left:230px;
+    box-sizing: border-box;
+    position: absolute;
+    display: none;
+    float: left;
+
+}
+
+.itens-subcategoria{
+    
+    width:inherit;
+    height: 65px;
+    list-style:none;
+    text-align:center;
+    padding:0px 0px 0px 0px;
+/*    padding:20px 15px 15px 20px;*/
+    font-weight: bold;
+    color: white;
+    background-color:#ffaa00;
+    overflow: hidden;
+    cursor: pointer;
+    font-size:17px;
+    box-sizing:border-box;
+    
+}
+
+.itens-subcategoria:hover> a{
+    
+    width: 100%;
+    height: 65px;
+    color:#ffaa00;
     background-color:rgba(255, 255, 255, 255);
     
 }
@@ -1239,14 +1284,19 @@ textarea{
         
     }
     
-    #box-slider{
+    #box-slider-mobile{
         
         width: inherit;
         height: 300px;
         background-image: url(../img/20140727-PELOTON-PHOTOS-HOMEPAGE.jpg);
         background-size: 680px 300px;
         background-repeat: no-repeat;
-/*        display: none;*/
+
+    }
+    
+    #box-slider{
+        
+        display: none;
     }
     
     #conteudo-catalogo{
@@ -1264,7 +1314,7 @@ textarea{
     
     #menu-catalogo{
         
-        width: 150px;
+        width: 175px;
         min-height: 700px;
         max-height: 700px;
         float: left;
@@ -1277,17 +1327,79 @@ textarea{
         list-style:none;
         text-align:center;
         margin-bottom:0;
-        padding:10px 0px 0px 0px;
+        padding:5px 0px 0px 0px;
         font-weight: bold;
         color: white;
         cursor: pointer;
-        font-size:0.9em;
+        font-size:1.3em;
         box-sizing:border-box;
+    }
+
+
+    #menu-catalogo .itens-catalogo:hover> #submenu{
+
+        width:250px;
+        min-height:40px;
+        margin-top: -29px;
+        margin-left: 175px;
+        padding: 0px;
+        display: block;
+
+    }
+
+    #submenu{
+
+        width:250px;
+        min-height:40px;
+        margin-top: -29px;
+        margin-left:175px;
+        padding: 0px;
+        box-sizing: border-box;
+        position: absolute;
+        display: none;
+        float: left;
+
+    }
+
+    .itens-subcategoria{
+
+        width:inherit;
+        height: 40px;
+        list-style:none;
+        text-align:center;
+        padding:0px;
+        font-weight: bold;
+        color: white;
+        background-color:#ffaa00;
+        overflow: hidden;
+        cursor: pointer;
+        font-size:1em;
+        box-sizing:border-box;
+
+    }
+    
+    .itens-subcategoria a{
+        
+        width: 100%;
+        height: 40px;
+        padding-top: 0px;
+        margin-top: -12px;
+/*        background-color: antiquewhite;*/
+        overflow: hidden;
+    }
+    
+    .itens-subcategoria:hover> a{
+
+        width: 100%;
+        height: 40px;
+        color:#ffaa00;
+        background-color:rgba(255, 255, 255, 255);
+
     }
     
     #box-catalogo{
         
-        width: 530px;
+        width: 505px;
         min-height: 700px;
         max-height: 700px;
         margin: 0px;
@@ -1316,7 +1428,7 @@ textarea{
         
         width: 450px;
         height: 550px;
-        margin: 20px 0px 0px 40px;
+        margin: 20px 0px 0px 30px;
         padding: 0px;
 /*        background-color: #eeff99;*/
         float:none;
@@ -1388,12 +1500,80 @@ textarea{
         color:#ffbb33;
 
     }
+
+    /****************** FOOTER MOBILE ******************/
     
     #footer{
         
         width: 680px;
         height: 100px;
+        background-color: #031;
         box-sizing: border-box;
         overflow: hidden;
     }
+    
+    #main-footer{
+
+        width: 680px;
+        height: 100px;
+/*        background-color: black;*/
+        box-sizing: border-box;
+    }
+    
+
+    .conteudo-footer{
+
+        width: 170px;
+        height: inherit;
+        padding: 5px;
+/*        background-color: #00ffea;*/
+        overflow: hidden;
+        float:left;
+        word-wrap: break-word;
+    /*    text-transform:capitalize;*/
+        box-sizing: border-box;
+
+    }
+
+    .conteudo-footer ul{
+
+        font-size: 1em;
+        color:white;
+        text-align: left;
+        text-decoration: none;
+        list-style: none;
+
+    }
+
+    #logo-footer{
+
+        width: 130px;
+        height: 65px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+/*        background-color: #fefffe;*/
+        overflow: hidden;
+        box-sizing: border-box;
+
+    }
+
+    #imag-logo-footer{
+
+        width: 90px;
+        height: 55px;
+        padding: 0px 0px 0px 30px;
+        background-position: left;
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        background-size:cover;
+    }
+
+    .titulo-footer{
+
+        font-size: 1em;
+        text-align: center;
+        color: #ffffff;
+
+    }
+
 }

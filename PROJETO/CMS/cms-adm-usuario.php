@@ -3,6 +3,17 @@
     require_once('../modulo.php');
     require_once('../bd/conexao.php');
     session_start();
+
+    $nivel = null;
+    $status = null;
+    $sql = null;
+    $rs = null;
+    $id = null;
+    $rdoativado = null;
+    $rdodesativado = null;
+    $botao = null;
+    
+    
     
 ?>
 
@@ -14,10 +25,7 @@
         <title>
             CMS Adm. Usuário
         </title>
-        
         <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-
     </head>
     <body>
         <div id="box-main" class="center">
@@ -42,7 +50,7 @@
                 </div>
                 <div>
                     
-                    <a href="cms-nivel-usuario.php">Cadastrar Nível Usuário</a>
+                    <a href="cms-nivel.php">Cadastrar Nível Usuário</a>
                     
                 </div>
                 

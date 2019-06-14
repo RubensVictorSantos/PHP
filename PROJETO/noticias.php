@@ -40,7 +40,7 @@
             <div id="principais-noticias">
                 <?php
                 
-                    $sql = "SELECT * FROM tbl_noticia WHERE statusnoticia LIKE 'P%' AND status LIKE 'A%' LIMIT 3 ";
+                    $sql = "SELECT * FROM tbl_noticia WHERE statusnoticia LIKE 'P%' AND status LIKE 'A%' ORDER BY codigo DESC LIMIT 3 ";
                     $select = mysqli_query($conexao, $sql);
                     
                     while($rscontatos=mysqli_fetch_array($select))
@@ -50,7 +50,6 @@
                                 $titulo = $rscontatos['titulo'];
                                 $nomefoto = $rscontatos['imagem'];
                         
-//                            if($cont<=3){
                         
                 ?>
                 <div class="box-noticia">
@@ -78,7 +77,7 @@
                 
                 <?php
                 
-                    $sql = "SELECT * FROM tbl_noticia WHERE statusnoticia LIKE 'S%' AND status LIKE 'A%'";
+                    $sql = "SELECT * FROM tbl_noticia WHERE statusnoticia LIKE 'S%' AND status LIKE 'A%' ORDER BY codigo DESC";
                 
                     $select = mysqli_query($conexao, $sql);
                     

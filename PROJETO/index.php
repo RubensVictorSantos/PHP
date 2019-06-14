@@ -1,42 +1,63 @@
 <?php
 
-require_once('bd/conexao.php');
-$conexao = conexaoMysql();
-session_start();
+    require_once('bd/conexao.php');
+    session_start();
 
-if(isset($_POST['btn-login'])){
-    // Atribuindo os valores das input da página index.php p/ essas variáveis
-    $login = $_POST['txt-usuario'];
-    $senha = $_POST['txt-senha'];
+    $conexao = conexaoMysql();
 
-    // Criptografando a senha
-    $senha_cryt = md5($senha);
+    $nomeProduto = null;
+    $imagem = null;
+    $descricao = null;
+    $preco = null;
+    $status = null;
+    $sql = null;
+    $rdoativado = null;
+    $rdodesativado = null;
+    $modo = null;
+    $id = null;
+    $idcat = null;
 
-    $sql = "SELECT * FROM tbl_usuario WHERE nome = '$login' AND senha = '$senha_cryt' AND status = 'A'";
-
-    $select = mysqli_query($conexao, $sql);
-
-//    var_dump($conexao);
-
-    /*  Se existe um cadastro no banco com esse nome e senha 
-        mysqli_num_rows retorna 1 do contrario ele vai retornar 0;*/
-
-    if(mysqli_num_rows($select) > 0){
-
-        $_SESSION['login'] = $login;
-        $_SESSION['senha'] = $senha_cryt;
-        header('location:cms/cms.php');
-
-    }else{
-
-        unset ($_SESSION['login']);
-        unset ($_SESSION['senha']);
-        echo('<script>alert("Erro ao tentar logar, verifique seu login ou senha")</script>');
+    $modo = null;
+    if(isset($_SESSION['path_foto'])){
+        $foto = $_SESSION['path_foto'];
     }
-    
-//    header('location:index.php');
-    
-}
+
+    if(isset($_POST['btn-login'])){
+        // Atribuindo os valores das input da página index.php p/ essas variáveis
+        $login = $_POST['txt-usuario'];
+        $senha = md5($_POST['txt-senha']);
+
+        // Criptografando a senha
+
+        $sql = "SELECT * FROM tbl_usuario WHERE nome = '".$login."' AND senha = '".$senha."' AND status = 'A'";
+        
+        $select = mysqli_query($conexao, $sql);
+
+        /*  Se existe um cadastro no banco com esse nome e senha 
+            mysqli_num_rows retorna 1 do contrario ele vai retornar 0;*/
+        
+        if(mysqli_num_rows($select) > 0){
+
+            $_SESSION['login'] = $login;
+            $_SESSION['senha'] = $senha;
+            
+            while($rs=mysqli_fetch_array($select)){
+            
+                $_SESSION['nivel'] = $rs['cod_nivel'];
+            
+            }
+            
+            header('location:cms/cms.php');
+
+        }else{
+
+            unset ($_SESSION['login']);
+            unset ($_SESSION['senha']);
+            echo('<script>alert("Erro ao tentar logar, verifique seu login e senha estão corretos")</script>');
+        }
+
+    }
+
 ?>
 
 
@@ -83,7 +104,7 @@ if(isset($_POST['btn-login'])){
                             </a>
                         </li>
                         <li>
-                            <a href="Sobre.php">
+                            <a href="sobre.php">
                                 Sobre
                             </a>
                         </li>
@@ -154,7 +175,7 @@ if(isset($_POST['btn-login'])){
                         </a>
                     </li>
                     <li class="itens-menu-mobile">
-                        <a href="Sobre.php" class="link">
+                        <a href="sobre.php" class="link">
                             Sobre
                         </a>
                     </li>
@@ -167,29 +188,26 @@ if(isset($_POST['btn-login'])){
             </nav>
         </header>
         <div id="conteudo" class="center">
+            
+            <div id="box-slider-mobile"></div>
             <div id="box-slider" class="center">
                 
-<!--
                 <script src="js/jquery-1.11.3.min.js" ></script>
                 <script src="js/jssor.slider-27.5.0.min.js"></script>
                 <script src="js/slider.js"></script>
                 
                 <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,regular,italic,700,700italic&subset=latin-ext,greek-ext,cyrillic-ext,greek,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
--->
 
-<!--                <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;visibility:hidden;">-->
-                    <!-- Loading Screen -->
+                <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;visibility:hidden;">
+<!--                     Loading Screen -->
 
-<!--
                     <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
                         
                         <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" alt="Imgem que representa o carregamento do slid" />
                         
                     </div> 
--->
 
                     
-<!--
                     <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
                         
                         <div>
@@ -212,9 +230,7 @@ if(isset($_POST['btn-login'])){
                         </div>
                         
                     </div>
--->
 <!--                     Bullet Navigator -->
-<!--
                     <div data-u="navigator" class="jssorb032" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
                         <div data-u="prototype" class="i" style="width:16px;height:16px;">
                             <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
@@ -225,9 +241,7 @@ if(isset($_POST['btn-login'])){
                         </div>
                         
                     </div>
--->
 <!--                     Arrow Navigator -->
-<!--
                     <div data-u="arrowleft" class="jssora051" style="width:65px;height:65px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
                         <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
                             <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
@@ -238,177 +252,152 @@ if(isset($_POST['btn-login'])){
                             <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
                         </svg>
                     </div>
--->
-<!--                </div>-->
+                </div>
             </div>
+            
             <!--conteudo catalogo-->
             
             <div id="conteudo-catalogo" class="center">
                 <div id="menu-catalogo">
                     <ul >
+                        
+                        <?php
+                        
+                        $sql =  "SELECT * FROM tbl_categoria WHERE status LIKE 'A%'";
+
+                        $select = mysqli_query($conexao, $sql);
+                        
+                        while($rsmenu=mysqli_fetch_array($select))
+                        {
+
+                            $codcategoria = $rsmenu['codigo'];
+                            $categoria = $rsmenu['categoria'];
+                            
+                        ?>
                         <li class="itens-catalogo">
                             <strong>
-                                CAPACETES
+                                <?php
+                                    echo($rsmenu['categoria']);
+                                    
+                                ?>
                             </strong>
-                        </li>
-                        <li class="itens-catalogo">
-                            <strong>
-                                DISCO DE FREIO
-                            </strong>
-                        </li>
-                        <li class="itens-catalogo">
-                            <strong>
-                                PINHÃO CASSETE
-                            </strong>
-                        </li>
-                        <li class="itens-catalogo">
-                            <strong>
-                                CADEADOS
-                            </strong>
-                        </li>
-                        <li class="itens-catalogo">
-                            <strong>
-                                FITA DE ARO
-                            </strong>
+                            <ul id="submenu">
+                                
+                                	<?php
+                            
+                                    $sqlsub = "SELECT DISTINCT psc.cod_subcategoria,
+                                                        s.subcategoria,
+                                                        psc.cod_categoria
+                                                        FROM tbl_produto_subcategoria_categoria AS psc
+                                                        INNER JOIN tbl_subcategoria AS s 
+                                                        ON psc.cod_subcategoria = s.codigo 
+                                                        WHERE psc.cod_categoria =".$codcategoria." AND psc.status LIKE 'A%'";
+                            
+                                    $test = mysqli_query($conexao, $sqlsub);
+
+
+                                    while($rsmenu=mysqli_fetch_array($test))
+                                    {
+
+                                        $subcategoria = $rsmenu['subcategoria'];
+                                        $codsubcategoria = $rsmenu['cod_subcategoria'];
+                                        
+                                    ?>
+                                
+                                <li class="itens-subcategoria">
+                                    <a href="index.php?modo=categoria&id=<?php echo($codsubcategoria);?>&idcat=<?php echo($codcategoria);?>">
+                                    <strong>
+                                        <?php
+                                            echo($subcategoria);
+                                        ?>
+                                    </strong>
+                                    </a>
+                                </li>
+                                <?php
+                                        
+                                        
+                                    }
+                                ?>
+                            </ul>
                         </li>
                         
-                        <li class="itens-catalogo">
-                            <strong>
-                                AROS VZAN
-                            </strong>
-                        </li>
-                        <li class="itens-catalogo">
-                            <strong>
-                                PLACAS SINALIZADORAS
-                            </strong>
-                        </li>
-                        <li class="itens-catalogo">
-                            <strong>
-                                PARALAMAS
-                            </strong>
-                        </li>
-                        <li class="itens-catalogo">
-                            <strong>
-                                BOMBA DE AR
-                            </strong>
-                        </li>
-                        <li class="itens-catalogo">
-                            <strong>
-                                SUPORTE CARAMANHOLA
-                            </strong>
-                        </li>
-                        <li class="itens-catalogo">
-                            <strong>
-                                CALIBRADOR
-                            </strong>
-                        </li>
-                        
-                        
-                        
+                        <?php
+                            }
+                        ?>
                     </ul>
                 </div>
                 <!--BOX CATALOGO-->
                 <div id="box-catalogo">
-                    <div class="card-box">
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/img-produto/imgbikes_MountainBikeCaloiLotus.jpg" alt="    Bicicleta MountainBike Caloi Lotus" class="img-card">
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                   Mountain Bike Caloi Lotus
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Descrição: Aro 29 Freio a Disco 21 Marchas Feminina
-                                </p>
-                            </div>
-                            <div class="preco-card">
-                                <p>
-                                    R$854,05
-                                    10x de R$85,41
-                                </p>
-                            </div>
-                            <div class="detalhes">
-
-                                <a href="#">Detalhes</a>
-
-                            </div>
-                        </div>
-
-                        <!--<div class="card">
-                            <div class="img-card center">
-                                <img src="img/img-produto/imgbikes_MountainBikeTrackBikesTKS.jpg" alt="Bicicleta  MountainBike Track Bikes TKS" class="img-card">
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                    Mountain Bike Track Bikes TKS
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 29 Freio a Disco Câmbio Shimano 21 Marchas
-                                </p>
-                            </div>
-                            <div class="preco-card">
-                                <p>
-                                    R$854,05
-                                    10x de R$85,41
-                                </p>
-                            </div>
-                            <div class="detalhes">
-
-                                <a href="#">Detalhes</a>
-
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/img-produto/imgbikes_MountainBikeCaloiSport.jpg" alt="Bicicleta MountainBike Caloi Sport" class="img-card">
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                    Mountain Bike Caloi Aluminum Sport
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 26 Freio V-Brake 21 Marchas
-                                </p>
-                            </div>
-                            <div class="preco-card">
-                                <p>
-                                    R$854,05
-                                    10x de R$85,41
-                                </p>
-                            </div>
-                            <div class="detalhes">
-                                <a href="#">Detalhes</a>
-                            </div>
-                        </div>-->
-                    </div>
                     
-<!--
-                    <div class="card-box">
+                    
+                    <?php
+                        
+                        $nomeProduto = null;
+                        $nomefoto = null;
+                        $descricao = null;
+                        $preco = null;
+                        $status = null;
+                        
+                        if(isset($_GET['modo'])){
+                            
+                            $modo = $_GET['modo'];
+                            $id = $_GET['id'];
+                            $idcat = $_GET['idcat'];
+                            
+                            if($modo == 'categoria'){
+                                
+                                $sql = "SELECT DISTINCT psc.cod_subcategoria,
+                                                        p.*,
+                                                        s.subcategoria,
+                                                        psc.cod_categoria
+                                                        FROM tbl_produto_subcategoria_categoria AS psc
+                                                        INNER JOIN tbl_subcategoria AS s 
+                                                        ON psc.cod_subcategoria = s.codigo
+                                                        INNER JOIN tbl_produto = p
+                                                        ON p.codigo = psc.cod_produto
+                                                        WHERE psc.cod_categoria = ".$idcat." AND psc.cod_subcategoria = ".$id." AND psc.status LIKE 'A%'";
+
+                            }
+                        }else{
+                        
+                            $sql = "SELECT * FROM tbl_produto WHERE status LIKE 'A%' ORDER BY RAND()";
+                        
+                        }
+                        $select = mysqli_query($conexao, $sql);
+                        
+                        
+                        while($rscontatos=mysqli_fetch_array($select))
+                        {
+
+                            $nomeProduto = $rscontatos['produto'];
+                            $nomefoto = $rscontatos['imagem'];
+                            $descricao = $rscontatos['descricao'];
+                            $preco = $rscontatos['preco'];
+                            $valorDesconto = $rscontatos['valor_desconto'];
+                    ?>
                         <div class="card">
                             <div class="img-card center">
-                                <img src="img/img-produto/imgbikes_MountainBikeCaloiLotus.jpg" alt="Bicicleta MountainBike Caloi Lotus" class="img-card">
+                                <img src="cms/<?php echo($nomefoto);?>" alt="" class="img-card">
                             </div>
                             <div class="nome-card">
                                 <p>
-                                   Mountain Bike Caloi Lotus
+                                   <?php 
+                                        echo($nomeProduto);
+                                    
+                                    ?>
                                 </p>
                             </div>
                             <div class="desc-card">
                                 <p>
-                                    Aro 29 Freio a Disco 21 Marchas Feminina
+                                    <?php 
+                                        echo($descricao);
+                                    
+                                    ?>
                                 </p>
                             </div>
                             <div class="preco-card">
                                 <p>
-                                    R$854,05
+                                    R$ <?php echo($preco)?>
                                     10x de R$85,41
                                 </p>
                             </div>
@@ -418,64 +407,15 @@ if(isset($_POST['btn-login'])){
 
                             </div>
                         </div>
-
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/img-produto/imgbikes_MountainBikeTrackBikesTKS.jpg" alt="Bicicleta MountainBike Track Bikes TKS" class="img-card">
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                    Mountain Bike Track Bikes TKS
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 29 Freio a Disco Câmbio Shimano 21 Marchas
-                                </p>
-                            </div>
-                            <div class="preco-card">
-                                <p>
-                                    R$854,05
-                                    10x de R$85,41
-                                </p>
-                            </div>
-                            <div class="detalhes">
-
-                                <a href="#">Detalhes</a>
-
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="img-card center">
-                                <img src="img/img-produto/imgbikes_MountainBikeCaloiSport.jpg" alt="Bicicleta MountainBike Caloi Sport" class="img-card">
-                            </div>
-                            <div class="nome-card">
-                                <p>
-                                    Mountain Bike Caloi Aluminum Sport
-                                </p>
-                            </div>
-                            <div class="desc-card">
-                                <p>
-                                    Aro 26 Freio V-Brake 21 Marchas
-                                </p>
-                            </div>
-                            <div class="preco-card">
-                                <p>
-                                    R$854,05
-                                    10x de R$85,41
-                                </p>
-                            </div>
-                            <div class="detalhes">
-                                <a href="#">Detalhes</a>
-                            </div>
-                        </div>
-                    </div>
--->
+                    
+                    <?php
+                    
+                        }
+                    ?>
                 </div>
                 <?php
                 
-//                    require_once('redes.php');
+                    require_once('redes.php');
                 
                 ?>
             </div>

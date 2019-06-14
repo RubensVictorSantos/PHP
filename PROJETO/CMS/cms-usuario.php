@@ -39,7 +39,7 @@
             $sql = "DELETE FROM tbl_usuario WHERE codigo =".$id;
             mysqli_query($conexao, $sql);
             
-            header('location:cms-adm-usuario.php');
+            header('location:cms-usuario.php');
             
        }elseif($modo == 'consultar'){
             
@@ -64,7 +64,6 @@
                 
                 }
                 $botao = 'editar';
-                $readonly = 'readonly';
                 
                 $_SESSION['id'] = $id;
             }
@@ -92,7 +91,7 @@
 
                 mysqli_query($conexao, $sql);
 
-                header("location:cms-adm-usuario.php");
+                header("location:cms-usuario.php");
 
             }else{
                 echo('<script>alert("Erro ao confirmar a senha, digite novamente")</script>');
@@ -110,7 +109,7 @@
             
             mysqli_query($conexao, $sql);
 
-        header("location:cms-adm-usuario.php");
+        header("location:cms-usuario.php");
         }
     }
 
@@ -124,8 +123,6 @@
             CMS Adm. Usuários
         </title>
         
-        <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
         <div id="box-main" class="center">
@@ -141,119 +138,122 @@
                 <h3>Administrar Usuários</h3>
             </div>
             <div id="conteudo">
-                <form name="frmcms-usuario" method="POST" action="cms-adm-usuario.php" enctype="multipart/form-data">
-                <div class="conteudo-adm">
-                    <div class="input-text-cms">
-                        <div class="box-input-promo">
-                            <input type="text"
-                                   name="text-nome"
-                                   class="input-cms-promo"
-                                   value="<?php echo($nome)?>"
-                                   maxlength="65"
-                                   placeholder=" Digite o nome do usuário"
-                                   required>
+                <form name="frmcms-usuario" method="POST" action="cms-usuario.php" enctype="multipart/form-data">
+                    <div class="conteudo-adm">
+                        <div class="input-text-cms">
+                            <h3>Cadastrar Usuário</h3>
+                        </div>
+                        <div class="input-text-cms">
+                            <div class="box-input-promo">
+                                <input type="text"
+                                       name="text-nome"
+                                       class="input-cms-promo"
+                                       value="<?php echo($nome)?>"
+                                       maxlength="65"
+                                       placeholder=" Digite o nome do usuário"
+                                       required>
 
+                            </div>
+                        </div>
+                        <div class="input-text-cms">
+                            <div class="box-input-promo">
+                                <input type="email"
+                                       name="text-email"
+                                       class="input-cms-promo"
+                                       value="<?php echo($email)?>"
+                                       maxlength="65"
+                                       placeholder=" Digite o seu email"
+                                       required>
+
+                            </div>
+                        </div>
+                        <div class="input-text-cms">
+                            <div class="box-input-promo">
+                                <input type="password"
+                                       name="text-senha"
+                                       class="input-cms-promo"
+                                       value="<?php echo($senha)?>"
+                                       placeholder=" Digite a senha" 
+                                       maxlength="15"
+                                       required
+                                       >
+                            </div>
+                        </div>
+                        <div class="input-text-cms">
+                            <div class="box-input-promo">
+                                <input type="password"
+                                       name="text-senha2"
+                                       class="input-cms-promo"
+                                       value="<?php echo($verificar_senha)?>"
+                                       placeholder=" Confirmar senha"
+                                       maxlength="15"
+                                       >
+
+                            </div>
+                        </div>
+                        <div class="input-text-cms">
+                            <div class="box-input-promo">
+
+                                <!--********************* COMBO BOX ********************-->
+                                <select name="combobox" class="input-cms-promo" id="combobox" required>
+                                    <option>
+                                        Selecione nivel de usuário
+                                    </option>
+
+                                    <?php
+
+                                        $sql = "SELECT * FROM tbl_nivel order by codigo";
+                                        $select = mysqli_query($conexao, $sql);
+
+                                        while($rscontatos=mysqli_fetch_array($select)){
+
+                                    ?>
+
+                                    <option value="<?php echo($rscontatos['codigo'])?>">
+
+                                        <?php echo($rscontatos['nivel'])?>
+
+                                    </option>
+
+                                    <?php
+                                        }
+                                    ?>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="input-text-cms">
+                            <div class="box-rdo" style="width:85px;">
+                                <input type="radio"
+                                       name="radio"
+                                       value="A"
+                                       id="rdo-ativado"
+                                       <?php echo($rdoativado)?>
+                                       required>
+
+                                <label for="rdo-ativado"> Ativar</label>
+
+                            </div>
+                            <div class="box-rdo">
+                                <input type="radio"
+                                       name="radio"
+                                       value="D"
+                                       id="rdo-desativado"
+                                       <?php echo($rdodesativado)?>
+                                       required>
+
+                                <label for="rdo-desativado"> Desativar</label>
+
+                            </div>
+                            <div class="box-rdo">
+                                <input type="submit"
+                                       class="btn-salvar"
+                                       name="btnsalvar"
+                                       id="btnsalvar"
+                                       value="<?php echo($botao);?>">
+                            </div>
                         </div>
                     </div>
-                    <div class="input-text-cms">
-                        <div class="box-input-promo">
-                            <input type="email"
-                                   name="text-email"
-                                   class="input-cms-promo"
-                                   value="<?php echo($email)?>"
-                                   maxlength="65"
-                                   placeholder=" Digite o seu email"
-                                   required>
-
-                        </div>
-                    </div>
-                    <div class="input-text-cms">
-                        <div class="box-input-promo">
-                            <input type="password"
-                                   name="text-senha"
-                                   class="input-cms-promo"
-                                   value="<?php echo($senha)?>"
-                                   placeholder=" Digite a senha" 
-                                   maxlength="15"
-                                   required
-                                   >
-                        </div>
-                    </div>
-                    <div class="input-text-cms">
-                        <div class="box-input-promo">
-                            <input type="password"
-                                   name="text-senha2"
-                                   class="input-cms-promo"
-                                   value="<?php echo($verificar_senha)?>"
-                                   placeholder=" Confirmar senha"
-                                   maxlength="15"
-                                   >
-
-                        </div>
-                    </div>
-                    <div class="input-text-cms">
-                        <div class="box-input-promo">
-                            
-                            <!--********************* COMBO BOX ********************-->
-                            <select name="combobox" class="input-cms-promo" id="combobox" required>
-                                <option>
-                                    Selecione nivel de usuário
-                                </option>
-                                
-                                <?php
-                                    
-                                    $sql = "SELECT * FROM tbl_nivel order by codigo";
-                                    $select = mysqli_query($conexao, $sql);
-                                   
-                                    while($rscontatos=mysqli_fetch_array($select)){
-                                        
-                                ?>
-                                
-                                <option value="<?php echo($rscontatos['codigo'])?>">
-                                    
-                                    <?php echo($rscontatos['nivel'])?>
-                                
-                                </option>
-                                
-                                <?php
-                                    }
-                                ?>
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="input-text-cms">
-                        <div class="box-rdo" style="width:85px;">
-                            <input type="radio"
-                                   name="radio"
-                                   value="A"
-                                   id="rdo-ativado"
-                                   <?php echo($rdoativado)?>
-                                   required>
-
-                            <label for="rdo-ativado"> Ativar</label>
-                            
-                        </div>
-                        <div class="box-rdo">
-                            <input type="radio"
-                                   name="radio"
-                                   value="D"
-                                   id="rdo-desativado"
-                                   <?php echo($rdodesativado)?>
-                                   required>
-
-                            <label for="rdo-desativado"> Desativar</label>
-                            
-                        </div>
-                        <div class="box-rdo">
-                            <input type="submit"
-                                   class="btn-salvar"
-                                   name="btnsalvar"
-                                   id="btnsalvar"
-                                   value="<?php echo($botao);?>">
-                        </div>
-                    </div>
-                </div>
                 </form>
                 <div class="conteudo-tbl-adm-user">
                     <div id="tbl-promocoes">
@@ -336,7 +336,7 @@
                             
                             <div class="campo-opcoes">
                                 <div class="opcoes-promo">
-                                    <a href= "cms-adm-usuario.php?modo=excluir&id=<?php echo($rs['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
+                                    <a href= "cms-usuario.php?modo=excluir&id=<?php echo($rs['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
 
                                         <img src="../img/excluir.png"
                                              style="width:24px; height:24px; margin-top:2px;"
@@ -345,7 +345,7 @@
                                     </a>
                                 </div>
                                 <div class="opcoes-promo">
-                                    <a href="cms-adm-usuario.php?modo=consultar&id=<?php echo($rs['codigo']);?>">
+                                    <a href="cms-usuario.php?modo=consultar&id=<?php echo($rs['codigo']);?>">
                                         
                                         <img src="../img/editar24.png"
                                              style="width:20px; height:23px; margin-top:2px;"
