@@ -6,17 +6,18 @@
     
     $conexao = conexaoMysql();
 
-    $nome = null;
+    $titulo = null;
     $imagem = null;
-    $descricao = null;
-    $preco = null;
-    $valor_desconto = null;
+    $conteudo = null;
     $status = null;
+    $statusnoticia = null;
     $sql = null;
     $rs = null;
     $id = null;
     $rdoativado = null;
     $rdodesativado = null;
+    $rdonoticiap = null;
+    $rdonoticias = null;
     $botao = 'salvar';
     
     if(isset($_GET['modo'])){
@@ -24,12 +25,11 @@
         $modo = $_GET['modo'];
         $id = $_GET['id'];
         
-        /***************************** EXCLUIR ************************/
+        /***************************** EXCLUIR **************************/
         if($modo == 'excluir'){
             $nomefoto = $_GET['nomefoto'];
             
-            
-            $sql = "DELETE FROM tbl_produto WHERE codigo =".$id;
+            $sql = "DELETE FROM tbl_noticia WHERE codigo =".$id;
             mysqli_query($conexao, $sql);
             
             unlink($nomefoto);
@@ -39,16 +39,14 @@
         /***************************** CONSULTAR ************************/
         }elseif($modo == 'consultar'){
             
-            $sql = "SELECT * FROM tbl_produto WHERE codigo =".$id;
+            $sql = "SELECT * FROM tbl_noticia WHERE codigo =".$id;
             $select = mysqli_query($conexao, $sql);
             
             if($rs = mysqli_fetch_array($select)){
                 
-                $nome = $rs['nome'];
+                $titulo = $rs['titulo'];
                 $nomefoto = $rs['imagem'];
-                $descricao = $rs['descricao'];
-                $preco = $rs['preco'];
-                $valor_desconto = $rs['valor_desconto'];
+                $conteudo = $rs['conteudo'];
                 
                 if($rs['status'] == 'A'){
                     $rdoativado = 'checked';
@@ -57,6 +55,17 @@
                     $rdodesativado = 'checked';
                 
                 }
+                
+                /*********** VERFICAR NOTICIA PRINCIPAL *****************/
+                
+                if($rs['statusnoticia'] == 'P'){
+                    $rdonoticiap = 'checked';
+                
+                }else{
+                    $rdonoticias = 'checked';
+                
+                }
+                
                 $botao = 'editar';
                 
                 $_SESSION['id'] = $id;
@@ -69,12 +78,13 @@
 
     if(isset($_POST['btnsalvar'])){
         
-        $nome = $_POST["textnomep"];
-        $descricao = $_POST['textdescricao'];
-        $preco = $_POST['textpreco'];
-        $valor_desconto = $_POST['textvdesconto'];
+        $titulo = $_POST['text-titulo'];
+        $conteudo = $_POST['text-conteudo'];
         $status = $_POST['radio'];
+        $statusnoticia = $_POST['rdoprincipal'];
         $foto = "";
+        
+        echo($titulo.'<br><br>');
         
         if(isset($_SESSION['path_foto'])){
             $foto = $_SESSION['path_foto'];
@@ -85,7 +95,9 @@
             
             if(isset($_SESSION['path_foto']) && $_SESSION['path_foto']!=null){
             
-                $sql = "INSERT INTO tbl_produto(nome, imagem,descricao, preco, valor_desconto, status) VALUES ('".$nome."','".$foto."','".$descricao."','".$preco."','".$valor_desconto."','".$status."')";
+                $sql = "INSERT INTO tbl_noticia(titulo, imagem, conteudo, status, statusnoticia) VALUES ('".$titulo."','".$foto."','".$conteudo."','".$status."','".$statusnoticia."')";
+                
+//                echo($sql);
                 
                 if(mysqli_query($conexao, $sql)){
 
@@ -104,12 +116,11 @@
             
             if(isset($_SESSION['path_foto']) && $_SESSION['path_foto']!=null){
                 
-                $sql = "UPDATE tbl_produto SET nome = '".$nome."',
+                $sql = "UPDATE tbl_noticia SET titulo='".$titulo."',
                                             imagem ='".$foto."',
-                                            descricao = '".$descricao."',
-                                            preco = '".$preco."',
-                                            valor_desconto = '".$valor_desconto."',
-                                            status = '".$status."'
+                                            conteudo = '".$conteudo."',
+                                            status = '".$status."',
+                                            statusnoticia = '".$statusnoticia."'
                                             WHERE codigo =".$_SESSION['id'];
                 
                 if(mysqli_query($conexao, $sql)){
@@ -118,15 +129,16 @@
                     $_SESSION['nomefoto'] = null;
 
                 }
+                
             }else{
                 
-                $sql = "UPDATE tbl_produto SET nome = '".$nome."',
-                                            foto ='".$foto."',
-                                            descricao = '".$descricao."',
-                                            preco = '".$preco."',
-                                            valor_desconto = '".$valor_desconto."',
-                                            status = '".$status."'
+                $sql = "UPDATE tbl_noticia SET titulo = '".$titulo."',
+                                            conteudo = '".$conteudo."',
+                                            status = '".$status."',
+                                            statusnoticia = '".$statusnoticia."'
                                             WHERE codigo =".$_SESSION['id'];
+                
+                echo($sql);
                 
                 mysqli_query($conexao, $sql);
             }
@@ -140,8 +152,6 @@
         <title>
             CMS Notícias
         </title>
-        <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="../js/mascara.js" type="text/javascript"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>
@@ -164,173 +174,194 @@
         <div id="box-main" class="center">
             <?php
     
-                require_once('cms-menu.php');
+                include'cms-menu.php';
     
             ?>
             <div id="conteudo">
-                <form name="frm-cms-noticia" method="POST" action="cms-noticia.php">
                     <div class="titulos-cms">
                         <h3>Página Notícia</h3>
                         
                     </div>
-                    <div class="container-conteudo-cms">
+                    <div class="container-noticia">
                         <div class="container-input">
-                            <h4 style="margin-right:20px;">Noticia em destaque:</h4>
+                            <form id="fotos" name="frmFotos" method="POST" action="upload.php" enctype="multipart/form-data">
+                                <div class="input-text-cms">
+                                    <input type="file"
+                                           id="filefoto"
+                                           name="flefoto"
+                                           required>
+                                </div>
+                            </form>
+                            <form name="frm-cms-noticia-foto" method="POST" action="cms-noticias.php">
+                                 <div id="visualizar_foto" >
+                                    <?php
+                                        if(isset($nomefoto)){
+                                    ?>
+
+                                    <img src="<?php echo($nomefoto);?>" id="img-card">
+                                    <?php
+
+                                        }else{
+                                    ?>
+
+                                    <div src="" id="img-card" style="border:1px solid #003311;border-radius:2px 2px;">
+                                    </div>
+
+                                    <?php
+                                        }
+                                    ?>
+                                </div>
+                                <div class="input-text-cms">
+                                    <input type="text"
+                                           name="text-titulo"
+                                           class="input-cms-promo"
+                                           placeholder="Digite o titulo da noticia"
+                                           value="<?php echo($titulo)?>"
+                                           maxlength="255"
+                                           >
+
+                                </div>
+                                <div class="input-text-cms">
+                                    <div class="box-rdo">
+                                        <input type="radio"
+                                               name="rdoprincipal"
+                                               value="P"
+                                               id="rdo-noticia-p" <?php echo($rdonoticiap)?>
+                                               required>
+
+                                        <label for="rdo-noticia-p"> Principal</label>
+                                    </div>
+                                    <div class="box-rdo">
+                                        <input type="radio"
+                                               name="rdoprincipal"
+                                               value="S"
+                                               id="rdo-noticia-s" <?php echo($rdonoticias)?>
+                                               required>
+
+                                        <label for="rdo-noticia-s"> Secundário</label>
+                                    </div>
+                                </div>
                             
-                            <div class="input-text-cms">
-                                <input type="text"
-                                       class="input-cms-promo"
-                                       placeholder="Digite o titulo da noticia">
-                                
-                            </div>
-                            <div style="clear:both;">
-                                <div src="" class="img-cms-noticias" style="border:1px solid #003311;border-radius:2px 2px;">
-                                </div>
-                            </div>
-                            <div class="input-text-cms">
-                                <input type="file">
-                            </div>
-                             <div class="input-text-cms">
-                                <div class="box-rdo">
-                                    <input type="radio"
-                                           name="radio"
-                                           value="A"
-                                           id="rdo-ativado" <?php echo($rdoativado)?>
-                                           required>
+                                <div>
+                                    <textarea name="text-conteudo" maxlength="200" placeholder="Conteudo da notícia"><?php echo($conteudo);?></textarea>
 
-                                    <label for="rdo-ativado"> Ativar</label>
                                 </div>
-                                <div class="box-rdo">
-                                    <input type="radio"
-                                           name="radio"
-                                           value="D"
-                                           id="rdo-desativado" <?php echo($rdodesativado)?>
-                                           required>
+                                <div class="input-text-cms">
+                                    <div class="box-rdo" style="width:100px;">
+                                        <input type="radio"
+                                               name="radio"
+                                               value="A"
+                                               id="rdo-ativado" <?php echo($rdoativado)?>
+                                               required>
 
-                                    <label for="rdo-desativado"> Desativar</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container-noticias-corpo">
-                            <h4>Noticia em destaque:</h4>
-                            <div class="input-text-cms">
-                                <input type="text"
-                                       class="input-cms-promo"
-                                       placeholder="Digite o titulo da noticia">
-                                
-                            </div>
-                            <div>
-                                <div style="float:left;">
-                                    <figure>
-                                        <img src="" width="128px" height="128px" >
-                                    </figure>
-                                    
-                                </div>
-                                <div >
-                                    <input type="file">
-                                </div>
-                                
-                            </div>
-                            <div style="clear:both;">
-                                <textarea class="cms-textarea">
-                                
-                                
-                                </textarea>
-                            </div>
-                             <div class="input-text-cms">
-                                <div class="box-rdo">
-                                    <input type="radio"
-                                           name="radio"
-                                           value="A"
-                                           id="rdo-ativado" <?php echo($rdoativado)?>
-                                           required>
+                                        <label for="rdo-ativado"> Ativar</label>
+                                    </div>
+                                    <div class="box-rdo">
+                                        <input type="radio"
+                                               name="radio"
+                                               value="D"
+                                               id="rdo-desativado" <?php echo($rdodesativado)?>
+                                               required>
 
-                                    <label for="rdo-ativado"> Ativar</label>
+                                        <label for="rdo-desativado"> Desativar</label>
+                                    </div>
+                                     <div class="box-rdo" style="text-align:left;">
+                                        <input type="submit"
+                                               class="btn-salvar"
+                                               name="btnsalvar"
+                                               id="btnsalvar"
+                                               value="<?php echo($botao)?>">
+                                    </div>
                                 </div>
-                                <div class="box-rdo">
-                                    <input type="radio"
-                                           name="radio"
-                                           value="D"
-                                           id="rdo-desativado" <?php echo($rdodesativado)?>
-                                           required>
-
-                                    <label for="rdo-desativado"> Desativar</label>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <div class="conteudo-cms">
                         <div id="tbl-promocoes">
                             <div class="cabecalho">
-                                <div class="titulos-promo">
-<!--                                    Nome produto-->
+                                <div class="titulos-promo" style="width:250px;">
+                                    Titulo
                                 </div>
-                                <div class="titulos-promo">
-<!--                                    Imagem-->
+                                <div class="titulos-promo" style="width:380px;">
+                                    Conteúdo
                                 </div>
-                                <div class="titulos-promo">
-<!--                                    Preço-->
+                                <div class="titulos-promo" style="width:100px;">
+                                    Status
                                 </div>
-                                <div class="titulos-promo">
-<!--                                    Desconto-->
+                                <div class="titulos-promo" style="width:100px;">
+                                    Tipo Noticia
                                 </div>
-                                <div class="titulo-campo-opcoes">
-<!--                                    Opções-->
-                                </div>
-                            </div>
-                            <?php
-
-                                //TABELA VINDO DIRETO DO BANCO
-                                $sql = "SELECT * FROM  tbl_noticias ORDER BY codigo DESC";
-
-                                $select = mysqli_query($conexao, $sql);
-
-                                while($rscontatos=mysqli_fetch_array($select))
-                                {
-                            ?>
-                            <div class="tbl-dados-db">
-                                <div class="campos-tbl-promo">
-                                    <?php //echo($rscontatos['nome'])?>	
-                                </div>
-                                <div class="campos-tbl-promo">
-                                    <?php //echo($rscontatos['imagem'])?>	
-                                </div>
-                                <div class="campos-tbl-promo">
-                                    <?php ////echo($rscontatos['preco'])?>
-                                </div>
-                                <div class="campos-tbl-promo">
-                                    <?php //echo($rscontatos['valor_desconto'])?>	
-                                </div>
-                                <div class="campo-opcoes">
-                                    <div class="opcoes-promo">
-
-                                        <a href= "cms-promocoes.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>&nomefoto=<?php echo($rscontatos['imagem']);?>" onclick="return confirm('Deseja realmente excluir?');">
-
-                                            <input type="image"
-                                                   src="../img/excluir.png"
-                                                   width="24px"
-                                                   height="24px"
-                                                   class="img center"
-                                                   style="margin-top:2px;">
-                                            
-                                        </a>
-                                    </div>
-                                    <div class="opcoes-promo">
-
-                                        <a href="cms-promocoes.php?modo=editar&id=<?php echo($rscontatos['codigo']);?>">
-
-                                            <img src="../img/editar24.png" width="20px" height="23px" class="img center" style="margin-top:2px;">
-                                        </a>
-                                    </div>
+                                <div class="titulo-campo-opcoes" style="width:80px;">
+                                    Opções
                                 </div>
                             </div>
                             <?php
-                                }
-                            ?>
+                            
+                            /********************* VISUALIZAR DADOS DO BANCO ************************/
+                            $sql = "SELECT * FROM tbl_noticia ORDER BY statusnoticia LIKE 'S%'";
+                            $select = mysqli_query($conexao, $sql);
 
+                            while($rscontatos=mysqli_fetch_array($select)){
+                                
+                        ?>
+                        <div class="tbl-dados-db">
+                            <div class="campos-tbl-promo" style="width:250px;">
+                                <?php echo($rscontatos['titulo'])?>
+                                
+                            </div>
+                            <div class="campos-tbl-promo" style="width:385px;">
+                                <?php echo($rscontatos['conteudo'])?>
+                                
+                            </div>
+                            <div class="campos-tbl-promo" style="width:100px;">
+                                <?php
+                                    if($rscontatos['statusnoticia'] == 'P'){
+                                        echo('Principal');
+                                        
+                                    }else{
+                                        echo('Secundaria');
+                                        
+                                    }
+                                ?>	
+                            </div>
+                            <div class="campos-tbl-promo" style="width:100px;">
+                                <?php
+                                    if($rscontatos['status'] == 'A'){
+                                        echo('Ativado');
+                                        
+                                    }else{
+                                        echo('Desativado');
+                                        
+                                    }
+                                ?>	
+                            </div>
+                            
+                            <div class="campo-opcoes">
+                                <div class="opcoes-promo">
+                                    <a href= "cms-noticias.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>&nomefoto=<?php echo($rscontatos['imagem']);?>" onclick="return confirm('Deseja realmente excluir?');">
+
+                                        <input type="image"
+                                               src="../img/excluir.png"
+                                               width="24px"
+                                               height="24px"
+                                               class="img center"
+                                               style="margin-top:2px;">
+                                        
+                                    </a>
+                                </div>
+                                <div class="opcoes-promo">
+                                    <a href="cms-noticias.php?modo=consultar&id=<?php echo($rscontatos['codigo']);?>">
+                                        <img src="../img/editar24.png" width="20px" height="23px" class="img center" style="margin-top:2px;">
+                                        
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                            }
+                        ?>
                         </div>
                     </div>
-                </form>
             </div>
             <div id="footer">
                 <h3>

@@ -1,3 +1,46 @@
+<?php
+    
+    require_once('../bd/conexao.php');
+
+    $conexao = conexaoMysql();
+
+    /* esse bloco de código em php verifica se existe a sessão, pois o usuário pode
+     simplesmente não fazer o login e digitar na barra de endereço do seu navegador 
+    o caminho para a página principal do site (sistema), burlando assim a obrigação de 
+    fazer um login, com isso se ele não estiver feito o login não será criado a session, 
+    então ao verificar que a session não existe a página redireciona o mesmo
+     para a ../index.php.*/
+
+    if(!isset($_SESSION)) 
+    { 
+        session_start();
+        $usuario = $_SESSION['login'];
+    } 
+
+    if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
+
+        unset($_SESSION['login']);
+        unset($_SESSION['senha']);
+        header("location:../index.php");
+        
+    }else{
+        
+        $usuario = $_SESSION['login'];
+        $codnivel = $_SESSION['nivel'];
+
+        $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
+
+        $select = mysqli_query($conexao, $sql);
+
+        while($rs=mysqli_fetch_array($select))
+        {
+            $admconteudo = $rs['admconteudo'];
+
+        }
+        
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -14,8 +57,13 @@
     
             ?>
             <div id="conteudo">
+                <?php
+                    
+                    if($admconteudo == '1'){
+
+                ?>
                 <div class="container-conteudo-cms">
-                    <div class="option-conteudo">
+                    <div class="option-conteudo"><!--Notícia-->
                         <a href="cms-noticias.php">
                             <div class="conteudo-img">
                                 <figure>
@@ -33,7 +81,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="option-conteudo">
+                    <div class="option-conteudo"><!--promoção-->
                         <a href="cms-promocoes.php">
                             <div class="conteudo-img">
                                 <figure>
@@ -51,7 +99,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="option-conteudo">
+                    <div class="option-conteudo"><!--Eventos-->
                         <a href="cms-eventos.php">
                             <div class="conteudo-img">
                                 <figure>
@@ -69,7 +117,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="option-conteudo">
+                    <div class="option-conteudo"><!--Sobre-->
                         <a href="cms-sobre.php">
                             <div class="conteudo-img">
                                 <figure>
@@ -90,7 +138,7 @@
                     </div>
                 </div>
                 <div class="container-conteudo-cms">
-                    <div class="option-conteudo">
+                    <div class="option-conteudo"><!--Lojas-->
                         <a href="cms-lojas.php">
                             <div class="conteudo-img">
                                 <figure>
@@ -109,6 +157,15 @@
                         </a>
                     </div>
                 </div>
+                
+                <?php
+                        }else{
+                    
+                ?>
+                    <h1>Bem Vindo!</h1>
+                <?php
+                    }
+                ?>
             </div>
             <div id="footer">
                 <h3>

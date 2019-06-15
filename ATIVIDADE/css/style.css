@@ -9,6 +9,16 @@ a:link{
     display: inline-block;
 }
 
+a:active{
+    
+    color: white;
+}
+
+a:visited{
+    
+    color: white;
+}
+
 *{
     /*font-size: 14.8px;*/       
     font-family: arial;

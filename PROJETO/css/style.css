@@ -1,6 +1,5 @@
 /*CSS*/
 
-
 /************************* CSS PADRÃO **************/
 
 *{
@@ -20,14 +19,14 @@ body, ul, h1, h2, h3, h4, h5, p{
     margin-right: auto;
     
 }
-
-/**************************************** MENU ***********************************/
+    
+/************************* MENU **************/
 
 header{
     width:100%;
     height:70px;
     display: block;
-    overflow: hidden;
+/*    overflow: hidden;*/
     position:fixed;
     top: 0;
     background-color:#003311;
@@ -40,7 +39,7 @@ header{
     
     width:1552px;
     height: inherit;
-    /*background-color: #fee0ee;*/
+/*    background-color: #fee0ee;*/
     
 }
 
@@ -83,6 +82,16 @@ header{
     height: 40px;
     background-color: rgba(100, 100, 153, 0.3);
     color:white;
+}
+
+#icone-menu{
+    
+    display: none;
+}
+
+#menu_mobile{
+    
+    display: none;
 }
 
 li a:link{
@@ -152,7 +161,7 @@ input{
     border: none;
 }
 
-#btnOk{
+#btn-login{
     
     font-weight: bold;
     color:white;
@@ -168,32 +177,34 @@ input{
     background-color:gray;
 }
 
-/******************************************HOME*********************************/
-
-.msg-slider{
-    
-    /*background-color: rgba(255,250,255,0.3);*/
-    
-}
+/************************* HOME **************/
 
 #conteudo-catalogo{
     
     width: 1550px;
     min-height: 1000px;
-    /*-webkit-box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);*/
-    /*background-color: #f0f0f0;*/
     overflow: hidden;
     box-sizing: border-box;
     
 }
 
+#conteudo{
+    
+    margin-top: 52px;
+    width: 1552px;
+    min-height: 1000px;
+    max-height: inherit;
+    box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);
+    overflow: hidden;
+    box-sizing: border-box;
+/*    background-color: black;*/
+}
+
 #menu-catalogo{
     
     width:250px;
-    min-height:1000px;
-    /*background-color:rgba(102, 255, 153, 0.5);*/
+    height:inherit;
     background-color:#ffaa00;
-    overflow: hidden;
     float: left;
     
 }
@@ -204,7 +215,6 @@ input{
     height: 65px;
     list-style:none;
     text-align:center;
-    margin-bottom:5px;
     padding:20px 15px 15px 20px;
     font-weight: bold;
     color: white;
@@ -216,8 +226,56 @@ input{
 
 .itens-catalogo:hover{
     
-    /*transition: 0.5s;*/
     color:#ffbb33;
+    background-color:rgba(255, 255, 255, 255);
+}
+
+#menu-catalogo .itens-catalogo:hover> #submenu{
+    
+    width:250px;
+    min-height:65px;
+    margin-top: -40px;
+    margin-left: 230px;
+    display: block;
+    
+}
+
+#submenu{
+    
+    width:250px;
+    min-height:65px;
+    margin-top: -40px;
+    margin-left:230px;
+    box-sizing: border-box;
+    position: absolute;
+    display: none;
+    float: left;
+
+}
+
+.itens-subcategoria{
+    
+    width:inherit;
+    height: 65px;
+    list-style:none;
+    text-align:center;
+    padding:0px 0px 0px 0px;
+/*    padding:20px 15px 15px 20px;*/
+    font-weight: bold;
+    color: white;
+    background-color:#ffaa00;
+    overflow: hidden;
+    cursor: pointer;
+    font-size:17px;
+    box-sizing:border-box;
+    
+}
+
+.itens-subcategoria:hover> a{
+    
+    width: 100%;
+    height: 65px;
+    color:#ffaa00;
     background-color:rgba(255, 255, 255, 255);
     
 }
@@ -241,7 +299,8 @@ input{
     box-sizing: border-box;
     
 }
-/*******************************CARD******************************/
+
+/************************* CARD **************/
 
 .card{
     
@@ -328,7 +387,7 @@ input{
     
 }
 
-/***********************REDES********************/
+/************************* REDES **************/
 
 #redes{
     
@@ -350,7 +409,7 @@ input{
     background-color: transparent;
 }
 
-/****************FOOTER**************************/
+/************************* FOOTER **************/
 
 #footer{
     
@@ -390,18 +449,6 @@ input{
     height: 170px;
 }
 
-#conteudo{
-    
-    margin-top: 52px;
-    width: 1552px;
-    min-height: 1000px;
-    max-height: inherit;
-    box-shadow: 2px 2px 10px 5px rgba(50, 50, 50, 0.45);
-    overflow: hidden;
-    box-sizing: border-box;
-    /*background-color: #0f0f0f;*/
-}
-
 #logo-footer{
     
     width: 100px;
@@ -433,7 +480,7 @@ input{
     
 }
 
-/****************jssor slider loading skin spin css*****************/
+/************************* jssor slider loading skin spin css **************/
 
 .jssorl-009-spin img {
     animation-name: jssorl-009-spin;
@@ -451,7 +498,7 @@ input{
     }
 }
 
-/*jssor slider bullet skin 032 css*/
+/************************* jssor slider bullet skin 032 css **************/
 .jssorb032 {
     position:absolute;
 }
@@ -515,7 +562,7 @@ input{
     pointer-events:none;
 }
 
-/******************************* FALE-CONOSCO ********************************/
+/************************* FALE-CONOSCO **************/
 
 #main-fale-conosco{
     
@@ -661,7 +708,7 @@ textarea{
     
 }
 
-/************************** SOBRE A EMPRESA ***********************************/
+/************************* SOBRE A EMPRESA **************/
 
 .main-sobre{
     width:50%;
@@ -694,6 +741,7 @@ textarea{
     
     width:776px;
     height:334px;
+    margin-top: -340px;
     position:absolute;
     background-color:rgba(255, 187, 51,0.4);
 }
@@ -708,7 +756,7 @@ textarea{
     background-size:cover;
 }
 
-/**************************** DESTAQUES *****************************/
+/************************* NOTÍCIAS **************/
 
 #principais-noticias{
     
@@ -865,7 +913,7 @@ textarea{
     color: black;
 }
 
-/*********************************PROMOÇÕES**********************************/
+/************************* PROMOÇÕES **************/
 
 #box-catalogo-promo{
     
@@ -1002,7 +1050,7 @@ textarea{
     overflow: hidden;
 }
 
-/**************************NOSSAS LOJAS*************************/
+/************************* NOSSAS LOJAS **************/
 
 .container-lojas{
     
@@ -1031,7 +1079,7 @@ textarea{
 
 .conteudo-container-loja:hover>.text-noticia-loja{
     
-    border-left: 4px solid #33ff77;
+    border-left: 4px solid #031;
     
 }
 
@@ -1043,6 +1091,7 @@ textarea{
     text-align: center;
     padding: 20px 20px 20px 20px;
     font-size: 25px;
+    white-space: normal;
     text-transform:uppercase;
     overflow: hidden;
     box-sizing: border-box;
@@ -1060,7 +1109,7 @@ textarea{
     position:relative;
     text-align:right;
     height:inherit;
-    width:350;
+    width:513px;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -1073,24 +1122,13 @@ textarea{
     width:100%;
 }
 
-/*********************************EVENTOS**************************/
-
-.container-evento{
-    
-    width:inherit;
-    height: 450px;
-/*    background-color: #fafee0;*/
-    margin: 35px 0px 0px 0px;
-    overflow: hidden;
-    box-sizing: border-box;
-    
-    
-}
+/************************* EVENTOS **************/
 
 .box-evento{
     
     width:776px;
     height: inherit;
+    margin: 25px 0px 25px 0px;
 /*    background-color: #eeafaf;*/
     float: left;
     overflow: hidden;
@@ -1102,7 +1140,7 @@ textarea{
     
     width: 500px;
     height: 350px;
-    background-color: #eeefff;
+/*    background-color: #eeefff;*/
     overflow: hidden;
     box-sizing: border-box;
     
@@ -1112,7 +1150,9 @@ textarea{
     
     width: 500px;
     height: 100px;
-    background-color: #affaaf;
+    padding: 10px;
+    font-weight:550;;
+    background-color: rgba(0, 100, 50,0.1);
     overflow: hidden;
     box-sizing: border-box;
     
@@ -1145,4 +1185,395 @@ textarea{
 	margin-right:auto;
 	background-color:#ffffff;
 	margin-top:150px;
+}
+
+/*********************** CSS PARA MOBILE ***********************/
+
+@media screen and (max-width:680px){
+    
+    /****************** MENU MOBILE ******************/
+    
+    header{  
+        
+        width: 680px;
+        height: 70px;
+        padding: 0px;
+        background-color: #003311;
+/*        background-color: #555511;*/
+        box-sizing: border-box;
+    }
+    
+    #box-main-header{
+        
+        display: none;
+    }
+    
+    #icone_menu{
+    
+        width: 70px;
+        height: 70px;
+        padding: 9px 10px 0px 10px;
+        background-color: #003311;
+        box-sizing: border-box;
+        
+    }
+
+    .barra-menu{
+
+        width: 50px;
+        height: 6px;
+        margin: 8px 0px 8px 0px;
+        background-color: white;
+    }
+
+    #menu_mobile{
+        width: 150px;
+        height: 300px;
+        background-color: #003311;
+        color: white;
+        display: block;
+    }
+    
+    .itens-menu-mobile{
+
+        width: 150px;
+        height: 50px;
+        text-align: center;
+        padding: 0px;
+        background-color: #0033;
+        overflow: hidden;
+        box-sizing: border-box;
+
+    }
+    
+    .link{
+        width: inherit;
+        padding: 0px;
+        margin: 0px;
+        font-size: 1.2em;
+        
+    }
+    
+    .menu_mobile_close{
+    
+    margin-left: -500px;
+    transition:  1s;
+    visibility: hidden;
+/*    visibility: visible;*/
+    
+    }
+
+    .menu_mobile_open{
+
+    margin-left: 0px;
+    transition:  1s;
+    visibility: visible;
+
+    }
+    
+    /****************** CONTEUDO MOBILE ******************/
+    
+    #conteudo{
+        
+        width: 680px;
+        height: 1000px;
+        margin-top: 70px;
+/*        background-color: #55e5af;*/
+        overflow: hidden;
+        box-sizing: border-box;
+        
+    }
+    
+    #box-slider-mobile{
+        
+        width: inherit;
+        height: 300px;
+        background-image: url(../img/20140727-PELOTON-PHOTOS-HOMEPAGE.jpg);
+        background-size: 680px 300px;
+        background-repeat: no-repeat;
+
+    }
+    
+    #box-slider{
+        
+        display: none;
+    }
+    
+    #conteudo-catalogo{
+        
+        width: inherit;
+        min-height: 700px;
+        max-height: 700px;
+/*        background-color: #ffeeaa;*/
+        overflow: hidden;
+        box-sizing: border-box;
+        
+/*        display: none;*/
+        
+    }
+    
+    #menu-catalogo{
+        
+        width: 175px;
+        min-height: 700px;
+        max-height: 700px;
+        float: left;
+    }
+    
+    .itens-catalogo{
+        
+        width:inherit;
+        height: 40px;
+        list-style:none;
+        text-align:center;
+        margin-bottom:0;
+        padding:5px 0px 0px 0px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        font-size:1.3em;
+        box-sizing:border-box;
+    }
+
+
+    #menu-catalogo .itens-catalogo:hover> #submenu{
+
+        width:250px;
+        min-height:40px;
+        margin-top: -29px;
+        margin-left: 175px;
+        padding: 0px;
+        display: block;
+
+    }
+
+    #submenu{
+
+        width:250px;
+        min-height:40px;
+        margin-top: -29px;
+        margin-left:175px;
+        padding: 0px;
+        box-sizing: border-box;
+        position: absolute;
+        display: none;
+        float: left;
+
+    }
+
+    .itens-subcategoria{
+
+        width:inherit;
+        height: 40px;
+        list-style:none;
+        text-align:center;
+        padding:0px;
+        font-weight: bold;
+        color: white;
+        background-color:#ffaa00;
+        overflow: hidden;
+        cursor: pointer;
+        font-size:1em;
+        box-sizing:border-box;
+
+    }
+    
+    .itens-subcategoria a{
+        
+        width: 100%;
+        height: 40px;
+        padding-top: 0px;
+        margin-top: -12px;
+/*        background-color: antiquewhite;*/
+        overflow: hidden;
+    }
+    
+    .itens-subcategoria:hover> a{
+
+        width: 100%;
+        height: 40px;
+        color:#ffaa00;
+        background-color:rgba(255, 255, 255, 255);
+
+    }
+    
+    #box-catalogo{
+        
+        width: 505px;
+        min-height: 700px;
+        max-height: 700px;
+        margin: 0px;
+        padding: 0px;
+        overflow-y: scroll;
+/*        background-color: #bbffff;*/
+        box-sizing: border-box;
+        
+    }
+    
+    .card-box{
+    
+    width: inherit;
+    height: 700px;
+    margin: 0px;
+    padding: 0px;
+/*    background-color: #fedede;*/
+    overflow-y:scroll;
+    box-sizing: border-box;
+    
+    }
+    
+    /****************** CARD MOBILE ******************/
+    
+    .card{
+        
+        width: 450px;
+        height: 550px;
+        margin: 20px 0px 0px 30px;
+        padding: 0px;
+/*        background-color: #eeff99;*/
+        float:none;
+    }
+    
+    .img-card{
+
+        width: 320px;
+        height: 320px;
+/*        background-color: #feefee;*/
+        box-sizing: border-box;
+    }
+
+    .nome-card{
+
+        width:inherit;
+        height: 50px;
+        padding:6px 15px 0px 15px;
+        font-size: 1.5em;
+/*        background-color:#fedfff;*/
+        overflow: hidden;
+        text-align: center;
+        box-sizing: border-box;
+
+    }
+
+    .desc-card{
+
+        width:inherit;
+        height: 80px;
+        padding:6px 15px 0px 15px;
+        font-size: 1.3em;
+/*        background-color:#e0ffff;*/
+        text-align: center;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .preco-card{
+
+        width:inherit;
+        height: 47px;
+        padding:6px 15px 0px 55px;
+/*        background-color:#ffffe0;*/
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #003311;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .detalhes{
+
+        width:inherit;
+        height: 50px;
+        padding:6px 15px 0px 15px;
+        font-size: 1.3em;
+        background-color: white;
+        text-align: right;
+        overflow: hidden;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    .detalhes a{
+
+        padding: 10px;
+        font-weight: bold;
+        color:#ffbb33;
+
+    }
+
+    /****************** FOOTER MOBILE ******************/
+    
+    #footer{
+        
+        width: 680px;
+        height: 100px;
+        background-color: #031;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    #main-footer{
+
+        width: 680px;
+        height: 100px;
+/*        background-color: black;*/
+        box-sizing: border-box;
+    }
+    
+
+    .conteudo-footer{
+
+        width: 170px;
+        height: inherit;
+        padding: 5px;
+/*        background-color: #00ffea;*/
+        overflow: hidden;
+        float:left;
+        word-wrap: break-word;
+    /*    text-transform:capitalize;*/
+        box-sizing: border-box;
+
+    }
+
+    .conteudo-footer ul{
+
+        font-size: 1em;
+        color:white;
+        text-align: left;
+        text-decoration: none;
+        list-style: none;
+
+    }
+
+    #logo-footer{
+
+        width: 130px;
+        height: 65px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+/*        background-color: #fefffe;*/
+        overflow: hidden;
+        box-sizing: border-box;
+
+    }
+
+    #imag-logo-footer{
+
+        width: 90px;
+        height: 55px;
+        padding: 0px 0px 0px 30px;
+        background-position: left;
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        background-size:cover;
+    }
+
+    .titulo-footer{
+
+        font-size: 1em;
+        text-align: center;
+        color: #ffffff;
+
+    }
+
 }

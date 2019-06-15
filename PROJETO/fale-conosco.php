@@ -15,11 +15,6 @@
     $sexo = null;
     $profissao = null;
     $sql = null;
-    $rdosexoF = null;
-    $rdosexoM = null;
-    $btn = "salvar";
-    $data_nasc = null;
-    $dt_nasc = null;
 
     if(isset($_POST["btnsalvar"])){
         
@@ -67,6 +62,7 @@
         <meta charset="utf-8">
         <title>Fale conosco</title>
         <script src="js/mascara.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
     </head>
     <body>

@@ -6,11 +6,11 @@
     
     $conexao = conexaoMysql();
 
-    $nome = null;
+    $nomeProduto = null;
     $imagem = null;
     $descricao = null;
     $preco = null;
-    $valor_desconto = null;
+    $valorDesconto = null;
     $status = null;
     $sql = null;
     $rs = null;
@@ -35,7 +35,7 @@
             
             header('location:cms-promocoes.php');
             
-        /***************************** CONSULTAR **********************/
+        /************************ CONSULTAR **********************/
         }elseif($modo == 'consultar'){
             
             $sql = "SELECT * FROM tbl_produto WHERE codigo =".$id;
@@ -43,11 +43,11 @@
             
             if($rs = mysqli_fetch_array($select)){
                 
-                $nome = $rs['nome'];
+                $nomeProduto = $rs['produto'];
                 $nomefoto = $rs['imagem'];
                 $descricao = $rs['descricao'];
                 $preco = $rs['preco'];
-                $valor_desconto = $rs['valor_desconto'];
+                $valorDesconto = $rs['valor_desconto'];
                 
                 if($rs['status'] == 'A'){
                     $rdoativado = 'checked';
@@ -68,10 +68,10 @@
 
     if(isset($_POST['btnsalvar'])){
         
-        $nome = filter_var($_POST["textnomep"], FILTER_SANITIZE_STRING);
+        $nomeProduto = filter_var($_POST['textnomep'], FILTER_SANITIZE_STRING);
         $descricao = filter_var($_POST['textdescricao'], FILTER_SANITIZE_STRING);
         $preco = filter_var($_POST['textpreco'], FILTER_SANITIZE_STRING);
-        $valor_desconto = filter_var($_POST['textvdesconto'], FILTER_SANITIZE_STRING);
+        $valorDesconto = filter_var($_POST['textvdesconto'], FILTER_SANITIZE_STRING);
         $status = $_POST['radio'];
         $foto = "";
         
@@ -85,14 +85,22 @@
             
             if(isset($_SESSION['path_foto']) && $_SESSION['path_foto']!=null){
             
-                $sql = "INSERT INTO tbl_produto(nome, imagem,descricao, preco, valor_desconto, status) VALUES ('".$nome."','".$foto."','".$descricao."',".$preco.",".$valor_desconto.",'".$status."')";
-                
-                if(mysqli_query($conexao, $sql)){
-                    $_SESSION['path_foto'] = null;
-                    $_SESSION['nomefoto'] = null;
+                if(is_numeric($preco) && is_numeric($valor_desconto)){
+                    
+                    $sql = "INSERT INTO tbl_produto(produto, imagem,descricao, preco, valor_desconto, status) VALUES ('".$nomeProduto."','".$foto."','".$descricao."',".$preco.",".$valorDesconto.",'".$status."')";
+
+                    if(mysqli_query($conexao, $sql)){
+                        $_SESSION['path_foto'] = null;
+                        $_SESSION['nomefoto'] = null;
+
+                    }
+                    
+                    header("location:cms-promocoes.php");
+                }else{
+                    echo("<script>alert('Digite um valor numerico nos campos preço e desconto')</script>");
                     
                 }
-                
+//                echo($sql);
             }else{
                 echo("<script>alert('Erro ao salvar')</script>");
                 
@@ -101,35 +109,46 @@
         /***************************** EDITAR ************************/
         }elseif($_POST['btnsalvar']=='editar'){
             
-            if(isset($_SESSION['path_foto']) && $_SESSION['path_foto']!=null){
-                
-                $sql = "UPDATE tbl_produto SET nome = '".$nome."',
-                                            imagem ='".$foto."',
-                                            descricao = '".$descricao."',
-                                            preco = ".$preco.",
-                                            valor_desconto = ".$valor_desconto.",
-                                            status = '".$status."'
-                                            WHERE codigo =".$_SESSION['id'];
-                
-                if(mysqli_query($conexao, $sql)){
-                    unlink($_SESSION['nomefoto']);
-                    $_SESSION['path_foto'] = null;
-                    $_SESSION['nomefoto'] = null;
+            if(is_numeric($preco) && is_numeric($valorDesconto)){
+                if(isset($_SESSION['path_foto']) && $_SESSION['path_foto']!=null){
 
+
+
+                    $sql = "UPDATE tbl_produto SET produto = '".$nomeProduto."',
+                                                imagem ='".$foto."',
+                                                descricao = '".$descricao."',
+                                                preco = ".$preco.",
+                                                valor_desconto = ".$valorDesconto.",
+                                                status = '".$status."'
+                                                WHERE codigo =".$_SESSION['id'];
+
+                    if(mysqli_query($conexao, $sql)){
+                        unlink($_SESSION['nomefoto']);
+                        $_SESSION['path_foto'] = null;
+                        $_SESSION['nomefoto'] = null;
+
+                    }
+                    
+                    header("location:cms-promocoes.php");
+                }else{
+
+                    $sql = "UPDATE tbl_produto SET produto = '".$nomeProduto."',
+                                                descricao = '".$descricao."',
+                                                preco = ".$preco.",
+                                                valor_desconto = ".$valorDesconto.",
+                                                status = '".$status."'
+                                                WHERE codigo =".$_SESSION['id'];
+
+                    mysqli_query($conexao, $sql);
+                    
+                    header("location:cms-promocoes.php");
                 }
+                
             }else{
+                echo("<script>alert('Digite um valor numerico nos campos preço e desconto')</script>");
                 
-                $sql = "UPDATE tbl_produto SET nome = '".$nome."',
-                                            descricao = '".$descricao."',
-                                            preco = ".$preco.",
-                                            valor_desconto = ".$valor_desconto.",
-                                            status = '".$status."'
-                                            WHERE codigo =".$_SESSION['id'];
-                
-                mysqli_query($conexao, $sql);
             }
         }
-        header("location:cms-promocoes.php");
     }
 
 ?>
@@ -140,8 +159,6 @@
         <title>
             cms-promoções
         </title>
-        <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="../js/mascara.js" type="text/javascript"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>
@@ -163,7 +180,7 @@
     <body>
         <div id="box-main" class="center">   
             <?php
-                require_once('cms-menu.php');
+                include'cms-menu.php';
     
             ?>
             <div class="titulos-cms">
@@ -191,14 +208,15 @@
 
                             ?>
 
-                            <img src="<?php echo($nomefoto);?>" alt="" id="img-card" >
+                            <img src="<?php echo($nomefoto);?>" alt="" id="img-card" style="border:1px solid #003311;border-radius:2px 2px;">
 
 
                             <?php
                                 }else{
                             ?>
-                            <div id="img-card" style="border:1px solid #003311;border-radius:2px 2px;"></div>
-
+                            
+                            <img src="../img/ico/imgnotfound.png" alt="" id="img-card" style="border:1px solid #003311;border-radius:2px 2px;">
+                            
                             <?php 
                                 }
 
@@ -211,8 +229,8 @@
                                        name="textnomep"
                                        id="nome"
                                        class="input-cms-promo"
-                                       value="<?php echo($nome)?>"
-                                       maxlength="65"
+                                       value="<?php echo($nomeProduto)?>"
+                                       maxlength="90"
                                        placeholder="Digite o nome do produto"
                                        required>
 
@@ -238,7 +256,7 @@
                                        id="preco"
                                        class="input-cms-promo"
                                        value="<?php echo($preco)?>"
-                                       maxlength="65"
+                                       maxlength="6"
                                        placeholder=" Digite o preço atual do produto"
                                        required>
 
@@ -249,15 +267,15 @@
                                 <input type="text"
                                        name="textvdesconto"
                                        class="input-cms-promo"
-                                       value="<?php echo($valor_desconto)?>"
-                                       maxlength="65"
+                                       value="<?php echo($valorDesconto)?>"
+                                       maxlength="6"
                                        placeholder=" Digite o preço promocional"
                                        required>
 
                             </div>
                         </div>
                         <div class="input-text-cms">
-                            <div class="box-rdo">
+                            <div class="box-rdo" style="width:85px;">
                                 <input type="radio"
                                        name="radio"
                                        value="A"
@@ -336,7 +354,7 @@
                         ?>
                         <div class="tbl-dados-db">
                             <div class="campos-tbl-promo" style="width:300px;">
-                                <?php echo($rscontatos['nome'])?>
+                                <?php echo($rscontatos['produto'])?>
                                 
                             </div>
                             <div class="campos-tbl-promo" style="width:200px;">

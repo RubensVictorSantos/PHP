@@ -1,3 +1,17 @@
+<?php
+    
+    require_once('bd/conexao.php');
+    session_start();
+    
+    $conexao = conexaoMysql();
+
+    $imagem = null;
+    $conteudo = null;
+    $sql = null;
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -6,53 +20,45 @@
             Eventos
         </title>
         <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+        <header>
         <?php
         
-            require_once('menu.php');
+            include('menu.php');
         
         ?>
+        </header>
         <div id="conteudo" class="center" >
-        
+            <?php
+                
+                $sql = "SELECT * FROM tbl_eventos WHERE status LIKE 'A%'";
+
+                $select = mysqli_query($conexao, $sql);
+
+
+                while($rsevento=mysqli_fetch_array($select))
+                {
+
+                    $imagem = $rsevento['imagem'];
+                    $conteudo = $rsevento['conteudo'];
             
-            <div class="container-evento">
-                <div class="box-evento">
-                    <div class="box-img-evento center">
-                        <img src="img/festival-bike-sp.jpg" alt="" class="img-evento">
-                    </div>
-                    <div class="texto-evento center">
-                    
-                    </div>
+            ?>
+            <div class="box-evento">
+                <div class="box-img-evento center">
+                    <img src="cms/<?php echo($imagem);?>" alt="Imagem do Evento" class="img-evento">
                 </div>
-                <div class="box-evento">
-                    <div class="box-img-evento center">
-                        <img src="img/cycle-fair.png" alt="" class="img-evento">
-                    </div>
-                    <div class="texto-evento center">
-                    
-                    </div>
+                <div class="texto-evento center">
+                    <?php
+                        echo($conteudo);
+                    ?>
                 </div>
+
             </div>
-            
-            <div class="container-evento">
-                <div class="box-evento">
-                    <div class="box-img-evento center">
-                        <img src="img/001.jpg" alt="" class="img-evento">
-                    </div>
-                    <div class="texto-evento center">
-                    
-                    </div>
-                </div>
-                <div class="box-evento">
-                    <div class="box-img-evento center">
-                        <img src="img/2017-epic-final.jpg" alt="" class="img-evento">
-                    </div>
-                    <div class="texto-evento center">
-                    
-                    </div>
-                </div>
-            </div>
+            <?php
+                }
+            ?>
             
         </div>
         <?php

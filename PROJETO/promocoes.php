@@ -5,15 +5,13 @@
     
     $conexao = conexaoMysql();
 
-    $nome = null;
+    $nomeProduto = null;
     $imagem = null;
     $descricao = null;
     $preco = null;
-    $valor_desconto = null;
+    $valorDesconto = null;
     $status = null;
     $sql = null;
-    $rs = null;
-    $id = null;
     $rdoativado = null;
     $rdodesativado = null;
     
@@ -48,15 +46,15 @@
                 </h1>
                 <div id="box-catalogo-promo">
                     <?php
-//                        global $cont = null;
-                        $nome = null;
+
+                        $nomeProduto = null;
                         $nomefoto = null;
                         $descricao = null;
                         $preco = null;
-                        $valor_desconto = null;
+                        $valorDesconto = null;
                         $status = null;
 
-                        $sql = "SELECT * FROM tbl_produto WHERE status LIKE 'a%'";
+                        $sql = "SELECT * FROM tbl_produto WHERE status LIKE 'A%'";
 
                         $select = mysqli_query($conexao, $sql);
                         
@@ -64,11 +62,11 @@
                         while($rscontatos=mysqli_fetch_array($select))
                         {
 
-                            $nome = $rscontatos['nome'];
+                            $nomeProduto = $rscontatos['produto'];
                             $nomefoto = $rscontatos['imagem'];
                             $descricao = $rscontatos['descricao'];
                             $preco = $rscontatos['preco'];
-                            $valor_desconto = $rscontatos['valor_desconto'];
+                            $valorDesconto = $rscontatos['valor_desconto'];
 
                     ?>  
                         <div class="card">
@@ -93,7 +91,7 @@
                             <div class="nome-card">
                                 <p >
                                     <?php 
-                                        echo($nome);
+                                        echo($nomeProduto);
                                     
                                     ?>
                                 </p>
@@ -113,7 +111,7 @@
                                     
                                     ?>
                                     </span> Por R$<?php 
-                                        echo($valor_desconto);
+                                        echo($valorDesconto);
                                     
                                     ?>
                                 </p>

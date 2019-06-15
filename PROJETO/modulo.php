@@ -5,22 +5,27 @@ function info($a){
     
     $msg = null;
     $msg = $a;
-    
-    echo('
-        
-        <div class="info">
-            <div class="btn-informacoes">
-                <p>i</p>
-                <div class="box-info">
-                    <div class="retangulo">
-                        <p>
-                            '.$msg.'      
-                        </p>
-                    </div>
-                    <div class="triangulo"></div>
+
+?>
+
+    <div class="info">
+        <div class="btn-informacoes">
+            <p>i</p>
+            <div class="box-info">
+                <div class="retangulo">
+                    <p>
+                        <?php 
+                            echo($msg);
+                        
+                        ?>      
+                    </p>
                 </div>
+                <div class="triangulo"></div>
             </div>
         </div>
-    '); 
+    </div>
+
+<?php
 }
+
 ?>

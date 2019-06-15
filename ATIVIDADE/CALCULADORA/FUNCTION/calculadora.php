@@ -81,44 +81,10 @@
 	</head>
 	<body>
 		<div id="caixa-principal">
-            <div id="caixa_menu">
-                    <div id="caixa_icone">
-                        <div id="icone">
-
-                        </div>
-                        <div class="menu">
-                            <div class="itens_menu">
-                                <a href="../../MEDIA/media.php">Média</a>
-                            </div>
-                            <div id="sub_menu" class="itens_menu">
-                                Calculadora
-                                <div id="menu2">
-                                    <div class="itens_menu">
-                                        <a href="calculadora.php">Function</a>
-                                    </div>
-                                    <div class="itens_menu">
-                                        <a href="IF/calculadora.php">If</a>
-                                    </div>
-                                    <div class="itens_menu">
-                                        <a href="SWITCH/calculadora.php">Switch</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="itens_menu">
-                                <a href="../../tabuada.php">Tabuada</a>
-                            </div>
-                            <div class="itens_menu">
-                                <a href="../../ImPar.php">Pares e impares</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="titulo">
-                        <strong>
-                            CALCULADORA SIMPLES
-                        </strong>
-
-                    </div>
-                </div>
+            <?php
+                require_once('../../menu.php');
+            
+            ?>
 			<div id="caixa-valores">
                 <form name="frmmedia" method="POST" action="calculadora.php">
                     <div>
@@ -139,20 +105,44 @@
                         </div>
                         <div id="caixa-valores">
                             <div id="caixa-texto">
-                                Varlor 1: <input type="text" name="txtval1" onkeypress="return Validar(event);" value="<?php echo($valor1)?>" class="input" ><br>
-                                Varlor 2: <input type="text" name="txtval2" onkeypress="return Validar(event);" value="<?php echo($valor2)?>" class="input" >
+                                Varlor 1: <input type="text"
+                                                 name="txtval1"
+                                                 onkeypress="return Validar(event);"
+                                                 value="<?php echo($valor1)?>"
+                                                 class="input" ><br>
+                                
+                                Varlor 2: <input type="text"
+                                                 name="txtval2"
+                                                 onkeypress="return Validar(event);"
+                                                 value="<?php echo($valor2)?>"
+                                                 class="input" >
                             </div>
                             <div id="caixa-radio">
-                                <input type="radio" name="radio" value="som" <?php echo($rdosomar)?>> Somar<br>
+                                <input type="radio"
+                                       name="radio"
+                                       value="som" 
+                                       <?php echo($rdosomar)?>> Somar<br>
 
-                                <input type="radio" name="radio" value="sub" <?php echo($rdosubtrair)?>> Subtrair<br>
+                                <input type="radio"
+                                       name="radio"
+                                       value="sub"
+                                       <?php echo($rdosubtrair)?>> Subtrair<br>
 
-                                <input type="radio" name="radio" value="mul" <?php echo($rdomultiplicar)?>> Multiplicar<br>
+                                <input type="radio"
+                                       name="radio"
+                                       value="mul"
+                                       <?php echo($rdomultiplicar)?>> Multiplicar<br>
 
-                                <input type="radio" name="radio" value="div" <?php echo($rdodividir)?>> Dividir
+                                <input type="radio"
+                                       name="radio"
+                                       value="div"
+                                       <?php echo($rdodividir)?>> Dividir
                             </div>
                             <div id="caixa-botao">
-                                <input type="submit" id="btncal" name="btcalcular" value="Calcular" >
+                                <input type="submit"
+                                       id="btncal"
+                                       name="btcalcular"
+                                       value="Calcular" >
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,25 @@
+<?php
+    
+    require_once('bd/conexao.php');
+    session_start();
+    
+    $conexao = conexaoMysql();
+
+    $titulo = null;
+    $imagem = null;
+    $conteudo = null;
+    $status = null;
+    $statusnoticia = null;
+    $sql = null;
+    
+    if(isset($_SESSION['path_foto'])){
+        $foto = $_SESSION['path_foto'];
+    }
+    
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -6,6 +28,7 @@
             Destaques
         </title>
         <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <?php 
@@ -16,116 +39,82 @@
         <div id="conteudo" class="center" >
         
             <div id="principais-noticias">
-                <div class="box-noticia">
-                    <img src="img/002.jpg" alt="" class="img-main-noticia" title="" >
-                    <a href="#" style="text-decoration: none;color:white;">
-                        <div class="box-noticia-titulo" style="">
-                            <h1>
-                                Nasa Manda a 1° Bike para a Lua.
-                            </h1>
-                        </div>
-                    </a>
-                </div>
+                <?php
                 
-                <div class="box-noticia">
-                    <img src="img/001.jpg" class="img-main-noticia" alt="" title="" >
-                    <a href="#" style="text-decoration: none;color:white;">
-                        <div class="box-noticia-titulo" style="">
-                            <h1>
-                                Campeonato Mundial de Bikes 14/03
-                            </h1>
-                        </div>
-                    </a>
+                    $sql = "SELECT * FROM tbl_noticia WHERE statusnoticia LIKE 'P%' AND status LIKE 'A%' ORDER BY codigo DESC LIMIT 3 ";
+                    $select = mysqli_query($conexao, $sql);
                     
-                </div>
-                
+                    while($rs=mysqli_fetch_array($select))
+                        {
+                        
+                            
+                                $titulo = $rs['titulo'];
+                                $nomefoto = $rs['imagem'];
+                        
+                        
+                ?>
                 <div class="box-noticia">
-                    <img src="img/004.jpg" alt="" class="img-main-noticia" title="" >
+                    <img src="cms/<?php echo($nomefoto);?>" alt="" class="img-main-noticia" title="" >
+                    
                     <a href="#" style="text-decoration: none;color:white;">
                         <div class="box-noticia-titulo" style="">
                             <h1>
-                                O Gerente Enlouqueceu!, 30% de Desconto em Tudo!
+                                <?php 
+                                    echo($titulo);
+                                    
+                                ?>
+                                
                             </h1>
                         </div>
                     </a>
                 </div>
+                <?php 
+
+                    }
+                ?>
                 
             </div>
             <div id="conteudo-catalogo" class="center">
+                
+                <?php
+                
+                    $sql = "SELECT * FROM tbl_noticia WHERE statusnoticia LIKE 'S%' AND status LIKE 'A%' ORDER BY codigo DESC";
+                
+                    $select = mysqli_query($conexao, $sql);
+                    
+                    while($rsnoticia=mysqli_fetch_array($select))
+                        {
+                        
+                            
+                                $titulo = $rsnoticia['titulo'];
+                                $nomefoto = $rsnoticia['imagem'];
+                                $conteudo = $rsnoticia['conteudo'];
+                
+                ?>
                 <div class="noticias">
                     <a href="#" class="links-noticia">
                         <div class="conteudo-noticia">
                             <div class="box-img-noticia">
-                                <img src="img/bike-presidente.jpg" alt="" class="img-noticia-conteudo" title="" >
+                                <img src="cms/<?php echo($nomefoto);?>" alt="" class="img-noticia-conteudo" title="" >
                             </div>
                             <div class="text-noticia">
-                                <h1 class="formatacao-titulo-noticia">veja a última tendência para bicicletas presidenciais</h1>
+                                <h1 class="formatacao-titulo-noticia">
+                                    <?php echo($titulo);?>
+                                    
+                                </h1>
                                 <p class="formatacao-texto-destaque">
+                                    <?php echo($conteudo);?>
+                                    
                                 </p>
-                                <p>
-                                    20/04/2019
-                                </p>
+                                
                             </div>
 
                         </div>
                     </a>
                 </div>
-                <div class="noticias">
-                    <a href="#" class="links-noticia">
-                        <div class="conteudo-noticia">
-                            <div class="box-img-noticia">
-                                <img src="img/bike-pet.jpg" alt="" class="img-noticia-conteudo" title="" >
-                            </div>
-                            <div class="text-noticia">
-                                <h1 class="formatacao-titulo-noticia">Bicicleta de garrafa pet </h1>
-                                <p class="formatacao-texto-destaque">
-                                    Morador de rua após uma epifania desenvolve sozinho uma bicicleta de garrafa pet, de acordo com ele o mais difícil foi soldar as garrafas...
-                                </p>
-                                <p>
-                                    20/04/2019
-                                </p>
-                            </div>
-
-                        </div>
-                    </a>
-                </div>
-                <div class="noticias">
-                    <a href="#" class="links-noticia">
-                        <div class="conteudo-noticia">
-                            <div class="box-img-noticia">
-                                <img src="img/bike-papa.jpg" alt="" class="img-noticia-conteudo" title="" >
-                            </div>
-                            <div class="text-noticia">
-                                <h1 class="formatacao-titulo-noticia">Depois do papamóvel conheça a nova papabike</h1>
-                                <p class="formatacao-texto-destaque">
-                                </p>
-                                <p>
-                                    19/04/2019
-                                </p>
-                            </div>
-
-                        </div>
-                    </a>
-                </div>
-                <div class="noticias">
-                    <a href="#" class="links-noticia">
-                        <div class="conteudo-noticia">
-                            <div class="box-img-noticia">
-                                <img src="img/uber-bikes.jpg" alt="" class="img-noticia-conteudo" title="" >
-                            </div>
-                            <div class="text-noticia">
-                                <h1 class="formatacao-titulo-noticia">Saiba como ser um Uber bike </h1>
-                                <p class="formatacao-texto-destaque">
-                                    Com o almento de transito em são paulo uber lança uma nova forma de carona conheça o uber bike
-                                </p>
-                                <p>
-                                    19/04/2019
-                                </p>
-                            </div>
-
-                        </div>
-                    </a>
-                </div>
+                <?php
+                    }
+                ?>
             </div>
             <?php 
 
