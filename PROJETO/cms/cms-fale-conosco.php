@@ -1,7 +1,6 @@
 <?php
 
     require_once('../bd/conexao.php');
-    session_start();
 
     $conexao = conexaoMysql();
 
@@ -19,12 +18,16 @@
     $rdosexoF = null;
     $rdosexoM = null;
     
+    if(!isset($_SESSION)){    
+        session_start();
+    
+    } 
+
     if(isset($_GET['modo'])){
         
         $modo = $_GET['modo'];
         $id = $_GET['id'];
         $select = null;
-        $_SESSION['idRegistro'] = $id;
         
         /******************************* EXCLUIR *******************************/
         if($modo == 'excluir'){
@@ -115,31 +118,31 @@
                             $sql = "SELECT * FROM tbl_cadastro_cliente ORDER BY codigo DESC";
                             $select = mysqli_query($conexao, $sql);
                              
-                            while($rscontatos=mysqli_fetch_array($select)){
+                            while($rs=mysqli_fetch_array($select)){
                                 
                         ?>
                         <div class="tbl-dados-db">
                             <div class="campos-db">
-                                <?php echo($rscontatos['nome'])?>
+                                <?php echo($rs['nome'])?>
                                 
                             </div>
                             <div class="campos-db">
-                                <?php echo($rscontatos['telefone'])?>
+                                <?php echo($rs['telefone'])?>
                                 
                             </div>
                             <div class="campos-db">
-                                <?php echo($rscontatos['celular'])?>
+                                <?php echo($rs['celular'])?>
                                 
                             </div>
                             <div class="campos-db">
-                                <?php echo($rscontatos['email'])?>
+                                <?php echo($rs['email'])?>
                                 
                             </div>
                             <div class="campo-opcoes">
                                 <div class="opcoes">
                                     <input type="image"
                                            class="visualizar center"
-                                           onclick="visualizarDados(<?php echo($rscontatos['codigo']);?>);"
+                                           onclick="visualizarDados(<?php echo($rs['codigo']);?>);"
                                            src="../img/pesquisar.png"
                                            width="20px"
                                            height="20px"
@@ -147,7 +150,7 @@
                                     
                                 </div>
                                 <div class="opcoes">
-                                    <a href= "cms-fale-conosco.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
+                                    <a href= "cms-fale-conosco.php?modo=excluir&id=<?php echo($rs['codigo']);?>" onclick="return confirm('Deseja realmente excluir?');">
                                         <input type="image"
                                                src="../img/excluir.png"
                                                width="24px"

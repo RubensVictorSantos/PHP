@@ -1,46 +1,49 @@
 <?php
 
-require_once('../bd/conexao.php');
+    require_once('../bd/conexao.php');
 
-$conexao = conexaoMysql();
+    $conexao = conexaoMysql();
 
-if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
+    $usuario = null;
+    $codnivel = null;
+    $admconteudo = null;
+    $admfaleconosco = null;
+    $admproduto = null;
+    $admusuario = null;
+    $select = null;
+    $sql = null;
 
-    unset($_SESSION['login']);
-    unset($_SESSION['senha']);
-    header("location:../index.php");
+    if(((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)) or (isset($_POST['btn-logout']))){
 
-}else{
-    $usuario = $_SESSION['login'];
-    $codnivel = $_SESSION['nivel'];
-    
-    $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
-    
-    $select = mysqli_query($conexao, $sql);
-    
-    while($rs=mysqli_fetch_array($select))
-    {
-        $admconteudo = $rs['admconteudo'];
-        $admfaleconosco = $rs['admfaleconosco'];
-        $admproduto = $rs['admproduto'];
-        $admusuario = $rs['admusuario'];
+        unset($_SESSION['login']);
+        unset($_SESSION['senha']);
+        header("location:../index.php");
 
+    }else{
+        $usuario = $_SESSION['login'];
+        $codnivel = $_SESSION['nivel'];
+
+        $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
+
+        $select = mysqli_query($conexao, $sql);
+
+        while($rs=mysqli_fetch_array($select))
+        {
+            $admconteudo = $rs['admconteudo'];
+            $admfaleconosco = $rs['admfaleconosco'];
+            $admproduto = $rs['admproduto'];
+            $admusuario = $rs['admusuario'];
+
+        }
     }
-}
-
-if(isset($_POST['btn-logout'])){
-
-    unset($_SESSION['login']);
-    unset($_SESSION['senha']);
-    header("location:../index.php");
-}
 
 ?>
 <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+
 <div id="logo" class="center">
     <div id="box-titulo-cms">
-            <span style="font-weight:bold;" >CMS</span> - Sistema de gerenciamento do site
+        <span style="font-weight:bold;" >CMS</span> - Sistema de gerenciamento do site
 
     </div>
     <div id="box-img-logo">
@@ -78,12 +81,12 @@ if(isset($_POST['btn-logout'])){
         ?>
             <div class="img-option-cms center">
                 <figure>
-                    <img src="../img/ico/blocked.png" id="btn-content" class="img-menu-cms">
+                    <img src="../img/ico/blocked.png" id="img-content" class="img-menu-cms">
 
                 </figure>
             </div>
             <div class="text-cms center">
-                <label for="btn-content">
+                <label for="img-content">
                     <p>
                         Adm. Conteúdo
                     </p>
@@ -124,12 +127,12 @@ if(isset($_POST['btn-logout'])){
         ?>
             <div class="img-option-cms center">
                 <figure>
-                    <img src="../img/ico/blocked.png" id="btn-content" class="img-menu-cms">
+                    <img src="../img/ico/blocked.png" id="img-fc" class="img-menu-cms">
 
                 </figure>
             </div>
             <div class="text-cms center">
-                <label for="btn-content">
+                <label for="img-fc">
                     <p>
                         Adm. Fale conosco
                     </p>
@@ -151,12 +154,12 @@ if(isset($_POST['btn-logout'])){
         <a href="cms-adm-produto.php">
             <div class="img-option-cms center">
                 <figure>
-                    <img src="../img/ico/product.png" id="btn-fc" class="img-menu-cms">
+                    <img src="../img/ico/product.png" id="btn-produto" class="img-menu-cms">
 
                 </figure>
             </div>
             <div class="text-cms center">
-                <label>
+                <label for="btn-produto">
                     <p>
                         Adm. Produtos
                     </p>
@@ -169,12 +172,12 @@ if(isset($_POST['btn-logout'])){
         ?>
             <div class="img-option-cms center">
                 <figure>
-                    <img src="../img/ico/blocked.png" id="btn-content" class="img-menu-cms">
+                    <img src="../img/ico/blocked.png" id="img-produto" class="img-menu-cms">
 
                 </figure>
             </div>
             <div class="text-cms center">
-                <label for="btn-content">
+                <label for="img-produto">
                     <p>
                         Adm. Produtos
                     </p>
@@ -215,12 +218,12 @@ if(isset($_POST['btn-logout'])){
         ?>
             <div class="img-option-cms center">
                 <figure>
-                    <img src="../img/ico/blocked.png" id="btn-content" class="img-menu-cms">
+                    <img src="../img/ico/blocked.png" id="img-user" class="img-menu-cms">
 
                 </figure>
             </div>
             <div class="text-cms center">
-                <label for="btn-content">
+                <label for="img-user">
                     <p>
                         Adm. Usuários
                     </p>

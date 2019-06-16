@@ -6,23 +6,34 @@
         
 	    $conexao = conexaoMysql();
         
+        $nome = null;
+        $telefone = null;
+        $celular = null;
+        $email = null;
+        $homep = null;
+        $facebook = null;
+        $sugestoes = null;
+        $produto = null;
+        $sexo = null;
+        $profissao = null;
+        
         $codigo = $_GET['codigo'];
         
         $sql = "SELECT * FROM tbl_cadastro_cliente WHERE codigo =".$codigo;
         $select = mysqli_query($conexao, $sql);
         
-        if($rscontato = mysqli_fetch_array($select))
+        if($rs = mysqli_fetch_array($select))
         {
-            $nome = $rscontato['nome'];
-            $telefone = $rscontato['telefone'];
-            $celular = $rscontato['celular'];
-            $email = $rscontato['email'];
-            $homep = $rscontato['home_page'];
-            $facebook = $rscontato['facebook'];
-            $sugestoes = $rscontato['sugestoes'];
-            $produto = $rscontato['produto'];
-            $sexo = $rscontato['sexo'];
-            $profissao = $rscontato['profissao'];
+            $nome = $rs['nome'];
+            $telefone = $rs['telefone'];
+            $celular = $rs['celular'];
+            $email = $rs['email'];
+            $homep = $rs['home_page'];
+            $facebook = $rs['facebook'];
+            $sugestoes = $rs['sugestoes'];
+            $produto = $rs['produto'];
+            $sexo = $rs['sexo'];
+            $profissao = $rs['profissao'];
             
         }
     }
@@ -58,146 +69,140 @@
     </div>
 </div>
 <div id="tbl-modal">
-        <div style="width:100%;height:20px;">
-            <div style="float:left;width:100px;">
-                <lable>Nome:</lable>
+    <div style="width:100%;height:20px;">
+        <div style="float:left;width:100px;">
+            <lable>Nome:</lable>
 
-            </div>
-            <div style="width:400px;">
-                <?php
-                    if(isset($nome)){
-                        echo($nome);
-                    }
-                ?>
-            </div>
         </div>
-        <div style="width:100%;heigth:20px;">
-            <div style="float:left;width:100px;">
-                <lable>Telefone:</lable>
-
-            </div>
-            <div style="width:400px;">
-                <?php
-                    if(isset($telefone)){
-                        echo($telefone);
-                    }
-                ?>
-            </div>
+        <div style="width:400px;">
+            <?php
+                if(isset($nome)){
+                    echo($nome);
+                }
+            ?>
         </div>
-        <div style="width:100%;heigth:20px;">
-            <div style="float:left;width:100px;">
-                <lable>Celular:</lable>
-
-            </div>
-            <div style="width:400px;">
-                <?php
-                    if(isset($celular)){
-                        echo($celular);
-                    }
-                ?>
-            </div>
-        </div>
-        <div style="width:100%;heigth:20px;">
-            <div style="float:left;width:100px;">
-                <lable>Email:</lable>
-
-            </div>
-            <div style="width:400px;">
-                <?php
-                    if(isset($email)){
-                        echo($email);
-                    }
-                ?>
-            </div>
-        </div>
-        <div style="width:100%;heigth:20px;">
-            <div style="float:left;width:100px;">
-                <lable>Home Page:</lable>
-
-            </div>
-            <div style="width:400px;">
-                <?php
-                    if(isset($homep)){
-                        echo($homep);
-                    }
-                ?>
-            </div>
-        </div>
-        <div style="width:100%;heigth:20px;">
-            <div style="float:left;width:100px;">
-                <lable>facebook:</lable>
-
-            </div>
-            <div style="width:400px;">
-                <?php
-                    if(isset($facebook)){
-                        echo($facebook);
-                    }
-                ?>
-            </div>
-        </div>
-        <div style="width:100%;heigth:20px;">
-            <div style="float:left;width:100px;">
-                <lable>Produto:</lable>
-
-            </div>
-            <div style="width:400px;">
-                <?php
-                    if(isset($produto)){
-                        echo($produto);
-                    }
-                ?>
-            </div>
-        </div>
-        <div style="width:100%;heigth:20px;">
-            <div style="float:left;width:100px;">
-                <lable>Profissão:</lable>
-
-            </div>
-            <div style="width:400px;">
-                <?php
-                    if(isset($profissao)){
-                        echo($profissao);
-                    }
-                ?>
-            </div>
-        </div>
-        <div style="width:100%;heigth:20px;">
-            <div style="float:left;width:100px;">
-                <lable>Sugestões.:</lable>
-
-            </div>
-            <div style="width:400px;">
-                <?php
-                    if(isset($sugestoes)){
-                        echo($sugestoes);
-                    }
-                ?>
-            </div>
-        </div>
-        <div style="width:100%;heigth:20px;">
-            <div style="float:left;width:100px;">
-                <lable>Sexo:</lable>
-            </div>
-            <div style="width:400px;">
-                <?php
-                    if(isset($sexo)){
-                        
-                        if($sexo == 'M'){
-                            echo('Masculino');
-
-                        }else{
-                            echo('Feminino');
-                            
-                        }
-                    }
-                ?>
-            </div>
-        </div>
-<!--
-    <div id="dados-cliente">
-        
-        
     </div>
--->
+    <div style="width:100%;heigth:20px;">
+        <div style="float:left;width:100px;">
+            <lable>Telefone:</lable>
+
+        </div>
+        <div style="width:400px;">
+            <?php
+                if(isset($telefone)){
+                    echo($telefone);
+                }
+            ?>
+        </div>
+    </div>
+    <div style="width:100%;heigth:20px;">
+        <div style="float:left;width:100px;">
+            <lable>Celular:</lable>
+
+        </div>
+        <div style="width:400px;">
+            <?php
+                if(isset($celular)){
+                    echo($celular);
+                }
+            ?>
+        </div>
+    </div>
+    <div style="width:100%;heigth:20px;">
+        <div style="float:left;width:100px;">
+            <lable>Email:</lable>
+
+        </div>
+        <div style="width:400px;">
+            <?php
+                if(isset($email)){
+                    echo($email);
+                }
+            ?>
+        </div>
+    </div>
+    <div style="width:100%;heigth:20px;">
+        <div style="float:left;width:100px;">
+            <lable>Home Page:</lable>
+
+        </div>
+        <div style="width:400px;">
+            <?php
+                if(isset($homep)){
+                    echo($homep);
+                }
+            ?>
+        </div>
+    </div>
+    <div style="width:100%;heigth:20px;">
+        <div style="float:left;width:100px;">
+            <lable>facebook:</lable>
+
+        </div>
+        <div style="width:400px;">
+            <?php
+                if(isset($facebook)){
+                    echo($facebook);
+                }
+            ?>
+        </div>
+    </div>
+    <div style="width:100%;heigth:20px;">
+        <div style="float:left;width:100px;">
+            <lable>Produto:</lable>
+
+        </div>
+        <div style="width:400px;">
+            <?php
+                if(isset($produto)){
+                    echo($produto);
+                }
+            ?>
+        </div>
+    </div>
+    <div style="width:100%;heigth:20px;">
+        <div style="float:left;width:100px;">
+            <lable>Profissão:</lable>
+
+        </div>
+        <div style="width:400px;">
+            <?php
+                if(isset($profissao)){
+                    echo($profissao);
+                }
+            ?>
+        </div>
+    </div>
+    <div style="width:100%;heigth:20px;">
+        <div style="float:left;width:100px;">
+            <lable>Sugestões.:</lable>
+
+        </div>
+        <div style="width:400px;">
+            <?php
+                if(isset($sugestoes)){
+                    echo($sugestoes);
+                }
+            ?>
+        </div>
+    </div>
+    <div style="width:100%;heigth:20px;">
+        <div style="float:left;width:100px;">
+            <lable>Sexo:</lable>
+        </div>
+        <div style="width:400px;">
+            <?php
+                if(isset($sexo)){
+
+                    if($sexo == 'M'){
+                        echo('Masculino');
+
+                    }else{
+                        echo('Feminino');
+
+                    }
+                }
+            ?>
+        </div>
+    </div>
 </div>

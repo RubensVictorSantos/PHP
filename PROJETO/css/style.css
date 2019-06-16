@@ -326,8 +326,10 @@ input{
     
     width: 300px;
     height: 261px;
-    /*margin: 30px 65px 30px 65px;*/
-    background-color: #feefee;
+    background-image: url(../img/ico/imgnotfound.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     box-sizing: border-box;
 }
 
@@ -934,15 +936,6 @@ textarea{
     overflow: hidden;
     box-sizing: border-box;
     
-}
-
-.img-card{
-    
-    width: 300px;
-    height: 261px;
-    /*margin: 30px 65px 30px 65px;*/
-    background-color: #feefee;
-    box-sizing: border-box;
 }
 
 .box-img-card{

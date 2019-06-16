@@ -46,7 +46,6 @@
                 $_SESSION['nivel'] = $rs['cod_nivel'];
             
             }
-            
             header('location:cms/cms.php');
 
         }else{

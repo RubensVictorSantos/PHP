@@ -11,7 +11,6 @@
     $rdoativado_cat = null;
     $rdodesativado_cat = null;
     $botao_cat = 'salvar';
-
     $subcategoria = null;
     $status_sub = null;
     $rdoativado_sub = null;

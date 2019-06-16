@@ -1,8 +1,6 @@
 <?php
 
-    require_once('../modulo.php');
     require_once('../bd/conexao.php');
-    session_start();
     
     $conexao = conexaoMysql();
 
@@ -15,6 +13,11 @@
     $rdodesativado = null;
     $botao = 'salvar';
     
+    if(!isset($_SESSION)){
+        session_start();
+        
+    }
+
     if(isset($_GET['modo'])){
         
         $modo = $_GET['modo'];
@@ -106,8 +109,6 @@
                 }
             }else{
                 
-                var_dump($_SESSION['path_foto'].'<br><br>');
-                
                 $sql = "UPDATE tbl_eventos SET conteudo = '".$conteudo."',
                                             status = '".$status."'
                                             WHERE codigo =".$_SESSION['id'];
@@ -126,10 +127,7 @@
         <title>
             CMS Eventos
         </title>
-<!--
         <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
--->
         <script src="../js/mascara.js" type="text/javascript"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>
@@ -151,7 +149,7 @@
     <body>
         <div id="box-main" class="center">
             <?php
-                require_once('cms-menu.php');
+                include('cms-menu.php');
     
             ?>
             <div class="titulos-cms">
@@ -178,13 +176,13 @@
 
                             ?>
 
-                            <img src="<?php echo($nomefoto);?>" alt="" id="img-card" >
+                            <img src="<?php echo($nomefoto);?>" alt="Imagem do Evento" id="img-card">
 
 
                             <?php
                                 }else{
                             ?>
-                            <div id="img-card" style="border:1px solid #003311;border-radius:2px 2px;"></div>
+                            <img src="../img/ico/imgnotfound.png" alt='Imagem "Image not found" ' id="img-card">
 
                             <?php 
                                 }
@@ -259,21 +257,21 @@
                             
                             $select = mysqli_query($conexao, $sql);
 
-                            while($rscontatos=mysqli_fetch_array($select)){
+                            while($rs=mysqli_fetch_array($select)){
                                 
                         ?>
                         <div class="tbl-dados-db">
                             <div class="campos-tbl-promo" style="width:200px;">
-                                <?php echo($rscontatos['imagem'])?>
+                                <?php echo($rs['imagem'])?>
                                 
                             </div>
                             <div class="campos-tbl-promo" style="width:500px;">
-                                <?php echo($rscontatos['conteudo'])?>
+                                <?php echo($rs['conteudo'])?>
                                 
                             </div>
                             <div class="campos-tbl-promo" style="width:120px;">
                                 <?php
-                                    if($rscontatos['status'] == 'A'){
+                                    if($rs['status'] == 'A'){
                                         echo('Ativado');
                                         
                                     }else{
@@ -285,7 +283,7 @@
                             
                             <div class="campo-opcoes">
                                 <div class="opcoes-promo">
-                                    <a href= "cms-eventos.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>&nomefoto=<?php echo($rscontatos['imagem']);?>" onclick="return confirm('Deseja realmente excluir?');">
+                                    <a href= "cms-eventos.php?modo=excluir&id=<?php echo($rs['codigo']);?>&nomefoto=<?php echo($rs['imagem']);?>" onclick="return confirm('Deseja realmente excluir?');">
 
                                         <input type="image"
                                                src="../img/excluir.png"
@@ -297,7 +295,7 @@
                                     </a>
                                 </div>
                                 <div class="opcoes-promo">
-                                    <a href="cms-eventos.php?modo=consultar&id=<?php echo($rscontatos['codigo']);?>">
+                                    <a href="cms-eventos.php?modo=consultar&id=<?php echo($rs['codigo']);?>">
                                         <img src="../img/editar24.png" width="20px" height="23px" class="img center" style="margin-top:2px;">
                                         
                                     </a>

@@ -6,7 +6,7 @@
     $conexao = conexaoMysql();
 
     $nomeProduto = null;
-    $imagem = null;
+    $nomefoto = null;
     $descricao = null;
     $preco = null;
     $valorDesconto = null;
@@ -47,26 +47,19 @@
                 <div id="box-catalogo-promo">
                     <?php
 
-                        $nomeProduto = null;
-                        $nomefoto = null;
-                        $descricao = null;
-                        $preco = null;
-                        $valorDesconto = null;
-                        $status = null;
-
                         $sql = "SELECT * FROM tbl_produto WHERE status LIKE 'A%'";
 
                         $select = mysqli_query($conexao, $sql);
                         
                         
-                        while($rscontatos=mysqli_fetch_array($select))
+                        while($rspromocoes=mysqli_fetch_array($select))
                         {
 
-                            $nomeProduto = $rscontatos['produto'];
-                            $nomefoto = $rscontatos['imagem'];
-                            $descricao = $rscontatos['descricao'];
-                            $preco = $rscontatos['preco'];
-                            $valorDesconto = $rscontatos['valor_desconto'];
+                            $nomeProduto = $rspromocoes['produto'];
+                            $nomefoto = $rspromocoes['imagem'];
+                            $descricao = $rspromocoes['descricao'];
+                            $preco = $rspromocoes['preco'];
+                            $valorDesconto = $rspromocoes['valor_desconto'];
 
                     ?>  
                         <div class="card">
@@ -79,7 +72,7 @@
 
                                     <?php
                                         
-                                        $porcentagem = (100*$valor_desconto)/$preco;
+                                        $porcentagem = (100*$valorDesconto)/$preco;
                                         
                                         echo(round($porcentagem).'<span>%</span>');
                                 

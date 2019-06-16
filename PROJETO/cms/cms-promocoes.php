@@ -159,6 +159,7 @@
         <title>
             cms-promoções
         </title>
+        <link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
         <script src="../js/mascara.js" type="text/javascript"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>
@@ -180,7 +181,7 @@
     <body>
         <div id="box-main" class="center">   
             <?php
-                include'cms-menu.php';
+                include('cms-menu.php');
     
             ?>
             <div class="titulos-cms">
