@@ -1,8 +1,6 @@
 <?php
-    
-    require_once('../modulo.php');
+
     require_once('../bd/conexao.php');
-    session_start();
     
     $conexao = conexaoMysql();
     
@@ -16,7 +14,31 @@
     $rdodesativado = null;
     $botao = 'salvar';
     $text = null;
+    
+    if(!isset($_SESSION)){
 
+        session_start();
+
+        $codnivel = $_SESSION['nivel'];
+
+        $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
+
+        $select = mysqli_query($conexao, $sql);
+
+        if($rs=mysqli_fetch_array($select)){
+
+            $admusuario = $rs['admusuario'];
+
+        }
+        
+        if(!$admusuario == '1'){
+        
+            header('location:cms.php');
+            
+        }
+    }
+
+    
     if(isset($_GET['modo'])){
         
         $modo = $_GET['modo'];
@@ -173,8 +195,14 @@
                                 <input type="checkbox"
                                        name="chkconteudo"
                                        value="1"
-                                       <?php echo($chkconteudo)?>
-                                       > Administrar Conteudos
+                                       id="chkconteudo"
+                                       <?php echo($chkconteudo)?>> 
+                                
+                                <label for="chkconteudo">
+                                    Administrar Conteudos
+                                
+                                </label>
+                                
                             </div>
                         </div>
                         <div class="input-text-cms">
@@ -186,9 +214,14 @@
                                 
                                 <input type="checkbox"
                                        name="chkfaleconosco"
+                                       id="chkfaleconosco"
                                        value="1"
-                                       <?php echo($chkfaleconosco)?>
-                                       > Administrar Fale-Conosco
+                                       <?php echo($chkfaleconosco)?>>
+                                
+                                <label for="chkfaleconosco">
+                                    Administrar Fale-Conosco
+                                
+                                </label>
                             </div>
                         </div>
                         <div class="input-text-cms">
@@ -201,8 +234,13 @@
                                 <input type="checkbox"
                                        name="chkproduto"
                                        value="1"
-                                       <?php echo($chkproduto)?>
-                                       > Administrar Produtos
+                                       id="chkproduto"
+                                       <?php echo($chkproduto)?>> 
+                                
+                                <label for="chkproduto">
+                                    Administrar Produtos
+                                
+                                </label>
                             </div>
                         </div>
                         <div class="input-text-cms">
@@ -214,9 +252,14 @@
                                 
                                 <input type="checkbox"
                                        name="chkusuario"
+                                       id="chkusuario"
                                        value="1"
-                                       <?php echo($chkusuario)?>
-                                       > Administrar Usuários
+                                       <?php echo($chkusuario)?>>
+                                
+                                <label for="chkusuario">
+                                    Administrar Usuários
+                                    
+                                </label>
                             </div>
                         </div>
                         <div class="input-text-cms">

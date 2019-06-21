@@ -1,8 +1,6 @@
 <?php
 
-    require_once('../modulo.php');
     require_once('../bd/conexao.php');
-    session_start();
     
     $conexao = conexaoMysql();
 
@@ -17,6 +15,30 @@
     $rdoativado = null;
     $rdodesativado = null;
     $botao = 'salvar';
+    
+    /***************************** VERIFICAR PERMISSÃO  *****************************/
+    if(!isset($_SESSION)){
+
+        session_start();
+
+        $codnivel = $_SESSION['nivel'];
+
+        $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
+
+        $select = mysqli_query($conexao, $sql);
+
+        if($rs=mysqli_fetch_array($select)){
+
+            $admproduto = $rs['admproduto'];
+
+        }
+
+        if(!$admproduto == '1'){
+        
+            header('location:cms.php');
+            
+        }
+    }
     
     if(isset($_GET['modo'])){
         

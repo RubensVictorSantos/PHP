@@ -1,3 +1,4 @@
+﻿<!DOCTYPE html>
 <?php
 
     require_once('bd/conexao.php');
@@ -13,11 +14,10 @@
     $sql = null;
     $rdoativado = null;
     $rdodesativado = null;
-    $modo = null;
     $id = null;
     $idcat = null;
-
     $modo = null;
+
     if(isset($_SESSION['path_foto'])){
         $foto = $_SESSION['path_foto'];
     }
@@ -56,14 +56,12 @@
         }
 
     }
-
+header("Content-type: text/html; charset=utf-8");
 ?>
 
-
-<!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,charset=utf-8">
         <title>
             Road Runner Cross Bikes
         </title>
@@ -71,8 +69,36 @@
         <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
         <script src="js/jquery.js"></script>
         <script src="js/menu-mobile.js"></script>
+        <script>
+            $(document).ready(function(){
+				$('.visualizar').click(function(){
+					jQuery('#container').fadeIn(400);
+				});
+			});
+			
+			function visualizarDados (idItem)
+			{
+				$.ajax({
+                   
+                   type:"GET",
+                
+                   url:"modal.php",
+                    
+                    data:{codigo:idItem},
+                    
+                    success: function(dados){
+                        $('#modal').html(dados);
+                    
+                    }
+                });
+			}
+        </script>
     </head>
     <body>
+        <div id="container">
+			<div id="modal"></div>
+		
+        </div>
         <header class="center">
             <div id="box-main-header" class="center">
                 <div id="logo">
@@ -281,7 +307,7 @@
                                     
                                 ?>
                             </strong>
-                            <ul id="submenu">
+                            <ul class="submenu">
                                 
                                 	<?php
                             
@@ -399,7 +425,11 @@
                             </div>
                             <div class="detalhes">
 
-                                <a href="#">Detalhes</a>
+                                <input type="button"
+                                       class="visualizar center"
+                                       onclick="visualizarDados(<?php echo($rsproduto['codigo']);?>);"
+                                       value="Detalhes"
+                                       >
 
                             </div>
                         </div>

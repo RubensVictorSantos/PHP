@@ -9,9 +9,14 @@ function info($a){
 ?>
 <style type="text/css">
     
+    p{
+        
+        margin: 0px;
+        padding: 0px;
+    }
     .info{
     
-        width: 80px;
+        width: 35px;
         height: 35px;
         padding: 7px 6px 5px 6px;
         text-align: center;
@@ -49,7 +54,7 @@ function info($a){
         width: 300px;
         height: 50px;
         margin: -82px 0px 0px -20px;
-        position:absolute;
+/*        position:absolute;*/
         box-sizing: border-box;
         display: none;
     }
@@ -74,6 +79,40 @@ function info($a){
 
     }
     
+    .proibido{
+    
+        width: 55px;
+        height: 55px;
+        background-color: white;
+        border: 4px solid black;
+        border-radius: 50% 50%;
+        box-sizing: border-box;
+        overflow: hidden;
+
+    }
+
+    .barra{
+
+        width: 0px;
+        height: 0px;
+        margin-top: 2.2px;
+    /*    margin: 0px 0px 0px 0px;*/
+    /*    border-left: 10px solid transparent; */
+        border-right: 50px solid transparent; 
+        border-top: 50px solid black;
+    }
+
+    .barra1{
+
+        width: 0px;
+        height: 20px;
+        margin-top: -56px;
+    /*    margin: 0x 0px 0px 0px;*/
+    /*    border-left: 10px solid transparent; */
+        border-right: 50px solid transparent; 
+        border-top: 50px solid white;
+    }
+    
 </style>
 
     <div class="info">
@@ -92,7 +131,26 @@ function info($a){
             </div>
         </div>
     </div>
-
+    
+    
 <?php
 }
+
+/* Essa função vai fazer aparecer um icone feito com div proibido*/
+function proibido(){
+    
+?>
+    <div class="proibido">
+                                
+        <div class="barra" class="center">
+            <div class="barra1" class="center">
+
+            </div>
+            
+        </div>
+        
+    </div>
+
+<?php
+}      
 ?>

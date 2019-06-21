@@ -80,9 +80,13 @@
         ?>
             <div class="img-option-cms center">
                 <figure>
-                    <img src="../img/ico/blocked.png" id="img-content" class="img-menu-cms">
-
+                        <img src="../img/ico/writing.png" id="btn-content" class="img-menu-cms">
                 </figure>
+                <div class="img-desativado" style="position: absolute;margin-top: -94px;margin-left: -7px;">
+                    
+                    <img src="../img/ico/icon-cms/forbidden%20(1).png" id="btn-content" class="img-menu-cms" style="opacity:0.75;">
+                
+                </div>
             </div>
             <div class="text-cms center">
                 <label for="img-content">
@@ -126,9 +130,14 @@
         ?>
             <div class="img-option-cms center">
                 <figure>
-                    <img src="../img/ico/blocked.png" id="img-fc" class="img-menu-cms">
+                    <img src="../img/ico/contact.png" id="btn-fc" class="img-menu-cms">
 
                 </figure>
+                <div class="img-desativado" style="position: absolute;margin-top: -95px;margin-left: 10px;">
+                    
+                    <img src="../img/ico/icon-cms/forbidden%20(1).png" id="btn-content" class="img-menu-cms" style="opacity:0.75;">
+                
+                </div>
             </div>
             <div class="text-cms center">
                 <label for="img-fc">
@@ -171,9 +180,14 @@
         ?>
             <div class="img-option-cms center">
                 <figure>
-                    <img src="../img/ico/blocked.png" id="img-produto" class="img-menu-cms">
+                    <img src="../img/ico/product.png" id="btn-produto" class="img-menu-cms">
 
                 </figure>
+                <div class="img-desativado" style="position: absolute;margin-top: -94px;margin-left: 0px;">
+                    
+                    <img src="../img/ico/icon-cms/forbidden%20(1).png" id="btn-content" class="img-menu-cms" style="opacity:0.75;">
+                
+                </div>
             </div>
             <div class="text-cms center">
                 <label for="img-produto">
@@ -217,9 +231,14 @@
         ?>
             <div class="img-option-cms center">
                 <figure>
-                    <img src="../img/ico/blocked.png" id="img-user" class="img-menu-cms">
+                    <img src="../img/ico/man.png" id="img-user" class="img-menu-cms">
 
                 </figure>
+                <div class="img-desativado" style="position: absolute;margin-top: -94px;margin-left: 0px;">
+                    
+                    <img src="../img/ico/icon-cms/forbidden%20(1).png" id="btn-content" class="img-menu-cms" style="opacity:0.75;">
+                
+                </div>
             </div>
             <div class="text-cms center">
                 <label for="img-user">

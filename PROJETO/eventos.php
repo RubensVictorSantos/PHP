@@ -23,13 +23,11 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <header>
         <?php
         
             include('menu.php');
         
         ?>
-        </header>
         <div id="conteudo" class="center" >
             <?php
                 

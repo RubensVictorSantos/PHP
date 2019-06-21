@@ -1,12 +1,9 @@
 <?php
-    
-    require_once('../modulo.php');
+   
     require_once('../bd/conexao.php');
-    session_start();
     
     $conexao = conexaoMysql();
     
-
     $status = null;
     $codproduto = 0;
     $codsubcategoria = 0;
@@ -18,14 +15,38 @@
     $rdodesativado = null;
     $botao = 'salvar';
     
+
+    /***************************** VERIFICAR PERMISSÃO *****************************/
+    if(!isset($_SESSION)){
+
+        session_start();
+
+        $codnivel = $_SESSION['nivel'];
+
+        $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
+
+        $select = mysqli_query($conexao, $sql);
+
+        if($rs=mysqli_fetch_array($select)){
+
+            $admproduto = $rs['admproduto'];
+
+        }
+
+        if(!$admproduto == '1'){
+            
+            header('location:cms.php');
+        }
+    }
+
     if(isset($_GET['modo'])){
-        
+
         $modo = $_GET['modo'];
         $id = $_GET['id'];
-        
+
         /************************ EXCLUIR ************************/
         if($modo == 'consultar'){
-            
+
             $sql = "SELECT psc.codigo, psc.cod_produto, 
                             p.produto, psc.cod_subcategoria, 
                             s.subcategoria, psc.cod_categoria, 
@@ -37,40 +58,40 @@
                             ON psc.cod_subcategoria = s.codigo 
                             INNER JOIN tbl_categoria AS c 
                             ON psc.cod_categoria = c.codigo WHERE psc.codigo =".$id;
-            
-            
+
+
             $select = mysqli_query($conexao, $sql);
-            
+
             if($rs = mysqli_fetch_array($select)){
-                
+
                 $codproduto = $rs['cod_produto'];
                 $codsubcategoria = $rs['cod_subcategoria'];
                 $codcategoria = $rs['cod_categoria'];
                 $produto = $rs['produto'];
                 $subcategoria = $rs['subcategoria'];
                 $categoria = $rs['categoria'];
-                
+
                 if($rs['status'] == 'A'){
                     $rdoativado = 'checked';
-                
+
                 }else{
                     $rdodesativado = 'checked';
-                
+
                 }
                 $botao = 'editar';
-                
+
                 $_SESSION['id'] = $id;
             }
         }
     }
 
       if(isset($_POST['btnsalvar'])){
-        
+
         $codproduto = filter_var($_POST["cbo_produto"], FILTER_SANITIZE_STRING);
         $codsubcategoria = filter_var($_POST["cbo_subcategoria"], FILTER_SANITIZE_STRING);
         $codcategoria = filter_var($_POST["cbo_categoria"], FILTER_SANITIZE_STRING);
         $status = $_POST['radio'];
-        
+
         /*************** SALVAR **************/
         if($_POST['btnsalvar'] == 'salvar'){
 
@@ -89,7 +110,7 @@
                                             cod_categoria = ".$codcategoria.",
                                             status = '".$status."' 
                                             WHERE codigo =".$_SESSION['id'];
-            
+
             mysqli_query($conexao, $sql);
 
         header("location:cms-referencias.php");

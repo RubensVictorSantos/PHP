@@ -11,20 +11,19 @@
     então ao verificar que a session não existe a página redireciona o mesmo 
     para a ../index.php.*/
 
-    if(!isset($_SESSION)) 
-    { 
+    if(!isset($_SESSION)){
+        
         session_start();
-        $usuario = $_SESSION['login'];
     }
 
-    if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
+   if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
 
         unset($_SESSION['login']);
         unset($_SESSION['senha']);
         header("location:../index.php");
-        
+
     }else{
-        
+
         $usuario = $_SESSION['login'];
         $codnivel = $_SESSION['nivel'];
 
@@ -32,12 +31,11 @@
 
         $select = mysqli_query($conexao, $sql);
 
-        while($rs=mysqli_fetch_array($select))
-        {
+        if($rs=mysqli_fetch_array($select)){
+
             $admconteudo = $rs['admconteudo'];
 
         }
-        
     }
 ?>
 
@@ -166,7 +164,10 @@
                         }else{
                     
                 ?>
-                    <h1>Bem Vindo!</h1>
+                    <div class="welcome center">
+                        <h1>Bem Vindo!</h1>
+                
+                    </div>
                 <?php
                     }
                 ?>

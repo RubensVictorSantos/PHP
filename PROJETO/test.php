@@ -11,10 +11,14 @@
     
     </head>
     <body>
-        <?php
-            $msg = 'test';
-            info($msg);
-        ?>
+            <div style="width:300px;height:300px;margin-left:auto;margin-right:auto;padding-top:50px;">
+                <?php
+                    $msg = 'Botão de informações';
+                    info($msg);
+                    
+                    proibido();
+                ?>
+            </div>
     </body>
 
 </html>

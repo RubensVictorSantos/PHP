@@ -1,8 +1,6 @@
 <?php
 
-    require_once('../modulo.php');
     require_once('../bd/conexao.php');
-    session_start();
     
     $conexao = conexaoMysql();
 
@@ -17,6 +15,28 @@
     $rdodesativado_sub = null;
     $botao_sub = 'salvar';
     
+    if(!isset($_SESSION)){
+
+        session_start();
+
+        $codnivel = $_SESSION['nivel'];
+
+        $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
+
+        $select = mysqli_query($conexao, $sql);
+
+        if($rs=mysqli_fetch_array($select)){
+
+            $admproduto = $rs['admproduto'];
+
+        }
+
+        if(!$admproduto == '1'){
+            
+            header('location:cms.php');
+        }
+    }
+
     /*+++++++++++++++++++++++++++++ CATEGORIA +++++++++++++++++++++++++++++*/
 
     if(isset($_GET['modocat'])){
@@ -58,19 +78,19 @@
     }
 
     if(isset($_POST['btnsalvarcat'])){
-        
+
         $categoria = filter_var($_POST["textcategoria"], FILTER_SANITIZE_STRING);
         $status_cat = $_POST['radio'];
-        
+
         /***************************** SALVAR CATEGORIA ************************/
         if($_POST['btnsalvarcat']=='salvar'){
-                    
+
             $sql = "INSERT INTO tbl_categoria(categoria, status) VALUES ('".$categoria."','".$status_cat."')";
 
             mysqli_query($conexao, $sql);
 
             header("location:cms-categoria-subcategoria.php");
-            
+
         /***************************** EDITAR CATEGORIA ************************/
         }elseif($_POST['btnsalvarcat']=='editar'){
 
@@ -83,61 +103,61 @@
             header("location:cms-categoria-subcategoria.php");
         }
     }
-    
+
     /*+++++++++++++++++++++++++++++ SUBCATEGORIA +++++++++++++++++++++++++++++*/
-    
+
     if(isset($_GET['modosub'])){
-        
+
         $modo_sub = $_GET['modosub'];
         $id_sub = $_GET['idsub'];
-        
+
         /***************************** EXCLUIR ************************/
         if($modo_sub == 'excluir'){
-            
+
             $sql = "DELETE FROM tbl_subcategoria WHERE codigo =".$id_sub;
             mysqli_query($conexao, $sql);
-            
+
             header('location:cms-categoria-subcategoria.php');
-            
+
         /************************ CONSULTAR **********************/
         }elseif($modo_sub == 'consultar'){
-            
+
             $sql = "SELECT * FROM tbl_subcategoria WHERE codigo =".$id_sub;
             $select = mysqli_query($conexao, $sql);
-            
+
             if($rs = mysqli_fetch_array($select)){
-                
+
                 $subcategoria = $rs['subcategoria'];
-                
+
                 if($rs['status'] == 'A'){
                     $rdoativado_sub = 'checked';
-                
+
                 }else{
                     $rdodesativado_sub = 'checked';
-                
+
                 }
                 $botao_sub = 'editar';
-                
+
                 $_SESSION['idsub'] = $id_sub;
-                
+
             }
         }
     }
-    
+
     if(isset($_POST['btnsalvar'])){
-        
+
         $subcategoria = filter_var($_POST["textsubcategoria"], FILTER_SANITIZE_STRING);
         $status_sub = $_POST['radio'];
-        
+
         /***************************** SALVAR ************************/
         if($_POST['btnsalvar'] == "salvar"){
-                    
+
             $sql = "INSERT INTO tbl_subcategoria(subcategoria, status) VALUES ('".$subcategoria."','".$status_sub."')";
 
             mysqli_query($conexao, $sql);
 
             header("location:cms-categoria-subcategoria.php");
-            
+
         /***************************** EDITAR ************************/
         }elseif($_POST['btnsalvar'] =='editar'){
 
@@ -159,8 +179,7 @@
         <title>
             CMS Categoria e Subcategoria
         </title>
-        
-        <script src="../js/mascara.js" type="text/javascript"></script>
+
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.form.js"></script>
     </head>

@@ -1,8 +1,6 @@
 <?php
     
-    require_once('../modulo.php');
     require_once('../bd/conexao.php');
-    session_start();
     
     $conexao = conexaoMysql();
 
@@ -11,63 +9,89 @@
     $senha = null;
     $status = null;
     $sql = null;
-    $combobox = null;
+    $combobox = 0;
     $id = null;
     $readonly = null;
     $rdoativado = null;
     $rdodesativado = null;
     $verificar_senha = null;
     $botao = 'salvar';
-    
-    if(isset($_GET['modo'])){
+
+    /***************************** VERIFICAR PERMISÃO *****************************/
+    if(!isset($_SESSION)){
+
+        session_start();
+
+        $codnivel = $_SESSION['nivel'];
+
+        $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
+
+        $select = mysqli_query($conexao, $sql);
+
+        if($rs=mysqli_fetch_array($select)){
+
+            $admusuario = $rs['admusuario'];
+
+        }
+
+        if(!$admusuario == '1'){
+            
+            header('location:cms.php');
+            
+        }
+    }
         
+
+    if(isset($_GET['modo'])){
+
         $modo = $_GET['modo'];
         $id = $_GET['id'];
-        
+
         /************************ EXCLUIR ************************/
         if($modo == 'excluir'){
-            
+
             $sql = "DELETE FROM tbl_usuario WHERE codigo =".$id;
             mysqli_query($conexao, $sql);
-            
+
             header('location:cms-usuario.php');
-            
+
        }elseif($modo == 'consultar'){
-            
-            $sql = "SELECT * FROM tbl_usuario WHERE codigo =".$id;
-            
+
+            $sql = "SELECT u.*, n.* FROM tbl_usuario AS u INNER JOIN tbl_nivel AS n ON u.cod_nivel = n.codigo WHERE u.codigo =".$id;
+
             $select = mysqli_query($conexao, $sql);
-            
+
             if($rs = mysqli_fetch_array($select)){
-                
+
                 $nome = $rs['nome'];
                 $combobox = $rs['cod_nivel'];
+                $nivel = $rs['nivel'];
                 $email = $rs['email'];
                 $senha = $rs['senha'];
-                
+
                 if($rs['status'] == 'A'){
                     $rdoativado = 'checked';
-                
+
                 }else{
                     $rdodesativado = 'checked';
-                
+
                 }
                 $botao = 'editar';
-                
+
                 $_SESSION['id'] = $id;
             }
         }
     }
 
     if(isset($_POST['btnsalvar'])){
-        
+
         $nome = filter_var($_POST["text-nome"], FILTER_SANITIZE_STRING);
         $email = filter_var($_POST["text-email"], FILTER_SANITIZE_STRING);
         $senha = md5(filter_var($_POST["text-senha"], FILTER_SANITIZE_STRING));
         $verificar_senha = md5(filter_var($_POST["text-senha2"], FILTER_SANITIZE_STRING));
         $combobox = filter_var($_POST["combobox"], FILTER_SANITIZE_STRING);
         $status = $_POST['radio'];
-        
+
         /*************** SALVAR **************/
         if($_POST['btnsalvar'] == 'salvar'){
 
@@ -80,6 +104,8 @@
 
                 mysqli_query($conexao, $sql);
 
+                $senha = 'required';
+
                 header("location:cms-usuario.php");
 
             }else{
@@ -88,16 +114,30 @@
 
         /*************** EDITAR **************/
         }elseif($_POST['btnsalvar'] == 'editar'){
-//            echo($combobox);
-            $sql = "UPDATE tbl_usuario SET nome = '".$nome."',
-                                            email = '".$email."',
-                                            senha = '".$senha."',
-                                            status = '".$status."',
-                                            cod_nivel = '".$combobox."'
-                                            WHERE codigo =".$_SESSION['id'];
-            
-            mysqli_query($conexao, $sql);
 
+            if($senha == null){
+
+//                echo('<script>alert("senha: '.$senha.'")</script>');
+
+                $sql = "UPDATE tbl_usuario SET nome = '".$nome."',
+                                                email = '".$email."',
+                                                status = '".$status."',
+                                                cod_nivel = '".$combobox."'
+                                                WHERE codigo =".$_SESSION['id'];
+
+                mysqli_query($conexao, $sql);
+
+            }else{
+
+                $sql = "UPDATE tbl_usuario SET nome = '".$nome."',
+                                                email = '".$email."',
+                                                senha = '".$senha."',
+                                                status = '".$status."',
+                                                cod_nivel = '".$combobox."'
+                                                WHERE codigo =".$_SESSION['id'];
+
+                mysqli_query($conexao, $sql);
+            }
         header("location:cms-usuario.php");
         }
     }
@@ -161,10 +201,10 @@
                                 <input type="password"
                                        name="text-senha"
                                        class="input-cms-promo"
-                                       value="<?php echo($senha)?>"
+                                       value=""
+                                       <?php echo($senha);?>
                                        placeholder=" Digite a senha" 
                                        maxlength="15"
-                                       required
                                        >
                             </div>
                         </div>
@@ -173,7 +213,7 @@
                                 <input type="password"
                                        name="text-senha2"
                                        class="input-cms-promo"
-                                       value="<?php echo($verificar_senha)?>"
+                                       value=""
                                        placeholder=" Confirmar senha"
                                        maxlength="15"
                                        >
@@ -185,22 +225,36 @@
 
                                 <!--********************* COMBO BOX ********************-->
                                 <select name="combobox" class="input-cms-promo" id="combobox" required>
+                                    
+                                    <?php
+                                        
+                                        if($modo == "consultar"){
+                                            
+                                    ?>
+                                    <option value="<?php echo($combobox);?>">
+                                        <?php echo($nivel);?>
+                                    </option>
+                                    
+                                    <?php
+                                        }else{
+                                    ?>
                                     <option>
                                         Selecione nivel de usuário
                                     </option>
 
                                     <?php
-
-                                        $sql = "SELECT * FROM tbl_nivel order by codigo";
+                                        }
+                                    
+                                        $sql = "SELECT * FROM tbl_nivel WHERE status LIKE 'A%' AND codigo <>".$combobox." ORDER BY codigo";
                                         $select = mysqli_query($conexao, $sql);
 
-                                        while($rscontatos=mysqli_fetch_array($select)){
+                                        while($rs=mysqli_fetch_array($select)){
 
                                     ?>
 
-                                    <option value="<?php echo($rscontatos['codigo'])?>">
+                                    <option value="<?php echo($rs['codigo'])?>">
 
-                                        <?php echo($rscontatos['nivel'])?>
+                                        <?php echo($rs['nivel'])?>
 
                                     </option>
 

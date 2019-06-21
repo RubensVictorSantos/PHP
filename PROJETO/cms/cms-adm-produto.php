@@ -1,10 +1,30 @@
 <?php
     
     require_once('../bd/conexao.php');
-    session_start();
 
     $conexao = conexaoMysql();
     
+    if(!isset($_SESSION)){
+        
+        session_start();
+        
+        $codnivel = $_SESSION['nivel'];
+
+        $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
+
+        $select = mysqli_query($conexao, $sql);
+
+        if($rs=mysqli_fetch_array($select)){
+            
+            $admproduto = $rs['admproduto'];
+
+        }
+        
+        if(!$admproduto == '1'){
+            header('location:cms.php');
+            
+        }
+    }
 ?>
 
 
@@ -33,19 +53,58 @@
             
             <div id="conteudo">
                 
-                <div>
-                    <a href="cms-categoria-subcategoria.php">Cadastrar Categoria e Subcategoria</a>
-                    
+                <div class="option-conteudo">
+                    <a href="cms-categoria-subcategoria.php">
+                        <div class="conteudo-img">
+                            <figure>
+                                <img src="../img/ico/icon-cms/.png"
+                                     id="img-cat-sub"
+                                     class="img-cms">
+
+                            </figure>
+                        </div>
+                        <div class="text-conteudo">
+                            <label>
+                                <p>Cadastrar Categoria e Subcategoria</p>
+                            </label>
+                        </div>
+                    </a>
                 </div>
-                <div>
-                    
-                    <a href="cms-produto.php">Cadastrar Produto</a>
-                    
+                
+                <div class="option-conteudo">
+                    <a href="cms-produto.php">
+                        <div class="conteudo-img">
+                            <figure>
+                                <img src="../img/ico/icon-cms/.png"
+                                     id="img-cat-sub"
+                                     class="img-cms">
+
+                            </figure>
+                        </div>
+                        <div class="text-conteudo">
+                            <label>
+                                <p>Cadastrar Produto</p>
+                            </label>
+                        </div>
+                    </a>
                 </div>
-                <div>
-                    
-                    <a href="cms-referencias.php">Cadastrar Referencias</a>
-                    
+                
+                <div class="option-conteudo">
+                    <a href="cms-referencias.php">
+                        <div class="conteudo-img">
+                            <figure>
+                                <img src="../img/ico/icon-cms/.png"
+                                     id="img-referencias"
+                                     class="img-cms">
+
+                            </figure>
+                        </div>
+                        <div class="text-conteudo">
+                            <label>
+                                <p>Cadastrar Referencias</p>
+                            </label>
+                        </div>
+                    </a>
                 </div>
                 
             </div>

@@ -31,22 +31,12 @@
         
         if($_POST['btnsalvar'] == "salvar"){
         
-            $sql = "INSERT INTO tbl_cadastro_cliente(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao)
-                    VALUES('".$nome."',
-                            '".$telefone."',
-                            '".$celular."',
-                            '".$email."',
-                            '".$homep."',
-                            '".$facebook."',
-                            '".$sugestoes."',
-                            '".$produto."',
-                            '".$sexo."',
-                            '".$profissao."'
-                            )";
+            $sql = "INSERT INTO tbl_cadastro_cliente(nome, telefone, celular, email, home_page, facebook, sugestoes, produto, sexo, profissao) VALUES('".$nome."','".$telefone."','".$celular."','".$email."','".$homep."','".$facebook."','".$sugestoes."','".$produto."','".$sexo."','".$profissao."')";
         
         }
         
         if(mysqli_query($conexao, $sql)){
+            
             header("location:fale-conosco.php");
         }else{
             
@@ -61,7 +51,7 @@
     <head>
         <meta charset="utf-8">
         <title>Fale conosco</title>
-        <script src="js/mascara.js" type="text/javascript"></script>
+        <script src="js/mascara.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
     </head>
@@ -187,7 +177,7 @@
                             </label>
                         </div>
                         <div id="box-textarea" >
-                            <textarea name="txtsugestoes" value="<?php echo($sugestoes)?>"></textarea>
+                            <textarea name="txtsugestoes"><?php echo($sugestoes)?></textarea>
                         </div>
                     </div>
                     <div class="box_campos">

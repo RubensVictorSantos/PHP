@@ -11,14 +11,13 @@ function conexaoMysql(){
 
     $conexao = mysqli_connect($server, $user, $password, $database);
     
-//        if (!$conexao) {
-//
-//             die("Connection failed: " . mysqli_connect_error());
-//
-//        }else{
-
-//            mysqli_close($conexao);
-//            return $conexao;
+    /* change character set to utf8 */
+    
+//        if (!mysqli_set_charset($conexao, "utf8")) {
+//            printf("Error loading character set utf8: %s\n", mysqli_error($conexao));
+//            exit();
+//        } else {
+//            printf("Current character set: %s\n", mysqli_character_set_name($conexao));
 //        }
     
         return $conexao;

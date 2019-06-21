@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_GET['codigo']))
+    if(isset($_GET['cod_cliente']))
     {
         require_once('../bd/conexao.php');
         
@@ -17,9 +17,9 @@
         $sexo = null;
         $profissao = null;
         
-        $codigo = $_GET['codigo'];
+        $codigo = $_GET['cod_cliente'];
         
-        $sql = "SELECT * FROM tbl_cadastro_cliente WHERE codigo =".$codigo;
+        $sql = "SELECT * FROM tbl_cadastro_cliente WHERE cod_cliente =".$codigo;
         $select = mysqli_query($conexao, $sql);
         
         if($rs = mysqli_fetch_array($select)){
@@ -121,7 +121,7 @@
         </td>
     </tr>
     <tr style="width:100%;heigth:20px;">
-        <td style="float:left;width:100px;">
+        <td style="width:100px;">
             <lable>Home Page:</lable>
 
         </td>
@@ -134,7 +134,7 @@
         </td>
     </tr>
     <tr style="width:100%;heigth:20px;">
-        <td style="float:left;width:100px;">
+        <td style="width:100px;">
             <lable>facebook:</lable>
 
         </td>
@@ -147,7 +147,7 @@
         </td>
     </tr>
     <tr style="width:100%;heigth:20px;">
-        <td style="float:left;width:100px;">
+        <td style="width:100px;">
             <lable>Produto:</lable>
 
         </td>
@@ -160,7 +160,7 @@
         </td>
     </tr>
     <tr style="width:100%;heigth:20px;">
-        <td style="float:left;width:100px;">
+        <td style="width:100px;">
             <lable>Profissão:</lable>
 
         </td>
@@ -173,7 +173,7 @@
         </td>
     </tr>
     <tr style="width:100%;heigth:20px;">
-        <td style="float:left;width:100px;">
+        <td style="width:100px;">
             <lable>Sugestões.:</lable>
 
         </td>
@@ -186,7 +186,7 @@
         </td>
     </tr>
     <tr style="width:100%;heigth:20px;">
-        <td style="float:left;width:100px;">
+        <td style="width:100px;">
             <lable>Sexo:</lable>
         </td>
         <td style="width:400px;">

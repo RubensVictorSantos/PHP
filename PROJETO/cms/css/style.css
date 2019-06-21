@@ -128,6 +128,12 @@ label{
     
 }
 
+.img-desativado{
+    
+    width: 90px;
+    height: 90px;
+}
+
 .text-cms{
     
     width: inherit;
@@ -253,6 +259,18 @@ label{
     overflow: hidden;
     box-sizing: border-box;
     float:left;
+}
+
+.welcome{
+    
+    width: 600px;
+    height: 270px;
+    background-color: transparent;
+    margin-top: 140px;
+    text-align: center;
+    font-size: 60px;
+    color:rgba(0, 51, 17, 0.70);
+    box-sizing: border-box;
 }
 
 /********************************* CMS-FOOTER *****************************/

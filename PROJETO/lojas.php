@@ -70,7 +70,7 @@
                         <div class="gmap_canvas">
 
                             <div style="width: 100%">
-                                <iframe width="100%" height="300px" src="https://maps.google.com/maps?width=100%&amp;height=300%&amp;hl=en&amp;q=<?php echo($numero)?>%20<?php echo($endereco)?>%20<?php echo($bairro)?>/2C%20<?php echo($cidade)?>%2C%20sp+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                <iframe width="450" height="310" src="https://maps.google.com/maps?width=100%&amp;height=300%&amp;hl=en&amp;q=<?php echo($numero)?>%20<?php echo($endereco)?>%20<?php echo($bairro)?>%2C%20<?php echo($cidade)?>%2C%20sp+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                                     <a href="https://www.maps.ie/map-my-route/">Map a route</a>
                                 </iframe>
                             </div>

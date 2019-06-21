@@ -1,9 +1,6 @@
 <?php
     /********************** MENU *******************/
 ?>
-
-<link rel="icon" href="../img/ico/i405_TDM_icon_bike93.gif">
-<link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="js/jquery.js"></script>
 <script src="js/menu-mobile.js"></script>
 <header class="center">

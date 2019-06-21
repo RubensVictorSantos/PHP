@@ -20,6 +20,23 @@
     
     if(!isset($_SESSION)){    
         session_start();
+        
+        $codnivel = $_SESSION['nivel'];
+
+        $sql = "SELECT * FROM tbl_nivel WHERE codigo =".$codnivel;
+
+        $select = mysqli_query($conexao, $sql);
+
+        if($rs=mysqli_fetch_array($select)){
+
+            $admfaleconosco = $rs['admfaleconosco'];
+
+        }
+        
+        if(!$admfaleconosco){
+            
+            header('location:cms.php');
+        }
     
     } 
 
@@ -63,7 +80,7 @@
                 
                    url:"modal.php",
                     
-                    data:{codigo:idItem},
+                    data:{cod_cliente:idItem},
                     
                     success: function(dados){
                         $('#modal').html(dados);

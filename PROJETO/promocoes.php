@@ -47,7 +47,7 @@
                 <div id="box-catalogo-promo">
                     <?php
 
-                        $sql = "SELECT * FROM tbl_produto WHERE status LIKE 'A%'";
+                        $sql = "SELECT * FROM tbl_produto WHERE status LIKE 'A%' ORDER BY RAND()";
 
                         $select = mysqli_query($conexao, $sql);
                         
@@ -65,11 +65,10 @@
                         <div class="card">
                             <div class="img-card center">
                                 
-                                    <img src="cms/<?php echo($nomefoto);?>" alt="" class="img-card">
-                                
+                                <img src="cms/<?php echo($nomefoto);?>" alt="Imagem do produto em promoção" class="img-card">
                                 
                                 <div class="box-img-card">
-
+                                    
                                     <?php
                                         
                                         $porcentagem = (100*$valorDesconto)/$preco;
