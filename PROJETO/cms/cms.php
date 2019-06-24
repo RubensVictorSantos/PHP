@@ -165,7 +165,7 @@
                     
                 ?>
                     <div class="welcome center">
-                        <h1>Bem Vindo!</h1>
+                        <h1>Bem :)<br>Vindo!</h1>
                 
                     </div>
                 <?php

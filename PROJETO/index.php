@@ -141,34 +141,46 @@ header("Content-type: text/html; charset=utf-8");
                         </li>
                     </ul>
                 </nav>
-                <div id="login">
-                    <form name="frmlogin" id="frmlogin" method="post" action="index.php">
-                        <div class="box-login center">
-                            <label>
-                                Usuário
-                            </label><br>
+                
+<!--
+                <div id="icone-buscar">
+                    
+                    <img src="img/ico/search.png" class="img-menu">
+                    
+                </div>
+-->
+                
+                <div id="icone-login">
+                    <div id="login" class="login_close">
+                        <form name="frmlogin" id="frmlogin" method="post" action="index.php">
 
-                            <input type="text"
-                                   name="txt-usuario"
-                                   id="txt-usuario">
+                            <div class="box-login center">
 
-                        </div>
-                        <div class="box-login center">
-                            <label>
-                                Senha
-                            </label><br>
+                                <input class="text-login center"
+                                       type="text"
+                                       name="txt-usuario"
+                                       id="txt-usuario"
+                                       placeholder="Login">
 
-                            <input type="password" 
-                                   name="txt-senha"
-                                   id="txt-senha">
+                            </div>
+                            <div class="box-login center">
 
-                            <input type="submit"
-                                   value="Ok"
-                                   name="btn-login"
-                                   id="btn-login">
+                                <input class="text-login center"
+                                       type="password" 
+                                       name="txt-senha"
+                                       id="txt-senha"
+                                       placeholder="Senha">
 
-                        </div>
-                    </form>
+                            </div>
+                            <div>
+                                <input type="submit"
+                                       value="Ok"
+                                       name="btn-login"
+                                       id="btn-login">
+                            </div>
+                        </form>
+                    </div>
+                    <img src="img/ico/user.png" class="img-menu">
                 </div>
             </div>
             
