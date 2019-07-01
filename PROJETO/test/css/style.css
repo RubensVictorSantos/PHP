@@ -1,0 +1,94 @@
+#icone_menu{
+
+    width: 70px;
+    height: 70px;
+    padding: 9px 10px 0px 10px;
+    background-color: #003311;
+    box-sizing: border-box;
+    float:left;
+
+}
+
+.barra-menu{
+
+    width: 50px;
+    height: 6px;
+    margin: 8px 0px 8px 0px;
+    background-color: white;
+}
+
+
+input{
+    
+    border: none;
+}
+
+.close{
+    
+    width:55px;
+    height: 55px;
+    margin: 8px 0px 0px 5%;
+    overflow: hidden;
+    background-color: #003311;
+    box-sizing: border-box;
+    float:left;
+}
+
+.open{
+    
+    width: 280px;
+    height: 55px;
+    margin: 8px 0px 0px 5%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: red;
+/*    transition: 0.2s;*/
+}
+
+.btnbuscar-close{
+    
+    width: 55px;
+    height: 55px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-image: url(../../img/ico/search.png);
+    background-size: 100%;
+    background-position: center;
+    background-color: #003311;
+}
+
+.btnbuscar-open{
+    
+    width: 30px;
+    height: 28px;
+    margin-top: 13px;
+    border-radius: 0px 40px 40px 0px;
+    box-sizing: border-box;
+    background-image: url(../../img/ico/search.png);
+    background-position: center;
+    background-size: 30px 28px;
+    background-color: white;
+    
+}
+
+
+.txtbuscar-close{
+    
+    width: 3px;
+    height: 3px;
+    display:none;
+}
+
+.txtbuscar-open{
+    
+    width: 230px;
+    height: 28px;
+    text-align: center;
+    transition: 0.2s;
+    display: inline-block;
+    border-radius: 40px 0px 0px 40px;
+    padding: 5px; 
+    margin: 13px 0px 0px 5px;
+    box-sizing: border-box;
+    float: left;
+}

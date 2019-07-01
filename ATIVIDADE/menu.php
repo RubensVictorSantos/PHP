@@ -1,6 +1,5 @@
 <?php
-
-    echo('
+?>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <div id="caixa_menu">
         <div id="caixa_icone">
@@ -46,6 +45,6 @@
 
         </div>
     </div>
-    ');
+<?php
 
 ?>

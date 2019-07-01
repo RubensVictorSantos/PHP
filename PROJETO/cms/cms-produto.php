@@ -1,6 +1,6 @@
 <?php
 
-    require_once('../bd/conexao.php');
+    require_once('../bd/conexao.php')
     
     $conexao = conexaoMysql();
 
@@ -80,7 +80,7 @@
                 
                 $_SESSION['id'] = $id;
                 $_SESSION['nomefoto'] = $nomefoto;
-                $_SESSION['path_foto'] = null;
+                
                 
             }
         }

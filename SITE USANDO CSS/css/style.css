@@ -4,11 +4,13 @@ body, h1, h2, h3, h4, ul, li{
     padding: 0px;
     
 }
+
 body{
 	
-	background-image:url("../img/Background/background3.jpg");
+/*	background-image:url("../img/Background/background3.jpg");*/
 	
 }
+
 *{
 	font-family:verdana;
 }
@@ -135,8 +137,8 @@ a:hover{
 }
 /****************************************************************************/
 #empresa{
-    width: 100%;
-    height: 100%;
+    width: inherit;
+    height: inherit;
 	/* background-color:blue; */
 }
 
@@ -163,38 +165,37 @@ a:hover{
 	
 }
 
-.teste3{
+.container-box{
     width: inherit;
-    height: 460px;
+    min-height: 460px;
     box-sizing: border-box;
-	/* background-repeat:no-repeat; */
+/*    background-repeat:no-repeat; */
 	background-size:cover;
 	background-attachment:fixed;
 	background-position: center;
-    /* padding-left: 50px; */
-    /* padding-top: 30px; */
-	background-image:url("../img/imgsecao1200x450_2.jpg");
+/*    background-color:rgba(0,0,0,0.7);*/
+/*	background-image:url("../img/imgsecao1200x450_2.jpg");*/
 }
 
 .teste2{
     width: inherit;
-    height: 460px;
-    box-sizing: border-box;
+    min-height: 460px;
+/*    position: absolute;*/
+    padding: 30px 0px 0px 50px;
 	background-color:rgba(0,0,0,0.7);
-    padding-left: 50px;
-    padding-top: 30px;
-	/* background-image:url("../img/imgsecao1200x450.jpg");/*CINZAESCURO*/
+    box-sizing: border-box;
+    
 }
 /*********************************************************************************/
 .box_filmes{
     height: 400px;
 	width: 250px;
     float:left;
+/*    position: absolute;*/
 	margin-left:20px;
-	padding:10px 10px 10px 10px;/*top right bottom left*/
+	padding:10px 10px 10px 10px;
     box-sizing: border-box;
 	background-color: #f2f2f2;
-	/* background-color: red; */
 	border-radius: 2%;
 }
 
@@ -281,7 +282,7 @@ a:hover{
     opacity:1;
 	color:white;
     visibility: visible;
-    border-radius: 1%;
+    border-radius: 2%;
 }
 
 .box_jogos:hover{

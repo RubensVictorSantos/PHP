@@ -20,7 +20,7 @@
 		$server = "localhost";
 		$user = "root";
 		$password = "binho250398";
-		$database = "db_bicicleta";
+		$database = "dbcontato";
 
 		$conexao = mysqli_connect($server,$user,$password,$database);
 		

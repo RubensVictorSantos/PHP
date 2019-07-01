@@ -82,58 +82,54 @@
             
             ?>
             <form name="frmrepeticao" method="post" action="tabuada.php">
+                <div id="caixa_alert">
+                    <?php
+                    if($vazio_err){
+                        echo(VAZIO);
 
-                <div>
-                    <div id="caixa_alert">
-                        <?php
-                        if($vazio_err){
-                            echo(VAZIO);
-                            
-                        }
-                        if($invalido_err){
-                            echo(INVALIDO);
-                            
-                        }
-                        
-                        if($calc_err){
-                            echo(ZERO);
-                            
-                        }
-                        ?>
-                    </div>
-                    <div id="caixa-valores">
-                        <div id="caixa-labels">
-                            <div class="label ">
-                                TABUADA:
-                            </div>
-                            <div class="label ">
-                                CONTADOR:
-                            </div>
+                    }
+                    if($invalido_err){
+                        echo(INVALIDO);
+
+                    }
+
+                    if($calc_err){
+                        echo(ZERO);
+
+                    }
+                    ?>
+                </div>
+                <div id="caixa-valores">
+                    <div id="caixa-labels">
+                        <div class="label ">
+                            TABUADA:
                         </div>
-                        <div id="caixa-text">
-                            <input type="text" name="txt_tab" onkeypress="return Validar(event);" value="<?php echo($txttab)?>" ><br>
-                            <input type="text" name="txt_cont" onkeypress="return Validar(event);" value="<?php echo($txtcont)?>" >
-                            
-                        </div>
-                        <div id="caixa-botao">
-                            <input type="submit" id="btnCalc" name="btn_calc" value="CALCULAR">
-                            
+                        <div class="label ">
+                            CONTADOR:
                         </div>
                     </div>
-                    <div id="saida">
-                        
-                        
-                        <div id="caixa-resultado" class="center">
-                            <p>
-                                
-                                <?php echo($resultado); ?>
-                            
-                            </p>
-                        </div>
-                        
+                    <div id="caixa-text">
+                        <input type="text" name="txt_tab" onkeypress="return Validar(event);" value="<?php echo($txttab)?>" ><br>
+                        <input type="text" name="txt_cont" onkeypress="return Validar(event);" value="<?php echo($txtcont)?>" >
+
+                    </div>
+                    <div id="caixa-botao">
+                        <input type="submit" id="btnCalc" name="btn_calc" value="CALCULAR">
+
                     </div>
                 </div>
-                
+                <div id="saida">
+
+
+                    <div id="caixa-resultado" class="center">
+                        <p>
+
+                            <?php echo($resultado); ?>
+
+                        </p>
+                    </div>
+
+                </div>
             </form>
         </div>
     </body>

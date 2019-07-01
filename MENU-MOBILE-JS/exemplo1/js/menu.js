@@ -7,7 +7,7 @@ $(document).ready(function(){
     });
     
     /*Fecha o menu vertical no click do item*/
-    $('.link').click(function(){
+    $('.link').notclick(function(){
         $('#menu').slideToggle(500);
         
     })

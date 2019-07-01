@@ -68,6 +68,7 @@ header("Content-type: text/html; charset=utf-8");
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
         <script src="js/jquery.js"></script>
+        <script src="js/buscar.js"></script> 
         <script src="js/menu-mobile.js"></script>
         <script>
             $(document).ready(function(){
@@ -101,131 +102,125 @@ header("Content-type: text/html; charset=utf-8");
         </div>
         <header class="center">
             <div id="box-main-header" class="center">
+                
+                <!-- LOGO -->
+                
                 <div id="logo">
                     <a href="index.php" title="Página inicial" >
                         <img src="img/ico/logo.png" style=" " alt="Logotipo da empresa" id="imag-logo">
 
                     </a>
                 </div>
+                
                 <nav id="menu" class="center">
                     <ul class="center">
-                        <li>
-                            <a href="noticias.php">
+                        <li><a href="noticias.php">Destaques</a></li>
+                        <li><a href="promocoes.php">Promoções</a></li>
+                        <li><a href="eventos.php">Eventos</a></li>
+                        <li><a href="fale-conosco.php">Fale Conosco</a></li>
+                        <li><a href="sobre.php">Sobre</a></li>
+                        <li><a href="lojas.php">Nossas Lojas</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- LOGIN -->
+                
+                <div id="icone-login">
+                    <form name="frmlogin" id="frmlogin" method="post" action="index.php">
+
+                        <div class="box-login center">
+
+                            <input class="text-login center"
+                                   type="text"
+                                   name="txt-usuario"
+                                   id="txt-usuario"
+                                   placeholder="Login">
+
+                        </div>
+                        <div class="box-login center">
+
+                            <input class="text-login center"
+                                   type="password" 
+                                   name="txt-senha"
+                                   id="txt-senha"
+                                   placeholder="Senha">
+
+                        </div>
+                        <input type="submit"
+                               value="Ok"
+                               name="btn-login"
+                               id="btn-login">
+                    </form>
+                </div>
+            
+                <!-- BUSCAR -->
+
+                <div id="container-buscar" class="container-buscar-close">
+                    <form name="frmbuscar" id="frmbuscar" method="post" action="index.php">
+
+                        <input type="text"
+                               name="txtbuscar"
+                               placeholder="Search..."
+                               id="txtbuscar"
+                               class="txtbuscar-close">
+
+                        <input type="submit"
+                               name="btnbuscar" 
+                               alt="submit" 
+                               id="btnbuscar"
+                               value=""
+                               class="btnbuscar-close">
+
+                    </form>
+                </div>
+            
+                <!-- MENU MOBILE -->
+
+                <div id="icone_menu">
+                    <div class="barra-menu"></div>
+                    <div class="barra-menu"></div>
+                    <div class="barra-menu"></div>
+                </div>
+                <nav id="menu_mobile" class="menu_mobile_close">
+                    <ul class="center">
+                        <li class="itens-menu-mobile">
+                            <a href="noticias.php" class="link">
                                 Destaques
                             </a>
                         </li>
-                        <li>
-                            <a href="promocoes.php">
+                        <li class="itens-menu-mobile">
+                            <a href="promocoes.php" class="link">
                                 Promoções
                             </a>
                         </li>
-                        <li>
-                            <a href="eventos.php">
+                        <li class="itens-menu-mobile">
+                            <a href="eventos.php" class="link">
                                 Eventos
                             </a>
                         </li>
-                        <li>
-                            <a href="fale-conosco.php">
+                        <li class="itens-menu-mobile">
+                            <a href="fale-conosco.php" class="link">
                                 Fale Conosco
                             </a>
                         </li>
-                        <li>
-                            <a href="sobre.php">
+                        <li class="itens-menu-mobile">
+                            <a href="sobre.php" class="link">
                                 Sobre
                             </a>
                         </li>
-                        <li>
-                            <a href="lojas.php">
+                        <li class="itens-menu-mobile">
+                            <a href="lojas.php" class="link">
                                 Nossas Lojas
                             </a>
                         </li>
                     </ul>
                 </nav>
-                
-<!--
-                <div id="icone-buscar">
-                    
-                    <img src="img/ico/search.png" class="img-menu">
-                    
-                </div>
--->
-                
-                <div id="icone-login">
-                    <div id="login" class="login_close">
-                        <form name="frmlogin" id="frmlogin" method="post" action="index.php">
-
-                            <div class="box-login center">
-
-                                <input class="text-login center"
-                                       type="text"
-                                       name="txt-usuario"
-                                       id="txt-usuario"
-                                       placeholder="Login">
-
-                            </div>
-                            <div class="box-login center">
-
-                                <input class="text-login center"
-                                       type="password" 
-                                       name="txt-senha"
-                                       id="txt-senha"
-                                       placeholder="Senha">
-
-                            </div>
-                            <div>
-                                <input type="submit"
-                                       value="Ok"
-                                       name="btn-login"
-                                       id="btn-login">
-                            </div>
-                        </form>
-                    </div>
-                    <img src="img/ico/user.png" class="img-menu">
-                </div>
             </div>
             
-            <!-- MENU MOBILE -->
-            <div id="icone_menu">
-                <div class="barra-menu"></div>
-                <div class="barra-menu"></div>
-                <div class="barra-menu"></div>
-            </div>
-            <nav id="menu_mobile" class="menu_mobile_close">
-                <ul class="center">
-                    <li class="itens-menu-mobile">
-                        <a href="noticias.php" class="link">
-                            Destaques
-                        </a>
-                    </li>
-                    <li class="itens-menu-mobile">
-                        <a href="promocoes.php" class="link">
-                            Promoções
-                        </a>
-                    </li>
-                    <li class="itens-menu-mobile">
-                        <a href="eventos.php" class="link">
-                            Eventos
-                        </a>
-                    </li>
-                    <li class="itens-menu-mobile">
-                        <a href="fale-conosco.php" class="link">
-                            Fale Conosco
-                        </a>
-                    </li>
-                    <li class="itens-menu-mobile">
-                        <a href="sobre.php" class="link">
-                            Sobre
-                        </a>
-                    </li>
-                    <li class="itens-menu-mobile">
-                        <a href="lojas.php" class="link">
-                            Nossas Lojas
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </header>
         <div id="conteudo" class="center">
+            
+            <!-- SLIDER -->
             
             <div id="box-slider-mobile"></div>
             <div id="box-slider" class="center">
@@ -293,7 +288,7 @@ header("Content-type: text/html; charset=utf-8");
                 </div>
             </div>
             
-            <!--conteudo catalogo-->
+            <!-- CONTEÚDO CATALOGO -->
             
             <div id="conteudo-catalogo" class="center">
                 <div id="menu-catalogo">
@@ -324,12 +319,13 @@ header("Content-type: text/html; charset=utf-8");
                                 	<?php
                             
                                     $sqlsub = "SELECT DISTINCT psc.cod_subcategoria,
-                                                        s.subcategoria,
-                                                        psc.cod_categoria
-                                                        FROM tbl_produto_subcategoria_categoria AS psc
-                                                        INNER JOIN tbl_subcategoria AS s 
-                                                        ON psc.cod_subcategoria = s.codigo 
-                                                        WHERE psc.cod_categoria =".$codcategoria." AND psc.status LIKE 'A%'";
+                                                                s.subcategoria,
+                                                                psc.cod_categoria
+                                                                FROM tbl_produto_subcategoria_categoria AS psc
+                                                                INNER JOIN tbl_subcategoria AS s 
+                                                                ON psc.cod_subcategoria = s.codigo 
+                                                                WHERE psc.cod_categoria =".$codcategoria." 
+                                                                AND psc.status LIKE 'A%'";
                             
                                     $test = mysqli_query($conexao, $sqlsub);
 
@@ -387,9 +383,18 @@ header("Content-type: text/html; charset=utf-8");
                                                         ON psc.cod_subcategoria = s.codigo
                                                         INNER JOIN tbl_produto = p
                                                         ON p.codigo = psc.cod_produto
-                                                        WHERE psc.cod_categoria = ".$idcat." AND psc.cod_subcategoria = ".$id." AND psc.status LIKE 'A%'";
-
-                            }
+                                                        WHERE psc.cod_categoria = ".$idcat." 
+                                                        AND psc.cod_subcategoria = ".$id." 
+                                                        AND psc.status LIKE 'A%'";
+                            };
+                            
+                        }elseif(isset($_POST['btnbuscar'])){
+                            
+                            $buscar = null;
+                            $buscar = $_POST['txtbuscar'];
+                            
+                            $sql = "SELECT * FROM tbl_produto WHERE produto LIKE '%".$buscar."%' OR descricao LIKE '%".$buscar."%' AND status LIKE 'A%'";
+                            
                         }else{
                         
                             $sql = "SELECT * FROM tbl_produto WHERE status LIKE 'A%' ORDER BY RAND()";
@@ -397,14 +402,26 @@ header("Content-type: text/html; charset=utf-8");
                         }
                         $select = mysqli_query($conexao, $sql);
                         
-                        
-                        while($rsproduto=mysqli_fetch_array($select))
-                        {
+                        if(mysqli_num_rows($select) <= 0){
+                            
+                            ?>
+                                <div >
+                                    <p>Colocar Imagem!</p>
+                                    
+                                </div>
+                                
+                            <?php
 
-                            $nomeProduto = $rsproduto['produto'];
-                            $nomefoto = $rsproduto['imagem'];
-                            $descricao = $rsproduto['descricao'];
-                            $preco = $rsproduto['preco'];
+                        }else{
+                        
+                    
+                            while($rsproduto=mysqli_fetch_array($select))
+                            {
+
+                                $nomeProduto = $rsproduto['produto'];
+                                $nomefoto = $rsproduto['imagem'];
+                                $descricao = $rsproduto['descricao'];
+                                $preco = $rsproduto['preco'];
                             
                     ?>
                         <div class="card">
@@ -417,7 +434,7 @@ header("Content-type: text/html; charset=utf-8");
                                 <p>
                                    <?php 
                                         echo($nomeProduto);
-                                    
+                            
                                     ?>
                                 </p>
                             </div>
@@ -432,22 +449,22 @@ header("Content-type: text/html; charset=utf-8");
                             <div class="preco-card">
                                 <p>
                                     R$ <?php echo($preco)?>
-                                    10x de R$85,41
+                                    
                                 </p>
                             </div>
                             <div class="detalhes">
 
                                 <input type="button"
                                        class="visualizar center"
+                                       id="btndetalhes"
                                        onclick="visualizarDados(<?php echo($rsproduto['codigo']);?>);"
-                                       value="Detalhes"
-                                       >
+                                       value="Detalhes">
 
                             </div>
                         </div>
                     
                     <?php
-                    
+                            }
                         }
                     ?>
                 </div>

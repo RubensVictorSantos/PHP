@@ -41,45 +41,10 @@
     </head>
     <body>  
         <div id="caixa-principal">
-            <div id="caixa_menu">
-                <div id="caixa_icone">
-                    <div id="icone">
-
-                    </div>
-                    <div class="menu">
-                        <div class="itens_menu">
-                            <a href="MEDIA/media.php">Média</a>
-                        </div>
-                        <div id="sub_menu" class="itens_menu">
-                            Calculadora
-                            <div id="menu2">
-                                <div class="itens_menu">
-                                    <a href="CALCULADORA/FUNCTION/calculadora.php">Function</a>
-                                </div>
-                                <div class="itens_menu">
-                                    <a href="CALCULADORA/FUNCTION/calculadora.php">If</a>
-                                </div>
-                                <div class="itens_menu">
-                                    <a href="CALCULADORA/FUNCTION/calculadora.php">Switch</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="itens_menu">
-                            <a href="tabuada.php">Tabuada</a>
-                        </div>
-                        <div class="itens_menu">
-                            <a href="ImPar.php">Pares e impares</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="titulo">
-                    <strong>
-                        PARES E IMPARES
-                    </strong>
-
-                </div>
-            </div>
-            <div id="caixa_alert">
+            <?php
+                include('menu.php');
+            ?>
+            <div id="caixa-alert">
                 <?php 
                 
                     if($vazio_err){
@@ -119,9 +84,9 @@
                         </select>
                     </div>
                     <div id="caixa-botao">
-                    <input type="submit" id="btnCalc" name="btn_calc" value="CALCULAR">
+                        <input type="submit" id="btnCalc" name="btn_calc" value="CALCULAR">
 
-                </div>
+                    </div>
                 </div>
                 <div id="saida">
                     <div id="titulo_Par">
@@ -153,25 +118,25 @@
                     </div>
                 </div>
                 <div id="quantidade">
-                <div id="qtd_par">
-                    Qtd Par <?php 
-                    
-                    if($vazio_err == false || $invalido_err == false){
-                        echo($impar_par[2]);
-                    }
-                    ?>
+                    <div id="qtd_par">
+                        Qtd Par <?php 
+
+                        if($vazio_err == false || $invalido_err == false){
+                            echo($impar_par[2]);
+                        }
+                        ?>
+                    </div>
+                    <div id="qtd_impar">
+                        Qtd Impar <?php 
+
+                        if($vazio_err == false || $invalido_err == false){
+                            echo($impar_par[3]);
+
+                        }
+
+                        ?>
+                    </div>
                 </div>
-                <div id="qtd_impar">
-                    Qtd Impar <?php 
-                    
-                    if($vazio_err == false || $invalido_err == false){
-                        echo($impar_par[3]);
-                        
-                    }
-                    
-                    ?>
-                </div>
-            </div>
             </form>
         </div>
     </body>

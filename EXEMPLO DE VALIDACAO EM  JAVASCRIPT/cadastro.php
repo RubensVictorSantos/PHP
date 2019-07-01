@@ -1,11 +1,12 @@
 <?php 
 /*conexao com o Banco de Dados*/
-    
+    $conexao = null;
+
     //Estabelece uma conexao com o BD MySQl
-    $conexao=mysql_connect('localhost','root','binho250398');
+    $conexao=mysqli_connect('localhost','root','binho250398','dbcontato');
     
     //Ativa o database a ser utilizado no projeto
-    mysql_select_db('db_site');
+//    mysqli_select_db('');
 
 
 /**/
@@ -24,12 +25,12 @@ if(isset($_POST["btnsalvar"]))
     $obs=$_POST["txtobs"];
     
     //Monta o Script para enviar para o BD
-    $sql="insert into tbl_cadastro_contato (nome,telefone,celular,email,sexo,dt_nasc,obs)
+    $sql="insert into tblcontatos (nome,telefone,celular,email,sexo,dt_nasc,obs)
         values('".$nome."','".$telefone."','".$celular."','".$email."',
                '".$sexo."','".$dt_nasc."','".$obs."')";
     
     //Executa o script no BD
-    mysql_query($sql);
+    mysqli_query($conexao,$sql);
     
     
     /*
@@ -158,7 +159,7 @@ if(isset($_POST["btnsalvar"]))
                   </tr>
                   <tr>
                     <td class="tblcadastro_td">Telefone:</td>
-                    <td><input id="telefone" onkeypress="return validar(event,'caracter','telefone')" pattern="[0-9]{3} [0-9]{4}-[0-9]{4}"  name="txttelefone" type="text" value="" /></td>
+                    <td><input id="telefone" onkeypress="return validar(event,'caracter','telefone')"   name="txttelefone" type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="tblcadastro_td">Celular:</td>
