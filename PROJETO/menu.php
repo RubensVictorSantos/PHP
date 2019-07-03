@@ -8,13 +8,45 @@
     <div id="box-main-header" class="center">
         
         <!-- LOGO -->
-        
+
         <div id="logo">
             <a href="index.php" title="Página inicial" >
-                <img src="img/ico/logo.png" style=" " alt="bicicleta logo da empresa" id="imag-logo">
+                <img src="img/ico/logo.png" style=" " alt="Logotipo da empresa" id="imag-logo">
 
             </a>
         </div>
+<!--
+        <div id="logo">
+            <a href="index.php" title="Página inicial" >
+                <div id="painel02">
+                    <div id="box1" class="center">
+                        <p class="letras">
+                            R
+                        </p>
+                        <div id="box2">
+
+                            <p class="letras">
+                                R
+                            </p>
+                            <div id="box3">
+
+                                <p class="letras">
+                                    C
+                                </p>
+                                <div id="box4">
+
+                                    <p class="letras">
+                                        B
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+-->
         <nav id="menu" class="center">
             <ul class="center">
                 <li><a href="noticias.php">Destaques</a></li>
@@ -28,19 +60,23 @@
         
         <!-- BUSCAR -->
         
-        <div id="container-buscar">
+        <div id="container-buscar" class="container-buscar-open">
             <form name="frmbuscar" id="frmbuscar" method="post" action="index.php">
+
+                <div id="img-buscar" class='img-close'></div>
 
                 <input type="text"
                        name="txtbuscar"
                        placeholder="Search..."
-                       id="txtbuscar">
+                       id="txtbuscar"
+                       class="txtbuscar-open">
 
                 <input type="submit"
                        name="btnbuscar" 
                        alt="submit" 
                        id="btnbuscar"
-                       value="">
+                       value=""
+                       class="btnbuscar-open">
 
             </form>
         </div>

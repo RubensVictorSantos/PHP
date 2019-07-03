@@ -68,8 +68,7 @@ header("Content-type: text/html; charset=utf-8");
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="icon" href="img/ico/i405_TDM_icon_bike93.gif">
         <script src="js/jquery.js"></script>
-        <script src="js/buscar.js"></script> 
-        <script src="js/menu-mobile.js"></script>
+        <script src="js/menu.js"></script>
         <script>
             $(document).ready(function(){
 				$('.visualizar').click(function(){
@@ -112,6 +111,41 @@ header("Content-type: text/html; charset=utf-8");
                     </a>
                 </div>
                 
+<!--
+                <div id="logo">
+                    <a href="index.php" title="Página inicial" >
+                        <div id="painel02">
+                            <div id="box1" class="center">
+                                <p class="letras">
+                                    R
+                                </p>
+                                <div id="box2">
+
+                                    <p class="letras">
+                                        R
+                                    </p>
+                                    <div id="box3">
+
+                                        <p class="letras">
+                                            C
+                                        </p>
+                                        <div id="box4">
+
+                                            <p class="letras">
+                                                B
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+-->
+                
+                <!-- MENU -->
+                
                 <nav id="menu" class="center">
                     <ul class="center">
                         <li><a href="noticias.php">Destaques</a></li>
@@ -122,13 +156,39 @@ header("Content-type: text/html; charset=utf-8");
                         <li><a href="lojas.php">Nossas Lojas</a></li>
                     </ul>
                 </nav>
+            
+                <!-- BUSCAR -->
+
+                <div id="container-buscar" class="container-buscar-open">
+                    <form name="frmbuscar" id="frmbuscar" method="post" action="index.php">
+                        
+                        <div id="img-buscar" class='img-close'></div>
+                        
+                        <input type="text"
+                               name="txtbuscar"
+                               placeholder="Search..."
+                               id="txtbuscar"
+                               class="txtbuscar-open">
+
+                        <input type="submit"
+                               name="btnbuscar" 
+                               alt="submit" 
+                               id="btnbuscar"
+                               value=""
+                               class="btnbuscar-open">
+
+                    </form>
+                </div>
                 
                 <!-- LOGIN -->
                 
-                <div id="icone-login">
+                <div id="login" class="login-close">
                     <form name="frmlogin" id="frmlogin" method="post" action="index.php">
-
-                        <div class="box-login center">
+                        <div id="img-login" class="img-login-open">
+                        
+                        
+                        </div>
+                        <div id="box-user" class="box-login-open center">
 
                             <input class="text-login center"
                                    type="text"
@@ -137,40 +197,19 @@ header("Content-type: text/html; charset=utf-8");
                                    placeholder="Login">
 
                         </div>
-                        <div class="box-login center">
+                        <div id="box-senha" class="box-login-open center">
 
                             <input class="text-login center"
                                    type="password" 
                                    name="txt-senha"
                                    id="txt-senha"
-                                   placeholder="Senha">
+                                   placeholder="Password">
 
                         </div>
                         <input type="submit"
                                value="Ok"
                                name="btn-login"
                                id="btn-login">
-                    </form>
-                </div>
-            
-                <!-- BUSCAR -->
-
-                <div id="container-buscar" class="container-buscar-close">
-                    <form name="frmbuscar" id="frmbuscar" method="post" action="index.php">
-
-                        <input type="text"
-                               name="txtbuscar"
-                               placeholder="Search..."
-                               id="txtbuscar"
-                               class="txtbuscar-close">
-
-                        <input type="submit"
-                               name="btnbuscar" 
-                               alt="submit" 
-                               id="btnbuscar"
-                               value=""
-                               class="btnbuscar-close">
-
                     </form>
                 </div>
             
@@ -405,9 +444,14 @@ header("Content-type: text/html; charset=utf-8");
                         if(mysqli_num_rows($select) <= 0){
                             
                             ?>
-                                <div >
-                                    <p>Colocar Imagem!</p>
-                                    
+                                <div id="tratamento-produto" class="center">
+                                    <i>
+                                    <div id="ops">Ops!</div> 
+                                    Produto não encontrado.<br><br>
+                                    Não encontrou produto desejado?<br>
+                                    Envie um e-mail para:<br>
+                                    RoadRunnerCross@outlook.com
+                                    </i>
                                 </div>
                                 
                             <?php

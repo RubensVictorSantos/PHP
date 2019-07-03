@@ -61,10 +61,10 @@
             $diretorio = "arquivos/";
 
             //Guarda o nome do arquivo a ser upado para o servidor
-            $arquivo = $_FILES['flefotos']['name'];
+            $arquivo = $_FILES['img/flefotos']['name'];
 
             //Guarda o tamanho do arquivo
-            $tamanho_arquivo = $_FILES['flefotos']['size'];
+            $tamanho_arquivo = $_FILES['img'.'flefotos']['size'];
 
             //A divisão de 1024 Converte a unidade de medida de bytes para kbites
             //round permite trazer apenas a parte internma do valor

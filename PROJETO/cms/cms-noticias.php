@@ -195,6 +195,7 @@
                             <form name="frm-cms-noticia-foto" method="POST" action="cms-noticias.php">
                                  <div id="visualizar_foto" >
                                     <?php
+                                        
                                         if(isset($nomefoto)){
                                     ?>
 

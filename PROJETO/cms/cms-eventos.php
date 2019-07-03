@@ -190,7 +190,7 @@
                             ?>
                         </div>
                         <div>
-                            <textarea name="text-conteudo" maxlength="200" placeholder="Informações sobre o evento" ><?php echo($conteudo);?></textarea>
+                            <textarea name="text-conteudo" maxlength="200" placeholder="Informações sobre o evento" style="text-align:center;"><?php echo($conteudo);?></textarea>
 
                         </div>
                         <div class="input-text-cms">
