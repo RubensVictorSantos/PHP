@@ -1,6 +1,6 @@
 *{
                 
-    border: none;
+    /* border: none; */
     font-family: arial;
 
 }
@@ -11,68 +11,86 @@ body, h2, h3, p{
     padding:0;
 }
 
-div{
+div:not(.box-main){
 
     /*border: 1px solid black;*/
     font-size: 14.8px;
     box-sizing: border-box;
-    background-color:#d4cfc6;
+    /* background-color:#d4cfc6; */
 
 }
 
-#titulo{
-
-    width:444px;
-    height:40px;
-    padding:5px;
-    color:white;
-    font-size: 18px;
-    text-align:center;
-    background-color: #000000;
+.box-main{
+    width: 80vw;
+    height: 35vh;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-#caixa-principal{
+.titulo{
 
-    width:450px;
+    width: inherit;
+    height:15%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    font-size: 1.6em;
+}
+
+.resto{
+    width: inherit;
+    height: 85%;
+    display: flex;
+}
+
+#box-calc{
+
+    width:500px;
     height:251px;
-    /*border: 1px solid black;*/
-    /*border-radius:0px 0px 2px 2px;*/
     border-top: none;
-    border:1px solid black;
-    /*border-style:outset;*/
-    /*background-color:#001111;*/
-
+    background-color: khaki;
 }
 
 #caixa-valores{
 
-    width:244px;
-    height:205px;
-    float:left;
-    /*background-color:#0000ff;*/
-    /*border: 1px solid black;*/
+    width:50%;
+    height: 100%;
+    background-color:#eeeeff;
 }
 
 #saida{
 
-    width:200px;
-    height:205;
-    float:left;
-    padding: 7px 0px 0px 5px;
-    /*background-color:#dd11dd;
-    /*border: 1px solid black;*/
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* background-color:#ffaaff; */
 
+}
+
+h3{
+    color: black;
+    font-size: 1.2em;
 }
 
 #titulo-resultado{
 
-    width:189px;
-    padding:5px;
-    font-size: 18px;
-    text-align:center;
-    background-color: #ffffff;
-    color:white;
-    /*border: 1px solid black;*/
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+p{  
+    font-size: 2em;
+    /* background-color: gold; */
 }
 
 #caixa-texto{
@@ -81,6 +99,7 @@ div{
     width:inherit;
     height:56px;
     box-sizing: border-box;
+    justify-content: space-around;
     /*background-color:#d4cfdd;*/
 }
 
@@ -123,10 +142,9 @@ div{
 
     width: 189px;
     height: 158px;
-    padding-top: 20%;
-    font-size: 50px;
-    text-align: center;
-    border: 1px solid black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
     overflow: auto;
     background-color:white;
 }

@@ -14,8 +14,8 @@
     
     */
 
-    $valor1 = (float) null;
-    $valor2 = (float) null;
+    $valor1 = null;
+    $valor2 =   null;
     $resultado = (float) 0;
     $opcao = (string) null;
     $rdosomar = null;
@@ -50,8 +50,6 @@
         }else{
             
             $opcao= $_POST['radio'];
-            
-            //echo(gettype($opcao));//STRING?
 
             if($opcao == 'som'){
 
@@ -87,45 +85,50 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
-		<div id="caixa-principal">
-            <div id="titulo">
-                <h2>Calculadora Simples</h2>
+        <div class="box-main">
+		    <div id="box-calc">
+
+                <div class="titulo">
+                    <h2>Calculadora Simples</h2>
+                </div>
+                <div class="resto">
+                    <div id="caixa-valores">
+                        <form name="frmmedia" method="POST" action="calculadora.php">
+                            <div id="caixa-texto">
+                                Varlor 1: <input type="text" name="txtval1" value="<?php echo($valor1)?>" class="input" ><br>
+                                Varlor 2: <input type="text" name="txtval2" value="<?php echo($valor2)?>" class="input" >
+                            </div>
+                            <div id="caixa-radio">
+                                <input type="radio" name="radio" value="som" <?php echo($rdosomar)?>> Somar<br>
+                                
+                                <input type="radio" name="radio" value="sub" <?php echo($rdosubtrair)?>> Subtrair<br>
+                                
+                                <input type="radio" name="radio" value="mul" <?php echo($rdomultiplicar)?>> Multiplicar<br>
+                                
+                                <input type="radio" name="radio" value="div" <?php echo($rdodividir)?>> Dividir
+                            </div>
+                            <div id="caixa-alert" name="caixa-alert" >
+                                <?php 
+                                    #echo VAZIO;
+                                ?>
+                            </div>
+                            <div id="caixa-botao">
+                                <input type="submit" id="btncal" name="btcalcular" value="Calcular" >
+                            </div>
+                        </form>
+                    </div>
+                    <div id="saida">
+                        <div id="titulo-resultado">
+                            <h3>Resultado</h3>
+                        </div>
+                        <div id="caixa-resultado"><!--Caixa Resultado-->
+                            <p>
+                                <?php echo($resultado); ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-			<div id="caixa-valores">
-                <form name="frmmedia" method="POST" action="calculadora.php">
-                    <div id="caixa-texto">
-                        Varlor 1: <input type="text" name="txtval1" value="<?php echo($valor1)?>" class="input" ><br>
-                        Varlor 2: <input type="text" name="txtval2" value="<?php echo($valor2)?>" class="input" >
-                    </div>
-                    <div id="caixa-radio">
-                        <input type="radio" name="radio" value="som" <?php echo($rdosomar)?>> Somar<br>
-                        
-                        <input type="radio" name="radio" value="sub" <?php echo($rdosubtrair)?>> Subtrair<br>
-                        
-                        <input type="radio" name="radio" value="mul" <?php echo($rdomultiplicar)?>> Multiplicar<br>
-                        
-                        <input type="radio" name="radio" value="div" <?php echo($rdodividir)?>> Dividir
-                    </div>
-                    <div id="caixa-alert" name="caixa-alert" >
-                        <?php 
-                            #echo VAZIO;
-                        ?>
-                    </div>
-                    <div id="caixa-botao">
-                        <input type="submit" id="btncal" name="btcalcular" value="Calcular" >
-                    </div>
-                </form>
-			</div>
-			<div id="saida">
-				<div id="titulo-resultado">
-					<h3>Resultado</h3>
-				</div>
-				<div id="caixa-resultado"><!--Caixa Resultado-->
-                    <p>
-                        <?php echo($resultado); ?>
-                    </p>
-				</div>
-			</div>
-		</div>
+        </div>
 	</body>
 </html>

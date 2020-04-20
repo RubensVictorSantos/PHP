@@ -55,8 +55,6 @@
             
                 $opcao= $_POST['radio'];
 
-                //echo(gettype($opcao));//STRING?
-
                 if($opcao == 'som'){
 
                     $resultado = $valor1 + $valor2;
