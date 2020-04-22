@@ -19,53 +19,84 @@ a:visited{
     color: white;
 }
 
-*{
-    /*font-size: 14.8px;*/       
+*{      
     font-family: arial;
 
 }
+
 .center{
     
     margin-left: auto;
     margin-right: auto;
     
 }
-body, a, h2, h3, p{
+
+body, a, h1, h2, h3, p, form{
 
     margin:0;
     padding:0;
 }
 
 div{
-    background-color: #d4cfc6;
+
     box-sizing: border-box;
 
+}
+
+/* 
+width = 1366
+height = 657 
+
+*/
+
+/*
+    Div principal
+*/
+.main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 #caixa-principal{
 
-    width:600px;
-    height:611px;
+    width:  43.92%;/*600*/
+    height: 92.99%;/*611*/
     border-radius:0px 0px 2px 2px;
-    border-style:outset;
+    border: 1px solid rgba(116, 143, 190,0.9);
+    border-radius: 0.2em;
+    overflow: hidden;
     box-sizing: border-box;
-/*    background-color:#efffff;*/
-
 }
 
-#caixa_menu{
+.box-menu{
+    width: 100%;
+    height: 8.18%;
+    box-sizing: border-box;
     
-    width: 594;
-	height: 50px;
-    background-color: #ff000f;
+}
+
+.nav-bar{
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    background-color: #ffaaaf;
 }
 
 #caixa_icone{
     
-    width: 50px;
-	height: 50px;
-    float: left;
+    width: 8.33%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    background-color: rgba(116, 143, 190,0.9);
 }
 
 #icone{
@@ -75,7 +106,6 @@ div{
 	background-image: url(../img/menu_mobile.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-    float:left;
 }
 
 .menu{
@@ -89,6 +119,7 @@ div{
     
     
 }
+
 #sub_menu{
     
     width: 135px;
@@ -102,10 +133,8 @@ div{
 	height: 97px;
     margin-top: -20px;
     margin-left: 135px;
-    opacity: 0;*
+    opacity: 0;
 	visibility: hidden;
-    /*background-color: rgba(116, 143, 190,0.9);
-    /*position: absolute;*/
     box-sizing: border-box;
     
 }
@@ -148,27 +177,33 @@ div{
 	
 }
 
-.welcome{
+.box-welcome{
     
-    width: 450px;
-    height: 300px;
-    font-size: 60px;
-    text-align: center;
-    font-weight: bold;
-    color: rgba(116, 143, 190,0.9);
+    width: 100%;
+    height: 92%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
+}
+
+.box-welcome, h1{
+    color: rgba(116, 143, 190,0.9);
+    text-align: center;
+    font-size: 3.3em;
+    font-weight: bold;
 }
 
 #titulo{
 
-    width:544px;
-    height:inherit;
-    padding: 10px 0px 0px 0px;
+    width: 91.67%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color:white;
-    text-align:center;
     background-color: #748fbe;
-    margin-left: 50px;
-    font-size:25px;
+    font-size: 1.5em;
 }
 
 #caixa-valores{
@@ -213,6 +248,21 @@ input{
     text-align: center;
 }
 
+/*
+
+----------------- IMPAR PAR -----------------
+
+*/
+
+.box-painel{
+    width: 100%;
+    height: 91,82%;
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    /* background-color: tomato; */
+}
+
 #caixa-alert{
     
     width: 100%;
@@ -220,7 +270,7 @@ input{
     color: red;
     padding-top: 5px;
     text-align: center;
-/*    background-color:#d4cfdd;*/
+   background-color:#d4cfdd;
     box-sizing: border-box;
     
 }
@@ -236,6 +286,7 @@ input{
     box-sizing: border-box;
 
 }
+
 .label{
     
     width: 100px;
@@ -245,6 +296,7 @@ input{
     margin-left: 35%;
     
 }
+
 #caixa-text{
 
     padding: 0px;
@@ -277,7 +329,6 @@ input{
     border-style: inset;
     background-color:white;
 }
-
 
 .caixa_resultado_parImpar{
 
@@ -328,6 +379,7 @@ input{
     /*background-color:#ffeedd;*/
     
 }
+
 select{
     
     margin-top:7px; 

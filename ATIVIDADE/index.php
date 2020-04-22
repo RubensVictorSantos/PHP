@@ -5,16 +5,21 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <div id="caixa-principal">
-            <?php
-                include('menu.php');
-            ?>
-            <div class="welcome center">
-                <h1>
-                    Bem<br>Vindo!
-                </h1>
+        <div class="main">
+
+            <div id="caixa-principal">
+                <div class="box-menu">
+                    <?php
+                        include('menu.php');
+                    ?>
+                </div>
+                <div class="box-welcome center">
+                    <h1>
+                        Bem Vindo!
+                    </h1>
+                </div>
             </div>
+
         </div>
-        
     </body>
 </html>

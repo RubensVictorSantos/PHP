@@ -4,11 +4,11 @@
     include_once('../modulo.php');
 
     $media = null;
-    $erro=null;
-    $nota1=null;
-    $nota2=null;
-    $nota3=null;
-    $nota4=null;
+    $erro = null;
+    $nota1 = null;
+    $nota2 = null;
+    $nota3 = null;
+    $nota4 = null;
     
 	if(isset($_GET['btncalc']))
 	{

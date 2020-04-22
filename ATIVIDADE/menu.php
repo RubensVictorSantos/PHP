@@ -1,14 +1,13 @@
 <?php
 ?>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <div id="caixa_menu">
+    <div class="nav-bar">
         <div id="caixa_icone">
             <div id="icone">
 
             </div>
             <div class="menu">
                 <div class="itens_menu"> 
-                    <a href="MEDIA/media.php">Média</a>
+                    <a href="MEDIA/media.php">Calcular média</a>
                     
                 </div>
                 <div id="sub_menu" class="itens_menu">
@@ -40,7 +39,7 @@
         </div>
         <div id="titulo">
             <strong>
-                CALCULADORA SIMPLES
+                CALCULADORA
             </strong>
 
         </div>
