@@ -15,7 +15,7 @@
     */
 
     $valor1 = null;
-    $valor2 =   null;
+    $valor2 = null;
     $resultado = (float) 0;
     $opcao = (string) null;
     $rdosomar = null;
@@ -25,10 +25,6 @@
     $erro = null;
 
     define("ERRO","Erro no calculo!");
-    define("VAZIO","Erro de caixa vazia!");
-   /* define("LIMPAR"){
-        
-    }*/
     
     /*verifica se o botão foi clicado*/
     if(isset($_POST['btcalcular']))
@@ -40,41 +36,34 @@
         $rdosubtrair = $_POST['radio'];
         $rdodividir = $_POST['radio'];
         $rdomultiplicar = $_POST['radio'];
-        
-
-        /*Radio retorna um valor booleano por isso q não precisamos especificar if($v1 == true)*/
-        if($valor1 == null || $valor2 == null || !isset($_POST['radio'])){
             
-           echo VAZIO ;
-        
-        }else{
-            
-            $opcao= $_POST['radio'];
+        $opcao= $_POST['radio'];
 
-            if($opcao == 'som'){
-
+        switch ($opcao){
+            case 'som':
                 $resultado = $valor1 + $valor2;
                 $rdosomar = "checked";
-                
-            }elseif($opcao == 'sub'){
-                
+                break;
+
+            case 'sub':
                 $resultado = $valor1 - $valor2;
                 $rdosubtrair = "checked";
-                    
-            }elseif($opcao == 'div'){
-                if($valor2==0){
-                    
-                    echo(ERRO);
+                break;
+
+            case 'div':
+                if($valor2 == 0){
+                    $erro = ERRO;
                     $rdodividir = "checked";
-                        
                 }else{
                     $resultado = $valor1 / $valor2;
                 }
-            }elseif($opcao == 'mul'){
+                break;
 
+            case 'mul':
                 $resultado = $valor1 * $valor2;
                 $rdomultiplicar = "checked";
-            }
+                break;
+
         }
     }
 ?>
@@ -95,22 +84,20 @@
                     <div id="caixa-valores">
                         <form name="frmmedia" method="POST" action="calculadora.php">
                             <div id="caixa-texto">
-                                Varlor 1: <input type="text" name="txtval1" value="<?php echo($valor1)?>" class="input" ><br>
-                                Varlor 2: <input type="text" name="txtval2" value="<?php echo($valor2)?>" class="input" >
+                                <label>Varlor 1: </label><input type="text" name="txtval1" value="<?php echo($valor1)?>" class="input" placeholder="Digite um número" required>
+                                <label>Varlor 2: </label><input type="text" name="txtval2" value="<?php echo($valor2)?>" class="input" placeholder="Digite um número" required>
                             </div>
                             <div id="caixa-radio">
-                                <input type="radio" name="radio" value="som" <?php echo($rdosomar)?>> Somar<br>
+                                <div class="div-rdo"><input id="rdosomar" type="radio" name="radio" value="som" <?php echo($rdosomar)?>><label for="rdosomar"> Somar</label></div>
                                 
-                                <input type="radio" name="radio" value="sub" <?php echo($rdosubtrair)?>> Subtrair<br>
+                                <div class="div-rdo"><input id="rdosubtrair" type="radio" name="radio" value="sub" <?php echo($rdosubtrair)?>><label for="rdosubtrair"> Subtrair</label></div>
                                 
-                                <input type="radio" name="radio" value="mul" <?php echo($rdomultiplicar)?>> Multiplicar<br>
+                                <div class="div-rdo"><input id="rdomultiplicar" type="radio" name="radio" value="mul" <?php echo($rdomultiplicar)?>><label for="rdomultiplicar"> Multiplicar</label></div>
                                 
-                                <input type="radio" name="radio" value="div" <?php echo($rdodividir)?>> Dividir
+                                <div class="div-rdo"><input id="rdodividir" type="radio" name="radio" value="div" <?php echo($rdodividir)?>><label for="rdodividir"> Dividir</label></div>
                             </div>
                             <div id="caixa-alert" name="caixa-alert" >
-                                <?php 
-                                    #echo VAZIO;
-                                ?>
+                                <p class="box-err"><?php echo $erro;?></p>
                             </div>
                             <div id="caixa-botao">
                                 <input type="submit" id="btncal" name="btcalcular" value="Calcular" >
@@ -123,7 +110,7 @@
                         </div>
                         <div id="caixa-resultado"><!--Caixa Resultado-->
                             <p>
-                                <?php echo($resultado); ?>
+                                <?php echo $resultado; ?>
                             </p>
                         </div>
                     </div>

@@ -1,11 +1,9 @@
 *{
-                
-    /* border: none; */
-    font-family: arial;
+    font-family: Arial, Calibri,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
 
-body, h2, h3, p{
+body, h2, h3, p, form{
 
     margin:0;
     padding:0;
@@ -13,16 +11,15 @@ body, h2, h3, p{
 
 div:not(.box-main){
 
-    /*border: 1px solid black;*/
     font-size: 14.8px;
     box-sizing: border-box;
-    /* background-color:#d4cfc6; */
-
 }
 
+/**/
+
 .box-main{
-    width: 80vw;
-    height: 35vh;
+    width: 100vw;
+    height: 100vh;
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -30,38 +27,111 @@ div:not(.box-main){
     justify-content: center;
 }
 
+#box-calc{
+
+    width: 36.60%;
+    height: 38.20%;
+    border: 1px solid royalblue;
+    overflow: hidden;
+    border-radius: 3px 3px;
+}
+
 .titulo{
 
-    width: inherit;
+    width: 100%;
     height:15%;
     align-items: center;
+    background-color: royalblue;
     display: flex;
     justify-content: center;
 }
 
 h2{
+    color:white;
     font-size: 1.6em;
 }
 
 .resto{
-    width: inherit;
+    width: 100%;
     height: 85%;
     display: flex;
-}
-
-#box-calc{
-
-    width:500px;
-    height:251px;
-    border-top: none;
-    background-color: khaki;
+    background-color:#eeeeff;
 }
 
 #caixa-valores{
 
     width:50%;
     height: 100%;
-    background-color:#eeeeff;
+}
+
+#caixa-texto{
+
+    width:100%;
+    height:26.4%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+#caixa-radio{
+
+    width:100%;
+    height:41%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    /* background-color:#d4ddc6; */
+
+}
+
+.div-rdo{
+    display:flex;
+    padding-left: 2%;
+}
+
+#caixa-alert{
+
+    width:100%;
+    height:14.6%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color:#ddcfc6; */
+
+}
+
+p:not(.box-err){
+    width: 90%;
+    text-align: center;
+    font-size: 2em;
+    word-wrap: break-word;
+} 
+
+#caixa-botao{
+
+    width:100%;
+    height:17.9%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background-color:#dddfc6;*/
+
+}
+
+#btncal{
+
+    width: 95%;
+    height: 80%;
+    background-color: royalblue;
+    color:white;
+    font-size: 1.5em;
+    border-radius: 3px;
+    border: none;
+
 }
 
 #saida{
@@ -72,7 +142,6 @@ h2{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    /* background-color:#ffaaff; */
 
 }
 
@@ -88,69 +157,17 @@ h3{
     justify-content: center;
 }
 
-p{  
-    font-size: 2em;
-    /* background-color: gold; */
-}
-
-#caixa-texto{
-
-    padding:3px;
-    width:inherit;
-    height:56px;
-    box-sizing: border-box;
-    justify-content: space-around;
-    /*background-color:#d4cfdd;*/
-}
-
-.input{
-
-    margin-bottom: 5px;
-    /*border-style:inset;*/
+input{
     text-align: center;
-}
-
-#caixa-radio{
-
-    padding:5px;
-    width:inherit;
-    height:87px;
-    /*background-color:#d4ddc6;*/
-
-}
-
-#caixa-alert{
-
-    padding:5px;
-    text-align: center;
-    width:inherit;
-    height:31px;
-    /*background-color:#ddcfc6;*/
-
-}
-
-#caixa-botao{
-
-    padding:5px 0px 0px 90px;
-    width:inherit;
-    height:31px;
-    /*background-color:#dddfc6;*/
-
-}
+}   
 
 #caixa-resultado{
 
-    width: 189px;
-    height: 158px;
+    width: 75.6%;
+    height: 74.1%;
     align-items: center;
     display: flex;
     justify-content: center;
     overflow: auto;
     background-color:white;
-}
-
-#btncal{
-
-     /*border-style:outset;*/
-
 }
