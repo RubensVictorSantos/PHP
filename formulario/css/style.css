@@ -454,4 +454,120 @@ svg:hover {
   background-color: #d6d5df;
   cursor: pointer;
 }
+
+/* --------------------------------------------------------- */
+.bg-01 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#db2044), to(#e233b8));
+  background-image: linear-gradient(to top right, #db2044, #e233b8);
+}
+
+.bg-02 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#3fff7c), to(#3ffbe0));
+  background-image: linear-gradient(to top right, #3fff7c, #3ffbe0);
+}
+
+.bg-03 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#6b2cf5), to(#d450e6));
+  background-image: linear-gradient(to top right, #6b2cf5, #d450e6);
+}
+
+.bg-04 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#2f80ff), to(#3ccbff));
+  background-image: linear-gradient(to top right, #2f80ff, #3ccbff);
+}
+
+.bg-05 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#ff4ba7), to(#ffda64));
+  background-image: linear-gradient(to top right, #ff4ba7, #ffda64);
+}
+
+.bg-06 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#a1ffd9), to(#f3ff77));
+  background-image: linear-gradient(to top right, #a1ffd9, #f3ff77);
+}
+
+.bg-07 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#6f085a), to(#c51c53));
+  background-image: linear-gradient(to top right, #6f085a, #c51c53);
+}
+
+.bg-08 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#fe3d6c), to(#fc9995));
+  background-image: linear-gradient(to top right, #fe3d6c, #fc9995);
+}
+
+.bg-09 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#78DFF2), to(#f2b5d4));
+  background-image: linear-gradient(to top right, #78DFF2, #f2b5d4);
+}
+
+.bg-10 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#12c2e9), to(#f6af59));
+  background-image: linear-gradient(to top right, #12c2e9, #f6af59);
+}
+
+.bg-11 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#007991), to(#68dac7));
+  background-image: linear-gradient(to top right, #007991, #68dac7);
+}
+
+.bg-12 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#d96113), to(#fed046));
+  background-image: linear-gradient(to top right, #d96113, #fed046);
+}
+
+.body-teste {
+  background-image: none !important;
+  background-color: #f2e6ff !important;
+}
+
+.main-teste {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main-teste .boxes {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  background-color: white;
+  margin: 1rem 1rem;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(200, 200, 200, 0.3);
+          box-shadow: 0px 0px 10px 3px rgba(200, 200, 200, 0.3);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-teste .boxes div {
+  width: 150px;
+  height: 200px;
+}
+
+.main-teste .boxes p {
+  padding: 0px;
+  margin: .3rem 0;
+  text-transform: uppercase;
+  font-family: Arial;
+}
 /*# sourceMappingURL=style.css.map */
