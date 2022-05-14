@@ -1,94 +1,457 @@
-.center{
-	margin-left:auto;
-	margin-right:auto;
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-
-.img{
-
-	margin-left:10px;
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url(../img/bg-login2940x1960.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
-/*estilo para a modal*/
-#container{
-	width:100%;
-	height:100%;
-	background-color:rgba(0,0,0,0.7);
-	position:fixed;
-	z-index:999;
-	display:none;	
+input {
+  color: white;
+  /* Input date */
+  /* Input submit */
 }
 
-#modal{
-	width:500px;
-	height:500px;
-	margin-left:auto;
-	margin-right:auto;
-	background-color:#ffffff;
-	margin-top:150px;
+input[type=date]::-webkit-datetime-edit-text, input[type=date]::-webkit-datetime-edit-month-field, input[type=date]::-webkit-datetime-edit-day-field, input[type=date]::-webkit-datetime-edit-year-field {
+  color: transparent;
+  -webkit-appearance: none;
 }
 
-
-/*conteudo*/
-header{
-	width:500px;
-	height:50px;
-	font-family:arial;
-	font-weight:bold;
-	color:white;
-	background-color:blue;
-	text-align:center;
-	line-height:50px;
-	font-size:25px;
+input[type=date]:focus::-webkit-datetime-edit-text, input[type=date]:focus::-webkit-datetime-edit-month-field, input[type=date]:focus::-webkit-datetime-edit-day-field, input[type=date]:focus::-webkit-datetime-edit-year-field {
+  color: white !important;
+  -webkit-appearance: auto !important;
 }
 
-#caixa_conteudo{
-	width:500px;
-	min-height:480px;
-	height:auto;
-	overflow:hidden;
-	background-color:white;
-	border:1px solid;
-	border-color:black;
-	margin-bottom:10px;
+input[type=date]:valid::-webkit-datetime-edit-text, input[type=date]:valid::-webkit-datetime-edit-month-field, input[type=date]:valid::-webkit-datetime-edit-day-field, input[type=date]:valid::-webkit-datetime-edit-year-field {
+  color: white !important;
+  -webkit-appearance: auto !important;
 }
 
-#txts{
-	width:50%;
-	height:480px;
-	background-color:white;
-	float:left;
+input[type=submit] {
+  background-color: white;
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+  padding: .5rem 3rem;
+  text-transform: uppercase;
 }
 
-
-label{
-	width:200px;
-	height:50px;
-	background-color:white;
-	margin-left:100px;
-	margin-top:100px;
-	line-height:22px;
-    font-weight:bold;	
+footer {
+  height: auto;
 }
 
-
-input[type=submit]{
-	width:80px;
-	background-color:blue;
-	color:white;
-	font-weight:bold;
-}
-	
-
-form{
-	width:50%;
-	min-height:480px;
-	height:auto;
-	overflow:hidden;
-	background-color:white;
-	float:left;
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-footer{
-	height:auto;
+.img {
+  color: rgba(0, 0, 0, 0.7);
 }
+
+.border-1 {
+  border: 1px solid black !important;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+svg:hover {
+  background-color: #8f8c9c;
+  padding: .3rem;
+}
+
+/* Scroll --------------------------------------------*/
+.default-scroll {
+  vertical-align: top;
+  overflow: auto;
+}
+
+.default-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+.default-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.default-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Modal --------------------------------------------*/
+.container-modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: none;
+}
+
+.container-modal .modal {
+  width: 500px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  margin-top: 150px;
+}
+
+/* Main content --------------------------------------------*/
+.main-content {
+  width: 1000px;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+
+.main-content header {
+  font-family: arial;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+}
+
+.container-cadastro {
+  width: 50%;
+  padding: 1rem;
+}
+
+.container-cadastro header {
+  height: 10%;
+}
+
+.container-cadastro form {
+  padding: 1rem 0rem;
+  overflow: hidden;
+  /* Campos de entradas do formulário */
+}
+
+.container-cadastro form input, .container-cadastro form textarea, .container-cadastro form select {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+
+.container-cadastro form input::-webkit-input-placeholder, .container-cadastro form textarea::-webkit-input-placeholder, .container-cadastro form select::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.container-cadastro form input:-ms-input-placeholder, .container-cadastro form textarea:-ms-input-placeholder, .container-cadastro form select:-ms-input-placeholder {
+  color: transparent;
+}
+
+.container-cadastro form input::-ms-input-placeholder, .container-cadastro form textarea::-ms-input-placeholder, .container-cadastro form select::-ms-input-placeholder {
+  color: transparent;
+}
+
+.container-cadastro form input::placeholder, .container-cadastro form textarea::placeholder, .container-cadastro form select::placeholder {
+  color: transparent;
+}
+
+.container-cadastro form input:-moz-placeholder, .container-cadastro form input::-moz-placeholder, .container-cadastro form textarea:-moz-placeholder, .container-cadastro form textarea::-moz-placeholder, .container-cadastro form select:-moz-placeholder, .container-cadastro form select::-moz-placeholder {
+  color: transparent;
+}
+
+.container-cadastro form input:focus, .container-cadastro form textarea:focus, .container-cadastro form select:focus {
+  border-color: transparent !important;
+}
+
+.container-cadastro form input:focus::-webkit-input-placeholder, .container-cadastro form textarea:focus::-webkit-input-placeholder, .container-cadastro form select:focus::-webkit-input-placeholder {
+  color: white;
+}
+
+.container-cadastro form input:focus:-ms-input-placeholder, .container-cadastro form textarea:focus:-ms-input-placeholder, .container-cadastro form select:focus:-ms-input-placeholder {
+  color: white;
+}
+
+.container-cadastro form input:focus::-ms-input-placeholder, .container-cadastro form textarea:focus::-ms-input-placeholder, .container-cadastro form select:focus::-ms-input-placeholder {
+  color: white;
+}
+
+.container-cadastro form input:focus::placeholder, .container-cadastro form textarea:focus::placeholder, .container-cadastro form select:focus::placeholder {
+  color: white;
+}
+
+.container-cadastro form input:focus:-moz-placeholder, .container-cadastro form input:focus::-moz-placeholder, .container-cadastro form textarea:focus:-moz-placeholder, .container-cadastro form textarea:focus::-moz-placeholder, .container-cadastro form select:focus:-moz-placeholder, .container-cadastro form select:focus::-moz-placeholder {
+  color: white;
+}
+
+.container-cadastro form .form-inputs-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  color: white;
+}
+
+.container-cadastro form .form-inputs-field .field-radio {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: smaller;
+}
+
+.container-cadastro form .form-inputs-field .field-radio input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+
+.container-cadastro form .form-inputs-field .field-radio input[type=radio]:checked ~ label {
+  background-color: white !important;
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: bold;
+}
+
+.container-cadastro form .form-inputs-field .field-radio label {
+  padding: .5rem 1rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.container-cadastro form .form-inputs-field .field-radio label:hover {
+  background-color: white !important;
+  color: rgba(100, 100, 100, 0.7);
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.container-cadastro form .form-inputs-field .form-lbl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  margin: 0;
+  border-bottom: 1px solid white;
+}
+
+.container-cadastro form .form-inputs-field .form-lbl::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid white;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.container-cadastro form .form-inputs-field .form-lbl span {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: smaller;
+}
+
+.field-input {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.field-input input {
+  padding-top: 1rem;
+  border: none;
+  background-color: transparent;
+}
+
+.field-input input[type=date]::-webkit-calendar-picker-indicator {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.field-input input:focus + label span,
+.field-input input:valid + label span {
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  font-size: .6rem;
+}
+
+.field-input input .form-inputs-field input:focus + label::after,
+.field-input input .form-inputs-field input:valid + label::after {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+.field-input input .form-inputs-field .txta-count {
+  font-size: 13px;
+}
+
+.field-input input .form-inputs-field textarea {
+  resize: none;
+  line-height: 1;
+}
+
+.field-input input .form-inputs-field textarea:focus + label span,
+.field-input input .form-inputs-field textarea:valid + label span {
+  -webkit-transform: translateY(-150%);
+  transform: translateY(-150%);
+  font-size: 14px;
+}
+
+.field-input input .form-inputs-field textarea:focus + label::after,
+.field-input input .form-inputs-field textarea:valid + label::after {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+.field-input input .form-inputs-field select {
+  width: 100%;
+  cursor: pointer;
+}
+
+.field-input input .form-inputs-field select:focus + label::after,
+.field-input input .form-inputs-field select:valid + label::after {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+.field-input input .form-inputs-field select:focus + label span,
+.field-input input .form-inputs-field select:valid + label span {
+  -webkit-transform: translateY(-150%);
+  transform: translateY(-150%);
+  font-size: 14px;
+}
+
+.field-input input .form-inputs-field select option, .field-input input .form-inputs-field select option:disabled {
+  border: none;
+  background-color: #d96113 !important;
+}
+
+.field-input input .form-submit {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-consulta {
+  height: 100%;
+  border-radius: 0px 10px 10px 0px;
+  padding: 1rem;
+}
+
+.container-consulta header {
+  height: 10%;
+}
+
+.container-consulta .tb-container {
+  max-height: 88%;
+  overflow: auto;
+}
+
+.container-consulta .tb-container table {
+  border: none;
+}
+
+.container-consulta .tb-container td, .container-consulta .tb-container th {
+  padding: .5rem;
+}
+
+.container-consulta .tb-container th {
+  text-transform: uppercase;
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-consulta .tb-container thead {
+  background-color: black;
+  padding: .5rem;
+  color: white;
+}
+
+.container-consulta .tb-container .row:nth-child(2n+1) {
+  background-color: #e1e0e7;
+}
+
+.container-consulta .tb-container .row:hover {
+  background-color: #d6d5df;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

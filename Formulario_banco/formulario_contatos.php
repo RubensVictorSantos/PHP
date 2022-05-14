@@ -10,7 +10,6 @@
     
     $conexao = conexaoMysql();
     
-
     $nome = null;
     $endereco = null;
     $bairro = null;
@@ -298,6 +297,7 @@
                             <textarea name="txtobs" value="<?php echo($obs) ?>"></textarea>
                         </div>
                     </div>
+                    <!-- BOX- SUBMIT -->
                     <div class="box_campos">
                         <div class="box-label">
                             <input type="submit" name="btnsalvar" id="btnsalvar" value="<?php echo($botao) ?>">
@@ -346,20 +346,6 @@
                     </td>
                     <td>
                         <a href="formulario_contatos.php?modo=excluir&id=<?php echo($rscontatos['codigo']);?>" onclick="return confirm('Deseja relmanete excluir?');">
-<<<<<<< HEAD
-<!--
-<<<<<<< HEAD
-                            <img src="img/x-button.png">&nbsp; &nbsp;
-                        </a>
-                        <a href="formulario_contatos.php?modo=buscar&id=<?php echo($rscontatos['codigo']);?>;">
-                            <img src="img/search.png">&nbsp; &nbsp;
-                        </a>
-                        <a href="#" >
-                            <img src="img/exchange.png" class="visualizar" width="24px" height="24px" onclick="visualizardados(<?php ?>)">&nbsp; &nbsp;
-=======
--->
-=======
->>>>>>> 17de3d8cbcbdd118d2faf6fccf9c47a684038621
                             <img src="img/x-button.png" width="24px" height="24px">&nbsp; &nbsp;
                         </a>
                         <a href="formulario_contatos.php?modo=buscar&id=<?php echo($rscontatos['codigo']);?>;">
@@ -367,10 +353,6 @@
                         </a>
                         <a href="#" >
                             <img src="img/exchange.png" class="visualizar" width="24px" height="24px" onclick="visualizardados(<?php echo($rscontatos['codigo']);?>);">
-<<<<<<< HEAD
-<!-->>>>>>> 58562b25220c2e2810a41e100a7f6f2fde9efae9-->
-=======
->>>>>>> 17de3d8cbcbdd118d2faf6fccf9c47a684038621
                         </a>
                     </td>
                 </tr>

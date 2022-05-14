@@ -33,6 +33,8 @@
 
         if($rs=mysqli_fetch_array($select)){
 
+            // var_dump($rs);
+
             $admconteudo = $rs['admconteudo'];
 
         }

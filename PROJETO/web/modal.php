@@ -40,7 +40,7 @@
         });
     });
 </script>
-<div style="width:100%; heigth: 20px;">
+<div style="width:100%; height: 20px;">
     <div id="titulo-modal" >
         <p>
             <?php    
@@ -76,7 +76,7 @@
             ?>
         </td>
     </tr>
-    <tr style="width:100%;heigth:20px;">
+    <tr style="width:100%;height:20px;">
         <td style="width:100px;">
             <lable>Imagem:</lable>
 
@@ -89,7 +89,7 @@
             ?>
         </td>
     </tr>
-    <tr style="width:100%;heigth:20px;">
+    <tr style="width:100%;height:20px;">
         <td style="width:100px;">
             <lable>Descrição:</lable>
 

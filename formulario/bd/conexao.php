@@ -19,7 +19,7 @@
 		//variaveis para estabelecer a conexao com o banco
 		$server = "localhost";
 		$user = "root";
-		$password = "binho250398";
+		$password = "Ladera*610892";
 		$database = "dbcontato";
 
 		$conexao = mysqli_connect($server,$user,$password,$database);
