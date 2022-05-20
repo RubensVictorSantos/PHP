@@ -1,7 +1,6 @@
 @charset "UTF-8"
 
-$bgColor1: rgb(217, 97, 19)
-$bgImage1: linear-gradient(to top right, $bgColor1, rgb(254, 208, 70))
+$colors-list: [#db2044, #e233b8], [#3fff7c, #3ffbe0], [#6b2cf5, #d450e6], [#2f80ff, #3ccbff], [#ff4ba7, #ffda64], [#a1ffd9, #f3ff77], [#6f085a, #c51c53], [#fe3d6c, #fc9995], [#78DFF2, #f2b5d4], [#12c2e9, #f6af59], [#007991, #68dac7], [#d96113, #fed046]
 
 *
     box-sizing: border-box
@@ -16,10 +15,19 @@ body
     justify-items: center
     justify-content: center
     background-image: url(../img/bg-login2940x1960.jpg)
-    background-blend-mode: darken
     background-position: center
     background-repeat: no-repeat
-    background-size: 100% auto
+    background-size: cover
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important
+
+header
+    height: 10%
+    font-family: arial !important
+    font-weight: bold
+    color: white
+    text-align: center
+    line-height: 50px
+    font-size: 25px
 
 input
     color: white
@@ -31,72 +39,52 @@ input
         &::-webkit-datetime-edit-day-field,
         &::-webkit-datetime-edit-year-field
             color: transparent
-            -webkit-appearance: none
+            appearance: none
 
-        &:focus
+        &:focus, &:valid
             &::-webkit-datetime-edit-text,
             &::-webkit-datetime-edit-month-field,
             &::-webkit-datetime-edit-day-field,
             &::-webkit-datetime-edit-year-field
                 color: white !important
-                -webkit-appearance: auto !important
-
-        &:valid
-            &::-webkit-datetime-edit-text,
-            &::-webkit-datetime-edit-month-field,
-            &::-webkit-datetime-edit-day-field,
-            &::-webkit-datetime-edit-year-field
-                color: white !important
-                -webkit-appearance: auto !important
+                appearance: auto !important
 
     /* Input submit */
+
     &[type=submit]
-        background-color: white
+        background-color: white !important
         color: rgba(100, 100, 100, 0.7)
         font-weight: bold
         border: none
         border-radius: 2px
-        padding: .5rem 3rem
+        padding: .5rem 2.7rem
         text-transform: uppercase
 
     &[type=radio]
 
-footer
-    height: auto
+/* Table's row --------------------------------------------*/
+.row
+    &:nth-child(2n+1)
+        background-color: #e1e0e7
 
-.center
-    margin-left: auto
-    margin-right: auto
-
-.img
-    color: rgba(0, 0, 0, 0.7)
-
-.border-1
-    border: 1px solid black !important
-
-svg
-    width: 24px
-    height: 24px
-    border-radius: 4px
-
-svg:hover
-    background-color: #8f8c9c
-    padding: .3rem
+    &:hover
+        background-color: #d6d5df
+        cursor: pointer
 
 /* Scroll --------------------------------------------*/
 .default-scroll
     vertical-align: top
     overflow: auto
 
-.default-scroll::-webkit-scrollbar-thumb
-    background-color: rgba(255, 255, 255, 0.3)
-    border-radius: 5px
+    &::-webkit-scrollbar
+        width: 8px
 
-.default-scroll::-webkit-scrollbar-thumb:hover
-    background-color: rgba(255, 255, 255, 0.7)
+    &::-webkit-scrollbar-thumb
+        background-color: rgba(255, 255, 255, 0.3)
+        border-radius: 5px
 
-.default-scroll::-webkit-scrollbar
-    width: 8px
+        &:hover
+            background-color: rgba(255, 255, 255, 0.7)
 
 /* Modal --------------------------------------------*/
 .container-modal
@@ -116,6 +104,53 @@ svg:hover
         background-color: #ffffff
         margin-top: 150px
 
+/* Modal alert --------------------------------------------*/
+
+// .container-modal-alert
+//     position: fixed
+//     top: 0
+//     z-index: 999
+//     color: rgba(255,255,255,.8)
+//     display: none
+
+//     &[data-toggle-modal=true]
+//         display: flex !important
+
+.modal-alert
+    // display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    background-color: tomato
+    margin-top: 10px
+    padding: .5rem
+    box-shadow: 0px 0px 5px 5px rgba(80, 80, 80, .2)
+    position: fixed
+    top: 0
+    right: 0
+    z-index: 999
+    color: rgba(255,255,255,.8)
+    display: none
+
+    &[data-toggle-modal=true]
+        display: flex !important
+
+    h5
+        margin: 1rem
+
+    span
+        background-color: rgba(255,255,255,.8)
+        padding: .17rem 0rem
+        position: absolute
+        bottom: 0px
+        left: 0px
+        animation-name: example
+        animation-duration: 6s
+
+@keyframes example
+  from {width: 0%}
+  to {width: 100%}
+
 /* Main content --------------------------------------------*/
 .main-content
     width: 1000px
@@ -127,29 +162,25 @@ svg:hover
     border-radius: 10px
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, .2)
     background: rgba(0, 0, 0, .1)
-    overflow: hidden
     backdrop-filter: blur(20px)
+    overflow: hidden
 
-    header
-        font-family: arial
-        font-weight: bold
-        color: white
-        text-align: center
-        line-height: 50px
-        font-size: 25px
-
+/* Container Consulta */
 .container-cadastro
     width: 50%
     padding: 1rem
 
-    header
-        height: 10%
-
     form
-        padding: 1rem 0rem
+        color: white
         overflow: hidden
 
-        input, textarea, select
+        span
+            text-transform: uppercase
+            font-size: smaller
+
+        input,
+        textarea,
+        select
             outline: none
             border: none
             background-color: transparent
@@ -158,26 +189,22 @@ svg:hover
             &::placeholder
                 color: transparent
 
-            &:-moz-placeholder,
-            &::-moz-placeholder
-                color: transparent
-
             &:focus
-                border-color: transparent !important
-
                 &::placeholder
                     color: white
 
-                &:-moz-placeholder,
-                &::-moz-placeholder,
-                    color: white
+        textarea
+            background-color: rgba(255,255,255, .2) !important
+            margin-top: 5px
+            overflow: auto
+            color: white
+            resize: none
 
         /* Campos de entradas do formulário */
         .form-inputs-field
             display: flex
             flex-direction: column
             height: auto
-            color: white
 
             .field-radio
                 width: 100%
@@ -185,7 +212,6 @@ svg:hover
                 align-items: center
                 justify-content: space-between
                 padding: 1rem
-                font-family: Verdana, Geneva, Tahoma, sans-serif
                 font-size: smaller
 
                 & input[type=radio]
@@ -238,8 +264,6 @@ svg:hover
                     left: 0px
                     text-transform: uppercase
                     transition: all 0.3s ease
-                    font-family: Verdana, Geneva, Tahoma, sans-serif
-                    font-size: smaller
 
 .field-input
     width: 100%
@@ -257,96 +281,100 @@ svg:hover
             &::-webkit-calendar-picker-indicator
                 filter: invert(100%)
 
+        &:focus+label
+            & span
+                transform: translateY(-150%)
+                font-size: .6rem
+
+            &::after
+                transform: translateX(0%)
+
+        &:valid+label
+            & span
+                transform: translateY(-150%)
+                font-size: .6rem
+
+            &::after
+                transform: translateX(0%)
+
+    textarea
+        resize: none
+        line-height: 1
+
         &:focus+label span,
         &:valid+label span
             transform: translateY(-150%)
-            font-size: .6rem
+            font-size: 14px
 
-        .form-inputs-field input:focus+label::after,
-        .form-inputs-field input:valid+label::after
-            -webkit-transform: translateX(0%)
+        &:focus+label::after,
+        &:valid+label::after
             transform: translateX(0%)
 
-        .form-inputs-field .txta-count
-            font-size: 13px
+    select
+        width: 100%
+        cursor: pointer
 
-        .form-inputs-field textarea
-            resize: none
-            line-height: 1
-
-        .form-inputs-field textarea:focus+label span,
-        .form-inputs-field textarea:valid+label span
-            -webkit-transform: translateY(-150%)
+        &:focus+label span,
+        &:valid+label span
             transform: translateY(-150%)
             font-size: 14px
 
-        .form-inputs-field textarea:focus+label::after,
-        .form-inputs-field textarea:valid+label::after
-            -webkit-transform: translateX(0%)
+        &:focus+label::after,
+        &:valid+label::after
             transform: translateX(0%)
 
-        .form-inputs-field select
-            width: 100%
-            cursor: pointer
+.form-submit
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
 
-        .form-inputs-field select:focus+label::after,
-        .form-inputs-field select:valid+label::after
-            -webkit-transform: translateX(0%)
-            transform: translateX(0%)
-
-        .form-inputs-field select:focus+label span,
-        .form-inputs-field select:valid+label span
-            -webkit-transform: translateY(-150%)
-            transform: translateY(-150%)
-            font-size: 14px
-
-        .form-inputs-field select option, .form-inputs-field select option:disabled
-            border: none
-            background-color: #d96113 !important
-
-        .form-submit
-            width: 100%
-            display: flex
-            flex-direction: row
-            justify-content: space-between
-
+/* Container Consulta */
 .container-consulta
     height: 100%
-    border-radius: 0px 10px 10px 0px
     padding: 1rem
 
-    header
-        height: 10%
-
-    .tb-container
-        // height: 100px
+    main
         max-height: 88%
         overflow: auto
-        // padding-bottom: 0 1rem
 
-        & table
-            border: none
-            // color: white
-            // background-color: rgba(0, 0, 0, 0.1)
+    table
+        border: none
 
-        & td, th
-            padding: .5rem
+    td
+        max-width: 130px
+        text-overflow: ""
+        white-space: nowrap
+        overflow: hidden
 
-        & th
-            text-transform: uppercase
-            font-size: small
-            font-family: Arial, Helvetica, sans-serif
+    th
+        text-transform: uppercase
+        font-size: small
+        font-family: Arial, Helvetica, sans-serif
 
-        & thead
-            background-color: black
-            padding: .5rem
-            color: white
+    td,
+    th
+        padding: .5rem
 
-        & .row:nth-child(2n+1)
-            background-color: #e1e0e7
-            // background-color: rgba(0, 0, 0, 0.3)
+    thead
+        background-color: black
+        padding: .5rem
+        color: white
 
-        & .row:hover
-            background-color: #d6d5df
-            // background-color: rgba(0, 0, 0, 0.7)
-            cursor: pointer
+    .img
+        color: rgba(0, 0, 0, 0.7)
+        width: 24px
+        height: 24px
+        border-radius: 4px
+
+        &:hover
+            background-color: #8f8c9c
+            padding: .3rem
+
+@each $current-color in $colors-list
+    $index: index($colors-list, $current-color)
+    $first-color: nth($current-color, 1)
+    $second-color: nth($current-color, 2)
+
+    .bg-gradient#{$index}
+        background-image: linear-gradient(to top right, $first-color, $second-color)

@@ -20,10 +20,20 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   background-image: url(../img/bg-login2940x1960.jpg);
-  background-blend-mode: darken;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+header {
+  height: 10%;
+  font-family: arial !important;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
 }
 
 input {
@@ -35,60 +45,43 @@ input {
 input[type=date]::-webkit-datetime-edit-text, input[type=date]::-webkit-datetime-edit-month-field, input[type=date]::-webkit-datetime-edit-day-field, input[type=date]::-webkit-datetime-edit-year-field {
   color: transparent;
   -webkit-appearance: none;
+          appearance: none;
 }
 
-input[type=date]:focus::-webkit-datetime-edit-text, input[type=date]:focus::-webkit-datetime-edit-month-field, input[type=date]:focus::-webkit-datetime-edit-day-field, input[type=date]:focus::-webkit-datetime-edit-year-field {
+input[type=date]:focus::-webkit-datetime-edit-text, input[type=date]:focus::-webkit-datetime-edit-month-field, input[type=date]:focus::-webkit-datetime-edit-day-field, input[type=date]:focus::-webkit-datetime-edit-year-field, input[type=date]:valid::-webkit-datetime-edit-text, input[type=date]:valid::-webkit-datetime-edit-month-field, input[type=date]:valid::-webkit-datetime-edit-day-field, input[type=date]:valid::-webkit-datetime-edit-year-field {
   color: white !important;
   -webkit-appearance: auto !important;
-}
-
-input[type=date]:valid::-webkit-datetime-edit-text, input[type=date]:valid::-webkit-datetime-edit-month-field, input[type=date]:valid::-webkit-datetime-edit-day-field, input[type=date]:valid::-webkit-datetime-edit-year-field {
-  color: white !important;
-  -webkit-appearance: auto !important;
+          appearance: auto !important;
 }
 
 input[type=submit] {
-  background-color: white;
+  background-color: white !important;
   color: rgba(100, 100, 100, 0.7);
   font-weight: bold;
   border: none;
   border-radius: 2px;
-  padding: .5rem 3rem;
+  padding: .5rem 2.7rem;
   text-transform: uppercase;
 }
 
-footer {
-  height: auto;
+/* Table's row --------------------------------------------*/
+.row:nth-child(2n+1) {
+  background-color: #e1e0e7;
 }
 
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.img {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.border-1 {
-  border: 1px solid black !important;
-}
-
-svg {
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-}
-
-svg:hover {
-  background-color: #8f8c9c;
-  padding: .3rem;
+.row:hover {
+  background-color: #d6d5df;
+  cursor: pointer;
 }
 
 /* Scroll --------------------------------------------*/
 .default-scroll {
   vertical-align: top;
   overflow: auto;
+}
+
+.default-scroll::-webkit-scrollbar {
+  width: 8px;
 }
 
 .default-scroll::-webkit-scrollbar-thumb {
@@ -98,10 +91,6 @@ svg:hover {
 
 .default-scroll::-webkit-scrollbar-thumb:hover {
   background-color: rgba(255, 255, 255, 0.7);
-}
-
-.default-scroll::-webkit-scrollbar {
-  width: 8px;
 }
 
 /* Modal --------------------------------------------*/
@@ -124,6 +113,71 @@ svg:hover {
   margin-top: 150px;
 }
 
+/* Modal alert --------------------------------------------*/
+.modal-alert {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: tomato;
+  margin-top: 10px;
+  padding: .5rem;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(80, 80, 80, 0.2);
+          box-shadow: 0px 0px 5px 5px rgba(80, 80, 80, 0.2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  color: rgba(255, 255, 255, 0.8);
+  display: none;
+}
+
+.modal-alert[data-toggle-modal=true] {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.modal-alert h5 {
+  margin: 1rem;
+}
+
+.modal-alert span {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: .17rem 0rem;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+}
+
+@-webkit-keyframes example {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes example {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 /* Main content --------------------------------------------*/
 .main-content {
   width: 1000px;
@@ -142,84 +196,91 @@ svg:hover {
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
   background: rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
+  overflow: hidden;
 }
 
-.main-content header {
-  font-family: arial;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  line-height: 50px;
-  font-size: 25px;
-}
-
+/* Container Consulta */
 .container-cadastro {
   width: 50%;
   padding: 1rem;
 }
 
-.container-cadastro header {
-  height: 10%;
-}
-
 .container-cadastro form {
-  padding: 1rem 0rem;
+  color: white;
   overflow: hidden;
   /* Campos de entradas do formulário */
 }
 
-.container-cadastro form input, .container-cadastro form textarea, .container-cadastro form select {
+.container-cadastro form span {
+  text-transform: uppercase;
+  font-size: smaller;
+}
+
+.container-cadastro form input,
+.container-cadastro form textarea,
+.container-cadastro form select {
   outline: none;
   border: none;
   background-color: transparent;
   text-transform: uppercase;
 }
 
-.container-cadastro form input::-webkit-input-placeholder, .container-cadastro form textarea::-webkit-input-placeholder, .container-cadastro form select::-webkit-input-placeholder {
+.container-cadastro form input::-webkit-input-placeholder,
+.container-cadastro form textarea::-webkit-input-placeholder,
+.container-cadastro form select::-webkit-input-placeholder {
   color: transparent;
 }
 
-.container-cadastro form input:-ms-input-placeholder, .container-cadastro form textarea:-ms-input-placeholder, .container-cadastro form select:-ms-input-placeholder {
+.container-cadastro form input:-ms-input-placeholder,
+.container-cadastro form textarea:-ms-input-placeholder,
+.container-cadastro form select:-ms-input-placeholder {
   color: transparent;
 }
 
-.container-cadastro form input::-ms-input-placeholder, .container-cadastro form textarea::-ms-input-placeholder, .container-cadastro form select::-ms-input-placeholder {
+.container-cadastro form input::-ms-input-placeholder,
+.container-cadastro form textarea::-ms-input-placeholder,
+.container-cadastro form select::-ms-input-placeholder {
   color: transparent;
 }
 
-.container-cadastro form input::placeholder, .container-cadastro form textarea::placeholder, .container-cadastro form select::placeholder {
+.container-cadastro form input::placeholder,
+.container-cadastro form textarea::placeholder,
+.container-cadastro form select::placeholder {
   color: transparent;
 }
 
-.container-cadastro form input:-moz-placeholder, .container-cadastro form input::-moz-placeholder, .container-cadastro form textarea:-moz-placeholder, .container-cadastro form textarea::-moz-placeholder, .container-cadastro form select:-moz-placeholder, .container-cadastro form select::-moz-placeholder {
-  color: transparent;
-}
-
-.container-cadastro form input:focus, .container-cadastro form textarea:focus, .container-cadastro form select:focus {
-  border-color: transparent !important;
-}
-
-.container-cadastro form input:focus::-webkit-input-placeholder, .container-cadastro form textarea:focus::-webkit-input-placeholder, .container-cadastro form select:focus::-webkit-input-placeholder {
+.container-cadastro form input:focus::-webkit-input-placeholder,
+.container-cadastro form textarea:focus::-webkit-input-placeholder,
+.container-cadastro form select:focus::-webkit-input-placeholder {
   color: white;
 }
 
-.container-cadastro form input:focus:-ms-input-placeholder, .container-cadastro form textarea:focus:-ms-input-placeholder, .container-cadastro form select:focus:-ms-input-placeholder {
+.container-cadastro form input:focus:-ms-input-placeholder,
+.container-cadastro form textarea:focus:-ms-input-placeholder,
+.container-cadastro form select:focus:-ms-input-placeholder {
   color: white;
 }
 
-.container-cadastro form input:focus::-ms-input-placeholder, .container-cadastro form textarea:focus::-ms-input-placeholder, .container-cadastro form select:focus::-ms-input-placeholder {
+.container-cadastro form input:focus::-ms-input-placeholder,
+.container-cadastro form textarea:focus::-ms-input-placeholder,
+.container-cadastro form select:focus::-ms-input-placeholder {
   color: white;
 }
 
-.container-cadastro form input:focus::placeholder, .container-cadastro form textarea:focus::placeholder, .container-cadastro form select:focus::placeholder {
+.container-cadastro form input:focus::placeholder,
+.container-cadastro form textarea:focus::placeholder,
+.container-cadastro form select:focus::placeholder {
   color: white;
 }
 
-.container-cadastro form input:focus:-moz-placeholder, .container-cadastro form input:focus::-moz-placeholder, .container-cadastro form textarea:focus:-moz-placeholder, .container-cadastro form textarea:focus::-moz-placeholder, .container-cadastro form select:focus:-moz-placeholder, .container-cadastro form select:focus::-moz-placeholder {
+.container-cadastro form textarea {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  margin-top: 5px;
+  overflow: auto;
   color: white;
+  resize: none;
 }
 
 .container-cadastro form .form-inputs-field {
@@ -231,7 +292,6 @@ svg:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   height: auto;
-  color: white;
 }
 
 .container-cadastro form .form-inputs-field .field-radio {
@@ -246,7 +306,6 @@ svg:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: smaller;
 }
 
@@ -311,8 +370,6 @@ svg:hover {
   text-transform: uppercase;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: smaller;
 }
 
 .field-input {
@@ -339,65 +396,65 @@ svg:hover {
           filter: invert(100%);
 }
 
-.field-input input:focus + label span,
+.field-input input:focus + label span {
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  font-size: .6rem;
+}
+
+.field-input input:focus + label::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
 .field-input input:valid + label span {
   -webkit-transform: translateY(-150%);
           transform: translateY(-150%);
   font-size: .6rem;
 }
 
-.field-input input .form-inputs-field input:focus + label::after,
-.field-input input .form-inputs-field input:valid + label::after {
+.field-input input:valid + label::after {
   -webkit-transform: translateX(0%);
-  transform: translateX(0%);
+          transform: translateX(0%);
 }
 
-.field-input input .form-inputs-field .txta-count {
-  font-size: 13px;
-}
-
-.field-input input .form-inputs-field textarea {
+.field-input textarea {
   resize: none;
   line-height: 1;
 }
 
-.field-input input .form-inputs-field textarea:focus + label span,
-.field-input input .form-inputs-field textarea:valid + label span {
+.field-input textarea:focus + label span,
+.field-input textarea:valid + label span {
   -webkit-transform: translateY(-150%);
-  transform: translateY(-150%);
+          transform: translateY(-150%);
   font-size: 14px;
 }
 
-.field-input input .form-inputs-field textarea:focus + label::after,
-.field-input input .form-inputs-field textarea:valid + label::after {
+.field-input textarea:focus + label::after,
+.field-input textarea:valid + label::after {
   -webkit-transform: translateX(0%);
-  transform: translateX(0%);
+          transform: translateX(0%);
 }
 
-.field-input input .form-inputs-field select {
+.field-input select {
   width: 100%;
   cursor: pointer;
 }
 
-.field-input input .form-inputs-field select:focus + label::after,
-.field-input input .form-inputs-field select:valid + label::after {
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
-}
-
-.field-input input .form-inputs-field select:focus + label span,
-.field-input input .form-inputs-field select:valid + label span {
+.field-input select:focus + label span,
+.field-input select:valid + label span {
   -webkit-transform: translateY(-150%);
-  transform: translateY(-150%);
+          transform: translateY(-150%);
   font-size: 14px;
 }
 
-.field-input input .form-inputs-field select option, .field-input input .form-inputs-field select option:disabled {
-  border: none;
-  background-color: #d96113 !important;
+.field-input select:focus + label::after,
+.field-input select:valid + label::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
 }
 
-.field-input input .form-submit {
+.form-submit {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -411,47 +468,114 @@ svg:hover {
           justify-content: space-between;
 }
 
+/* Container Consulta */
 .container-consulta {
   height: 100%;
-  border-radius: 0px 10px 10px 0px;
   padding: 1rem;
 }
 
-.container-consulta header {
-  height: 10%;
-}
-
-.container-consulta .tb-container {
+.container-consulta main {
   max-height: 88%;
   overflow: auto;
 }
 
-.container-consulta .tb-container table {
+.container-consulta table {
   border: none;
 }
 
-.container-consulta .tb-container td, .container-consulta .tb-container th {
-  padding: .5rem;
+.container-consulta td {
+  max-width: 130px;
+  text-overflow: "";
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.container-consulta .tb-container th {
+.container-consulta th {
   text-transform: uppercase;
   font-size: small;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container-consulta .tb-container thead {
+.container-consulta td,
+.container-consulta th {
+  padding: .5rem;
+}
+
+.container-consulta thead {
   background-color: black;
   padding: .5rem;
   color: white;
 }
 
-.container-consulta .tb-container .row:nth-child(2n+1) {
-  background-color: #e1e0e7;
+.container-consulta .img {
+  color: rgba(0, 0, 0, 0.7);
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
 }
 
-.container-consulta .tb-container .row:hover {
-  background-color: #d6d5df;
-  cursor: pointer;
+.container-consulta .img:hover {
+  background-color: #8f8c9c;
+  padding: .3rem;
+}
+
+.bg-gradient1 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#db2044), to(#e233b8));
+  background-image: linear-gradient(to top right, #db2044, #e233b8);
+}
+
+.bg-gradient2 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#3fff7c), to(#3ffbe0));
+  background-image: linear-gradient(to top right, #3fff7c, #3ffbe0);
+}
+
+.bg-gradient3 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#6b2cf5), to(#d450e6));
+  background-image: linear-gradient(to top right, #6b2cf5, #d450e6);
+}
+
+.bg-gradient4 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#2f80ff), to(#3ccbff));
+  background-image: linear-gradient(to top right, #2f80ff, #3ccbff);
+}
+
+.bg-gradient5 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#ff4ba7), to(#ffda64));
+  background-image: linear-gradient(to top right, #ff4ba7, #ffda64);
+}
+
+.bg-gradient6 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#a1ffd9), to(#f3ff77));
+  background-image: linear-gradient(to top right, #a1ffd9, #f3ff77);
+}
+
+.bg-gradient7 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#6f085a), to(#c51c53));
+  background-image: linear-gradient(to top right, #6f085a, #c51c53);
+}
+
+.bg-gradient8 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#fe3d6c), to(#fc9995));
+  background-image: linear-gradient(to top right, #fe3d6c, #fc9995);
+}
+
+.bg-gradient9 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#78DFF2), to(#f2b5d4));
+  background-image: linear-gradient(to top right, #78DFF2, #f2b5d4);
+}
+
+.bg-gradient10 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#12c2e9), to(#f6af59));
+  background-image: linear-gradient(to top right, #12c2e9, #f6af59);
+}
+
+.bg-gradient11 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#007991), to(#68dac7));
+  background-image: linear-gradient(to top right, #007991, #68dac7);
+}
+
+.bg-gradient12 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#d96113), to(#fed046));
+  background-image: linear-gradient(to top right, #d96113, #fed046);
 }
 /*# sourceMappingURL=style.css.map */

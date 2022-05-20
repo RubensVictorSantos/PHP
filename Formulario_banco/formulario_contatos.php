@@ -91,13 +91,9 @@
         
         
         /*Explode busca uma caracter padrão na string e automaticamente quebra a sua string em vetor, colocando cada infiormalção encontrada em um indice*/
-        
         $data_nasc = explode("/", $_POST["txtdtnasc"]);
         $obs = $_POST["txtobs"];
         $dt_nasc = $data_nasc[2]."-".$data_nasc[1]."-".$data_nasc[0];
-        
-        //var_dump($data_nasc."<br>");
-        //var_dump($dt_nasc."<br>");
         
         if($_POST['btnsalvar'] == 'salvar'){
         

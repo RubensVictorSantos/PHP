@@ -102,7 +102,7 @@
             ?>
         </td>
     </tr>
-    <tr style="width:100%;heigth:20px;">
+    <tr style="width:100%; height:20px;">
         <td style="width:100px;">
             <lable>Preco:</lable>
 
@@ -130,7 +130,7 @@
         </td>
     </tr>
 -->
-    <tr style="width:100%;heigth:20px;">
+    <tr style="width:100%;height:20px;">
         <td style="width:100px;">
             <lable>Status:</lable>
         </td>
